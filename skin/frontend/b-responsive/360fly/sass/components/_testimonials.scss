@@ -1,0 +1,378 @@
+#testimonials {
+	background-color: #f9f9f9;
+	padding: 50px 0 70px;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: #ddd;
+	margin: -1px 0;
+	h2 {
+		margin-top: 0;
+	}
+	.testimonial {
+		padding-top: 50px;
+		.highlight {
+			padding-left: 290px;
+			padding-bottom: 10px;
+			padding-right: 80px;
+			text-transform: uppercase;
+			color: $color1;
+			font-size: 14px;
+			font-family: $font2;
+			line-height: normal;
+			a {
+				color: $color1;
+				text-decoration: none;
+			}
+		}
+		.quote {
+			background-color: $color1;
+			color: #fff;
+			padding: 15px 80px;
+			min-height: 180px;
+			@include clearfix();
+			.detail {
+				width: 190px;
+				float: left;
+				text-align: center;
+				margin-top: -80px;
+				margin-bottom: 20px;
+
+				.avatar {
+					width: 125px;
+					height: 125px;
+					background-color: #fff;
+					@include border-radius(50%);
+					@include box-shadow(0,0,0,3px,rgba(0,0,0,0.15));
+					margin: 0 auto 20px;
+					text-align: center;
+					overflow: hidden;
+					padding: 0;
+					display: -moz-flex;
+					display: -webkit-flex;
+					display: -ms-flex;
+					display: flex;
+					-moz-align-items: center;
+					-webkit-align-items: center;
+					-ms-align-items: center;
+					align-items: center;
+					img {
+						width: 100%;
+						min-height: 100%;
+						max-width: 1000%;
+					}
+				}
+				.name {
+					font-size: 14px;
+					text-transform: uppercase;
+					font-family: $font2;
+				}
+				.company {
+					font-weight: 300;
+					font-size: 12px;
+					line-height: normal;
+				}
+			}
+			.blockquote {
+				margin-left: 210px;
+				blockquote {
+					margin: 0;
+					padding: 0;
+					border: none;
+					font-size: 16px;
+					line-height: 1.4;
+					font-style: italic;
+					a {
+						color: #fff;
+						text-decoration: none;
+					}
+					q {
+						font-size: 18px;
+						line-height: 24px;
+						font-weight: 300;
+						font-style: normal;
+						padding: 5px 0;
+						&:before {
+							content: '“';
+							font-family: $font2;
+							font-size: 36px;
+							color: #ccc;
+							display: inline;
+							vertical-align: text-top;
+							margin-right: 3px;
+						}
+						&:after {
+							content: '“';
+							font-family: $font2;
+							font-size: 36px;
+							color: #ccc;
+							display: inline;
+							vertical-align: text-top;
+							margin-left: 3px;
+							margin-top: -18px;
+							-webkit-transform: rotate(180deg);
+							-moz-transform: rotate(180deg);
+							-ms-transform: rotate(180deg);
+							-o-transform: rotate(180deg);
+							filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+						}
+					}
+				}
+			}
+		}
+		.quote-toggle {
+			display: none;
+			width: 40px;
+			height: 40px;
+			@include border-radius(50%);
+			background-color: $color3;
+			color: #fff;
+			font-size: 44px;
+			text-align: center;
+		}
+	}
+	.carousel {
+		margin-bottom: 0;
+		position: relative;
+	}
+	.slider-controls {
+		a {
+			font-size: 50px;
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background-color: $color2;
+			color: #fff;
+			overflow: hidden;
+			border: 2px solid #fff;
+			@include border-radius(50%);
+			position: absolute;
+			top: 75px;
+			z-index: 5;
+			text-align: center;
+			@include transition(all,.2s);
+
+			&.left {
+				left: 20px;
+			}
+			&.right {
+				right: 20px;
+			}
+			span[class*="pe-7s-angle"]{
+				line-height: 36px;
+				vertical-align: top;
+				margin-left: -7px;
+			}
+			&:hover {
+				-ms-transform: scale(1.1); /* IE 9 */
+				-webkit-transform: scale(1.1); /* Safari */
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+.category-testimonials {
+	.wrapper {
+		background-color: #fff;
+	}
+	.module_banner {
+		border: none;
+	}
+}
+
+@media screen and (max-width: 767px){
+	#testimonials {
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		margin: 0 -10px;
+		.testimonial {
+			padding-top: 55px;
+			margin-bottom: 25px;
+			.highlight {
+				display: none;
+			}
+			.quote {
+				padding-left: 10px;
+				padding-right: 10px;
+				background-color: #f1f1f1;
+				position: relative;
+				color: $color1;
+				min-height: 1px;
+				.detail {
+					float: none;
+					width: 100%;
+					margin-top: 0;
+					text-align: left;
+					margin-bottom: 0;
+					@include clearfix();
+					.avatar {
+						width: 100px;
+						height: 100px;
+						margin: -66px 0 0 3px;
+						float: left;
+						box-shadow: none;
+						border: 3px solid $color3;
+					}
+					.company {
+						color: $color2;
+						padding-left: 115px;
+						margin-top: -10px;
+						padding-right: 55px;
+					}
+					.name {
+						width: 100%;
+						position: absolute;
+						left: 0;
+						top: 0;
+						padding-left: 125px;
+						padding-right: 55px;
+						line-height: 1;
+						margin-top: -12px;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						-moz-transform: translateY(-50%);
+						-webkit-transform: translateY(-50%);
+						-o-transform: translateY(-50%);
+						-ms-transform: translateY(-50%);
+						transform: translateY(-50%);
+					}
+				}
+				.blockquote {
+					margin-left: 0;
+					
+					blockquote {
+						padding-top: 15px;
+						font-size: 14px;
+					}
+				}
+			}
+			.quote-toggle {
+				position: absolute;
+				right: 8px;
+				top: 0;
+				overflow: hidden;
+				border: 3px solid #fff;
+				margin-top: -20px;
+				display: inline-block;
+				span {
+					margin-top: -4px;
+					margin-left: -5px;
+					vertical-align: top;
+				}
+				&:not(.collapsed){
+					span {
+						&:before {
+							content: "\e682";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px){
+	#testimonials {
+		&:not(.featured){
+			background-color: transparent;
+			border: none;
+			padding: 0;
+			margin: 0;
+				
+			.testimonial {
+				padding-top: 65px;
+				margin-bottom: 40px;
+				.highlight {
+					display: none;
+				}
+				.quote {
+					background-color: #f1f1f1;
+					padding: 15px;
+					color: $color1;
+					.detail {
+						.avatar {
+							box-shadow: none;
+							border: 3px solid $color3;
+						}
+						.name {
+							color: $color2;
+						}
+						.company {
+							color: $color2;
+						}
+					}
+					.blockquote {
+						display: block !important;
+						height: auto !important;
+						blockquote {
+							font-size: 16px;
+							q {
+								&:after {
+									display: inline-block;
+								}
+							}
+						}
+						q {
+							font-size: 24px;
+							text-align: center;
+						}
+						.quote-big {
+							text-align: center;
+							margin: 20px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	#testimonials {
+		.testimonial {
+			.highlight {
+				font-size: 18px;
+			}
+			.quote {
+				.detail {
+					.name {
+						font-size: 16px;
+					}
+					.company {
+						font-size: 14px;
+					}
+				}
+				.blockquote {
+					blockquote {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+		.slider-controls {
+			a {
+				top: 62px;
+			}
+		}
+
+		&:not(.featured){
+			.testimonial {
+				padding-top: 100px;
+				.quote {
+					.detail {
+						width: 300px;
+						margin-top: -115px;
+						.avatar {
+							width: 200px;
+							height: 200px;
+						}
+					}
+					.blockquote {
+						margin-left: 300px;
+					}
+				}
+			}
+		}
+	}				
+}

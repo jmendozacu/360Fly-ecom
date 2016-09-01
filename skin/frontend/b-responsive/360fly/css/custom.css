@@ -1,0 +1,308 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+/* Misc Custom */
+.no-gutter{padding:0;}
+.clear{clear:both;}
+/*.btn:hover, .btn:focus, .btn.focus{outline:none;color:#B1B1B1;}*/
+button:focus{outline:none;}
+h1,h2,h3,h4,h5,h6{color: #78be20;font-family: "FlySans-", Arial, sans-serif;}
+p{font-family: "FlySans-Light", Arial, sans-serif;}
+.margin-center{margin: 0 auto;}
+a {color: #78be20;line-height: inherit;text-decoration: none;}
+a:hover, a:focus {color: #67a31c;}
+/* footer-start*/
+.footer-360 .inline-list li:first-child > a {border: none;padding-left: 0px;}
+.footer-360 .inline-list li > a {border-left: 1px solid #999999;padding-right: 10px;padding-left: 9px;font-weight:normal;color: #999999;}
+.footer-360 .hide-mobile {display:block;}
+.footer-360 .copyright {line-height: 1.42857143;}
+.contact .row{padding: 0 15px;}
+.footer-360 .btn-footer{width:120px;background-color:transparent;margin-bottom:0;min-width: 120px;}
+.copyright{font-family: "FlySans-Light", Arial, sans-serif;color: #999999;}
+.footer-360 .inline-list li > a:hover{text-decoration: none;color:#fff;}
+.footer-360 .social-icons li {clear: both;float: none;display: inline-block;margin:0;list-style-type:none;}
+.stayuptodate{font-weight:normal;font-family:"FlySans-", Arial, sans-serif;color:#999999;font-size: 14px;}
+.footer-360 .show-mobile{display:none;}
+.footer-wrapper{max-width: 1170px;width:100%;padding:0 15px;}
+.footer-360 .social-icon{margin-right: -8px;margin-left: -8px;margin-top: 20px;margin-bottom: 8px;}
+.footer-360 .social-icon li{clear: both;float: none;display: inline-block;margin:0;}
+.footer-360 .social-icon li:last-child a{border: none;padding-left: 0px;}
+.footer-360 .social-icon li a{border: none;font-size: 32px;color: #666666;padding: 0px 5px;}
+.footer-360 .social-icon li a:hover{text-decoration: none;color: #fff;}
+/* footer-end */
+
+/* home page start */
+.main-container{overflow-x: hidden;background:transparent;}
+.custom-container{max-width:1000px;width:100%;margin:0 auto;}
+.custom-container:before,.custom-container:after{content: " ";display: table;}
+/* home page end */
+
+/* header-subnavbar start */
+.subnav-360 {background-color: #7abc31;}
+.subnav-360 .row {max-width: 980px;margin:0 auto;}
+.subnav-360 .row ul {margin: 0px;}
+/*.right {float: right;}*/
+.subnav-360 .row ul li {float: left;list-style: none;}
+.subnav-360 .row ul li a {color: #FFFFFF;padding: 0 10px;margin: 10px 0 12px;font-size: 14px;line-height: 14px;border-right: 1px solid white;display: block;font-family: inherit;font-weight:normal;}
+.subnav-360 .row ul li:last-child a{border-right:none;}
+/* header-subnavbar end */
+
+/* header start */
+.inner-div{padding:0;}
+.header-360 a img{display: block;width: 100%;max-width: 140px;float: left;margin: 20px 0px;}
+ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
+/* header end */
+
+/* font-family for icon */
+@font-face {
+  font-family: '360fly';
+  src: url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.eot?ycz9j5");
+  src: url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.eot?ycz9j5#iefix") format("embedded-opentype"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.woff2?ycz9j5") format("woff2"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.ttf?ycz9j5") format("truetype"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.woff?ycz9j5") format("woff"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.svg?ycz9j5#360fly") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+
+/* wrapper-width - common for all start */
+.wrapper-width{max-width: 1000px;width:100%;margin: 0 auto;/*padding:0;*/}
+/* wrapper-width - common for all end */
+
+/* globe section start */
+.video_background .valign{padding: 107px 0;}
+.video_background .valign h2{margin: 0;line-height: 41px;font-weight: 900;font-family: "FlySans-Medium", Arial, sans-serif;color: #78be20;font-size:38px;}
+.video_background .valign h3{color: #666666;margin-bottom: 20px;font-family: "FlySans-", Arial, sans-serif;font-style: normal;font-weight: normal;
+    margin-top: 3px;}
+.video_background .valign p{line-height: 27px;font-size:20px;margin-bottom:35px;font-family: "FlySans-Light", Arial, sans-serif;}
+.btn-custom{text-transform:uppercase;color:#fff;/*padding: 0 33px;*/line-height: 35px;border-radius: 40px;background: #78be20;border-color: #60981a;font-family: "FlySans-", Arial, sans-serif;
+    text-align: center;font-size: 20px;transition: background-color 300ms ease-out;margin-bottom: 20px;border: 1px solid #78be20;}
+.btn-custom:hover{background: #60981a;border-color: #60981a;}
+.btn-primary:active{background: #60981a;border-color: #60981a;}
+.btn-primary:active:hover{background: #60981a;border-color: #60981a;}
+/* globe section end */
+
+/* pov section start */
+.pov{padding: 60px 0 50px;background-color:#fff;}
+.pov h2,.pre-footer h2{font-size:38px;line-height:41px;font-weight: 900;font-family: "FlySans-Medium", Arial, sans-serif;margin:0;}
+.pov h3{font-size:25px;line-height:26px;margin-bottom:20px;color: #666666;margin-top:3px;}
+.pov p{font-size:20px;line-height: 27px;margin-bottom: 35px;}
+/* pov section end */
+
+/* THE APPS THAT POWER IT ALL section start */
+
+.pre-footer h3{font-size: 25px;line-height: 33px;color:#fff;margin-bottom:24px;margin-top:3px;}
+.pre-footer p{color: #999999;margin-bottom: 35px;}
+.pre-footer .app-img{text-align: center;line-height: 440px;}
+#apps-img{display: inline-block;max-width:100%;}
+
+/* THE APPS THAT POWER IT ALL section end */
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Apps Page start */
+
+/* THE apps start start */
+
+.full-width{width: 100%;margin-left: auto;margin-right: auto;max-width: initial;}
+#apps-header{background-image: url("../images/apps/apps-page-header.jpg");background-size: cover;padding-top: 120px;
+    padding-bottom: 200px;border-top: #78be20 5px solid;}
+#apps-header h1{text-shadow: none;font-size: 65px;text-transform: uppercase;line-height: 65px;font-family: "FlySans-Medium", Arial, sans-serif;color:#fff;margin:3px 0 8px;}
+#apps-header p{font-size: 20px;line-height: 30px;color:#fff;margin-bottom: 24px;}
+/* THE apps start end */
+
+/* miss nothing share everything section start */
+#miss-share{text-align: center;color: #fff;background-color: #78be20;padding-top: 60px;padding-bottom: 60px;}
+#miss-share h2{color: #fff;text-shadow: none;margin-bottom:8px;margin-top:3px;font-size: 45px;font-family: "FlySans-Medium", Arial, sans-serif;font-weight:normal;line-height: .95;}
+#miss-share p{font-size: 20px;line-height: 30px;margin-bottom: 20px;}
+/* miss nothing share everything section end */
+
+/* 360 control comes easy start */
+
+#easy-control {background-image: url("../images/apps/easy-control.jpg");padding-top: 60px;padding-bottom: 60px;
+    background-size: cover;}
+#easy-control h2 {font-size:45px;color: #fff;text-shadow: none;font-family: "FlySans-Medium", Arial, sans-serif;line-height: .85;margin:3px 0 8px;}
+#easy-control p {color: #fff;font-size: 20px;line-height:30px;margin-bottom:20px;}
+
+/* 360 control comes easy end */
+
+/* youtbe section start */
+
+#youtube-section {background-color: #fff;padding-top: 60px;padding-bottom: 60px;color: #000;border-bottom: 45px solid #78be20;}
+#youtube-section h2 {color: #000;line-height: .85;font-size:45px;margin:3px 0 8px;}
+#youtube-section p{font-family: "FlySans-Light", Arial, sans-serif;font-size: 20px;line-height: 30px;margin-bottom: 20px;}
+/* youtbe section end */
+
+/* compatible section start */
+
+#compatible-section {background-color: #333333;padding-top: 60px;padding-bottom: 60px;color: #cccccc;}
+#compatible-section h2 {color: #cccccc;font-size: 36px;line-height: .95;margin:3px 0 8px;}
+#compatible-section p {font-size: 17px;line-height: 1.25;margin-bottom: 20px;}
+#compatible-section ul {padding-left: 50px;line-height: 1.25;font-size: 17px;margin-left: 17px;margin-bottom: 20px;}
+small {font-size: 60%;line-height: inherit;}
+
+/* compatible section end */
+
+/* 360 Android and iOS apps section start */
+.mobile-desktop-apps{border-bottom: 50px solid #78be20;margin-bottom: -10px;}
+.apps-container .left-content{left:0;}
+.apps-container .right-content{right:0;}
+.image-square {overflow: hidden;padding: 0;}
+.left-content .background-image-holder{background-image: url('../images/apps/mobile-app-preview.jpg');background-size: cover;height: 40vw;background-position: center;background-repeat: no-repeat;}
+.image-square.left-content .image {left: 0;}
+.background-image{width:100%;}
+.image-square.left-content > .content {right: 0;}
+.image-square .overflow-content {max-height: 100%;}
+.image-square .content{position: absolute;}
+.app-section h2{color:#000;line-height: 0.95;font-size: 45px;margin:3px 0 8px 0;}
+.app-section p{font-size: 20px;line-height: 30px;margin-bottom:20px;}
+.android-ios:before,.android-ios:after{content: " ";display: table;clear:both;}
+.android-ios{margin:0;padding:0;list-style-type:none;display: block;line-height: 1.6;}
+.android-ios li{padding:0 10px 20px;overflow: hidden;display: table;list-style: none;width: 50%;float: left;height: auto;margin:0;}
+.app-content{padding:60px 0 0;}
+.right-content .background-image-holder{background-image: url('../images/apps/app-page-director.jpg');background-size: cover;height:43vw;background-position: center;background-repeat: no-repeat;}
+.image-square.right-content .img-right{float:right;padding:0;}
+.download-section{margin:0;padding:0;}
+.download-section li{padding: 0 10px 20px;overflow: hidden;display: table;list-style: none;}
+.download-section li .btn-custom{font-size:16px;width: 100%;font-weight: 600;padding: 16px 16px;margin: 0 0 20px;line-height:normal;}
+
+/* 360 Android and iOS apps section end */
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Apps Page End */
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Shop 360 home page Start */
+
+.pageheader{padding-top: 50px;background-color: #fff;background-image: url('../images/facets-home-light.jpg');overflow: hidden;}
+.pageheader h1 {color: #78be20;font-size: 62px;line-height: 1;margin:3px 0 8px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
+.pageheader p{font-size:20px;margin-bottom: 20px;}
+.pageheader p b {font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;font-weight: 700;}
+.pageheader .pr-40{padding-right:40px;font-family: FlySans-,Helvetica,Arial,sans-serif;font-size:20px;margin-bottom: 20px;}
+.pageheader .btn-custom{text-transform:uppercase;}
+.btn-primary:focus, .btn-primary.focus {color: #fff;background-color: #60981a;border-color: #60981a;}
+.home-shop .camera-layers .camera-4k-link, .home-shop .camera-layers .camera-hd-link, .home-shop .pageheader, .home-shop .product-block {background-repeat: no-repeat;background-size: cover;}
+.home-shop .camera-layers a {display: block;float: left;position: relative;}
+.pageheader .camera-layers .camera-4k-link {background-image: url('../images/shop360/4K_camera_header.png');z-index: 99999;
+    margin-top: 110px;width: 500px;height: 475px;margin-left: -80px;background-position: top;border-top-right-radius: 315px;}
+.home-shop .camera-layers .camera-4k-link:hover {background-image: url('../images/shop360/4K_camera_header.png');background-position: 0 -498px;
+}
+.home-shop .camera-layers .camera-hd-link {background-image: url('../images/shop360/hd_camera_header.png');position: absolute;z-index: 1;
+    width: 340px;height: 541px;margin-left: 155px;margin-top: -25px;background-position: top;}
+.home-shop .camera-layers .camera-hd-link:hover {background-image: url('../images/shop360/hd_camera_header.png');background-position: 0 -547px;
+}
+
+/* video start */
+#player {background-color: #000;background-size: contain;}
+#one-up {max-width: 854px;margin: 0 auto;}
+.videocontent {background: #000;height: 510px;}
+#player {background-image: url("../images/shop360/video-player-bg.jpg");background-repeat: no-repeat;background-size: cover;padding-top: 96px;padding-bottom: 160px;
+    background-position: center;}
+/* video end */
+
+/* camera and accessories start */
+.product-block {margin: 0 auto;text-align: center;padding-top: 45px;background-image: url('../images/shop360/facets-home-dark.jpg');background-repeat: no-repeat;
+    background-size: cover;}
+.product-block h3 {font-family: FlySans-Medium,Helvetica,Arial,sans-serif;color: #78be20;font-size: 38px;text-transform: uppercase;}
+/*.product-block .fly-camera {margin-left: -60px;}*/
+.product-block .product-img {max-width: 400px;width: 100%;}
+.product-block .mobile-products {margin-top: 10px;margin-bottom: 10px;}
+.product-block p {font-size: 15px;color: #fff;font-family: FlySans-,Helvetica,Arial,sans-serif;margin-bottom: 30px;max-width: 265px;line-height: 1.2;
+    width: 100%;}
+.product-block .center {margin: 0 auto 55px;clear: both;float: none;display: table;}
+/*.product-block .mounts-img {margin-top: 53px;margin-left: -70px;}*/
+/* camera and accessories end */
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Shop 360 home page End */
+
+/* Shop-360 Camera Page Start */
+/*----------------------------------------------------------------------------------------------------------------*/
+/* compare camera start */
+.wrapper-width-camera{max-width:1000px;width:100%;margin:0 auto;padding:0 15px;}
+.compare-cameras, .compare-cameras-mobile {padding-top: 20px;background-image: url('../images/shop-camera/light-facets-bg.jpg');background-repeat: repeat-x;padding-bottom: 140px;background-size: 100%;}
+.compare-cameras h1, .compare-cameras-mobile h1 {color: #78be20;margin-bottom: 90px;font-size: 45px;line-height: .85;margin-top:3px;}
+.compare-cameras h1 span, .compare-cameras-mobile h1 span {font-size: 68px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
+.btn-shop {width: 175px;line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;
+    border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;padding: 0 20px;padding-top: 3px;padding-bottom: 3px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
+.cameras-contain .btn-shop:hover,.mobile-4k .btn-shop:hover, .mobile-hd .btn-shop:hover {background-color: #78be20;color: #fff;}
+
+/* compare camera End */
+
+/* comparison table start */
+
+/* Desktop compare Start */
+.button-contain .btn-custom,.mobile-buttons .btn-custom{text-transform:uppercase;}
+.spec-chart.collapse {height: 300px !important;overflow: hidden;display: block;margin-bottom: 40px;}
+.spec-chart.collapse.in {height: auto !important;}
+.camera-spec:nth-child(odd) {background: linear-gradient(to right,rgba(229,229,229,0) 0,#e5e5e5 18%,#e5e5e5 89%,rgba(229,229,229,0) 100%);}
+.camera-spec {margin-bottom: 5px;padding: 10px 0;color: #B1B1B1;}
+.camera-spec p {margin: 0;font-size: 18px;}
+.camera-spec:nth-child(even) {background: linear-gradient(to right,rgba(241,241,241,0) 0,#f1f1f1 18%,#f1f1f1 89%,rgba(241,241,241,0) 100%);}
+.camera-spec div:nth-child(2) {color: #78be20;}
+.camera-spec div:nth-child(2) p{font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
+.camera-spec div:nth-child(2) b{font-weight:700;}
+.button-contain .price_color {font-size: 20px;text-align: center;color: #78be20;margin-bottom: 10px;font-weight:700;}
+.compare-cameras .spec-txt,.compare-cameras-mobile .spec-txt{margin-bottom: 0;color: #B1B1B1;font-size: 14px;}
+.center-block {display: block;margin-left: auto;margin-right: auto;}
+/*.collapse .btn[data-toggle=collapse], */.expand, .expand-mobile {width: 36px;height: 36px;position: relative;font-weight: 700;cursor: pointer;
+    color: #B1B1B1;padding: 0;border-radius: 100%;background-color: transparent;border: 1px solid #B1B1B1;}
+/*.collapse .btn[data-toggle=collapse], */.expandedBtn, .expand-mobile {width: 36px;height: 36px;position: relative;font-weight: 700;cursor: pointer;
+    color: #B1B1B1;padding: 0;border-radius: 100%;background-color: transparent;border: 1px solid #B1B1B1;}
+.collapse .btn[data-toggle=collapse] .minus, .collapse .btn[data-toggle=collapse] .plus, .expand .minus, .expand .plus, .expand-mobile .minus, .expand-mobile .plus {width: 34px;height: 34px;display: block;position: absolute;top: 7px;left: 0;text-align: center;transition: .5s all ease-out;}
+.collapse .btn[data-toggle=collapse] .minus, .collapse .btn[data-toggle=collapse] .plus, .expandedBtn .minus, .expandedBtn .plus, .expand-mobile .minus, .expandedBtn-mobile .plus {width: 34px;height: 34px;display: block;position: absolute;top: 7px;left: 0;text-align: center;transition: .5s all ease-out;}
+.expandedBtn .plus {opacity: 0;-webkit-transform: rotate(90deg);transform: rotate(90deg);display: none;}
+.expandedBtn .minus {opacity: 1;-webkit-transform: rotate(0);transform: rotate(0);}
+/* Desktop compare End */
+
+/* Mobile compare Start */
+.mobile-buttons{margin-bottom: 100px;}
+.compare-cameras-mobile .mobile-camera {width: 100%;}
+.compare-cameras-mobile .mobile-chart {height: 288px;overflow: hidden;margin-bottom: 20px;}
+.compare-cameras-mobile .mobile-chart p:nth-child(odd) {background: linear-gradient(to right,rgba(229,229,229,0) 0,#e5e5e5 18%,#e5e5e5 89%,rgba(229,229,229,0) 100%);}
+.compare-cameras-mobile .mobile-chart p {margin-bottom: 3px;padding-top: 10px;padding-bottom: 10px;color: #B1B1B1;font-size: 18px;}
+.compare-cameras-mobile .mobile-chart p:nth-child(even) {background: linear-gradient(to right,rgba(241,241,241,0) 0,#f1f1f1 18%,#f1f1f1 89%,rgba(241,241,241,0) 100%);}
+.compare-cameras-mobile .mobile-buttons .price_color {font-size: 20px;text-align: center;color: #78be20;margin-bottom: 10px;margin-top: 30px;}
+.price_color{font-weight:700;}
+.mobile-chart.collapse.in {height: auto!important;}
+.mobile-chart.collapse {min-height: 288px!important;display: block!important;}
+.expandedBtn:hover{color:#B1B1B1;}
+/* Mobile compare End */
+/* comparison table End */
+
+/* video start */
+
+.player-toggle{max-width:854px;margin:0 auto;position:relative;}
+.quality-head{float:left;position:absolute;right: 1%;top: -45px;z-index: 1;margin:0;padding:0;list-style-type:none;}
+.quality-head li{display:inline-block;width:40px;height:40px;border:2px solid #b1b1b1;border-radius:50%;position:relative;}
+.quality-head button{background-color:transparent;border:none;color:#b1b1b1;font-size:18px;position:absolute;top:-8%;line-height: 40px;left: 5%;font-weight: normal;font-family: 'Flysans-Medium';}
+/*.quality-head li a{position:absolute;line-height:35px;left: 20%;font-size: 18px;font-family: 'Flysans-Medium';font-weight: bold;color: #b1b1b1;}
+.quality-head li a:hover{text-decoration: none;}*/
+/* video End */
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Shop-360 Camera Page End */
+
+/* Shop-360 Accessories Start */
+/*----------------------------------------------------------------------------------------------------------------*/
+
+.product-intro{background-image: url('../images/accessory_header.jpg');background-repeat: no-repeat;background-size: cover;padding: 90px 0;}
+.product-intro h3{font-family: FlySans-SemiBold,helvetica,arial,sans-serif;font-size: 38px;color: #7abc31;line-height: 1;margin:3px 0 8px;}
+.product-intro .medium-font {font-family: FlySans-Medium,helvetica,arial,sans-serif;color: #fff;line-height:1.2;font-size: 20px;margin:0 0 20px;}
+.product-intro p {line-height: 1.2;color: #ccc;font-size: 20px;margin:0 0 20px;}
+.accessories{max-width: none;width: 100%;background-image: url('../images/facets-fade.png');background-repeat: repeat-x;background-size: inherit;}
+.page-inner{padding: 30px;}
+.camera_4k_badge, .camera_hd_badge {width: 41px;height: 40px;display: inline;position: absolute;background-image: url('../images/compatibility/hd-4k.png');background-size: cover;top: -8%;}
+.accessories label[for=camera_type] {color: #666;font-family: FlySans-Medium,helvetica,arial,sans-serif;font-weight: 400;font-size: 20px;text-transform: uppercase;
+    margin-bottom: 20px;}
+.accessory_top_bar {width: 100%;border-bottom: 2px solid #cdcdcd;margin-bottom: 20px;}
+#camera_type {font-size: 20px;box-shadow: none;background-color: transparent;background-image: none;border-radius: 5px;margin-left: 55px;}
+.image-container{max-width: 100%;width: 100%;padding: 4px;margin:0 0 20px;background-color: #fff;}
+.products{min-height:270px;overflow:hidden;margin:0 0 10px;}
+.products h3{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;
+    white-space: inherit;margin-top: 0;text-overflow: initial;text-align: left;}
+.products h3 a{color:#333;}
+.products .price_color{font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #7abc31;font-weight: normal;}
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Shop-360 Accessories End */
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Shop - 360 - Handlebar Mount HD Accessories Start */
+
+.accessory-bar{background: url('../images/mounts_package_bg.jpg') no-repeat;background-size: cover;padding-top: 215px;padding-bottom: 150px;border-top: #78be20 35px solid;margin-bottom: -5px;}
+.accessory-bar h3{color: #78be20;font-size: 47px;margin: 3px 0 8px;font-family: "FlySans-Light", Arial, sans-serif;line-height: 1.4}
+.accessory-bar p{color: #666;font-size: 25px;margin: 0 0 20px;}
+.product-promotions{padding-top: 30px;clear: both;float: none;background-color: #fff;}
+/*----------------------------------------------------------------------------------------------------------------*/
+/* Shop - 360 - Handlebar Mount HD Accessories End */

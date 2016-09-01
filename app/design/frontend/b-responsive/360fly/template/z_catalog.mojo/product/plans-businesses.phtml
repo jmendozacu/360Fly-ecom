@@ -1,0 +1,80 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if($_productCollection->count()): ?>
+<div class="plans">
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+    <?php $i++; ?>
+    <div class="plan<?php if($i == 2): ?> most-popular<?php endif; ?>">
+        <h3>
+            <?php
+                $str = $_helper->productAttribute($_product, $_product->getName(), 'name');
+                $name = explode(" ", $str);
+            ?>
+            <a href="<?php echo $_product->getProductUrl() ?>" class="hidden-xs">
+                <?php echo $name[0]."<span>".$name[1]."</span>" ?>
+            </a>
+            <a href="javascript:void(0);" class="specs-toggle collapsed visible-xs" data-toggle="collapse" data-target=".specs-bb-<?php echo $i;?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+                <?php echo $name[0]."<span>".$name[1]."</span>" ?>
+                <?php if($i == 2): ?><i class="fa fa-star">&nbsp;</i><?php endif; ?>
+                <i class="pe-7s-angle-down">&nbsp;</i>
+            </a>
+        </h3>
+        <div class="specs specs-bb-<?php echo $i;?> collapse<?php if($i == 2): ?> in<?php endif; ?>">
+            <?php if($i == 2): ?><div class="badge"><?php echo $this->__('Most popular') ?></div><?php endif; ?>
+            <a href="<?php echo $_product->getProductUrl() ?>"><?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short-description') ?></a>
+        </div>
+        <div class="actions">
+            <span class="price"><?php echo $this->helper('core')->formatPrice($_product->getFinalPrice(), false)."/mo" ?></span>
+            <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="btn-cart" title="<?php echo $this->__('Add to Cart') ?>"><i class="pe-7s-cart">&nbsp;</i></a>
+        </div>
+    </div>
+    <?php endforeach ?>
+</div>
+
+<div class="icons">
+    <div class="icons-businesses">
+        <div class="icon-custom-small-business icon-left">
+            <?php echo $this->__('Just<br/>Launched') ?>
+        </div>
+        <div class="arrow">&nbsp;<span class="fa fa-long-arrow-right"></span></div>
+        <div class="icon-custom-big-business icon-right">
+            <?php echo $this->__('Growing<br/>Business') ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

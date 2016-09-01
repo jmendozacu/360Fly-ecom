@@ -1,0 +1,77 @@
+<?php 
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+
+?>
+
+<div class="pageheader home-shop">
+      <div class="container wrapper-width">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <h1>WELCOME TO THE 360fly STORE.</h1>
+              <p><b>360fly HD on sale for $299! Limited Time Only!</b></p>
+              <p class="pr-40">You’ll find everything you need to capture your entire life in immersive, interactive 360° HD and 4K video right here, anytime, under one digital roof. 360fly proudly offers free shipping on any camera purchase <i>(U.S. residents only)</i>. We're even prouder of our customer service and making sure you love your 360fly camera as much as we love ours. Come in and take a look around - all around.</p>
+              <a href="<?php echo $baseUrl ?>catalogue/category/cameras_1/" class="btn btn-primary btn-custom">Shop Cameras</a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 camera-layers hidden-xs hidden-sm ">
+                <a href="<?php echo $baseUrl ?>catalogue/360fly4K_3/" class="camera-4k-link"></a>
+                <a href="<?php echo $baseUrl ?>catalogue/360fly_1/" class="camera-hd-link"></a>
+            </div>
+        </div>
+      </div>
+</div>
+<!--<div id="player">
+  <div id="video">
+    <section id="one-up">
+      <div class="videocontent">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="images/shop360/grass.mp4"></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>-->
+<div class="row product-block">
+    <div class="container wrapper-width">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-12">
+                <div class="mobile-center">
+                  <div class="md-left">
+                    <h3>Cameras</h3>
+                    <img class="product-img fly-camera mobile-products hidden-sm hidden-md hidden-lg" alt="360 Fly Camera" title="360 Fly Camera" src="<?php echo $skinUrl ?>images/shop360/cameras-grouped.png">
+
+                    <p class="col-sm-12 center no-gutter">Browse and buy the game-changing 360fly cameras that miss nothing.<br>And change everything.</p>
+                    <a href="<?php echo $baseUrl ?>catalogue/category/cameras_1/" class="btn btn-primary btn-custom center">Shop Cameras</a>
+                  </div>
+                  <div class="md-left hidden-xs">
+                    <img class="product-img fly-camera" alt="360 Fly Camera" title="360 Fly Camera" src="<?php echo $skinUrl ?>images/shop360/cameras-grouped.png">
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-12">
+
+                <div class="mobile-center">
+                  <div class="md-left">
+                    <h3>Accessories</h3>
+                    <img class="product-img mounts-img mobile-products hidden-sm hidden-md hidden-lg" alt="360 Fly Camera Accessories" title="360 Fly Camera Accessories" src="<?php echo $skinUrl ?>images/shop360/mount_cluster.png">
+                    <p class="col-sm-12 center no-gutter">From innovative mounts to spare chargers, get everything you need to keep your 360fly capturing it all.</p>
+                    <a href="<?php echo $baseUrl ?>catalogue/category/accessories/" class="btn btn-primary btn-custom center">Shop Accessories</a>
+                  </div>
+                  <div class="md-left  hidden-xs">
+                    <img class="product-img mounts-img" alt="360 Fly Camera Accessories" title="360 Fly Camera Accessories" src="<?php echo $skinUrl ?>images/shop360/mount_cluster.png">
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

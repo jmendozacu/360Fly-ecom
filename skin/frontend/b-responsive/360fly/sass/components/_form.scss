@@ -1,0 +1,31 @@
+.form-control {
+	box-shadow: none;
+	height: 45px;
+	background-color: #f0f0f0;
+	@include border-radius(3px);
+	border: none;
+	padding-right: 25px;
+	color: #444;
+	font-weight: 300;
+	font-size: 16px;
+	-webkit-appearance: none;
+	&:focus {
+		box-shadow: none;
+	}
+}
+.form-group {
+	label {
+		text-transform: uppercase;
+		color: $color6;
+		font-size: 12px;
+		font-family: $font2;
+		font-weight: normal;
+		em {
+			float: right;
+			color: red;
+		}
+	}
+}
+p.required {
+	display: none;
+}

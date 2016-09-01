@@ -1,0 +1,17 @@
+.module_banner {
+	background-color: $color1;
+	color: #fff;
+	text-align: center;
+	padding: 30px 0;
+}
+@media screen and (min-width: 768px){
+	.module_banner {
+		border-top: 3px solid #ccc;
+		padding: 50px 0;
+		.text02 {
+			display: inline-block;
+			margin: 0 30px 0 0;
+			vertical-align: middle;	
+		}
+	}
+}

@@ -1,0 +1,101 @@
+
+<div class="padder">
+
+<div class="page-title">
+    <h1><?php echo $this->__('My Servers') ?></h1>
+</div>
+
+<?php if($this->getCollection()->count() > 0) { ?>
+
+        <div class="module_servers">
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    	<tr>
+                    		<th>Host Name</th>
+                    		<th>Host IP</th>
+                    		<th>Uptime</th>
+                    		<th>Level</th>
+                    		<th>CPU</th>
+                    		<th>RAM</th>
+                    		<th>SSD /home</th>
+                    		<th>BANDWIDTH</th>
+                    	</tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($this->getCollection() as $server) { 
+                          if ($server->getPanel() == 'cpanel') {?>
+
+                           <tr>
+                           		<td><?php echo $server->getHostName(); ?></td>
+                           		<td><?php echo $server->getHostIp()?></td>
+                           		<td><?php echo $server->getUptime()?></td>
+                           		<td><?php echo $server->getLevel()?></td>
+                           		<td><?php echo $server->getLevel()?></td>
+                           		<td><?php echo $server->getLevel() * 2?>GB</td>
+                           		<td><?php echo $server->getLevel() * 7.5?>GB</td>
+                           		<td><?php echo $server->getLevel() * 250 + 250?>GB</td>
+                           	</tr>
+			<?php } else { ?>
+                           	<tr>
+                           		<td><?php echo $server->getHostName(); ?></td>
+                           		<td><?php echo $server->getHostIp()?></td>
+                           		<td><?php echo $server->getUptime()?></td>
+                           		<td><?php echo $server->getLevel()?></td>
+                           		<td><?php echo $server->getLevel()?></td>
+                           		<td><?php echo $server->getLevel() * 4?>GB</td>
+                           		<td><?php echo $server->getLevel() * 50?>GB</td>
+                           		<td><?php echo $server->getLevel() * 250 + 250?>GB</td>
+                           	</tr>
+                        <?php }
+                        } ?>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Available Graphs</th>
+                            <th>
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=3600">1h</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=10800">3h</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=43200">12h</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=86400">1d</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=604800">7d</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=1209600">14d</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=2592000">1m</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=7776000">3m</a> |
+                            <a href="<?php echo str_replace(':8080','',$this->getCurrentUrl()) ?>?&duration=23328000">9m</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $hostgraphs = $this->getServerGraphsFromZabbix();
+                        while (list($key, $value) = each($hostgraphs)) {
+                        ?>
+
+                        <tr>
+                            <td colspan="2"><img src="/magento/noc/server/graph/id/<?php echo $key . $this->getGraphUrlParams() . $this->getGraphDuration() ?>"></td>
+                        </tr>
+
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+<?php } else { ?>
+
+    <p class="text04"><?php echo $this->__('This server does not exist.') ?></p>
+
+    <?php }  ?>
+
+<div class="button-set">
+    <a href="<?php echo $this->getBackUrl() ?>" class="btn btn-link">&laquo; <?php echo $this->__('Back To Servers') ?></a>
+</div>
+</div>

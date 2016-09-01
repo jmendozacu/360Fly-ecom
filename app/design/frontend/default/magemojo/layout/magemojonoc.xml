@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	
+	<!-- customer account -->
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="noc">
+                <name>noc_migration</name>
+                <path>noc/migration/index</path>
+                <label>Submit Migration Info</label>
+            </action>				
+            <action method="addLink" translate="label" module="noc">
+                <name>noc_server</name>
+                <path>noc/server/index</path>
+                <label>My Servers</label>
+            </action>
+            <action method="addLink" translate="label" module="noc">
+                <name>noc_email</name>
+                <path>noc/email/index</path>
+                <label>My Email Log</label>
+            </action>						
+        </reference>
+    </customer_account>
+	
+	<!-- noc server -->
+    <noc_server_index>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="noc/server_index" name="noc_server_index" template="noc/server/index.phtml">
+                <action method="setTitle" translate="title" module="noc">
+                    <title>My Servers</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="noc">
+                <title>My Servers</title>
+            </action>
+        </reference>
+    </noc_server_index>	
+    <noc_server_view>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="noc/server_view" name="noc_server_index" template="noc/server/view.phtml">
+                <action method="setTitle" translate="title" module="noc">
+                    <title>My Servers</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="noc">
+                <title>My Servers</title>
+            </action>
+        </reference>
+    </noc_server_view>	
+	
+	<!-- noc email -->
+    <noc_email_index>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="noc/email_index" name="noc_email_index" template="noc/email/index.phtml">
+                <action method="setTitle" translate="title" module="noc">
+                    <title>My Email Log</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="noc">
+                <title>My Email Log</title>
+            </action>
+        </reference>
+    </noc_email_index>	
+    <noc_email_view>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="noc/email_view" name="noc_email_index" template="noc/email/view.phtml">
+                <action method="setTitle" translate="title" module="noc">
+                    <title>My Email Log</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="noc">
+                <title>My Email Log</title>
+            </action>
+        </reference>
+    </noc_email_view>
+	
+	<!-- noc zalert --> 
+	<noc_zalert_edit>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="noc/zalert_edit" name="noc_zalert_edit" template="noc/zalert/edit.phtml">
+                <action method="setTitle" translate="title" module="noc">
+                    <title>My Performance Alerts</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="noc">
+                <title>My Performance Alerts</title>
+            </action>
+        </reference>
+    </noc_zalert_edit>	
+	
+	<!-- noc migration -->
+    <noc_migration_index>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="noc/migration_index" name="noc_migration_index" template="noc/migration/index.phtml">
+                <action method="setTitle" translate="title" module="noc">
+                    <title>Submit Migration Info</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="noc">
+                <title>Submit Migration Info</title>
+            </action>
+        </reference>
+    </noc_migration_index>	
+    <noc_migration_sent>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="noc/migration_sent" name="noc_migration_sent" template="noc/migration/sent.phtml">
+                <action method="setTitle" translate="title" module="noc">
+                    <title>Submit Migration Info</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="noc">
+                <title>Submit Migration Info</title>
+            </action>
+        </reference>
+    </noc_migration_sent>					
+  
+</layout>

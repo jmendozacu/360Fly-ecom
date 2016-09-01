@@ -1,0 +1,636 @@
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+  $.noConflict();
+</script>
+
+<script language="javascript">
+<!--
+var focused = true;
+window.onfocus = function() {
+    focused = true;
+};
+window.onblur = function() {
+    focused = false;
+};
+function patchtoggle(server) {
+  patch=document.getElementById(server + "_patch").checked;
+  if (patch) {
+    window.location='<?php print Mage::helper('adminhtml')->getUrl("noc/server/patchtoggle"); ?>server/' + server + '/patch/1';
+  } else {
+    window.location='<?php print Mage::helper('adminhtml')->getUrl("noc/server/patchtoggle"); ?>server/' + server + '/patch/0';
+  }
+}
+function patchnotifytoggle(server) {
+  patch=document.getElementById(server + "_patchnotify").checked;
+  if (patch) {
+    window.location='<?php print Mage::helper('adminhtml')->getUrl("noc/server/patchnotifytoggle"); ?>server/' + server + '/patchnotify/1';
+  } else {
+    window.location='<?php print Mage::helper('adminhtml')->getUrl("noc/server/patchnotifytoggle"); ?>server/' + server + '/patchnotify/0';
+  }
+}
+function autoscaletoggle(server) {
+  document.getElementById('server').value = server;
+  document.getElementById('threshold').value = document.getElementById(server + '_threshold')[document.getElementById(server + '_threshold').selectedIndex].value;
+  document.getElementById('autoscalepopup').style.display='block';
+  document.getElementById('fade').style.display='block';
+}
+function autoscaleCheckboxRevert(server){
+  var el = document.getElementById(server + "_autoscale");
+  if(el.checked) {
+    el.checked = false;
+  }else{
+    el.checked = true;
+  }
+}
+function patchoutput(patchid) {
+  document.getElementById('patchlog_' + patchid).style.display='block';
+  document.getElementById('fade').style.display='block';
+}
+function autoscalethreshold(server) {
+	var autoscale;
+  if (document.getElementById(server + "_autoscale").checked) {
+    autoscale = 1;
+  } else {
+    autoscale = 0;
+  }
+  window.location='<?php print Mage::helper('adminhtml')->getUrl("noc/server/autoscaletoggle"); ?>server/' + server + '/autoscale/' + autoscale + '/threshold/' + document.getElementById(server + '_threshold')[document.getElementById(server + '_threshold').selectedIndex].value;
+}
+var currentAutoscale;
+function setCurrentAutoscale(server){
+  var autoscale;
+  if (document.getElementById(server + "_autoscale").checked) {
+    autoscale = 1;
+  } else {
+    autoscale = 0;
+  }
+    currentAutoscale = autoscale;
+}
+function currentAutoscaleReturn(){
+    return currentAutoscale;
+}
+//-->
+</script>
+    <style>
+    .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index:10000;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);
+    }
+    .white_content {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 25%;
+        width: 50%;
+        padding: 16px;
+        border: 16px solid #3a334d;
+        background-color: white;
+        z-index:10001;
+        overflow: auto;
+    }
+    #autoscalehelp,
+    #autoscalepopup {
+        z-index: 10001;
+    }
+    #fade {
+        z-index: 10000;
+    }
+     .accordion-toggle {cursor: pointer;}
+  .accordion-content {display: none;}
+  .accordion-content.default {display: block;}
+</style>
+    <div id="autoscalehelp" class="white_content">
+    <div class="a-right"><a href = "javascript:void(0)" onclick = "document.getElementById('autoscalehelp').style.display='none';document.getElementById('fade').style.display='none'">Close</a></div>
+    <br/>
+    By enabling CPU Auto scaling you allow your server to dynamically request additional CPU resources during high traffic periods. This gives your server the power to handle higher than normal traffic due to marketing newsletters or special offers that could potentially bog down response times or lock up the server completely.
+<br><br>
+Autoscaling is triggered when total CPU usage goes beyond 80% average CPU usage for a period of time as referred to by the Autoscaling Threshold. For example, if your threshold is set to 5 minutes your CPU usage would have to average over 80% for that time before it will start adding CPU cores. The threshold gives you control of how soon and the frequently resources will be added when the server is under higher load. A lower threshold will respond faster to high load, but will result in more overage than a higher threshold.
+<br><br>
+Autoscaling is billed based on core hours at a cost of $1 per core per hour which is rounded up. Note that any process that creates a sustained CPU spike can potentially cause autoscaling to add more resources. This can apply to cron jobs, imports or bot traffic as well as legitimate traffic.
+<br><br>
+Enabling or disabling the autoscaling option will result in a one time server reboot to reconfigure the server to allow the dynamic adding of resources. When making these changes make sure you are doing them at a non peak time as the server will become unavailable for about 5 minutes.
+</div>
+    <div id="autoscalepopup" class="white_content">
+    <div class="a-right"><a href = "javascript:void(0)" onclick = "autoscaleCheckboxRevert(document.getElementById('server').value);document.getElementById('autoscalepopup').style.display='none';document.getElementById('fade').style.display='none'">Close</a></div>
+    <br/>
+    <center><b>------------------------ WARNING ------------------------</b></center>
+    <br/>
+    Enabling / Disabling CPU autoscaling will issue a server reboot command which will result in a 5 minute service interruption. Be aware that additional service changes can occur when autoscaling is enabled. Press OK to confirm these changes or Cancel to abort this operation.
+<center>
+<input type="button" value="Cancel" onclick = "autoscaleCheckboxRevert(document.getElementById('server').value);document.getElementById('autoscalepopup').style.display='none';document.getElementById('fade').style.display='none'" class="btn btn-primary"> 
+<input type="button" value="OK" onClick="window.location='<?php print Mage::helper('adminhtml')->getUrl("noc/server/autoscaletoggle"); ?>server/' + document.getElementById('server').value + '/autoscale/'+currentAutoscaleReturn()+'/threshold/' + document.getElementById('threshold').value" class="btn btn-default">
+</center>
+
+</div>
+    <div id="fade" class="black_overlay"></div>
+<div class="padder">
+<input type="hidden" id="server" name="server" value=""/>
+<input type="hidden" id="threshold" name="threshold" value=""/>
+<div class="page-title">
+    <h1><?php echo $this->__('My Servers') ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<?php 
+$customer = Mage::getSingleton('customer/session')->getCustomer();
+$contacts = Mage::getModel('noc/contacts')->getCollection()->addFieldToFilter('customer_id', $customer->getId());
+$serverids = array();
+foreach ($this->getCollection() as $server) {
+  $serverids[count($serverids)] = $server->getServerId();
+}
+foreach ($contacts as $contact) {
+  $serverids[count($serverids)] = $contact->getServerId();
+}
+$servers = Mage::getModel('noc/server')->getCollection()->addFieldToFilter('server_id', array('in'=>$serverids));
+if($servers->count() > 0) { ?>
+        <div class="module_servers">
+
+		
+		
+<div id="accordion" class="mm-account">
+          <div class="table-responsive">
+            <?php foreach ($servers as $server) { 
+              $patchlogs = Mage::getModel('noc/patchlog')->getCollection()->addFieldToFilter('host_name',$server->getHostName());
+	      foreach ($patchlogs as $patchlog) {
+	        print '<div id="patchlog_'.$patchlog->getEntityId().'" class="white_content">';
+	        print '<div class="a-right"><a href = "javascript:void(0)" onclick = "document.getElementById(\'patchlog_'.$patchlog->getEntityId().'\').style.display=\'none\';document.getElementById(\'fade\').style.display=\'none\'">Close</a></div>';
+	        print '<br/>';
+	        print str_replace("\n","<br/>",$patchlog->getOutput());
+	        print '</div>';
+              }
+            ?>
+
+		  <h4 class="accordion-toggle"><?php echo $server->getHostName(); ?></h4>
+		  <div class="accordion-content">
+		    <table class="table" cellspacing="0" cellpadding="0" width="100%" border="0">
+              	<?php if ($server->getStatus() == 1 or $server->getStatus() == 5 or $server->getStatus() == 6) {  ?>
+				<tr>
+            		<td class="th" width="35%">HOSTNAME</td>
+            		<td class="th" width="15%">IP</td>
+            		<td class="th" width="10%">UPTIME</td>
+            		<td class="th" width="10%">LEVEL</td>
+            		<td class="th" width="6%">CPU</td>
+            		<td class="th" width="6%">RAM</td>
+            		<td class="th" width="6%">SSD</td>
+            		<td class="th" width="12%">BANDWIDTH</td>
+            	</tr>
+				<tr>
+               		<td><?php echo $server->getHostName(); ?></td>
+               		<td><?php echo $server->getHostIp()?></td>
+               		<td id="divUptime<?php echo $server->getServerId(); ?>"><?//php echo $server->getUptime()?></td>
+               		<td><?php echo $server->getLevel()?></td>
+               		<td><?php echo $server->getLevel()?></td>
+               		<td><? if ($server->getLevel() == 32) { echo '120'; } else { echo ($server->getLevel() * 4); } ?>GB</td>
+						<? if($server->getPanel() == 'cpanel') { ?>
+							<td><?php echo $server->getLevel() * 7.5?>GB</td>
+						<? } ?>
+						<? if ($server->getPanel() == 'mhm') { ?>
+							<td><? if ($server->getLevel() == 32) { echo '1300'; } else { echo ($server->getLevel() * 50); } ?>GB</td>
+						<? } ?>
+               		<td><?php echo $server->getLevel() * 250 + 250?>GB</td>
+               	</tr>
+				<tr>
+					<td colspan="8" class="th">CONTROL PANEL</td>
+				</tr>
+				<? if($server->getPanel() == 'cpanel') { ?>
+					<tr>
+					<td colspan="8"><a target="_blank" href="https://<?php echo $server->getHostName(); ?>:2083">https://<?php echo $server->getHostName(); ?>:2083</a></td>
+					</tr>
+				<? } ?>
+				<? if ($server->getPanel() == 'mhm') { ?>
+					<tr>
+					<td>MHM 2.0 Control Panel Url</td>
+					<td colspan="7"><a target="_blank" href="https://magemojo.com/mhm2/#/host/<?php echo $server->getHostName(); ?>">https://magemojo.com/mhm2/#/host/<?php echo $server->getHostName(); ?>/</a></td>
+					</tr>
+					<tr>
+					<td>MHM 1.0 Control Panel Url **DEPRECATED**</td>
+					<td colspan="7"><a target="_blank" href="https://magemojo.com/mhm/app/#/host/<?php echo $server->getHostName(); ?>/help">https://magemojo.com/mhm/app/#/host/<?php echo $server->getHostName(); ?>/help</a></td>
+					</tr>
+				<? } ?>
+				<!-- <tr>
+					<td colspan="8">&nbsp;</td>
+				</tr> -->
+			<tr>
+				<td colspan="8" class="th">MAGENTO INSTALLS</td>
+			</tr>
+			<tr>
+				<td colspan="8">
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+						<td><b>Install Directory</b></td>
+						<td><b>Version</b></td>
+						<td><b>Base Url</b></td>
+						<td><b>Missing Patches</b></td>
+						<?php
+						$sites = Mage::getModel('noc/sites')->getCollection()->addFieldToFilter('host_name',$server->getHostName());
+						foreach ($sites as $site) {
+						  $missingpatches = explode(',',$site->getMissingPatches());
+						  print '<tr>';
+						  print '<td width="200">'.$site->getDir().'</td>';
+						  print '<td width="150">'.$site->getEdition().'-'.$site->getVersion().'</td>';
+						  print '<td width="150">'.$site->getUrl().'</td>';
+						  print '<td style="padding-left:5px">';
+						  $patchhtml = array();
+						  foreach ($missingpatches as $missingpatch) {
+						    $patchlogs = Mage::getModel('noc/patchlog')->getCollection()->addFieldToFilter('host_name',$server->getHostName())->addFieldToFilter('dir',$site->getDir())->addFieldToFilter('patch',strtolower($missingpatch))->load();
+						    #print_r($patchlog);
+						    unset($patchlog);
+						    foreach($patchlogs as $patchlog) {
+						    }
+						    if (isset($patchlog)) {
+						      array_push($patchhtml,'<a href="#" onClick="patchoutput(\''.$patchlog->getEntityId().'\')">'.$missingpatch.'</a>');
+						    } else {
+						      array_push($patchhtml,$missingpatch);
+						    }
+						  }
+						  print implode(',',$patchhtml);
+						  print '</td>';
+						  print '</tr>';
+						  
+						}?>
+					</table>
+				</td>
+			</tr>
+			<!-- <tr>
+				<td colspan="8">&nbsp;</td>
+			</tr> -->
+			<?php if ($server->getCustomerId() == $customer->getId()) { ?>
+			<tr>
+				<td colspan="8" class="th">ACCOUNT ACCESS</td>
+			</tr>
+			<tr>
+				<td colspan="8">
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td><b>Email</b></td>
+							<td><b>First Name</b></td>
+							<td><b>Last Name</b></td>
+							<td></td>
+						</tr>
+						<?php
+						$contacts = Mage::getModel('noc/contacts')->getCollection()->addFieldToFilter('server_id', $server->getServerId());
+						foreach ($contacts as $contact) {
+						  #print_r($contact);
+						  $contactData = Mage::getModel('customer/customer');
+						  $contactData->setWebsiteId(Mage::app()->getWebsite()->getId());
+						  $contactData->load($contact->getCustomerId());
+						  #print_r($contactData);
+						  print '<tr>';
+						  print '<td>'.$contactData->getEmail().'</td>';
+						  print '<td>'.$contactData->getFirstname().'</td>';
+						  print '<td>'.$contactData->getLastname().'</td>';
+						  print '<td><a href="'.Mage::helper('adminhtml')->getUrl("noc/server/deletecontact")."contactid/".$contact->getEntityId().'">Remove</a></td>';
+						  print '</tr>';
+						}?>
+						<tr>
+							<td colspan="4">
+								<p class="m-t1">To add additional authorized contacts to your server they will need to have a registered magemojo.com account. Once they have an account you can add them as an authorized contact for this server by entering their email address below.</p>
+								<form method="POST" action="<?php print Mage::helper('adminhtml')->getUrl("noc/server/addcontact"); ?>" class="mm-form m-t1">
+									<div class="form-group mm-form-group">
+										<input type="hidden" name="serverid" value="<?php print $server->getServerId(); ?>" />
+										<div class="input-group">  
+											<input class="form-control" name="email" type="text" length="30" maxchar="200" />
+											<div class="input-group-addon" style="padding: 0;">
+												<button type="submit" class="btn btn-primary">Add</button>
+											</div> 
+										</div> 
+									</div>
+								</form>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<?php } ?>
+			<tr>
+				<td colspan="8" class="th">PATCHING OPTIONS</td>
+			</tr>
+			<tr>
+				<td colspan="8" class="p-b0">
+					<?php
+					if ($server->getAutopatching()) {
+					  print '<div class="mm-inline-cr"><input type="checkbox" name="patch" id="'.$server->getHostName().'_patch" value="Y" onClick="patchtoggle(\''.$server->getHostName().'\')" checked/><label for="'.$server->getHostName().'_patch"><span></span>Automatically Patch Magento Installs</label></div>';
+					} else {
+					  print '<div class="mm-inline-cr"><input type="checkbox" name="patch" id="'.$server->getHostName().'_patch" value="Y" onClick="patchtoggle(\''.$server->getHostName().'\')" /><label for="'.$server->getHostName().'_patch"><span></span>Automatically Patch Magento Installs</label></div>';
+					}?><!-- &nbsp;Automatically Patch Magento Installs -->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="8" class="p-t0">
+					<?php
+					if ($server->getPatchNotify()) {
+					  print '<div class="mm-inline-cr"><input type="checkbox" name="patchnotify" id="'.$server->getHostName().'_patchnotify" value="Y" onClick="patchnotifytoggle(\''.$server->getHostName().'\')" checked/><label for="'.$server->getHostName().'_patchnotify"><span></span>Notify Me of Missing Patches</label></div>';
+					} else {
+					  print '<div class="mm-inline-cr"><input type="checkbox" name="patchnotify" id="'.$server->getHostName().'_patchnotify" value="Y" onClick="patchnotifytoggle(\''.$server->getHostName().'\')" />
+					  <label for="'.$server->getHostName().'_patchnotify"><span></span>Notify Me of Missing Patches</label></div>';
+					}?><!-- &nbsp;Notify Me of Missing Patches -->
+				</td>
+			</tr>
+			<?php
+			if ($server->getLevel() <= 16) {
+			  print '<tr>';
+			  print '<td colspan="8" class="th">AUTOSCALING OPTIONS</td>';
+			  print '</tr>';
+			  print '<tr>';
+			  print '<td colspan="8" class="p-b0">';
+			  if ($server->getAutoscaling()) {
+			    print '<div class="mm-inline-cr">
+			    	<input type="checkbox" name="autoscale" id="'.$server->getHostName().'_autoscale" value="Y" onClick="autoscaletoggle(\''.$server->getHostName().'\')" checked/>
+			    	<label for="'.$server->getHostName().'_autoscale"><span></span>Autoscale CPU Resources</label>
+			    </div>';
+			  } else {
+			    print '<div class="mm-inline-cr">
+			    	<input type="checkbox" name="autoscale" id="'.$server->getHostName().'_autoscale" value="Y" onClick="autoscaletoggle(\''.$server->getHostName().'\')" />
+			    	<label for="'.$server->getHostName().'_autoscale"><span></span>Autoscale CPU Resources</label>
+			    </div>';
+			  }
+			  // print '&nbsp;Autoscale CPU Resources';
+			  print '&nbsp;<a href = "javascript:void(0)" onclick = "document.getElementById(\'autoscalehelp\').style.display=\'block\';document.getElementById(\'fade\').style.display=\'block\'">What\'s this?</a>';
+			  print '</td>';
+			  print '</tr>';
+			  print '<tr>';
+			  print '<td colspan="8">';
+			  print 'Autoscaling Threshold&nbsp;';
+			  print '<div class="select"> <select name="threshold" id="'.$server->getHostName().'_threshold" onChange="autoscalethreshold(\''.$server->getHostName().'\')">';
+			  $minutes = array(1,5,10,20);
+			  foreach ($minutes as $minute) {
+			    if ($minute == $server->getAutoscalingThreshold()) {
+			      print '<option value="'.$minute.'" selected>'.$minute.' Minute(s)</option>';
+			    } else {
+			      print '<option value="'.$minute.'">'.$minute.' Minute(s)</option>';
+			    }
+			  }
+			  print '</select></div>';
+			  print '</td>';
+			  print '</tr>';
+			}
+            ?>
+			<!-- <tr>
+				<td colspan="8">&nbsp;</td>
+			</tr> -->
+			<tr>
+				<td colspan="8" class="th">Animated Real Time Performance</td>
+			</tr>
+			<!--
+			<tr>
+				<td colspan="8">
+					<a href="/magento/noc/server/view/id/<?php echo $server->getServerId(); ?>">View Performance History Graphs</a>
+				</td>
+			</tr>
+
+           	<tr>
+           		<td colspan="8" class="mm-performance__graph">
+				    <script type='text/javascript'>
+				      google.load('visualization', '1', {packages:['gauge']});
+				      google.setOnLoadCallback(drawChart);
+				      function drawChart() {
+				        var data<?php echo $server->getServerId(); ?> = google.visualization.arrayToDataTable([
+				          ['Label', 'Value'],
+				          ['CPU', 0],
+				          ['MEMORY', 0],
+				          ['SWAP', 0],
+				          ['DISK', 0],
+						  ['NET-OUT', 0],
+						  ['NET-IN', 0],
+				        ]);
+				        var options<?php echo $server->getServerId(); ?> = {
+				          width: 550, height: 100,
+				          redFrom: 90, redTo: 100,
+				          yellowFrom:75, yellowTo: 90,
+				          minorTicks: 5
+				        };
+				        var chart<?php echo $server->getServerId(); ?> = new google.visualization.Gauge(document.getElementById('chart_div<?php echo $server->getServerId(); ?>'));
+				        chart<?php echo $server->getServerId(); ?>.draw(data<?php echo $server->getServerId(); ?>, options<?php echo $server->getServerId(); ?>);
+						function focus<?php echo $server->getServerId(); ?>() {
+						  if (focused) {
+						  	drawChart<?php echo $server->getServerId(); ?>();
+						  }
+						}
+						function drawChart<?php echo $server->getServerId(); ?>()
+						{
+					        jQuery.post(
+					                //'/noc/snmp/view/id/<?php echo $server->getHostName(); ?>',
+					                '/mojo_scripts/animatedgraphsnmp.php?id=<?php echo $server->getHostName(); ?>',
+					                { 'foo' : 'bar' },
+					                function (response) {
+					                    // parse response
+					                    var retObj = eval('(' + response + ')');;
+										//alert(retObj['cpu']);
+										data<?php echo $server->getServerId(); ?> = google.visualization.arrayToDataTable([
+											['Label', 'Value'],
+										    ['CPU', (retObj['cpu']/1)],
+										    ['MEMORY', (retObj['memory']/1)],
+										    ['SWAP', (retObj['swap']/1)],
+										    ['DISK', (retObj['homePercent']/1)],
+										    ['NET-OUT', (retObj['net-out-percent']/1)],
+										    ['NET-IN', (retObj['net-in-percent']/1)],
+										]);
+								        chart<?php echo $server->getServerId(); ?>.draw(data<?php echo $server->getServerId(); ?>, options<?php echo $server->getServerId(); ?>);
+								        jQuery("#divUptime<?php echo $server->getServerId(); ?>").html(retObj['uptime']);
+								        //alert(retObj['homeSize']);
+								        jQuery("#spanDiskTotal<?php echo $server->getServerId(); ?>").html( Math.ceil(((retObj['homeTotal'] / 1024 / 1024)*100))/100 );
+								        jQuery("#spanDiskUsed<?php echo $server->getServerId(); ?>").html( Math.ceil(((retObj['homeUsed'] / 1024 / 1024)*100))/100 );
+								        jQuery("#spanDiskAvailable<?php echo $server->getServerId(); ?>").html( Math.ceil(((retObj['homeAvailable'] / 1024 / 1024)*100))/100 );
+								        jQuery("#spanNetIn<?php echo $server->getServerId(); ?>").html(retObj['net-in-kbps']);
+								        jQuery("#spanNetOut<?php echo $server->getServerId(); ?>").html(retObj['net-out-kbps']);
+					                }
+					            );
+				            setTimeout(focus<?php echo $server->getServerId(); ?>, 5000);
+						}
+						drawChart<?php echo $server->getServerId(); ?>();
+				      }
+				    </script>
+					<div style="margin-bottom:10px;" id='chart_div<?php echo $server->getServerId(); ?>'></div>
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td width="16.6%"><b>Disk Size:</b> <span id="spanDiskTotal<?php echo $server->getServerId(); ?>"></span> GB</td>
+							<td width="16.6%"><b>Used:</b> <span id="spanDiskUsed<?php echo $server->getServerId(); ?>"></span> GB</td>
+							<td width="16.6%"><b>Available:</b> <span id="spanDiskAvailable<?php echo $server->getServerId(); ?>"></span> GB</td>
+							<td width="16.6%"><b>Network Out:</b> <span id="spanNetOut<?php echo $server->getServerId(); ?>"></span> kbps</td>
+							<td width="16.6%"><b>Network In:</b> <span id="spanNetIn<?php echo $server->getServerId(); ?>"></span> kbps</td>
+							<td width="16.6%"></td>
+						</tr>
+					</table>
+				</td>
+           	</tr>-->
+        	<!-- <tr>
+        		<td colspan="8">&nbsp;</td>
+        	</tr> -->
+        	<tr>
+        		<td colspan="8">Includes high cpu, low swap, low disk and unavailability notifications.</td>
+        	</tr>
+           	<tr>
+           		<td class="th">Server Alert Contacts</td>
+           		<td class="th">Name</td>
+           		<td class="th">Email</td>
+           		<td colspan="5" class="th">Action</td>
+           	</tr>
+           	<?php $zalerts = $this->getZalerts($server); ?>
+           	<?php foreach ($zalerts as $zalert) { ?>
+        	<tr>
+        		<td>Contact</td>
+        		<td><?php echo $zalert->getContactName(); ?></td>
+        		<td><?php echo $zalert->getContactEmail(); ?></td>
+        		<td colspan="5"><a href="/magento/noc/zalert/delete/id/<?php echo $zalert->getZalertId(); ?>">Delete</a></td>
+        	</tr>
+        	<?php } ?>
+        	<?php  if ($zalerts->count() == 0) { ?>
+        	<tr>
+        		<td colspan="8" class="text07">No contacts added.</td>
+        	</tr>
+        	<?php } ?>
+        	<tr>
+        		<td colspan="8"><a href="/magento/noc/zalert/new/?server_id=<?php echo $server->getServerId(); ?>" class="btn btn-default">Add Contact</a></td>
+        	</tr>
+        	<!-- <tr>
+        		<td colspan="8">&nbsp;</td>
+        	</tr> -->
+        	<tr>
+        		<td colspan="8" class="note"><strong>NOTE:</strong> These are copies of OUR internal alerts.  We've already been notified.  Please do not open tickets because you received an alert as we have already been notified.</td>
+        	</tr>
+        	<!-- <tr>
+        		<td colspan="8">&nbsp;</td>
+        	</tr> -->
+           	<tr>
+           		<td colspan="1" class="th"><strong>Domains</strong></td>
+           		<td colspan="7" class="th"><strong>IPs</strong></td>
+           	</tr>
+           	<?php foreach ($this->getDomains($server) as $domain) { ?>
+        	<tr>
+        		<td colspan="1"><a href="http://<?php echo $domain->getName(); ?>">http://<?php echo $domain->getName(); ?></a></td>
+        		<td colspan="7"><a href="http://<?php echo $domain->getIp()?>"><?php echo $domain->getIp()?></a></td>
+        	</tr>
+        	<?php } ?>
+        	<!-- <tr>
+        		<td colspan="8">&nbsp;</td>
+        	</tr> -->
+           	<tr>
+           		<td colspan="8" class="th"><strong>General Information</strong></td>
+           	</tr>
+			<? if($server->getPanel() == 'cpanel') { ?>
+				<tr>
+					<td>DNS 1</td>
+					<td colspan="7">ns1.magemojo.com</td>
+				</tr>
+				<tr>
+					<td>DNS 2</td>
+					<td colspan="7">ns2.magemojo.com</td>
+				</tr>
+			<? } ?>
+			<? if ($server->getPanel() == 'mhm') { ?>
+				<tr>
+					<td>DNS 1</td>
+					<td colspan="7">ns1.mojohostmanager.com</td>
+				</tr>
+				<tr>
+					<td>DNS 2</td>
+					<td colspan="7">ns2.mojohostmanager.com</td>
+				</tr>
+			<? } ?>
+			<? if($server->getPanel() == 'cpanel') { ?>
+				<tr>
+					<td>cPanel Url</td>
+					<td colspan="7"><a href="https://<?php echo $server->getHostName(); ?>:2083">http://<?php echo $server->getHostName(); ?>:2083</a></td>
+				</tr>
+				<tr>
+					<td>WHM Url</td>
+					<td colspan="7"><a href="https://<?php echo $server->getHostName(); ?>:2087">http://<?php echo $server->getHostName(); ?>:2087</a></td>
+				</tr>
+				<tr>
+					<td>Webmail Url</td>
+					<td colspan="7"><a href="https://<?php echo $server->getHostName(); ?>:2096">http://<?php echo $server->getHostName(); ?>:2096</a></td>
+				</tr>
+			<? } ?>
+			<? if ($server->getPanel() == 'mhm') { ?>
+					<tr>
+						<td>MHM 2.0 Control Panel Url</td>
+						<td colspan="7"><a target="_blank" href="https://magemojo.com/mhm2/#/host/<?php echo $server->getHostName(); ?>/help">https://magemojo.com/mhm2/#/host/<?php echo $server->getHostName(); ?>/</a></td>
+					</tr>
+				<tr>
+					<td>MHM 1.0 Control Panel Url **DEPRECATED**</td>
+					<td colspan="7"><a target="_blank" href="https://magemojo.com/mhm/app/#/host/<?php echo $server->getHostName(); ?>/help">https://magemojo.com/mhm/app/#/host/<?php echo $server->getHostName(); ?>/help</a></td>
+				</tr>
+				<tr>
+					<td>phpMyAdmin Url</td>
+					<td colspan="7"><a target="_blank" href="https://<?php echo $server->getHostName(); ?>:2087">https://<?php echo $server->getHostName(); ?>:2087</a></td>
+				</tr>
+			<? } ?>
+          <tr>
+            <td colspan="8" class="note"><strong>NOTE:</strong> You must use your full email address as the username when configuring your email.</td>
+          </tr>
+        	<tr>
+        		<td>Mail Incoming/Outgoing Server</td>
+        		<td colspan="7"><?php echo $server->getHostName(); ?></td>
+        	</tr>
+        	<tr>
+        		<td>SMTP Port</td>
+        		<td colspan="7">25</td>
+        	</tr>
+        	<tr>
+        		<td>Alternate SMTP Port</td>
+        		<td colspan="7">26</td>
+        	</tr>
+        	<tr>
+        		<td>SMTP Port w/SSL</td>
+        		<td colspan="7">465</td>
+        	</tr>
+        	<tr>
+        		<td>SMTP Authentication</td>
+        		<td colspan="7">Enabled (same as pop/imap user and pass)</td>
+        	</tr>
+        	<tr>
+        		<td>POP3 Port (no encryption)</td>
+        		<td colspan="7">110</td>
+        	</tr>
+        	<tr>
+        		<td>POP3 Port w/SSL</td>
+        		<td colspan="7">995</td>
+        	</tr>
+        	<tr>
+        		<td>IMAP (no encryption)</td>
+        		<td colspan="7">143</td>
+        	</tr>
+        	<tr>
+        		<td>IMAP w/TLS</td>
+        		<td colspan="7">585</td>
+        	</tr>
+        	<tr>
+        		<td>IMAP w/SSL</td>
+        		<td colspan="7">993</td>
+          </tr>
+
+ <?php } ?>
+
+            </table>
+		  </div>
+		
+            
+            <?php } ?>
+          </div>
+        </div>
+
+<?php } else { ?>
+
+    <p class="text04"><?php echo $this->__('You do not have any servers provisioned yet.') ?></p>
+
+    <?php }  ?>
+
+</div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#accordion').find('.accordion-toggle').click(function(){
+	      jQuery(this).next().slideToggle('fast');
+	      jQuery(".accordion-content").not($(this).next()).slideUp('fast');
+	    });
+	});	   
+</script>

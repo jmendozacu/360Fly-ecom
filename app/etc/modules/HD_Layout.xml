@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <HD_Layout>
+            <active>true</active>
+            <codePool>local</codePool>
+        </HD_Layout>
+    </modules>
+</config>

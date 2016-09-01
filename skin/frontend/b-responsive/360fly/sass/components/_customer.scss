@@ -1,0 +1,957 @@
+.account-login {
+	margin-bottom: 50px;
+	.content {
+		background-color: #fff;
+		padding: 10px 10px 20px;
+		min-height: 1px;
+		p {
+			font-weight: 300;
+			font-size: 16px;
+		}
+		.heading {
+			@extend .heading;
+			margin: -10px -10px 15px -10px;
+			h2 {
+				padding: 0;
+				border: none;
+			}
+		}
+	}
+}
+.customer-account-create {
+	.wrapper {
+		background-color: #fff;
+	}
+	.page-title {
+		h1 {
+			@include make-container;
+		}
+	}
+	.account-create {
+		.heading {
+			margin-bottom: 20px;
+		}
+		ul {
+			margin-bottom: 20px;
+		}
+	}
+}
+.customer-account-forgotpassword {
+	.page-title {
+		h1 {
+			@include make-container;
+		}
+	}
+	.body-wrapper {
+		form {
+			display: block;
+			background-color: #fff;
+			border-width: 1px 0;
+			border-style: solid;
+			border-color: #ddd;
+			padding: 20px 10px;
+			margin-bottom: 30px;
+			p {
+				font-weight: 300;
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+			.buttons-set {
+				text-align: center;
+			}
+		}
+	}
+}
+.customer-account-resetpassword {
+	@extend .customer-account-forgotpassword;
+}
+
+.customer-account-logoutsuccess {
+	.body-wrapper {
+		@include make-container;
+		p {
+			margin-bottom: 50px;
+			@extend .text04;
+		}
+	}
+}
+
+/* Account */
+.module_navigation {
+	background-color: $color5;
+	padding: 0 10px;
+	.heading {
+		background-color: $color5;
+		border-bottom: 1px solid $color1;
+		padding: 0;
+		margin-left: -10px;
+		margin-right: -10px;
+		h2 {
+			font-size: 14px;
+			a {
+				padding: 13px 10px;
+				color: #fff;
+				display: block;
+				text-decoration: none;
+				font-weight: normal;
+				.pe-7s-angle-down {
+					font-size: 25px;
+				    margin-bottom: -5px;
+				    margin-left: -5px;
+				    margin-top: -3px;
+				    vertical-align: top;
+				    color: $color2;
+				}
+				&:not(.collapsed){
+					.pe-7s-angle-down {
+						&:before {
+							content: "\e682";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#account-nav {
+	ul {
+		margin: 0 -10px;
+		font-family: $font2;
+		text-transform: uppercase;
+		color: $color3;
+		border-bottom: 1px solid $color1;
+		padding: 5px 0 10px;
+		font-size: 13px;
+		li {
+			a {
+				display: block;
+				padding: 10px;
+				color: #fff;
+			}
+			strong {
+				display: block;
+				padding: 10px;
+			}
+		}
+	}
+}
+.customer-account {
+	.page-title {
+		h1 {
+			padding: 0 10px;
+		}
+	}
+}
+.my-account {
+	margin-bottom: 5px;
+	font-weight: 300;
+	.panel {
+		margin-bottom: 0;
+		border: none;
+		box-shadow: none;
+		.panel-heading {
+			@extend .heading;
+			border: none;
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+			background-image: none;
+			.panel-title {
+				&> a {
+					color: #fff !important;
+					text-transform: none;
+				}
+			}
+		}
+		.panel-body {
+			padding: 15px 10px;
+			.info-box {
+				border: none;
+				padding: 0;
+				background: none;
+			}
+		}
+	}
+	.glyphicon-edit {
+		font-family: "Pe-icon-7-stroke";
+		font-size: 20px !important;
+		&:before {
+			content: "\e666";
+		}
+	}
+	.info-box {
+		background: none;
+		font-weight: 300;
+		color: $color3;
+		.box-title {
+			margin: 0 0 10px;
+			font-size: 16px;
+			color: $color1;
+			font-style: italic;
+			&> a.pull-right {
+				float: none !important;
+			}
+		}
+		.box-content {
+			color: $color1;
+			font-size: 14px;
+			a {
+				font-weight: normal;
+			}
+		}
+	}
+	#form-validate {
+		display: block;
+		background-color: #fff;
+		padding: 0 10px 10px;
+		.legend {
+			background-color: $color3;
+			padding: 11px 10px;
+			color: #fff;
+			margin: 0 -10px 15px;
+			text-transform: uppercase;
+			font-family: $font2;
+			font-size: 14px;
+		}
+	}
+	.checkbox {
+		margin-bottom: 30px;
+		label {
+			font-weight: 300;
+			text-transform: none;
+			font-family: $font1;
+			font-size: 14px;
+		}
+	}
+	.divider {
+		display: none;
+	}
+	.form-group {
+		&.a-right {
+			padding-top: 20px;
+			.back-link {
+				display: none;
+			}
+			.pull-left {
+				display: none;
+			}
+			.btn-success {
+				text-transform: none;
+				display: block;
+				margin: 0 auto;
+			}
+			.btn-primary {
+				display: block;
+				margin: 0 auto;
+				background: $color2;
+				&:hover {
+					background: darken($color2,5%);
+				}
+			}
+		}
+	}
+	.address-book {
+		background-color: #fff;
+		padding: 0 10px 1px;
+		.sub-title {
+			background-color: $color3;
+			padding: 11px 10px;
+			color: #fff;
+			margin: 0 -10px 15px;
+			text-transform: uppercase;
+			font-family: $font2;
+			font-size: 14px;
+		}
+		.info-box {
+			border: none;
+			padding: 0;
+		}
+		.empty {
+			font-weight: 300;
+		}
+	}
+	.notice {
+		color: $color1;
+		padding: 10px 10px 10px 60px;
+		position: relative;
+		margin-bottom: 20px;
+		border: 1px solid #ddd;
+		font-style: italic;
+		line-height: normal;
+		background-color: darken(#f0f0f0,5%);
+
+		&:before {
+			content: "\e69b";
+			font-family: "Pe-icon-7-stroke";
+			display: inline-block;
+			font-size: 25px;
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			color: #fff;
+			background-color: $color3;
+			@include border-radius(50%);
+			width: 40px;
+			height: 40px;
+			line-height: 38px;
+			text-align: center;
+			font-style: normal;
+		}
+		li {
+			&+ li {
+				margin-top: 5px;
+			}
+		}
+	}
+	.monkey-multisubscribe {
+		.checkbox {
+			margin: 0;
+			input[type="checkbox"]{
+				margin-left: 0;
+				left: 0;
+			}
+		}
+	}
+	#mailchimp-additional {
+		background-color: #fff;
+		display: block;
+		padding: 20px 10px 1px;
+	}
+	.col2-set.order-info-box {
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	.page-head {
+		@extend .page-title;
+		h3 {
+			@extend .text03;
+		}
+	}
+}
+#my-orders-table {
+	tbody {
+		tr {
+			td {
+				font-weight: 300;
+				em {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+.order-page {
+	.order-buttons {
+		padding: 10px 10px 0;
+		text-align: left;
+		a {
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			text-align: center;
+			background-color: $color2;
+			font-size: 20px;
+			padding: 0;
+			@include border-radius(50%);
+			overflow: hidden;
+			color: #fff;
+			&:hover {
+				background-color: $color2;
+				color: #fff;
+			}
+		}
+	}
+	.order-status-date {
+		background-color: #fff;
+		padding: 0 10px;
+		.order-date {
+			margin: 0;
+			padding: 0 0 10px;
+			font-size: 15px;
+			font-weight: 300;
+		}
+		.text07 {
+			padding: 10px 0 0 0;
+		}
+	}
+	.order-info {
+		padding: 10px;
+		margin: 10px 0;
+		dt {
+			font-weight: 300;
+		}
+	}
+	.order-sp {
+		margin: 0;
+		.info-box {
+			margin: 0 -10px -1px;
+			background-color: #fff;
+			border-width: 1px 0;
+			border-color: #ddd;
+		}
+	}
+}
+.order-items {
+	.table {
+		margin-bottom: 0;
+		tbody {
+			tr {
+				td {
+					&.first {
+						&> div {
+							font-size: 16px;
+							font-weight: normal;
+							margin-bottom: 10px;
+						}
+						.item-options {
+							color: $color3;
+							margin: 0 10px;
+							dd {
+								padding-left: 0;
+								margin-bottom: 0;
+								padding-bottom: 5px;
+							}
+							dt {
+								font-style: normal;
+							}
+						}
+					}
+				}
+			}
+		}
+		tfoot {
+			tr {
+				td {
+					border: none;
+				}
+				&.last {
+					td {
+						text-transform: uppercase;
+						font-family: $font2;
+						font-size: 16px;
+					}
+				}
+				&.first {
+					td {
+						border-top: 1px solid #ddd;
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.buttons-set {
+		margin: 0;
+	}
+	.sub-title {
+		font-size: 18px;
+		font-weight: 300;
+		padding: 0 10px 10px;
+		margin: 0;
+		&> a {
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			line-height: 40px;
+			text-align: center;
+			background-color: #fff;
+			overflow: hidden;
+			@include border-radius(50%);
+			margin-top: -10px;
+			font-size: 20px;
+		}
+	}
+	.order-links {
+		margin-bottom: 20px;
+	}
+}
+
+.simple_contact {
+	padding-bottom: 1px;
+	.text07 {
+		font-weight: 300;
+		font-size: 14px;
+	}
+	form {
+		display: block;
+		padding-bottom: 1px;
+	}
+	.payment-methods {
+		.form-group {
+			label {
+				display: block;
+			}
+		}
+	}
+}
+
+.module_servers {
+	padding-bottom: 1px;
+	form {
+		display: block;
+		padding-bottom: 1px;
+	}
+	.table {
+		tbody {
+			tr {
+				td {
+					font-weight: 300;
+					font-size: 13px;
+					&.th {
+						background-color: $color3;
+						color: #fff;
+						font-family: $font2;
+						text-transform: uppercase;
+						font-size: 11px;
+						white-space: nowrap;
+						strong {
+							font-weight: normal;
+						}
+					}
+					&.note {
+						border-width: 1px 0;
+						border-style: solid;
+						border-color: #ddd;
+					}
+					&> div {
+						b {
+							text-transform: uppercase;
+							font-family: $font2;
+							font-size: 12px;
+						}
+					}
+					&.text07 {
+						color: $color1;
+						font-size: 14px;
+					}
+					.btn-default {
+						margin: 0 auto;
+						font-size: 14px;
+						padding: 10px 20px;
+					}
+					a {
+						font-weight: normal;
+					}
+				}
+			}
+		}
+	}
+}
+
+.module_affiliate {
+	background-color: #fff;
+	padding: 15px 0;
+	margin: 0 -10px;
+	dl {
+		margin-bottom: 0;
+		padding-left: 10px;
+		padding-right: 10px;
+		&+ dl {
+			margin-top: 15px;
+			border-top: 1px solid #ddd;
+			padding-top: 15px;
+		}
+	}
+}
+
+@media screen and (max-width: 420px){
+	.my-account {
+		.notice {
+			padding-left: 10px;
+			margin-top: 30px;
+			margin-right: -10px;
+			margin-left: -10px;
+			background-color: darken(#f0f0f0,5%);
+			border-width: 0;
+			font-size: 13px;
+			&:before {
+				display: block;
+				position: static;
+				margin-bottom: 10px;
+				margin-top: -33px;
+				margin-left: -5px;
+				border: 3px solid #f0f0f0;
+				width: 43px;
+				height: 43px;
+				line-height: 35px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px){
+	.account-login {
+		.col-xs-12 {
+			width: 100%;
+			float: none;
+			clear: both;
+			padding: 0;
+			&.new-users {
+				margin-top: 15px;
+			}
+		}
+	}
+	.customer-account {
+		.header {
+			&+ .body-wrapper {
+				padding-top: 0;
+				top: 55px;
+				position: relative;
+				margin-bottom: 60px;
+			}
+		}
+	}
+	#my-orders-table {
+		thead {
+			tr {
+				th {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	.order-items {
+		.table {
+			display: block;
+			* {
+				display: block;
+			}
+			thead {
+				display: none;
+			}
+			colgroup {
+				display: none;
+			}
+			tbody {
+				tr {
+					td {
+						&.first {
+							padding: 0 0 5px;
+							border-bottom: 1px solid #ddd;
+						}
+						&.empty {
+							display: none;
+						}
+						&.cell-price {
+							display: inline-block;
+							width: 33.33%;
+							vertical-align: top;
+						}
+						&.cell-qty {
+							display: inline-block;
+							width: 30%;
+							vertical-align: top;
+						}
+						&.cell-subtotal {
+							display: inline-block;
+							width: 33.33%;
+							vertical-align: top;
+						}
+						.cell-label {
+							font-family: $font2;
+							text-transform: uppercase;
+							font-size: 12px;
+							color: $color3;
+						}
+					}
+				}
+			}
+			tfoot {
+				tr {
+					display: table;
+					width: 100%;
+					td {
+						display: table-cell;
+						&.last {
+							width: 90px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.my-account {
+		padding-bottom: 1px;
+		min-height: 200px;
+		.buttons-set {
+			.btn {
+				margin: 5px auto;
+				font-size: 14px;
+			}
+		}
+		.padder {
+			padding: 0 10px;
+			.page-title {
+				margin-left: -10px;
+				margin-right: -10px;
+			}
+			.panel {
+				margin-left: -10px;
+				margin-right: -10px;
+			}
+			.table-responsive {
+				margin-left: -10px;
+				margin-right: -10px;
+				width: auto;
+			}
+		}
+		.page-head {
+			padding: 20px 10px 10px;
+			margin: 0 0 10px;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+	.module_servers {
+		.table-responsive {
+			width: 100%;
+			border: 1px solid #ddd;
+			overflow: auto;
+			margin-bottom: 15px;
+			.table {
+				thead {
+					tr {
+						th {
+							white-space: nowrap;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px){
+	.account-login {
+		.content {
+			padding: 20px;
+			.heading {
+				margin: -20px -20px 25px -20px;
+			}
+		}
+		.row {
+			display: table;
+			margin: 0;
+			table-layout: fixed;
+			&> div {
+				display: table-cell;
+				vertical-align: top;
+				background-color: #fff;
+				float: none;
+				width: 50%;
+				padding: 0;
+			}
+		}
+	}
+	.customer-account-create {
+		.wrapper {
+			background-color: #f0f0f0;
+		}
+		.account-create {
+			form {
+				display: block;
+				clear: both;
+				background-color: #fff;
+			}
+			.heading {
+				h2 {
+					@include make-container;
+				}
+			}
+			ul {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.customer-account-forgotpassword {
+		.body-wrapper {
+			form {
+				border: none;
+				@include make-container;
+				.buttons-set {
+					text-align: right;
+				}
+			}
+		}
+	}
+	.customer-account-resetpassword {
+		.body-wrapper {
+			form {
+				.buttons-set {
+					text-align: center;
+				}
+			}
+		}
+	}
+	.my-account {
+		margin-bottom: 50px;
+		.welcome-msg {
+			display: block !important;
+			font-size: 18px;
+			font-weight: 300;
+			margin-right: 0;
+			.hello {
+				font-family: $font2;
+				margin-bottom: 10px;
+			}
+		}
+		.form-group {
+			&.a-right {
+				.btn-success {
+					font-size: 16px;
+				}
+			}
+		}
+		.row {
+			.col-md-6 {
+				&.col-md-offset-3 {
+					margin-left: 0;
+					width: 100%;
+					ul {
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+		.buttons-set {
+			.btn {
+				font-size: 14px;
+			}
+		}
+	}
+	.customer-account {
+		.body-wrapper {
+			@include make-container;
+			padding: 0;
+			@include clearfix();
+		}
+		.page-title {
+			h1 {
+				padding: 0;
+			}
+		}
+	}
+	.module_navigation {
+		width: 30%;
+		float: left;
+		padding: 50px 10px 0 0;
+		background-color: transparent;
+		margin-bottom: 50px;
+		.heading {
+			display: none;
+		}
+	}
+	#account-nav {
+		display: block !important;
+		height: auto !important;
+		overflow: visible;
+		ul {
+			padding: 0;
+			margin: 0;
+			border: none;
+			font-size: 12px;
+			color: $color2;
+			li {
+				a {
+					color: $color1;
+					display: inline-block;
+					&:hover {
+						color: $color2;
+					}
+				}
+			}
+		}
+	}
+	.my-account {
+		width: 70%;
+		float: left;
+		padding: 0 10px;
+		.panel {
+			margin-bottom: 30px;
+			.panel-heading {
+				h2 {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.order-page {
+		.page-title {
+			h1 {
+				display: inline-block;
+			}
+		}
+		.order-buttons {
+			padding: 0;
+			float: right;
+			a {
+				color: #fff;
+				background: $color2;
+			}
+		}
+		.order-status-date {
+			.order-date {
+				font-size: 14px;
+			}
+		}
+		.order-sp {
+			.info-box {
+				border: none;
+				min-height: 175px;
+				.box-title {
+					color: $color3;
+				}
+			}
+		}
+	}
+	.order-items {
+		.table {
+			thead {
+				tr {
+					th {
+						border-bottom: 1px solid #ddd;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+	.module_affiliate {
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+		dl {
+			background-color: #fff;
+			padding: 10px;
+			&+ dl {
+				padding-top: 10px;
+				border: none;
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	.my-account {
+		.row {
+			.col-md-6 {
+				&.col-md-offset-3 {
+					ul {
+						width: 50%;
+						margin: 0 auto 30px;
+					}
+				}
+			}
+		}
+	}
+	.simple_contact {
+		.payment-methods {
+			ul {
+				margin: 0 25%;
+			}
+		}
+	}
+}

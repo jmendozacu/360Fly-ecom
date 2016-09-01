@@ -1,0 +1,9 @@
+<div class="minicart-button">
+    <a href="<?php echo $this->getUrl('checkout/cart');?>">
+        <span class="pe-7s-cart"></span>
+        <?php $_cartQty = $this->helper('checkout/cart')->getSummaryCount() ?>
+        <?php if ($_cartQty > 0): ?>
+            <?php echo '<i></i>' ?>
+        <?php endif ?>
+    </a>
+</div>

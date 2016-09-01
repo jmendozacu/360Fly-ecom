@@ -1,0 +1,43 @@
+<div class="padder">
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	<div class="page-title">
+	    <h1><?php echo $this->__('My Servers') ?></h1>
+	</div>
+
+	<div class="box simple_contact">
+		<form id="noc_zalert_edit" name="noc_zalert_edit" action="/magento/noc/zalert/save" method="post">
+			<script type="text/javascript">
+			//< ![CDATA[
+			var customForm = new VarienForm('noc_zalert_edit');
+			//]]>
+			</script>
+		    <div class="panel panel-default">
+		    	<div class="panel-heading">
+		    		<h2 class="panel-title">Server Alert Contact</h2>
+		    	</div>
+		    	<div class="panel-body">
+		    		<div class="row">
+		    			<div class="col-xs-12 col-md-6">
+		    				<div class="form-group">
+		    					<label for="name" class="required">Name<em>*</em></label>
+		    					<input name="contact_name" id="contact_name" title="Name" value="" class="required-entry form-control" type="text" />
+		    				</div>
+		    			</div>
+		    			<div class="col-xs-12 col-md-6">
+		    				<div class="form-group">
+		    					<label for="email" class="required">Email Address<em>*</em></label>
+		    					<input name="contact_email" id="contact_email" title="Email" value="" class="required-entry form-control validate-email" type="text" />
+		    					<input type="hidden" name="server_id" id="server_id" value="<?php echo $this->getServerId() ?>">
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+
+		    <div class="buttons-set a-center">
+		        <p class="required">* Required Fields</p>
+		        <button type="submit" class="btn btn-default"><span>Submit</span></button>
+		    </div>
+		</form>
+	</div>
+</div>

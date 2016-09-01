@@ -1,0 +1,138 @@
+.cms-index-index {
+	@media screen and (min-width: 768px){
+		.header {
+			border-bottom: none;
+			background-color: transparent;
+			position: absolute;
+			top: 28px;
+			&+ .body-wrapper {
+				padding-top: 0;
+			}
+		}
+		.header-panel {
+			background-color: transparent;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 0;
+		}
+		.main-nav {
+			.navbar {
+				.navbar-collapse {
+					.navbar-nav {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+}
+.home-hero {
+	text-align: center;
+	color: #fff;
+	background: url(../images/hero.jpg) no-repeat center center;
+	background-size: cover;
+	.copy {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+    	-moz-flex-direction: column;
+    	-webkit-flex-direction: column;
+    	-ms-flex-direction: column;
+    	flex-direction: column;
+    	-moz-align-self: center;
+		-webkit-align-self: center;
+		-ms-align-self: center;
+		align-self: center;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+    	&> * {
+    		-moz-align-self: center;
+    		-webkit-align-self: center;
+    		-ms-align-self: center;
+    		align-self: center;
+    		margin: 0;
+    	}
+    	h2 {
+    		font-family: $font2;
+    		font-size: 24px;
+    		letter-spacing: 1px;
+    		margin-bottom: 5px;
+    	}
+    	p {
+    		font-style: italic;
+    		color: #fff;
+    		font-size: 18px;
+    		line-height: normal;
+    		&+ p {
+    			margin-top: 10px;
+    		}
+    	}
+	}
+	.hero-wrapper {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-align-self: center;
+		-webkit-align-self: center;
+		-ms-align-self: center;
+		align-self: center;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		min-height: 240px;
+	}
+}
+.home-logos {
+	#logos {
+		border: none;
+	}
+}
+
+.home-plans {
+	h2 {
+		font-weight: 300;
+		font-size: 18px;
+		text-align: center;
+		color: $color1;
+		line-height: normal;
+		margin-bottom: 20px;
+	}
+}
+
+
+@media screen and (min-width: 768px){
+	.home-hero {
+		.hero-wrapper {
+			min-height: 550px;
+		}
+		.copy {
+			h2 {
+				font-size: 48px;
+				margin-bottom: 20px;
+				margin-top: 50px;
+			}
+			p {
+				font-size: 30px;
+				font-weight: 300;
+				color: #d3d0dc;
+				&+ p {
+					margin-top: 25px;
+				}
+			}
+		}
+	}
+	.home-plans {
+		h2 {
+			font-size: 30px;
+			line-height: 44px;
+			margin: 50px auto;
+			max-width: 880px;
+		}
+	}
+}

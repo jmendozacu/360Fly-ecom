@@ -1,0 +1,55 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+.no-gutter{padding:0;}
+
+/* footer-start*/
+.footer-360 .inline-list li:first-child > a {border: none;padding-left: 0px;}
+.footer-360 .inline-list li > a {border-left: 1px solid #999999;padding-right: 10px;padding-left: 9px;font-weight:normal;color: #999999;}
+.footer-360 .hide-mobile {display:block;}
+.footer-360 .copyright {line-height: 1.42857143;}
+.contact .row{padding: 0 15px;}
+.footer-360 .btn-footer{width:120px;background-color:transparent;margin-bottom:0;min-width: 120px;}
+.copyright{font-family: "FlySans-Light", Arial, sans-serif;color: #999999;}
+.footer-360 .inline-list li > a:hover{text-decoration: none;color:#fff;}
+.footer-360 .social-icons li {clear: both;float: none;display: inline-block;margin:0;list-style-type:none;}
+.stayuptodate{font-weight:normal;font-family:"FlySans-", Arial, sans-serif;color:#999999;font-size: 14px;}
+.footer-360 .show-mobile{display:none;}
+.footer-wrapper{max-width: 1170px;width:100%;padding:0 15px;}
+.footer-360 .social-icon{margin-right: -8px;margin-left: -8px;margin-top: 20px;margin-bottom: 8px;}
+.footer-360 .social-icon li{clear: both;float: none;display: inline-block;margin:0;}
+.footer-360 .social-icon li:last-child a{border: none;padding-left: 0px;}
+.footer-360 .social-icon li a{border: none;font-size: 32px;color: #666666;padding: 0px 5px;}
+.footer-360 .social-icon li a:hover{text-decoration: none;color: #fff;}
+/* footer-end */
+
+/* home page start */
+.custom-container{max-width:1000px;width:100%;margin:0 auto;}
+.custom-container:before,.custom-container:after{content: " ";display: table;}
+/* home page end */
+
+/* header-subnavbar start */
+.subnav-360 {background-color: #7abc31;}
+.subnav-360 .row {max-width: 980px;margin:0 auto;}
+.subnav-360 .row ul {margin: 0px;}
+.right {float: right;}
+.subnav-360 .row ul li {float: left;list-style: none;}
+.subnav-360 .row ul li a {color: #FFFFFF;padding: 0 10px;margin: 10px 0 12px;font-size: 14px;line-height: 14px;border-right: 1px solid white;display: block;font-family: inherit;font-weight:normal;}
+.subnav-360 .row ul li:last-child a{border-right:none;}
+/* header-subnavbar end */
+
+/* header start */
+.inner-div{padding:0;}
+.header-360 a img{display: block;width: 100%;max-width: 140px;float: left;margin: 20px 0px;}
+ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
+/* header end */
+
+
+/* font-family for icon */
+@font-face {
+  font-family: '360fly';
+  src: url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.eot?ycz9j5");
+  src: url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.eot?ycz9j5#iefix") format("embedded-opentype"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.woff2?ycz9j5") format("woff2"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.ttf?ycz9j5") format("truetype"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.woff?ycz9j5") format("woff"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.svg?ycz9j5#360fly") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+
+

@@ -1,0 +1,7 @@
+
+.login-form{background:transparent;padding:0;}
+.input-box{text-align:center;}
+.login-form label{letter-spacing: 2px;margin-right: -2px;font-weight: 400;text-transform: uppercase;font-size: 16px;line-height: 24px;}
+.login-form .form-buttons{text-align:center;}
+li.error-msg{color:#000;}
+li.error-msg span{top: 19%;margin: -4px 0 0 -60px;color:#000!important;}

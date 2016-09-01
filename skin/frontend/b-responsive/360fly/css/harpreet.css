@@ -1,0 +1,71 @@
+/*
+	Harpreet Singh
+*/
+/*MISC CLASSES STARTS*/
+.btn.btn-custom, .btn.btn-shop {width: auto;padding: 6px 35px;margin:10px;}
+.btn.btn-custom{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: #78be20;color: #fff;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
+.btn.btn-shop{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
+.btn-custom:hover{background: #60981a;border-color: #60981a;}
+.btn-shop:hover {background-color: #78be20;color: #fff;}
+.m0p0{margin:0;padding:0;}
+iframe{border:none;}
+
+/*MISC CLASSES ENDS*/
+.displaynone, .no-display{display:none;}
+.category-title{display:none;}
+.abs{position:absolute;}
+.wrapper-width{max-width:1000px; width:100%;margin:0 auto;}
+.h95px{height:95px;}
+.h36px{height:36px;}
+.h5px{height:5px;}
+.wrapper {background-color: transparent;overflow:hidden;text-align:left;}
+.header-bg-black, .header-bg-green{width:100%;position:absolute;z-index:-1;}
+.header-bg-black{top:0;background:#000000;}
+.header-bg-green{top:95px;background:#7ABC31;}
+.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header, body div.wrapper .header{height: calc(95px + 36px);z-index:1;border: none;background-color: transparent;position: relative;top: 0;padding:0;}
+.header-mobile{height: calc(95px + 5px);z-index:1;}
+.header .logo{width:auto;margin:0;padding:0;}
+.header .logo a{display:inline-block;height:100%;}
+.header .logo a img{display:inline:block;height:60%;margin:13.35% 0;}
+#hand-wrap{display:none;}
+.header .navbar{float:right;}
+.header #navbar3{font-size:20px;margin-top:45px;}
+.header #navbar3 ul li a{color:#999999;text-decoration:none;}
+.header #navbar3 ul li a:hover{color:#7ABC31;font-weight:bold;}
+.header li{list-style:none;}
+.header #navbar3 .submenu{left:-35px;}
+.header #navbar3 .submenu li a{color:#ffffff;}
+.header #navbar3 .submenu li a:hover{color:#ffffff;font-weight:bold;}
+.header .mobilenav{height: 50px;width: 50px;border: 2px solid #999;color:#999;border-radius:50%;background:transparent;}
+.navbar-inverse .navbar-toggle{border-color:transparent;}
+
+/*Australia Landing Page Starts*/
+.cms-australia .video-container{height:650px;overflow:hidden;}
+.cms-australia .video-container p{line-height: 1.3;font-family: "FlySans-", Arial, sans-serif;color: #FFFFFF;}
+.cms-australia .video-overlay {height: 650px;width:100%;box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.65);}
+.cms-australia .video-container video.video-bg{height:100%;width:100%;object-fit:cover;}
+.cms-australia .video-overlay .au-r1-container{top:20%;z-index:2;position:relative;}
+.cms-australia .video-overlay h1 {font-family: "FlySans-", Arial, sans-serif;color: #78be20;line-height: 1.1;font-size: 47px;text-align: center;text-transform:uppercase;}
+.cms-australia .video-overlay .au-r1-container p {clear: both;float: none;margin-bottom: 60px;margin-left: auto;margin-right: auto;font-size: 27px;}
+.cms-australia .product-block {margin: 0px auto;text-align: center;padding-top: 75px;background-image: url('../images/au/facets_light.jpg');border-top: #78be20 35px solid;background-repeat: no-repeat;background-size: cover;}
+.cms-australia .product-block p{max-width:300px;}
+.cms-australia .product-block .product-img{max-height:350px;max-width: none;width: auto;}
+.cms-australia .social-connect{background-color: #000;height: 153px;font-size: 26px;}
+.cms-australia .social-connect p{color: #fff;margin:0;font-size: 26px;font-family: "FlySans-", Arial, sans-serif;display:inline-block;float:left;}
+.cms-australia .social-connect .social-links {font-size: 42px;line-height: 1;margin-left: 1px;}
+.cms-australia .social-connect input {border-radius: 1000px;margin-left: 15px;font-family: "FlySans-Medium", Arial, sans-serif;font-style:italic;font-size: 16px;-webkit-border-radius: 1000px;-moz-border-radius: 1000px;border-radius: 1000px;padding-right: 2rem;padding-left:1.5rem;float: left;width: 40%;margin-top: 47.5px;height: 58px;background-color: #1F1F1F;color: #808285;}
+.cms-australia .au-r3-container{height: 100%;line-height: 153px;}
+.cms-australia .au-r3-container #social-bar{height: 100%;}
+.cms-australia .au-r3-container #social-bar .social-left, .cms-australia .au-r3-container #social-bar .social-right, .cms-australia .au-r3-container #social-bar p{height: 100%;}
+.cms-australia .au-r3-container .social-icons{display:inline-block;margin:10px;}
+.cms-australia .au-r3-container .btn.btn-grey{height: 58px;margin: 0 25px;}
+.cms-australia .au-r4-container .container{margin-top:100px;}
+.cms-australia .au-r4-container .au-intro{background-image: url('../images/accessory_header.jpg');background-repeat: no-repeat;background-size: cover;min-height:485px;overflow:hidden;width:100%;}
+.cms-australia .au-r4-container h3 {font-family: "FlySans-Medium",Helvetica,Arial,sans-serif;color: #78be20;font-size: 45px;line-height: .9;margin-bottom: 20px;margin-top: 3px;}
+.cms-australia .au-r4-container p {font-size: 18px;line-height: 1.2;color: #FFFFFF;font-family: "FlySans-",Helvetica,Arial,sans-serif;}
+.cms-australia .au-r5-container .editing-sharing{background-color: #78be20;color: #FFFFFF;padding-top: 80px;padding-bottom: 80px;position: relative;float: left;width: 100%;}
+.cms-australia .au-r5-container h3{font-size: 49px;font-family: "FlySans-",Helvetica,Arial,sans-serif;color: #FFFFFF;line-height:1.4;margin:3px 0 8px;}
+.cms-australia .au-r5-container p{font-size: 27px;font-family: "FlySans-",Helvetica,Arial,sans-serif;margin-bottom:20px;line-height: 30px;padding:0 50px;}
+/*Australia Landing Page Ends*/
+
+

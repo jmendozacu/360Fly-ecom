@@ -1,0 +1,48 @@
+
+<div class="padder">
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-head">
+    <h3><?php echo $this->__('My Email Log') ?></h3>
+</div>
+
+<?php if($this->getCollection()->count() > 0) { ?>
+
+    <p><?php echo $this->__('Click on the view link to display a copy of the email.') ?></p>
+
+        <div class="content">
+            <table width="100%">
+            <thead style="font-weight:bold">
+            	<tr>
+            		<td>Dated</td>
+            		<td>Subject</td>
+            		<td>Action</td>
+            	</tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->getCollection() as $email) { ?>
+
+                   <tr>
+                   		<td><?php
+                   		$dateTimestamp = Mage::getModel('core/date')->timestamp(strtotime($email->getDated()));
+                   		echo $currentDate = date('M d Y h:i A', $dateTimestamp);
+                   		?> ET</td>
+                   		<td><?php echo $email->getEmailSubject()?></td>
+                   		<td><a href="/magento/noc/email/view/id/<?php echo $email->getEmailId()?>" target="_blank">View</a></td>
+                   	</tr>
+
+                <?php } ?>
+            </tbody>
+            </table>
+
+        </div>
+
+<?php } else { ?>
+
+    <p><?php echo $this->__('You do not have any emails provisioned yet.') ?></p>
+
+    <?php }  ?>
+
+<div class="button-set">
+    <a href="<?php echo $this->getBackUrl() ?>" class="f-left">&laquo; <?php echo $this->__('Back') ?></a>
+</div>
+</div>

@@ -1,0 +1,87 @@
+#perks {
+	background-color: #fff;
+	padding: 30px;
+	color: $color1;
+	font-size: 18px;
+	.icon {
+		font-size: 48px;
+		float: left;
+		text-align: center;
+		em {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 16px;
+			display: block;
+			background-color: #fff;
+			font-family: $font1;
+			margin-top: -15px;
+			padding: 1px 0;
+			position: relative;
+		}
+	}
+	.copy {
+		margin-left: 70px;
+		line-height: normal;
+		padding-top: 8px;
+	}
+}
+
+@media screen and (max-width: 767px){
+	#perks {
+		&> .container {
+			width: 280px;
+		}
+	}
+}
+
+@media screen and (min-width: 768px){
+	#perks {
+		font-size: 24px;
+		padding: 60px 0;
+		color: #131119;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: #ddd;
+		.icon {
+			float: none;
+			width: 145px;
+			height: 145px;
+			line-height: 145px;
+			@include border-radius(50%);
+			color: #fff;
+			background-color: $color3;
+			margin: 0 auto;
+			font-size: 72px;
+			overflow: hidden;
+			&> span {
+				display: block;
+				text-align: center;
+				line-height: 145px;
+			}
+			em {
+				line-height: 1;
+				background-color: $color3;
+				color: #fff;
+				font-size: 16px;
+				margin-top: -53px;
+				padding: 3px 0;
+				@include border-radius(10px);
+				width: 50px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		.copy {
+			margin-left: 0;
+			text-align: center;
+			margin-top: 10px;
+		}
+		.col-xs-12:not(.support) {
+			.icon {
+				span:before {
+					margin-right: -36px;
+				}
+			}
+		}
+	}
+}

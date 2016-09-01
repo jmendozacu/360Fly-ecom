@@ -1,0 +1,143 @@
+<layout version="0.1.0">
+    <default>
+        <reference name="root">
+            <block type="core/template" name="after_content" as="after_content" template="page/html/after_content.phtml"/>
+            <block type="core/text_list" name="before_content" as="before_content" />
+        </reference>
+
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
+            <action method="addLinkRel"><rel>stylesheet</rel><href>//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css</href></action>
+            <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic|Montserrat:400,700|Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans|Merriweather:300,700,700italic,300italic|Open+Sans:700,400</href></action>
+
+            <!--<action method="addCss"><stylesheet>css/magemojo-font.css</stylesheet></action>-->
+            <action method="addCss"><stylesheet>css/helper.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/pe-icon-7-stroke.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/magemojo.css</stylesheet></action>
+            <action method="addItem"><type>skin_js</type><name>js/modernizr.custom.js</name></action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/ie.css</name>
+                <params/>
+                <if>IE</if>
+            </action>
+		
+        </reference>
+
+        <remove name="right_panel"/>
+
+        <reference name="header">
+            <remove name="top.links"/>
+            <remove name="top.search"/>
+            <block type="page/template_links" name="account.links" as="accountLinks"/>
+            <block type="core/template" name="minicart.links" as="cartButton" template="page/template/minicart.phtml"/>
+        </reference>
+
+        <reference name="footer">
+            <action method="unsetChildren"></action>
+
+            <block type="cms/block" name="footer_links_block" as="footer_links_block" after="-">
+                <action method="setBlockId"><block_id>footer_links</block_id></action>
+            </block>
+        </reference>
+
+        <reference name="left">
+            <action method="unsetChildren"/>
+        </reference>
+	</default>
+
+    <customer_logged_in>
+        <reference name="account.links">
+            <action method="addLink" translate="label title" module="customer"><label>Account</label><url helper="customer/getAccountUrl"/><title>Account</title><prepare/><urlParams/><position>10</position><liParams/><aParams>class="link-account"</aParams></action>
+            <action method="addLink" translate="label title" module="customer"><label>Logout</label><url helper="customer/getLogoutUrl"/><title>Logout</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="link-logout"</aParams></action>
+        </reference>
+    </customer_logged_in>
+
+    <customer_logged_out>
+        <reference name="account.links">
+            <action method="addLink" translate="label title" module="customer"><label>Login</label><url helper="customer/getLoginUrl"/><title>Login</title><prepare/><urlParams/><position>10</position><liParams/><aParams>class="link-account"</aParams></action>
+            <action method="addLink" translate="label title" module="customer"><label>Register</label><url helper="customer/getRegisterUrl"/><title>Register</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="link-register"</aParams></action>
+        </reference>
+    </customer_logged_out>
+
+<!--
+    <catalog_category_default>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="unsetChild"><alias>breadcrumbs</alias></action>
+        </reference>
+        <reference name="content">
+            <action method="unsetChild"><alias>category.products</alias></action>
+            <block type="page/html_wrapper" name="content.wrapper" translate="label">
+                <label>Content Wrapper</label>
+                <action method="setElementClass"><value>container</value></action>
+                <action method="append"><block>category.products</block></action>
+            </block>
+        </reference>
+    </catalog_category_default>
+-->
+<!--
+    <checkout_cart_index>
+        <reference name="content">
+            <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>
+        </reference>
+    </checkout_cart_index>-->
+
+    <catalog_product_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </catalog_product_view>
+
+    <customer_account_create>
+        <reference name="after_content">
+            <action method="unsetChild"><name>footer_logos</name></action>
+            <action method="unsetChild"><name>footer_social</name></action>
+            <block type="cms/block" name="featured_testimonials" as="featured_testimonials" before="-">
+                <action method="setBlockId"><block_id>featured_testimonials</block_id></action>
+            </block>
+            <action method="append"><block>footer_logos</block></action>
+            <action method="append"><block>footer_social</block></action>
+        </reference>
+    </customer_account_create>
+
+    <customer_account>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="addBodyClass"><classname>customer-account</classname></action>
+        </reference>
+        <reference name="content">
+            <block type="page/html_wrapper" name="account.navigation.wrapper" before="my.account.wrapper" translate="label">
+                <label>Account Navigation Wrapper</label>
+                <action method="setElementClass"><value>module_navigation</value></action>
+                <action method="append"><block>customer_account_navigation</block></action>
+            </block>
+        </reference>
+    </customer_account>
+
+    <customer_account_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </customer_account_index>
+
+    <!-- Removes Nav in 1 Step Checkout if Used 
+    <onestepcheckout_index_index>
+        <reference name="root">
+            <action method="unsetChild"><name>after_content</name></action>
+        </reference>
+        <reference name="footer">
+            <action method="unsetChildren"></action>
+        </reference>
+        <reference name="header">
+            <action method="unsetChildren"></action>
+        </reference>
+    </onestepcheckout_index_index>-->
+
+    <checkout_onepage_success>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </checkout_onepage_success>
+</layout>
+

@@ -1,0 +1,140 @@
+<div class="padder">
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	<div class="page-head">
+	    <h3><?php echo $this->__('Submit Migration Info') ?></h3>
+	</div>
+	
+	<div class="box simple_contact">
+	<form id="noc_migration_submit" name="noc_migration_submit" action="/noc/migration/submit" method="post">
+	<script type="text/javascript">
+	//< ![CDATA[
+	var customForm = new VarienForm('noc_migration_submit');
+	//]]>
+	</script>
+	    <fieldset class="group-select">
+	        <h4 class="legend">Enter your migration information below.</h4>
+	        <p></p>
+               <div class="input-box">
+               <table border="0" cellpadding="5px" cellspacing="5px" style="margin-top:25px;" width="500px">
+               		<tr>
+               			<td colspan="3">
+               				<span style="font-style:italic;">Control Panel Information (this helps us migrate ssl certificates)</span>
+               			</td>
+               		</tr>
+                    <tr>
+                    	<td >
+                    		<label for="control_panel_url">Control Panel Url <span class="required">*</span></label>
+                    	</td>
+                    	<td >
+                    		<label for="control_panel_username">Control Panel Username <span class="required">*</span></label>
+                    	</td> 
+                    	<td >
+                    		<label for="control_panel_password">Control Panel Password <span class="required">*</span></label>
+                    	</td>                     	                   	
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<input name="control_panel_url" id="control_panel_url" title="Control Panel Url" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    	<td>
+                    		<input name="control_panel_username" id="control_panel_username" title="Control Panel Url" value="" class="required-entry input-text" type="text" />
+                    	</td>
+						<td>
+                    		<input name="control_panel_password" id="control_panel_password" title="Control Panel Passsword" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    </tr> 
+				</table>
+				<table border="0" cellpadding="5px" cellspacing="5px" style="margin-top:25px;" width="500px">  
+               		<tr>
+               			<td colspan="3">
+               				<span style="font-style:italic;">SSH Information (we cannot perform a migration without this)</span>
+               			</td>
+               		</tr>				                  
+                    <tr>
+                    	<td >
+                    		<label for="ssh_url">SSH Url <span class="required">*</span></label>
+                    	</td>
+                    	<td >
+                    		<label for="ssh_username">SSH Username <span class="required">*</span></label>
+                    	</td> 
+                    	<td >
+                    		<label for="ssh_password">SSH Password <span class="required">*</span></label>
+                    	</td>                     	                   	
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<input name="ssh_url" id="ssh_url" title="SSH Url" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    	<td>
+                    		<input name="ssh_username" id="ssh_username" title="SSH Username" value="" class="required-entry input-text" type="text" />
+                    	</td>
+						<td>
+                    		<input name="ssh_password" id="ssh_password" title="SSH Password" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    </tr> 
+				</table>
+				<table border="0" cellpadding="5px" cellspacing="5px" style="margin-top:25px;" width="500px">
+               		<tr>
+               			<td colspan="3">
+               				<span style="font-style:italic;">Magento Admin Information (we need this to perform our performance test, tune and optimization)</span>
+               			</td>
+               		</tr>				
+                    <tr>
+                    	<td >
+                    		<label for="magento_url">Magento Admin Url <span class="required">*</span></label>
+                    	</td>
+                    	<td >
+                    		<label for="magento_username">Magento Admin Username <span class="required">*</span></label>
+                    	</td> 
+                    	<td >
+                    		<label for="magento_password">Magento Admin Password <span class="required">*</span></label>
+                    	</td>                     	                   	
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<input name="magento_url" id="magento_url" title="Magento Url" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    	<td>
+                    		<input name="magento_username" id="magento_username" title="Magento Username" value="" class="required-entry input-text" type="text" />
+                    	</td>
+						<td>
+                    		<input name="magento_password" id="magento_password" title="Magento Password" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    </tr>  
+				</table>
+				<table border="0" cellpadding="5px" cellspacing="5px" style="margin-top:25px;" width="500px">
+               		<tr>
+               			<td colspan="3">
+               				<span style="font-style:italic;">DNS Registrar Information (we need this to switch your dns for the final cutover after your approval)</span>
+               			</td>
+               		</tr>
+                    <tr>
+                    	<td >
+                    		<label for="registrar_url">DNS Registrar Url <span class="required">*</span></label>
+                    	</td>
+                    	<td >
+                    		<label for="registrar_username">DNS Registrar Username <span class="required">*</span></label>
+                    	</td> 
+                    	<td >
+                    		<label for="registrar_password">DNS Registrar Password <span class="required">*</span></label>
+                    	</td>                     	                   	
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<input name="registrar_url" id="registrar_url" title="DNS Registrar Url" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    	<td>
+                    		<input name="registrar_username" id="registrar_username" title="DNS Registrar Username" value="" class="required-entry input-text" type="text" />
+                    	</td>
+						<td>
+                    		<input name="registrar_password" id="registrar_password" title="DNS Registrar Password" value="" class="required-entry input-text" type="text" />
+                    	</td>
+                    </tr>  
+                 </table>                                                                                                             
+                           
+	    </fieldset>
+	        <p class="required" style="margin-top:15px;">* Required Fields</p>
+	        <input type="image" src="<?php echo $this->getSkinUrl('images/btn_submit.gif') ?>" alt="<?php echo $this->__('Submit') ?>"/>
+	</form>
+	</div>
+</div>
