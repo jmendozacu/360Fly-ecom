@@ -1,0 +1,101 @@
+<?php 
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+$communityIndex = 'sunny-garcia';
+$athleteName = 'Sunny Garcia';
+
+?>
+
+
+<div class="wrapper-width">
+	<?php echo $this->getLayout()->createBlock('core/template')
+				->setData('ci', $communityIndex)
+				->setData('athlete_name', $athleteName)
+				->setTemplate('page/html/pages/community/community-dropdown.phtml')
+				->toHtml(); 
+	?>
+</div>
+<div class="community-inner sunny-garcia" id="athlete-marketing">
+	<div class="sunny-container" id="">
+		<div class="container wrapper-width">
+			<div class="covertext text-contain ">
+				<h1 class="extreme-headline">
+					<b>Sunny Garcia</b>
+				</h1>
+                <h2 class="extreme-headline">Surfing</h2>
+			</div>
+		</div>
+	</div>
+	<div class="bio-container">
+		<div class="bio-left greybg ">
+			<div class="bio-left-child-1">
+	          <h3>Sunny's Bio</h3>
+	            <div class="stats-box">
+					<span class="stats pull-left">Age:</span><span class="pull-left ">46</span>
+					<span class="clear"></span>
+					<span class="stats pull-left">Location:</span><span class="pull-left ">Sunset Beach, HI</span>
+					<span class="clear"></span>
+					<span class="stats pull-left">Sport:</span><span class="pull-left ">Surfing</span>
+					<span class="clear"></span>
+	            </div>
+				<p>Now retired from professional surfing, Sunny has now put his energy and athletic focus into triathons and motocross, both of which he has met with some success. Sunny likes to stay active and fitness is apart of his every day lifestyle.  He still surfs everyday since retiring and does such legendary events like the Eddie and other invite only contests. He also uses his free time away from competition to give back and focus on the Maulio foundation, where he works with terminally ill children and uses surfing and the water as therapy for these young patients. 	
+				</p>
+			</div>
+			<div class="bio-left-child-2">
+			</div>
+		</div>
+		<div class="bio-right greenbg">
+			<div class="">
+				<div class="athlete_highlight_text">
+					<h4>Career Highlights</h4>
+					<div class="bio-right-content">
+						<p >9 ASP Tour Victories</p>						
+						<p >22 WQS Victories.</p>						
+						<p >2000 ASP WCT World Champion</p>						
+						<p >2004 Triple Crown of Surfing</p>						
+						<p >2000 Triple Crown of Surfing</p>						
+						<p >1999 Triple Crown of Surfing</p>						
+						<p >1994 Triple Crown of Surfing</p>						
+						<p >1993 Triple Crown of Surfing</p>						
+						<p >1992 Triple Crown of Surfing</p>						
+						<p >1987/1988 ASP's Men's Most Improved award</p>						
+						<p >1990 ASP's Men's Most Improved award</p>						
+						<p >Most victories in WQS competition (22)</p>						
+						<p >Most Triple Crown of Surfing titles (6)</p>						
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2010</p>
+						<p class="indent">Surfing Walk Hall of Fame</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2000</p>
+						<p class="indent"> ASP World Champion</p>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="athlete-social">
+	<div class="athlete-wrapper">
+		<div class="col-sm-12 col-md-12 col-lg-6 icons-wrapper">
+	        <div class="athlete-social-name">
+	        	<p class="pull-left follow">Follow Sunny</p>
+	        </div>
+	      	<div class="pull-left icons">
+		        <a href="https://twitter.com/sunny_garcia" target="_blank"><span class="icon-twitter-jul15 social-links"></span></a>
+		        <a href="https://www.facebook.com/SunnyGarcia.Athlete" target="_blank"><span class="icon-facebook-jul15 social-links"></span></a>
+		        <a href="https://instagram.com/sunnygarcia" target="_blank"><span class="icon-instagram-jul15 social-links"></span></a>
+	        </div>
+  		</div>
+	</div>
+</div>
+

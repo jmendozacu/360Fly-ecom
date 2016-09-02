@@ -29,8 +29,8 @@
             <action method="addCss"><stylesheet>css/custom-fonts.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/slick.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/product_slider.css</stylesheet></action>
-            <action method="addCss"><stylesheet>css/media-queries.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/harpreet.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/media-queries.css</stylesheet></action>
             <!-- <action method="addCss"><stylesheet>css/360custom.css</stylesheet></action> -->
 			
 			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.js</name></action>	

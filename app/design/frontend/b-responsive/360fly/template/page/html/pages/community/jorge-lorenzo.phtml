@@ -9,8 +9,20 @@
 $baseUrl = $this->getBaseUrl();
 $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $skinUrl = $this->getSkinUrl();
+$communityIndex = 'jorge-lorenzo';
+$athleteName = 'Jorge Lorenzo';
 
 ?>
+
+
+<div class="wrapper-width">
+	<?php echo $this->getLayout()->createBlock('core/template')
+				->setData('ci', $communityIndex)
+				->setData('athlete_name', $athleteName)
+				->setTemplate('page/html/pages/community/community-dropdown.phtml')
+				->toHtml(); 
+	?>
+</div>
 <div class="community-inner jorge-lorenzo" id="athlete-marketing">
 	<div class="jorge-container" id="">
 		<div class="container wrapper-width">

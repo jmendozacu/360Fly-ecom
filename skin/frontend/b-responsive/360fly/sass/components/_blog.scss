@@ -22,7 +22,7 @@
 			font-size: 14px;
 			background-color: mix(#f9f9f9, $color3, 85%);
 			padding: 15px;
-			font-family: $font2;
+			font-family: $font3;
 			color: #302d37;
 			ul {
 				margin: 0;
@@ -162,7 +162,7 @@
 					&:before,
 					&:after {
 						display: inline-block;
-						font-family: $font2;
+						font-family: $font3;
 						font-size: 40px;
 						color: #e8e8e8;
 						font-style: normal;
@@ -198,7 +198,7 @@
 					line-height: normal;
 					.name {
 						display: block;
-						font-family: $font2;
+						font-family: $font3;
 						text-transform: uppercase;
 						font-weight: bold;
 						margin-bottom: 3px;
@@ -378,7 +378,7 @@
 				position: static;
 				margin-bottom: 0;
 				a {
-					font-family: $font2;
+					font-family: $font3;
 				}
 				&> span {
 					color: inherit;
@@ -401,7 +401,7 @@
 			background-color: $color4;
 			padding: 3px 10px;
 			margin: 3px 0;
-			font-family: $font2;
+			font-family: $font3;
 			text-transform: uppercase;
 			font-size: 12px;
 			@include border-radius(20px);
@@ -453,7 +453,7 @@
 			line-height: 1.4;
 			&:before {
 				content: '“';
-				font-family: $font2;
+				font-family: $font3;
 				color: #ccc;
 				font-size: 24px;
 				display: inline;
@@ -461,7 +461,7 @@
 			}
 			&:after {
 				content: '”';
-				font-family: $font2;
+				font-family: $font3;
 				color: #ccc;
 				font-size: 24px;
 				display: inline;
@@ -480,7 +480,7 @@
 			@include clearfix();
 		}
 		a {
-			font-family: $font2;
+			font-family: $font3;
 			color: #999;
 			&:hover {
 				color: $color2;
@@ -554,7 +554,7 @@
 			text-align: center;
 			float: none;
 			padding-top: 20px;
-			font-family: $font2;
+			font-family: $font3;
 			font-size: 16px;
 			color: $color3;
 		}
@@ -613,7 +613,7 @@
 				}
 				.comment-meta {
 					margin: 0 0 10px;
-					font-family: $font2;
+					font-family: $font3;
 					color: $color3;
 					text-transform: uppercase;
 					a {
@@ -719,7 +719,7 @@
 			margin-bottom: 0;
 			padding: 0 10px 10px;
 			a {
-				font-family: $font2;
+				font-family: $font3;
 				color: inherit;
 				text-transform: uppercase;
 				text-decoration: underline;

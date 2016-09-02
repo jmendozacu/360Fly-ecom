@@ -9,6 +9,8 @@
 .btn-shop:hover {background-color: #78be20;color: #fff;}
 .m0p0{margin:0;padding:0;}
 iframe{border:none;}
+.plr15{padding:0 15px;}
+.btn.retailer, .btn.mailSignUp {background-color: transparent;padding: 6px 12px;font-size: 14px;color: #fff;}
 
 /*MISC CLASSES ENDS*/
 .displaynone, .no-display{display:none;}
@@ -45,20 +47,27 @@ iframe{border:none;}
 .cms-australia .video-overlay {height: 650px;width:100%;box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.65);}
 .cms-australia .video-container video.video-bg{height:100%;width:100%;object-fit:cover;}
 .cms-australia .video-overlay .au-r1-container{top:20%;z-index:2;position:relative;}
-.cms-australia .video-overlay h1 {font-family: "FlySans-", Arial, sans-serif;color: #78be20;line-height: 1.1;font-size: 47px;text-align: center;text-transform:uppercase;}
-.cms-australia .video-overlay .au-r1-container p {clear: both;float: none;margin-bottom: 60px;margin-left: auto;margin-right: auto;font-size: 27px;}
+.cms-australia .video-overlay h1 {font-family: "FlySans-", Arial, sans-serif;color: #78be20;line-height: 1.1;font-size: 47px;text-align: center;text-transform:uppercase;margin: 3px 0 8px;}
+.cms-australia .video-overlay .au-r1-container p {clear: both;float: none;margin-bottom: 60px;margin-left: auto;margin-right: auto;font-size: 27px;padding: 0 22px;}
 .cms-australia .product-block {margin: 0px auto;text-align: center;padding-top: 75px;background-image: url('../images/au/facets_light.jpg');border-top: #78be20 35px solid;background-repeat: no-repeat;background-size: cover;}
-.cms-australia .product-block p{max-width:300px;}
-.cms-australia .product-block .product-img{max-height:350px;max-width: none;width: auto;}
+/* .cms-australia .product-block p{max-width:300px;} */
+/* .cms-australia .product-block .product-img{max-height:350px;max-width: none;width: auto;} */
+.cms-australia .product-block .product-img{max-height:350px;max-width: 100%;width: auto;}
 .cms-australia .social-connect{background-color: #000;height: 153px;font-size: 26px;}
-.cms-australia .social-connect p{color: #fff;margin:0;font-size: 26px;font-family: "FlySans-", Arial, sans-serif;display:inline-block;float:left;}
+.cms-australia .social-connect p{color: #fff;margin:0;font-size: 26px;font-family: "FlySans-", Arial, sans-serif;display:inline-block;float:left;line-height: 30px;padding-top: 5px;}
+/* Author - GT start */
+.cms-australia .social-connect p.left.getUpdates{margin-left:13px;}
 .cms-australia .social-connect .social-links {font-size: 42px;line-height: 1;margin-left: 1px;}
-.cms-australia .social-connect input {border-radius: 1000px;margin-left: 15px;font-family: "FlySans-Medium", Arial, sans-serif;font-style:italic;font-size: 16px;-webkit-border-radius: 1000px;-moz-border-radius: 1000px;border-radius: 1000px;padding-right: 2rem;padding-left:1.5rem;float: left;width: 40%;margin-top: 47.5px;height: 58px;background-color: #1F1F1F;color: #808285;}
-.cms-australia .au-r3-container{height: 100%;line-height: 153px;}
+.cms-australia .social-connect input {border-radius: 1000px;margin-left: 15px;font-family: "FlySans-Medium", Arial, sans-serif;font-style:italic;font-size: 16px;-webkit-border-radius: 1000px;-moz-border-radius: 1000px;border-radius: 1000px;float: left;width: 40%;margin-top: -10px;height: 58px;background-color: #fff;color: #808285;border-style: solid;border-width: 1px;border-color: #cccccc;box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);padding: 8px 32px 8px 24px;}
+/* .cms-australia .au-r3-container{height: 100%;line-height: 153px;} */
+.social-connect .follow,.social-connect .update{margin-top:50px;}
 .cms-australia .au-r3-container #social-bar{height: 100%;}
 .cms-australia .au-r3-container #social-bar .social-left, .cms-australia .au-r3-container #social-bar .social-right, .cms-australia .au-r3-container #social-bar p{height: 100%;}
-.cms-australia .au-r3-container .social-icons{display:inline-block;margin:10px;}
-.cms-australia .au-r3-container .btn.btn-grey{height: 58px;margin: 0 25px;}
+/* .cms-australia .au-r3-container .social-icons{display:inline-block;margin:10px;} */
+.social-connect .social-icons{display:inline-block;margin-left:26px;}
+/* .cms-australia .au-r3-container .btn.btn-grey{height: 58px;margin: 0 25px;} */
+.social-connect .btn.btn-grey{background-color: #000000;border: 2px solid #808285;color: #808285;margin-left: 10px;margin-top: -10px;text-transform: none;
+    font-family: "FlySans-Medium", Arial, sans-serif;padding: 16px 32px 17px;margin-bottom: 20px;display: inline-block;float: right;font-size:16px;}
 .cms-australia .au-r4-container .container{margin-top:100px;}
 .cms-australia .au-r4-container .au-intro{background-image: url('../images/accessory_header.jpg');background-repeat: no-repeat;background-size: cover;min-height:485px;overflow:hidden;width:100%;}
 .cms-australia .au-r4-container h3 {font-family: "FlySans-Medium",Helvetica,Arial,sans-serif;color: #78be20;font-size: 45px;line-height: .9;margin-bottom: 20px;margin-top: 3px;}
@@ -66,6 +75,30 @@ iframe{border:none;}
 .cms-australia .au-r5-container .editing-sharing{background-color: #78be20;color: #FFFFFF;padding-top: 80px;padding-bottom: 80px;position: relative;float: left;width: 100%;}
 .cms-australia .au-r5-container h3{font-size: 49px;font-family: "FlySans-",Helvetica,Arial,sans-serif;color: #FFFFFF;line-height:1.4;margin:3px 0 8px;}
 .cms-australia .au-r5-container p{font-size: 27px;font-family: "FlySans-",Helvetica,Arial,sans-serif;margin-bottom:20px;line-height: 30px;padding:0 50px;}
+
+.cms-australia .product-block h3{font-family: "FlySans-Medium",Helvetica,Arial,sans-serif;color: #78be20;font-size: 47px;margin:3px 0 8px;line-height:1.4;text-transform:capitalize;}
+.cms-australia .product-block p{font-size: 27px;line-height: 1.2;color: #FFFFFF;font-family: "FlySans-",Helvetica,Arial,sans-serif;margin-bottom: 30px;max-width:100%;}
+.cms-australia .product-block .btn-custom{margin: 0 auto;padding: 16px 32px 17px;padding-left: 35px;padding-right: 35px;margin-bottom: 55px;display: table;font-family: "FlySans-", Arial, sans-serif;font-weight: 600;font-size: 16px;line-height: normal;border-style:solid;border-width:0;}
+.cms-australia .app-content h3{font-family: "FlySans-Medium",Helvetica,Arial,sans-serif;font-size: 45px;line-height: 1;color: #000000;margin: 3px 0 8px;}
+.cms-australia .au-r6-container .app-section p,.cms-australia .au-r6-container .app-section p{color:#333;font-size: 18px;line-height: 1;font-family: "FlySans-Light", Arial, sans-serif;margin-bottom:20px;}
+.cms-australia .app-content{width:75%;margin:0 auto;padding-top:60px;}
+.apps-button{max-width:150px;}
+/* Author - GT End */
+
 /*Australia Landing Page Ends*/
+
+/*Community Page Starts*/
+.community-btn{max-width: 170px;width: auto;position: absolute;top:95px;z-index:3;padding-left:50px;}
+.community-btn .community-first-dd {height: 36px;line-height: 100%;color: #fff;}
+.community-btn .community-first-dd a{height: 100%;color: #fff;font-size:14px;}
+.community-btn .community-first-dd a:hover{font-weight:bold;color: #fff;}
+.community-btn a{color:#000;}
+ul.community-dropdown{position: relative;top: 0px;left:0px;} 
+.community-first-dd ul{background:#414042;border:1px solid #fff;} 
+.community-btn ul{border-radius:0px;}
+.community-content-left{float:left;padding:0 6px 6px 0px;margin:0;}
+.community-content-right{float:right;padding:0 0 6px 6px;margin:0;}
+.community-first-dd a{background-color:transparent;}
+/*Community Page Ends*/
 
 

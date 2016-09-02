@@ -153,7 +153,7 @@
 
 /********************************************************************************************************************/
 /*
-	upto 1024px;
+	upto 1023px;
 */
 @media screen and (max-width: 1023px){
 /*.wrapper-width{padding: 0 24px;}*/
@@ -172,12 +172,20 @@
 */
 @media screen and (max-width: 991px){
 	/* apps page */
-	.left .background-image-holder{height:70vw;}
+	.left-content .background-image-holder,.right-content .background-image-holder{height:70vw;padding-bottom:75%;}
 	.image-square .content{position:relative;}
-	.image-square.right .img-right{float:none;}
+	.image-square.right-content .img-right{float:none;}
 	/* community */
 	.community-banner.small{background-size:cover;}
 	.community-info{padding:10px;}
+	/* Australia Page */
+	.cms-australia .social-connect{padding:30px 0;height:auto;}
+	.social-connect .follow, .social-connect .update{margin-top:0px;}
+	.cms-australia .social-connect p{margin-left: 0px;width: 100%;line-height: 60px !important;margin-bottom: 17px;}
+	.social-connect .social-icons{margin-left: 3px;margin-bottom: 22px;}
+	.cms-australia .social-connect p.left.getUpdates{line-height: 60px !important;width: 100%;padding-top: 0px;margin-bottom: 18px;}
+	.cms-australia .social-connect input{width:100%;margin:0;}
+	.social-connect .btn.btn-grey{width: 100%;margin-left: 0px;margin-top: 16px;font-family: "FlySans-Medium", Arial, sans-serif;}
 }
 
 /********************************************************************************************************************/

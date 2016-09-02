@@ -1,15 +1,15 @@
 body {
-	font-family: $font1;
-	background: $color5;
-	color: $color7;
+	font-family: $font3;
+	background: $color7;
+	color: $color1;
 }
 
 a {
 	text-decoration: none;
 	&:not(.btn){
-		color: $color2;
+		color: $color8;
 		&:hover {
-			color: darken($color2,10%);
+			color: darken($color8,10%);
 			text-decoration: none;
 		}
 	}
@@ -20,7 +20,7 @@ a {
 }
 
 .wrapper {
-	background-color: #f1f1f1;
+	background-color: $color7;
 }
 
 .collapsing {
@@ -34,7 +34,7 @@ a {
 .text01 {
 	font-size: 18px;
 	font-weight: 300;
-	color: $color1;
+	color: $color8;
 	letter-spacing: 1px;
 	line-height: normal;
 	text-align: center;
@@ -46,7 +46,7 @@ a {
 .text02 {
 	font-size: 20px;
 	font-weight: normal;
-	color: #fff;
+	color: $color8;
 	line-height: normal;
 	text-align: center;
 	font-style: italic;
@@ -62,7 +62,7 @@ a {
 	font-size: 24px;
 	line-height: 30px;
 	color: $color5;
-	font-family: $font2;
+	font-family: $font3;
 	text-transform: uppercase;
 	font-weight: bold;
 	margin: 0;
@@ -85,11 +85,11 @@ a {
 .text05 {
 	font-size: 14px;
 	line-height: normal;
-	color: $color3;
+	color: $color8;
 	font-weight: normal;
 	text-transform: uppercase;
 	margin-top: 0;
-	font-family: $font2;
+	font-family: $font3;
 	@media screen and (min-width: 768px){
 		font-size: 18px;
 		font-weight: bold;
@@ -102,7 +102,7 @@ a {
 	font-weight: bold;
 	text-transform: uppercase;
 	margin: 0;
-	font-family: $font2;
+	font-family: $font3;
 	@media screen and (min-width: 768px){
 		font-size: 16px;
 	}
@@ -111,7 +111,7 @@ a {
 	font-size: 16px;
 	font-weight: bold;
 	font-style: italic;
-	color: $color3;
+	color: $color8;
 	@media screen and (min-width: 768px){
 		font-size: 18px;
 	}
@@ -136,13 +136,13 @@ a {
 }
 
 .heading {
-	background-color: $color3;
-	color: #fff;
+	background-color: $color8;
+	color: $color1;
 	text-transform: uppercase;
-	font-family: $font2;
+	font-family: $font3;
 	padding: 11px 10px;
 	h2 {
-		color: #fff;
+		color: #color1;
 		font-size: 16px;
 		font-weight: bold;
 		line-height: normal;
@@ -243,7 +243,7 @@ a {
 				color: $color1;
 				font-size: 14px;
 				text-transform: uppercase;
-				font-family: $font2;
+				font-family: $font3;
 				font-weight: normal;
 				border: none;
 			}
@@ -254,15 +254,15 @@ a {
 			td {
 				vertical-align: middle;
 				border: none;
-				background-color: #fff;
+				background-color: $color1;
 			}
 			th {
 				vertical-align: middle;
 				border: none;
-				background-color: #fff;
+				background-color: $color1;
 				text-transform: uppercase;
-				font-family: $font2;
-				color: $color3;
+				font-family: $font3;
+				color: $color8;
 				font-size: 12px;
 			}
 		}
@@ -278,13 +278,13 @@ a {
 		background-color: $color1 !important;
 		margin-bottom: 30px !important;
 		border: none !important;
-		color: #fff !important;
+		color: $color8 !important;
 		text-shadow: none;
 		text-align: center;
 		font-size: 14px !important;
 		font-weight: 300 !important;
 		a {
-			color: #fff !important;
+			color: $color8 !important;
 		}
 		li {
 			line-height: normal;
@@ -307,7 +307,7 @@ a {
 			border-color: #eee;
 			.panel-title {
 				text-transform: uppercase;
-				font-family: $font2;
+				font-family: $font3;
 				font-size: 14px;
 				a {
 					color: $color1;
