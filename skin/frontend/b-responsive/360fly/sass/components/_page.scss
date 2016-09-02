@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $font3;
     width: 100%;
 }
 
@@ -8,7 +8,7 @@ a {
     &:active,
     &:focus,
     &:hover {
-        color: #f27900;
+        color: $color8;
         cursor: pointer;
     }
 }
@@ -93,7 +93,7 @@ label {
         &:active,
         &:hover {
             background: 0 0!important;
-            color: #f27900!important;
+            color: $color8!important;
         }
         &.add-new,
         &.add-new:hover {
@@ -105,7 +105,7 @@ label {
             background: 0 0!important;
         }
         &.active {
-            color: #f27900!important;
+            color: $color8!important;
         }
     }
     &-pills {
@@ -243,7 +243,7 @@ fieldset[disabled] .form-control {
     color: #f39c12;
     &:hover {
         background-color: transparent;
-        color: #f27900;
+        color: $color8;
     }
 }
 
