@@ -182,7 +182,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .footer-360 .contact{margin-top:46px;}
 .footer-360 .btn-footer:hover{background-color:#666666;color:#999999;}
 .footer-360 a:hover{text-decoration:none;color:#fff;}
-.retailer{border-color:#666666;background:transparent;border-radius:50px;border-width:2px;margin-bottom: 0;min-width: 120px;width: auto;font-family:"FlySans-", Arial, sans-serif;font-weight: normal;padding:6px 12px;text-align: center;color:#999999;transition:all 0.5s;}
+.retailer{border-color:#666666;background:transparent;border-radius:50px;border-width:2px;margin-bottom: 0;min-width: 120px;width: 120px;font-family:"FlySans-", Arial, sans-serif;font-weight: normal;padding:6px 12px;text-align: center;color:#999999;transition:all 0.5s;}
 .contact .retailer:hover{background-color: #666666;color: #999999;border-color:#666666;}
 .footer-360 .social-icons{margin-right:-8px;margin-left:-8px;margin-top:20px;margin-bottom:8px;}
 .icon-instagram-jul15:before{content:"\e65d";}
@@ -208,14 +208,17 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .large{font-size:75px;line-height:65px;font-family:"FlySans-Medium", Arial, sans-serif;font-weight:900;margin-bottom:40px;color:#78be20;}
 .dirt{padding-bottom:3.125rem;overflow:hidden;}
 .dirt-wrap{position:absolute;bottom:-443px;left:0px;width:100%;height:0px;}
-.back{position:absolute;top:-101px;left:0px;width:550px;}
+.back{position:absolute;top:-101px;left:-50px;width:550px;}
 #dirt-back-spray-1,#dirt-back-spray-2{position:absolute;top:-241px;left:-96px;width:686px;-ms-transform:scale(0.2);-webkit-transform:scale(0.2);transform:scale(0.2);}
+#dirt-spray-front {position: absolute;top: -149px;left: -96px;width: 635px;-ms-transform: scale(0.5);-webkit-transform: scale(0.5);transform: scale(0.5);}
+/*.back{position:absolute;top:-101px;left:0px;width:550px;}
+#dirt-back-spray-1,#dirt-back-spray-2{position:absolute;top:-241px;left:-96px;width:686px;-ms-transform:scale(0.2);-webkit-transform:scale(0.2);transform:scale(0.2)}*/
 .camera{position:absolute;top:-258px;left:173px;width:200px;pointer-events:none;opacity:0;}
 .dirt-spray-front{position:absolute;top:-149px;left:-96px;width:635px;}
 .front{position:absolute;top:-88px;left:-15px;width:550px;}
 .about_img{background:url(../images/product_enclosure2.jpg);height:260px;background-size:cover;background-repeat:no-repeat;background-position:center;}
 .about_img_text h1{font-size:46px;display:block;padding-top:96px;margin:0px auto;max-width:1000px;text-shadow:none;font-family:"FlySans-Light", Arial, sans-serif;}
-.about_img_text h1{color:#000;font-size:46px;display:block;padding-top:96px;margin:0px auto;max-width:1000px;text-shadow:none;font-family:"FlySans-Light", Arial, sans-serif;}
+.about_img_text h1{color:#000;font-size:45px;display:block;padding-top:101px;margin:0px auto;max-width:1000px;text-shadow:none;font-family:"FlySans-Light", Arial, sans-serif;}
 .about_contain{margin-left:auto;margin-right:auto;}
 .about_contain p{font-family:"FlySans-Light", Arial, sans-serif;font-size:20px;}
 .about_contain h2{color:#78be20;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;line-height:1.4;margin-bottom:0.5rem;margin-top:0.2rem;text-rendering:optimizeLegibility;}
@@ -226,23 +229,24 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .career-section  p a{color:#78be20;}
 .career-section p a:hover{    color: #67a31c;text-decoration:none}
 .toTop{border-radius:50px;margin-top:20px;border:2px solid #808285;color:#808285;background-color:transparent;text-transform:none;}
-.about-contain p{font-family:"FlySans-Light", Arial, sans-serif;font-size:20px;line-height: 30px;color:#222;}
-.about-contain{padding-left: 0px;margin-left:auto;margin-right:auto;max-width:1000px;margin-top: 77px;}
+.about-contain p{font-family:"FlySans-Light", Arial, sans-serif;font-size:20px;line-height: 30px;color:#222;    margin-bottom: 20px;}
+.about-contain{padding-left: 0px;padding-right:0px;margin-left:auto;margin-right:auto;max-width:1000px;margin-top: 77px;}
 .about-contain h2{color:#78be20;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;line-height:1.4;margin-bottom:8px;margin-top:4px;text-rendering:optimizeLegibility;font-size:45px;}
 .about_contain .col{padding-right:0px;padding-left:0px}
 .product-promotion h2{text-align: center;margin-bottom: 45px;font-size: 38px;color: #78be20;font-family: "FlySans-Medium", Arial, sans-serif;font-weight: 900;margin-left: 15px;}
 /* FAQ */
 .community-container{overflow-x: hidden;}
 .faq-content{padding-bottom: 100px;}
-.faq h1{margin-top: 3px;margin-bottom: 8px;font-style: normal;font-size: 38px;}
-.question{font-size: 28px;padding-top: 30px;font-weight: bold;color: #333;}
-.answer{font-size:20px;color:#333;}
+.faq h1{margin-top: 3px;margin-bottom: 8px;font-style: normal;font-size: 38px;color:#333;line-height: 1.3}
+.question{font-size: 28px;padding-top: 30px;font-weight: bold;color: #333;margin: 0 0 20px;}
+.answer{font-size:20px;color:#333;margin: 0 0 20px;}
 .text-page{padding-top: 100px;padding-bottom: 100px;}
 .wrapper-content{max-width: 1000px;padding-right: 0px;padding-left: 0px;}
-.wrapper-content h2{color: #78be20;font-family: "FlySans-", Arial, sans-serif;font-style: normal;font-weight: normal;line-height: 1.4;margin-bottom: 0.5rem;margin-top: 0.2rem;text-rendering: optimizeLegibility;font-size: 46px;}
-.wrapper-content h4{color: #78be20;font-family: "FlySans-", Arial, sans-serif;font-style: normal;font-weight: normal;line-height: 1.4;margin-bottom: 0.5rem;margin-top: 0.2rem;text-rendering: optimizeLegibility;font-size:24px;}
-.wrapper-content p{color: #222;font-family: "FlySans-Light", Arial, sans-serif;font-size: 20px;line-height: 30px;margin-bottom: 1.25rem;text-rendering: optimizeLegibility;}
+.wrapper-content h2{color: #78be20;font-family: "FlySans-", Arial, sans-serif;font-style: normal;font-weight: normal;line-height: 1.4;margin-bottom: 8px;margin-top: 3px;text-rendering: optimizeLegibility;font-size: 45px;}
+.wrapper-content h4{color: #78be20;font-family: "FlySans-", Arial, sans-serif;font-style: normal;font-weight: normal;line-height: 1.4;margin-bottom: 8px;margin-top: 3px;text-rendering: optimizeLegibility;font-size:23px;}
+.wrapper-content p{color: #222;font-family: "FlySans-Light", Arial, sans-serif;font-size: 20px;line-height: 30px;margin-bottom: 20px;text-rendering: optimizeLegibility;}
 .wrapper-content a{color:#78be20;}
+.padding-lr{padding-right: 24px;padding-left:24px;}
 
 /* Community */
 .community-banner{background-image:url("../images/community/reed.jpg");margin-bottom:0px;background-size:cover;position:relative;background-position:center center;background-repeat:no-repeat;height:670px;}
@@ -328,19 +332,62 @@ div.todd-container{background:url('../images/athletes/Athlete_Todd.jpg') no-repe
 
 /* Press */
 .press-img{background-color:#D1D3D4;height:260px;background-image:url("../images/press_header_img.jpg");background-size:cover;background-repeat:no-repeat;background-position:center;margin-bottom:77px;}
-.press-img h1{padding:0px 110px;vertical-align:middle;text-shadow:none;font-size:45px;display:block;padding-top:95px;margin:0px auto;max-width:1000px;color:#000;font-family:"FlySans-Light", Arial, sans-serif;font-style:normal;font-weight:normal;}
-.list-content{margin-bottom:80px}
+.press-img h1{padding:0px 113px;vertical-align:middle;text-shadow:none;font-size:45px;display:block;padding-top:101px;margin:0px auto;max-width:1000px;color:#000;font-family:"FlySans-Light", Arial, sans-serif;font-style:normal;font-weight:normal;}
+.list-content{margin-bottom:80px;padding:0px;}
 .press-content p{margin-bottom:0px;font-family:"FlySans-Light", Arial, sans-serif;font-size:20px;line-height:30px;}
 .press-content a{color:#78be20;line-height:inherit;text-decoration:none;}
-#listings{padding:0px 110px;max-width:1000px;width:100%;margin-left:auto;margin-right:auto;}
-#listings h2,h3{color:#78be20;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;margin-bottom:8px;margin-top:3px;text-rendering:optimizeLegibility;}
+#listings{padding:0px 108px;max-width:1000px;width:100%;margin-left:auto;margin-right:auto;}
+#listings h2,h3{line-height:1.4;color:#78be20;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;margin-bottom:8px;margin-top:3px;text-rendering:optimizeLegibility;}
 #listings h2{font-size:34px;}
 #listings h3{font-size:20px;}
 .snippet-text{margin-top:8px;margin-bottom:12px;}
-a.read-more{display:inline-block;font-weight:normal;font-size:14px;border-style:solid;border-width:0;cursor:pointer;font-family:"FlySans-", Arial, sans-serif;line-height:normal;margin:0px 0px 20px;position:relative;text-align:center;text-decoration:none;padding:16px 32px 17px 32px;border-color:#60981a;color:#FFFFFF;transition:background-color 300ms ease-out;background-color:#78be20;margin-top:8px;}
+a.read-more{display:inline-block;font-weight:normal;font-size:14px;border-style:solid;border-width:0;cursor:pointer;font-family:"FlySans-", Arial, sans-serif;line-height:normal;margin:0px 0px 20px;position:relative;text-align:center;text-decoration:none;padding:16px 32px 17px 32px;border-color:#60981a;color:#FFFFFF;transition:background-color 300ms ease-out;background-color:#78be20;margin-top:14px;}
 a.read-more:hover{background-color:#60981a;color:white;}
 /* Director */
-.director-page .director-banner{background-image: url("../images/apps/desktop-app-header.jpg");background-size: cover;padding-top: 120px;padding-bottom: 100px;border-top: #78be20 5px solid;}
-.director-page .director-banner h1 {text-shadow: none;font-size: 65px;text-transform: uppercase;line-height: 65px;font-family: "FlySans-Medium", Arial, sans-serif;color: #fff;margin: 3px 0 8px;}
-.director-page .director-banner p {font-size: 20px;line-height: 30px;color: #fff;margin-bottom: 24px;}
-.director-page .director-banner .btn-custom{text-transform: none;}
+ .director-page .director-banner{background-image: url("../images/apps/desktop-app-header.jpg");background-size: cover;padding-top: 120px;padding-bottom: 100px;border-top: #78be20 5px solid;}
+ .director-page .director-banner h1 {text-shadow: none;font-size: 65px;text-transform: uppercase;line-height: 65px;font-family: "FlySans-Medium", Arial, sans-serif;color: #fff;margin: 3px 0 8px;}
+ .director-page .director-banner p {font-size: 20px;line-height: 30px;color: #fff;margin-bottom: 24px;font-family: "FlySans-Light", Arial, sans-serif;}
+ .director-page .director-banner .btn-custom{text-transform: none;}
+ .director-page .download-section .director-btn-padding{padding:16px 32px 17px 32px;}
+ .director-page .btn.btn-custom {border: 0px solid #78be20;}
+
+ /* LANDING PAGE */
+.landing-page .landing-footer h3{font-size: 36px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;color: #78be20;line-height: 1;margin-bottom:1;}
+.landing-page .landing-footer h5{font-family: FlySans-Medium,Helvetica,Arial,sans-serif;color: #666;font-size: 25px;margin-top: 0;}
+.landing-page .landing-footer p{color: #333;margin: 0 0 20px;line-height: 1.42857143;font-family: FlySans-,Helvetica,Arial,sans-serif;}
+.landing-page .landing-footer{background: #dfdfdf;}
+/*.landing-page .landing-footer img{ display: inline-block;max-width: 550px;vertical-align: top;}*/
+.landing-page .landing-footer #apps-img{vertical-align: initial;}
+.landing-logo {margin-top:-45px;}
+.landing-page h2.landing-title{text-align: center;margin-bottom: 45px;font-size: 38px;color: #78be20;font-family: FlySans-SemiBold,Arial,sans-serif;margin-left: 15px;}
+.landing-page .landing-header{background-image: url("../images/camera-details/facet-camera-header.jpg");background-size: cover;background-repeat: no-repeat;display:block;}
+.landing-page .landing-header .landing-camera-layer{background-image: url("../images/camera-details/4K-packaging.png");padding-top: 285px;padding-bottom: 170px;background-repeat: no-repeat;background-position: -190px 0;background-size: 80%;}
+.landing-page .landing-header .camera-info{text-align: right}
+.landing-page .landing-header .camera-info h3{font-size: 26px;color: #000;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
+.landing-page .landing-header .camera-info p{font-size: 20px;line-height: 1.2;margin: 0 0 20px;}
+#landing-cart,#landing-cart-btn{color: #fff;border: 2px solid #78be20;border-radius: 1000px;background-color: #78be20;font-size: 20px;padding: 0 20px;
+    text-transform: uppercase;font-family: FlySans-,Helvetica,Arial,sans-serif;}
+.landing-page #landing-cart-inverse{margin-left: 18px;background-color: transparent;width: 151px;color: #78be20;border: 2px solid #78be20;border-radius: 1000px ;
+    font-family: FlySans-,Helvetica,Arial,sans-serif;font-size:20px;padding:0 20px;}
+.landing-page .landing-header-btn{width:220px;}
+.landing-page .landing-header .camera-info p.price_color{color: #78be20;font-size: 32px;margin-bottom: 20px;font-weight: 700;}
+.landing-page .landing-mobile-header{width:100%;}
+.landing-page .landing-hand{background-image: url(../images/camera-details/facets-camera-dark.jpg);padding-top: 60px;padding-bottom: 50px;background-size: cover;
+    background-repeat: no-repeat;}
+.landing-page .hand-holding-camera img {width: 100%;position: absolute;}
+.landing-page .hand-holding-camera {position: relative;z-index: 999999;top: -385px;width: 930px;}
+.landing-content h2 {color: #78be20;font-size: 38px;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
+.landing-hand .landing-content p {color: #ccc;line-height: 1.2;font-size:20px;}
+.landing-page .page-inner{position: relative;padding-top: 205px;padding-left: 30px;}
+.landing-page .product-main h3{font-size: 36px;margin-top: 30px;margin-bottom: 10px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;font-weight: 100;
+}
+.landing-page .product-description ul li{font-size: 20px;margin-bottom: 25px;color: #666; list-style: none}
+.landing-page .product-description ul li:before{content: "";background-color: #78be20;position: absolute;margin-left: -20px;width: 6px;height: 6px;font-size: 20px;border-radius: 100px;margin-top: 12px;}
+.landing-page .product-main p.price_color{color: #78be20;font-size: 32px;font-family: FlySans-,Helvetica,Arial,sans-serif;font-weight: 400;margin-left: 20px;
+    margin-bottom: 20px;clear: both;float: none;}
+.landing-page .flexslider:hover .flex-direction-nav .flex-prev:hover ,.landing-page .flexslider:hover .flex-direction-nav .flex-next:hover {opacity: 0;}
+.landing-page .flexslider:hover .flex-direction-nav .flex-prev ,.landing-page .flexslider:hover .flex-direction-nav .flex-next {opacity: 0;left: 10px;}
+.landing-page .flex-control-thumbs li {width: 20%;float: left;}
+.landing-page .flex-control-thumbs .flex-active {border:none;}
+.landing-page .flex-control-thumbs img{height:93px;width:93px}
+img.camera-logo {margin-bottom: 30px;}
