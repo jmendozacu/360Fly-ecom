@@ -1,5 +1,5 @@
 /*
-	Harpreet Singh 
+	Harpreet Singh
 */
 /*MISC CLASSES STARTS*/
 .btn.btn-custom, .btn.btn-shop {width: auto;padding: 6px 35px;margin:10px;}
@@ -83,6 +83,8 @@ iframe{border:none;}
 .cms-australia .au-r6-container .app-section p,.cms-australia .au-r6-container .app-section p{color:#333;font-size: 18px;line-height: 1;font-family: "FlySans-Light", Arial, sans-serif;margin-bottom:20px;}
 .cms-australia .app-content{width:75%;margin:0 auto;padding-top:60px;}
 .apps-button{max-width:150px;}
+.cms-australia .plr15 .btn-custom{padding: 16px 32px 17px;font-family: "FlySans-", Arial, sans-serif;font-weight: 600;font-size: 16px;border: 0;margin: 0 0 10px;
+    border-width: 0;text-decoration: none;display: inline-block;float: left;clear:both;}
 /* Author - GT End */
 
 /*Australia Landing Page Ends*/
@@ -100,5 +102,4 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
 .community-content-right{float:right;padding:0 0 6px 6px;margin:0;}
 .community-first-dd a{background-color:transparent;}
 /*Community Page Ends*/
-
 
