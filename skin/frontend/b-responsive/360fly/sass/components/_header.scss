@@ -80,6 +80,7 @@
     }
 }
 
+
 .main-nav {
     .navbar {
         box-shadow: none;
@@ -219,6 +220,11 @@
             z-index: 901;
         }
     }
+    .nav-container{background: transparent;}
+    .header section.top-bar-section a{color:#999;font-size:20px; padding:6px 0;display:inline-block;}
+    .header section.top-bar-section{border-bottom:5px solid #7ABC31;border-top:1px solid #999;}
+    .header section.top-bar-section .icon-shopping-cart{color:#7ABC31;}
+
 }
 
 @media screen and (min-width: 768px) {

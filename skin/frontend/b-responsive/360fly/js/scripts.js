@@ -19,5 +19,13 @@ jQuery(document).ready(function(a) {
         }
     );
     /*NAVIGATION MENU ANIMATION ENDS*/
-
+    a( ".hamburger-menu .toggle-topbar" ).click(function() {
+        if(a(this).hasClass('open-hbm')){
+            a('.hamburger-menu section.top-bar-section').hide();
+            a(this).removeClass('open-hbm');
+        } else{
+            a('.hamburger-menu section.top-bar-section').show();
+            a(this).addClass('open-hbm');
+        }
+     });
 });
