@@ -72,6 +72,8 @@
 	.pre-footer h3{margin-top: 1.5rem;}
 	.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header, body div.wrapper .header {height: calc(95px + 5px);}
 	.header+.body-wrapper {padding-top: 0px;}
+	/* Home Page Hand */
+	.cms-index-index .pov-mobile img{display: inline-block;max-width: 100%;height:auto;}
 
 
 }
