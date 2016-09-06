@@ -391,3 +391,11 @@ a.read-more:hover{background-color:#60981a;color:white;}
 .landing-page .flex-control-thumbs .flex-active {border:none;}
 .landing-page .flex-control-thumbs img{height:93px;width:93px}
 img.camera-logo {margin-bottom: 30px;}
+
+
+/* Sign In */
+
+.body-wrapper{background-color:#191919;}
+.body-wrapper .form-bg{background-color:#191919; }
+.body-wrapper .page-title h2{font-size:45px; font-style: normal;color: #FFFFFF;text-transform:none}
+.body-wrapper .form-group label{font-style: normal;color: #FFFFFF;}
