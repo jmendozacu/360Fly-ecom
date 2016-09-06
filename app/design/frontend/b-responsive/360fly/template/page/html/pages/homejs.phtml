@@ -131,25 +131,25 @@ preloadImages(pov_images);
 var pov_obj = {
     curImg: 0
 };
-/* var pov_tween = TweenMax.to(pov_obj, 0.5, {
+var pov_tween = TweenMax.to(pov_obj, 0.5, {
     curImg: pov_images.length - 1,
     roundProps: "curImg",
     repeat: 0,
     immediateRender: true,
     ease: Linear.easeNone,
     onUpdate: function() {
-        $jQ('#hand-wrap img').attr("src", pov_images[pov_obj.curImg]);
+        $jQ('#pov-wrap img').attr("src", pov_images[pov_obj.curImg]);
     }
 });
 var pov_controller = new ScrollMagic.Controller();
 var pov_scene = new ScrollMagic.Scene({
-    triggerElement: ".hand",
+    triggerElement: ".pov",
     triggerHook: "onEnter",
     duration: "500",
     offset: 300
-}).setTween(pov_tween).addTo(pov_controller); */
+}).setTween(pov_tween).addTo(pov_controller);
 
-/* //field of view */
+/* field of view */
 var fov_images = [
     skin_url+"images/parallax/fov/fov__imagesequence_01.png",
     skin_url+"images/parallax/fov/fov__imagesequence_01.png",

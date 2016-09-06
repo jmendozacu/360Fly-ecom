@@ -209,8 +209,8 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .dirt{padding-bottom:3.125rem;overflow:hidden;}
 .dirt-wrap{position:absolute;bottom:-443px;left:0px;width:100%;height:0px;}
 .back{position:absolute;top:-101px;left:-50px;width:550px;}
-#dirt-back-spray-1,#dirt-back-spray-2{position:absolute;top:-241px;left:-96px;width:686px;-ms-transform:scale(0.2);-webkit-transform:scale(0.2);transform:scale(0.2);}
-#dirt-spray-front {position: absolute;top: -149px;left: -96px;width: 635px;-ms-transform: scale(0.5);-webkit-transform: scale(0.5);transform: scale(0.5);}
+#dirt-back-spray-1,#dirt-back-spray-2{position:absolute;top:-241px;left:-96px;width:686px;-ms-transform:scale(0.2);-webkit-transform:scale(0.2);transform:scale(0.2);pointer-events:none;}
+#dirt-spray-front {position: absolute;top: -149px;left: -96px;width: 635px;-ms-transform: scale(0.5);-webkit-transform: scale(0.5);transform: scale(0.5);pointer-events:none;}
 /*.back{position:absolute;top:-101px;left:0px;width:550px;}
 #dirt-back-spray-1,#dirt-back-spray-2{position:absolute;top:-241px;left:-96px;width:686px;-ms-transform:scale(0.2);-webkit-transform:scale(0.2);transform:scale(0.2)}*/
 .camera{position:absolute;top:-258px;left:173px;width:200px;pointer-events:none;opacity:0;}
