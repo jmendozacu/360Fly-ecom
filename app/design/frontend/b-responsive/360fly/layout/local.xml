@@ -40,7 +40,7 @@
 			<action method="addItem"><type>skin_js</type><name>js/animation.gsap.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/slick.min.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/scripts.js</name></action>
-			
+
 
         </reference>
 
@@ -49,7 +49,8 @@
 
         <reference name="header">
             <block type="page/template_links" name="account.links" as="accountLinks"/>
-            <block type="core/template" name="minicart.links" as="cartButton" template="page/template/minicart.phtml"/>
+            <block type="core/template" name="minicart.links" as="cartButton" template="page/template/minicart.phtml"/>4
+            <block type="core/template" name="category.links" template="page/html/category-links.phtml"/>
         </reference>
 <!--
         <reference name="after_content">

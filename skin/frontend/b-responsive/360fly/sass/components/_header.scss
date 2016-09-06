@@ -4,8 +4,6 @@
     top: 0;
     height: 55px;
     width: 100%;
-    background-color: $color1;
-    border-bottom: 1px solid #524c61;
     .brand {
         width: 100px;
         margin: 0 auto;
@@ -79,6 +77,7 @@
         }
     }
 }
+
 
 .main-nav {
     .navbar {
@@ -219,16 +218,19 @@
             z-index: 901;
         }
     }
+    .nav-container{background: transparent;}
+    .header section.top-bar-section a{color:#999;font-size:20px; padding:6px 0;display:inline-block;}
+    .header section.top-bar-section{border-bottom:5px solid #7ABC31;border-top:1px solid #999;}
+    .header section.top-bar-section .icon-shopping-cart{color:#7ABC31;}
+
 }
 
 @media screen and (min-width: 768px) {
     .header {
         position: static;
         text-align: left;
-        padding: 30px 20px;
+        padding: 0px;
         height: auto;
-        border-bottom: 3px solid mix(#000, #fff, 15%);
-        border-top: 1px solid #524c61;
         @include clearfix();
         .brand {
             width: auto;

@@ -93,7 +93,7 @@ label {
         &:active,
         &:hover {
             background: 0 0!important;
-            color: $color8!important;
+            color: $color7;
         }
         &.add-new,
         &.add-new:hover {
@@ -105,7 +105,7 @@ label {
             background: 0 0!important;
         }
         &.active {
-            color: $color8!important;
+            color: $color7!important;
         }
     }
     &-pills {

@@ -24,9 +24,8 @@
 				  </li>
 				  <li class="menu1" ><a href="<?php echo $baseUrl;?>shop">SHOP</a>
 					<ul class="submenu1 submenu">
-					  <li><a href="<?php echo $baseUrl ;?>cameras">CAMERAS</a></li>
-					  <li><a href="<?php echo $baseUrl ;?>accessories">ACCESSORIES</a></li>
-					  <li><a href="<?php echo $baseUrl;?>/faq/">FAQ</a></li>
+                        <?php echo $this->getChildHtml('category.links');?>
+                        <li><a href="<?php echo $baseUrl;?>/faq/">FAQ</a></li>
 
 					</ul>
 				  </li>
@@ -50,53 +49,42 @@
 		</div>
 	</div>
 </div>
-<div class="header container visible-xs">
+<!-- MOBILE MENU -->
+<div class="header container visible-xs header-mobile">
 	<div class="col-xs-12">
-		<div class="h95px logo col-xs-6"><a href="<?php echo $baseUrl;?>"><img src="<?php echo $skinUrl;?>images/logo.png" alt="360Fly Logo" /></a></div>
-		<div class="h95px col-xs-12 abs">
-			<nav class="mobilenav navbar navbar-inverse navbar-static-top" role="navigation">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
+		<div class="h95px logo col-xs-4"><a href="<?php echo $baseUrl;?>"><img src="<?php echo $skinUrl;?>images/logo.png" alt="360Fly Logo" /></a></div>
+		<div class="h95px col-xs-11 abs no-gutter hamburger-menu">
+			<ul>
+				<li class="toggle-topbar menu-icon open" id="nav-icon3">
+					<a href="#">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+				</li>
+			</ul>
+			<section class="top-bar-section" style="display:none;">
+				<!-- Right Nav Section -->
+				<ul class="">
+					<li class="shopping-cart show-mobile">
+						<a href="<?php echo $baseUrl;?>checkout/cart""><span class="icon-shopping-cart"></span></a>
+					</li>
+					<li class="show-mobile"><a href="<?php echo $baseUrl;?>shop">Shop</a></li>
+					<li class="show-mobile"><a href="<?php echo $baseUrl;?>apps">APPS</a></li>
+					<li><a href="videos.360lfy.com/">VIDEO</a></li>
+					<li><a href="<?php echo $baseUrl;?>/community">COMMUNITY</a></li>
 
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							  <li class="shopping-cart visible-xs">
-								<a href="<?php echo $baseUrl;?>shop"><span class="icon-shopping-cart"></span></a>
-							  </li>
-							  <li class="menu1" ><a href="<?php echo $baseUrl;?>shop">SHOP</a>
-								<ul class="submenu1 submenu">
-									<li><a href="<?php echo $baseUrl ;?>cameras">CAMERAS</a></li>
-									<li><a href="<?php echo $baseUrl ;?>accessories">ACCESSORIES</a></li>
-									<li><a href="<?php echo $baseUrl;?>/faq/">FAQ</a></li>
+					<li><a href="https://support.360fly.com">SUPPORT</a></li>
+					<hr/>
+					<?php echo $this->getChildHtml('category.links');?>
+					<hr/>
+					<li><a href="<?php echo $baseUrl;?>customer/account/create">SIGNUP</a></li>
+					<li><a href="<?php echo $baseUrl;?>customer/account/login">LOGIN</a></li>
+					<li><a href="<?php echo $baseUrl;?>faq/">FAQ</a></li>
+				</ul>
 
-								</ul>
-							  </li>
-							  <li class="divider-vertical menu2"><a href="<?php echo $baseUrl ;?>apps">APPS</a>
-								<ul class="submenu2 submenu">
-								  <li><a href="<?php echo $baseUrl;?>apps/">MOBILE</a></li>
-								  <li><a href="<?php echo $baseUrl;?>Director">DESKTOP</a></li>
 
-								</ul>
-							  </li>
-							  <li class="divider-vertical"><a href="<?php echo $baseUrl;?>videos">VIDEO</a></li>
-							  <li class="divider-vertical"><a href="<?php echo $baseUrl;?>community">COMMUNITY</a></li>
-							  <li class="divider-vertical"><a href="http://support.360fly.com/">SUPPORT</a></li>
-							  <li class="shopping-cart hide-mobile">
-								<a href="<?php echo $baseUrl;?>shop">
-								  <span class="icon-shopping-cart"></span>
-								</a>
-							  </li>
-						</ul>
-					</div>
-				</div>
-			</nav>
+			</section>
 		</div>
 	</div>
 </div>
