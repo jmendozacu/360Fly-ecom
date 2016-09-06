@@ -4,8 +4,6 @@
     top: 0;
     height: 55px;
     width: 100%;
-    background-color: $color1;
-    border-bottom: 1px solid #524c61;
     .brand {
         width: 100px;
         margin: 0 auto;
@@ -231,10 +229,8 @@
     .header {
         position: static;
         text-align: left;
-        padding: 30px 20px;
+        padding: 0px;
         height: auto;
-        border-bottom: 3px solid mix(#000, #fff, 15%);
-        border-top: 1px solid #524c61;
         @include clearfix();
         .brand {
             width: auto;

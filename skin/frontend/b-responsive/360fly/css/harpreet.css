@@ -38,7 +38,7 @@ iframe{border:none;}
 .header #navbar3 ul li a:hover{color:#7ABC31;font-weight:bold;}
 .header li{list-style:none;}
 .header #navbar3 .submenu{left:-35px;}
-.header #navbar3 .submenu li a{color:#ffffff;padding:0 10px;margin:10px 0;}
+.header #navbar3 .submenu li a{color:#ffffff;padding:0 10px;margin:10px 0;border-right: 1px solid #fff;}
 .header #navbar3 .submenu li a:hover{color:#ffffff;font-weight:bold;}
 .header .mobilenav{height: 50px;width: 50px;border: 2px solid #999;color:#999;border-radius:50%;background:transparent;}
 .navbar-inverse .navbar-toggle{border-color:transparent;}
@@ -96,17 +96,21 @@ iframe{border:none;}
 /*Australia Landing Page Ends*/
 
 /*Community Page Starts*/
-.community-btn{max-width: 170px;width: auto;position: absolute;top:95px;z-index:3;padding-left:50px;}
+.community-btn{max-width: 250px;width: auto;position: absolute;top:95px;z-index:3;padding-left:50px;}
 .community-btn .community-first-dd {height: 36px;line-height: 100%;color: #fff;}
 .community-btn .community-first-dd a{height: 100%;color: #fff;font-size:14px;}
 .community-btn .community-first-dd a:hover{font-weight:bold;color: #fff;}
+ul.community-dropdown li a:hover{background:#666;}
 .community-btn a{color:#000;}
+.community-btn span.icon-drop-arrow.sub-menu-arrow {margin-left: 10px;font-size: 0.7em;}
 ul.community-dropdown{position: relative;top: 0px;left:0px;} 
 .community-first-dd ul{background:#414042;border:1px solid #fff;} 
 .community-btn ul{border-radius:0px;}
 .community-content-left{float:left;padding:0 6px 6px 0px;margin:0;}
 .community-content-right{float:right;padding:0 0 6px 6px;margin:0;}
-.community-first-dd a{background-color:transparent;}
+.community-first-dd a:{color: #ffffff;font-weight:bold;}
+.nav .community-first-dd.open > a, .nav .community-first-dd.open > a:hover, .nav .community-first-dd.open > a:focus{background-color: transparent;text-align:left;color:#fff;}
+.nav>li.community-first-dd>a:hover{color: #ffffff;font-weight:bold;}
 /*Community Page Ends*/
 
 /*!----------  NAVIGATION ----------*/
