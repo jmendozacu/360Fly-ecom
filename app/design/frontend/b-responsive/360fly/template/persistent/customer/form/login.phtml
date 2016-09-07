@@ -35,16 +35,12 @@
 <div class=" container-fluid login-wrapper">
     <div class="page-title wrapper-width">
         <h2><?php echo $this->__('Sign In') ?></h2>
-    </div>
-    
+    </div>    
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
         <div class="row wrapper-width">
             <div class="col-md-5 form-bg">
-                
-                 <!--    <div class="heading"><h2><?php echo $this->__('Registered Customers') ?></h2></div> -->
-                  <!--   <p><?php echo $this->__('If you have an account with us, please log in.') ?></p> -->
-                    <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+                <p class="required"><?php echo $this->__('* Required Fields') ?></p>
                     <ul>
                         <li class="form-group">
                             <label for="email" class="required"><em>*</em><?php echo $this->__('Email') ?></label>
@@ -65,18 +61,8 @@
                     <div class="login-btn a-center">
                         <p><a href="<?php echo $this->getForgotPasswordUrl() ?>" class="btn btn-link"><?php echo $this->__('Forgot Your Password?') ?></a></p>
                         <button type="submit" class="btn btn-default" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
-                    </div>
-               
-            </div>
-           <!--  <div class="col-xs-12 col-sm-6 new-users">
-                <div class="content">
-                    <div class="heading"><h2><?php echo $this->__('New Customers') ?></h2></div>
-                    <p><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
-                    <div class="buttons-set a-center">
-                        <button type="button" title="<?php echo $this->__('Create an Account') ?>" class="btn btn-primary" onclick="window.location='<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>';"><span><span><?php echo $this->__('Create an Account') ?></span></span></button>
-                    </div>
-                </div>
-            </div> -->
+                    </div>               
+            </div>           
         </div>
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
             <input name="context" type="hidden" value="checkout" />
