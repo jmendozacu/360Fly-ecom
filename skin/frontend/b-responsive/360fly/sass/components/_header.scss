@@ -4,6 +4,7 @@
     top: 0;
     height: 55px;
     width: 100%;
+    background:$color5;
     .brand {
         width: 100px;
         margin: 0 auto;
@@ -47,12 +48,21 @@
             display: inline-block;
             padding: 0;
             border: none;
-            font-size: 16px;
-            text-transform: none;
+            font-size: 12px;
+            text-transform: uppercase;
             a {
-                padding: 10px;
+                padding: 0px 10px;
+                margin: 9px 0;
                 display: block;
-                color: $color3;
+                color: $color7;
+            }
+            &:hover{
+                font-weight:bold;
+            }
+        }
+        li.first{
+            a{
+                border-right:1px solid $color7;
             }
         }
     }
