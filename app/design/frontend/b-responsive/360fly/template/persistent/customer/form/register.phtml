@@ -32,9 +32,9 @@
  */
 /** @var $this Mage_Customer_Block_Form_Register */
 ?>
-<div class="account-create">
-    <div class="page-title">
-        <h1><?php echo $this->__('Create an Account') ?></h1>
+<div class="">
+    <div class="page-title wrapper-width">
+        <h1><?php echo $this->__('Join 360fly') ?></h1>
     </div>
     <?php echo $this->getChildHtml('form_fields_before')?>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
@@ -43,11 +43,11 @@
         <div class="heading">
             <h2><?php echo $this->__('Personal Information') ?></h2>
         </div>
-        <div class="container">
-            <div class="row">
+        <div class="container-fluid register-wrapper">
+            <div class="row wrapper-width">
                 <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
                 <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <ul>
                         <li class="form-group">
                             <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
@@ -86,10 +86,10 @@
         <div class="heading">
             <h2><?php echo $this->__('Address Information') ?></h2>
         </div>
-        <div class="container">
-            <div class="row">
+        <div class="container-fluid register-wrapper">
+            <div class="row wrapper-width">
                 <input type="hidden" name="create_address" value="1" />
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <ul>
                         <li>
                             <div class="form-group">
@@ -150,9 +150,9 @@
         <div class="heading">
             <h2><?php echo $this->__('Login Information') ?></h2>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+        <div class="container-fluid register-wrapper">
+            <div class="row wrapper-width">
+                <div class="col-md-5">
                     <ul>
                         <li>
                             <div class="form-group">
@@ -170,11 +170,10 @@
                     <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
                 </div>
             </div>
-        </div>
-        
-        <div class="container">
-            <div class="row">
-                <div class="buttons-set a-center col-md-6">
+        </div>        
+        <div class="container-fluid register-wrapper">
+            <div class="row wrapper-width">
+                <div class="register-btn a-left col-md-5">
                     <button type="submit" title="<?php echo $this->__('Submit') ?>" class="btn btn-default"><span><span><?php echo $this->__('Submit') ?></span></span></button>
                     <p class="clearfix required"><?php echo $this->__('* Required Fields') ?></p>
                 </div>
