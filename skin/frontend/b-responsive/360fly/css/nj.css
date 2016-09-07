@@ -398,4 +398,14 @@ img.camera-logo {margin-bottom: 30px;}
 .login-wrapper,.register-wrapper{background-color:#191919;}
 .login-wrapper .form-bg,.login-wrapper .form-bg{background-color:#191919; }
 .page-title h2{font-size:45px; font-style: normal;color: #FFFFFF;text-transform:none}
-.form-group label{font-style: normal;color: #FFFFFF;}
+.form-group label{font-style: normal;color: #FFFFFF;font-size:14px;}
+
+/* Sign Up */
+.register-wrapper .agreement{color:#808284;}
+.register-wrapper .form-group input ,.login-wrapper .form-group input{ height:34px;}
+.register-wrapper .checkbox label{color:white;}
+.register-wrapper .register-btn,.login-wrapper .login-btn{padding-bottom:7px}
+
+/* Dashboard */
+
+.grey-bg{background: grey;}
