@@ -394,8 +394,8 @@ img.camera-logo {margin-bottom: 30px;}
 
 
 /* Sign In */
-
-.body-wrapper{background-color:#191919;}
-.body-wrapper .form-bg{background-color:#191919; }
-.body-wrapper .page-title h2{font-size:45px; font-style: normal;color: #FFFFFF;text-transform:none}
-.body-wrapper .form-group label{font-style: normal;color: #FFFFFF;}
+/*Nj updated .body-wrapper to login wrapper,register wrapper*/
+.login-wrapper,.register-wrapper{background-color:#191919;}
+.login-wrapper .form-bg,.login-wrapper .form-bg{background-color:#191919; }
+.page-title h2{font-size:45px; font-style: normal;color: #FFFFFF;text-transform:none}
+.form-group label{font-style: normal;color: #FFFFFF;}
