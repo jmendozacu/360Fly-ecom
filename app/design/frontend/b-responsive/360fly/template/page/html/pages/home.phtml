@@ -65,15 +65,20 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 	</div>
 </div>
-<!--<div class="">
-  <div class="video_img">
-  	<section id="one-up">
-        <div class="embed-responsive embed-responsive-16by9">
-        	<iframe class="embed-responsive-item" src="<?php echo $skinUrl; ?>videos/promotional_4k.mp4"></iframe>
-      	</div>
-    </section>
-  </div>   
-</div>-->
+<div class="video-player" id="player">
+	<div class="video-container">
+		<div id="video">
+			<section id="one-up">
+				<div class="videocontent">
+					<video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered" controls preload="auto" width="854" height="480.375" data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
+					poster="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg" data-setup="{}">
+						<source src="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4" type='video/mp4'>
+					</video>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
 <div class="video_background globe">
   <div class="container wrapper-width">    
 		<div class="col-sm-12 col-md-7 col-lg-7 text-center" id="globe-wrap">
@@ -285,5 +290,6 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 	</div>
 </div>
-
+<link href="<?php echo $skinUrl ?>css/player-ui.css" rel="stylesheet">
+<script src="<?php echo $skinUrl ?>js/video.js"></script>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/homejs.phtml')->toHtml(); ?>
