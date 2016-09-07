@@ -47,6 +47,7 @@
 				</ul>
 			  </div>
 		</div>
+        <div class="abs header-account-links"><?php echo $this->getChildHtml('accountLinks');?></div>
 	</div>
 </div>
 <!-- MOBILE MENU -->
@@ -78,8 +79,7 @@
 					<hr/>
 					<?php echo $this->getChildHtml('category.links');?>
 					<hr/>
-					<li><a href="<?php echo $baseUrl;?>customer/account/create">SIGNUP</a></li>
-					<li><a href="<?php echo $baseUrl;?>customer/account/login">LOGIN</a></li>
+                    <li  class="header-xs-account-links"><?php echo $this->getChildHtml('accountLinks');?></li>
 					<li><a href="<?php echo $baseUrl;?>faq/">FAQ</a></li>
 				</ul>
 

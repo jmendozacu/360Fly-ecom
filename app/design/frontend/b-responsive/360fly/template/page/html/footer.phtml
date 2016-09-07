@@ -29,7 +29,7 @@
                 <li><a href="<?php echo $baseUrl;?>b2b/">B2B Portal</a>
                 </li>
             </ul>
-            <p class="copyright hide-mobile">&copy; <?php echo date('Y'), ' ', $this->getCopyright(); ?></p>
+            <p class="copyright hide-mobile"><?php echo $this->getCopyright(); ?></p>
             <ul class="inline-list footer-nav hide-mobile footer-bottom-nav">
                 <li><a href="<?php echo $baseUrl;?>contact">Contact Us</a>
                 </li>
@@ -62,7 +62,7 @@
                 </li>
             </ul>
             <div class="mobile-copyright show-mobile">
-                <p class="copyright">&copy; <?php echo date('Y'), ' ', $this->getCopyright(); ?></p>
+                <p class="copyright"><?php echo $this->getCopyright(); ?></p>
                 <ul class="inline-list footer-nav ">
                     <li><a href="<?php echo $baseUrl;?>contact">Contact Us</a>
                     </li>
