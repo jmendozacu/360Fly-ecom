@@ -102,23 +102,23 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 	</div>
 </div>              
-<div class="pov">
+<div class="pov row">
 	<div class="container wrapper-width">
-		<div class="col-md-7 col-sm-7 col-xs-12 text-left" >
+		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 text-left" >
 			<h2 >CAPTURE EVERY POV. PLUS ONE.</h2>
 			<h3>360fly 4K First-Person POV.</h3>
 			<p>Go from recording in 360&deg; video to standard 16:9 format and back with ease. With the 360fly 4K's First-Person mode activated, just orient or mount your camera with its lens facing forward and OnePush button centered/facing up and use your 360fly like traditional point-and-shoot action cameras.</p>
 			<a href="<?php echo $baseUrl;?>shop" class="btn btn-primary btn-custom">LEARN MORE </a>
 		</div>
-	</div>
-	<div class="abs-pov" id="hand-wrap">
-		<div class="pov-mobile visible-xs">
-			<img src="<?php echo $skinUrl;?>images/parallax/pov/pov_mobile.png" />
-		</div>
-		<div id="pov-wrap" class="hidden-xs">
-			<img src="<?php echo $skinUrl;?>images/parallax/pov/pov__imagesequence_01.png" />
-		</div>
-	</div>
+		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+			<div id="pov-wrap" class="hidden-xs">
+				<img src="<?php echo $skinUrl;?>images/parallax/pov/pov__imagesequence_01.png" />
+			</div>
+			<div id="pov-mobile" class="visible-xs">
+				<img src="<?php echo $skinUrl;?>images/parallax/pov/pov_mobile.png" />
+			</div>			
+      	</div>
+	</div>	
 </div>
 <div class="dirt ">
 	<div class="video_img2">        
@@ -292,4 +292,33 @@ $skinUrl = $this->getSkinUrl();
 </div>
 <link href="<?php echo $skinUrl ?>css/player-ui.css" rel="stylesheet">
 <script src="<?php echo $skinUrl ?>js/video.js"></script>
+<script type="text/javascript">
+function webgl_detect() {
+   var canvas = document.createElement('canvas');
+        names = ['webgl', 'experimental-webgl', 'moz-webgl', 'webkit-3d'],
+      context = false;
+
+       for(var i=0; i<4; i++) {
+           context = canvas.getContext(names[i]);
+           if (context && typeof context.getParameter == 'function') {
+                   return true;
+               }
+               continue;
+           }
+           return false;
+       }
+
+if (!webgl_detect()) {
+   var video = document.getElementsByTagName('video')[0];
+   video.classList.remove('video360');
+   video.classList.add('circle-view');
+   video.height = Math.min(window.innerWidth, 854) * 9/16;
+   document.getElementById('android-tiled').remove();
+   videojs(video.id);
+   video.style.display = 'block';
+}
+
+</script>
+
+
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/homejs.phtml')->toHtml(); ?>

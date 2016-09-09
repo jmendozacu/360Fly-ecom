@@ -34,8 +34,9 @@ a:hover, a:focus {color: #67a31c;}
 .main-container{overflow-x: hidden;background:transparent;}
 .custom-container{max-width:1000px;width:100%;margin:0 auto;}
 .custom-container:before,.custom-container:after{content: " ";display: table;}
-.cms-index-index{overflow-x:hidden;}
-.cms-index-index .pov #pov-wrap{position: absolute;left: 100%;top: -500px;pointer-events: none;float:right;}
+.cms-index-index .pov #pov-wrap{position: absolute;top: -250px;pointer-events: none;float:right;}
+.cms-home .body-wrapper{overflow-x: hidden;}
+.cms-home .body-wrapper .pov #pov-mobile img {margin: 0 -24px -50px 17px;max-width: 100%;}
 /* home page end */
 
 /* header-subnavbar start */
@@ -81,11 +82,13 @@ ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
 /* globe section end */
 
 /* pov section start */
+
 .pov{padding: 60px 0 50px;background-color:#fff;position:relative;}
 .pov h2,.pre-footer h2{font-size:38px;line-height:41px;font-weight: 900;font-family: "FlySans-Medium", Arial, sans-serif;margin:0;}
 .pov h3{font-size:25px;line-height:26px;margin-bottom:20px;color: #666666;margin-top:3px;}
 .pov p{font-size:20px;line-height: 27px;margin-bottom: 35px;}
 .abs-pov{position:absolute;width:44%;left:10%}
+
 /* pov section end */
 
 /* THE APPS THAT POWER IT ALL section start */
