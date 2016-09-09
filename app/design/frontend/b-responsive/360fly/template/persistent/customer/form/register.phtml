@@ -32,22 +32,19 @@
  */
 /** @var $this Mage_Customer_Block_Form_Register */
 ?>
-<div class="">
-    <div class="page-title wrapper-width">
-        <h1><?php echo $this->__('Join 360fly') ?></h1>
-    </div>
+<div class="register-container">
     <?php echo $this->getChildHtml('form_fields_before')?>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" role="form">
     <?php echo $this->getBlockHtml('formkey'); ?>
-        <div class="heading">
-            <h2><?php echo $this->__('Personal Information') ?></h2>
-        </div>
         <div class="container-fluid register-wrapper">
             <div class="row wrapper-width">
                 <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
                 <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
-                <div class="col-md-5">
+                <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+					<div class="page-title wrapper-width">
+						<h2><?php echo $this->__('Join 360fly') ?></h2>
+					</div>
                     <ul>
                         <li class="form-group">
                             <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
@@ -56,16 +53,6 @@
                             <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
                             <input type="email" name="email" id="email_address" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="form-control validate-email required-entry" />
                         </li>
-                        <?php if ($this->isNewsletterEnabled()): ?>
-                        <li>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter') ?>" value="1" id="is_subscribed"<?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif; ?> />
-                                    <?php echo $this->__('Sign Up for Newsletter') ?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php endif ?>
                     <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
                     <?php if ($_dob->isEnabled()): ?>
                         <li class="form-group"><?php echo $_dob->setDate($this->getFormData()->getDob())->toHtml() ?></li>
@@ -89,7 +76,7 @@
         <div class="container-fluid register-wrapper">
             <div class="row wrapper-width">
                 <input type="hidden" name="create_address" value="1" />
-                <div class="col-md-5">
+                <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
                     <ul>
                         <li>
                             <div class="form-group">
@@ -147,12 +134,12 @@
             </div>
         </div>
     <?php endif; ?>
-        <div class="heading">
-            <h2><?php echo $this->__('Login Information') ?></h2>
-        </div>
+        <!-- <div class="heading">
+            <h2><?php //echo $this->__('Login Information') ?></h2>
+        </div> -->
         <div class="container-fluid register-wrapper">
             <div class="row wrapper-width">
-                <div class="col-md-5">
+                <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
                     <ul>
                         <li>
                             <div class="form-group">
@@ -164,6 +151,16 @@
                                 <input type="password" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" id="confirmation" class="form-control required-entry validate-cpassword" />
                             </div>
                         </li>
+						<?php if ($this->isNewsletterEnabled()): ?>
+                        <li>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter') ?>" value="1" id="is_subscribed"<?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif; ?> />
+                                    <?php echo $this->__('Sign Up for Newsletter') ?>
+                                </label>
+								</div>
+                        </li>
+                        <?php endif ?>
                         <?php echo $this->getChildHtml('form.additional.info'); ?>
                         <?php echo $this->getChildHtml('persistent.remember.me'); ?>
                     </ul>
@@ -173,8 +170,8 @@
         </div>        
         <div class="container-fluid register-wrapper">
             <div class="row wrapper-width">
-                <div class="register-btn a-left col-md-5">
-                    <button type="submit" title="<?php echo $this->__('Submit') ?>" class="btn btn-default"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+                <div class="register-btn a-left col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                    <button type="submit" title="<?php echo $this->__('Submit') ?>" class="btn btn-custom"><span><span><?php echo $this->__('Submit') ?></span></span></button>
                     <p class="clearfix required"><?php echo $this->__('* Required Fields') ?></p>
                 </div>
                 <?php if (Mage::helper('checkout')->isContextCheckout()): ?>

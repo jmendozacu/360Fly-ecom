@@ -17,7 +17,11 @@
 			}
 		}
 	}
+	label{
+		font-size:20px!important;
+	}
 }
+
 .customer-account-create {
 	.wrapper {
 		background-color: #fff;
@@ -33,6 +37,15 @@
 		}
 		ul {
 			margin-bottom: 20px;
+		}
+	}
+	label{
+		font-size:20px!important;
+	}
+	.checkbox{
+		label{
+			font-size:14px!important;
+			text-transform:capitalize;
 		}
 	}
 }
@@ -731,19 +744,7 @@
 				margin: -20px -20px 25px -20px;
 			}
 		}
-		.row {
-			display: table;
-			margin: 0;
-			table-layout: fixed;
-			&> div {
-				display: table-cell;
-				vertical-align: top;
-				background-color: #fff;
-				float: none;
-				width: 50%;
-				padding: 0;
-			}
-		}
+		
 	}
 	.customer-account-create {
 		.wrapper {

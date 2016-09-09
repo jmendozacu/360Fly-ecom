@@ -292,7 +292,7 @@ small {font-size: 60%;line-height: inherit;}
     margin-bottom: 20px;}
 .accessory_top_bar {width: 100%;border-bottom: 2px solid #cdcdcd;margin-bottom: 20px;}
 #camera_type {font-size: 20px;box-shadow: none;background-color: transparent;background-image: none;border-radius: 5px;margin-left: 55px;}
-.image-container{max-width: 100%;width: 100%;padding: 4px;margin:0 0 20px;background-color: #fff;}
+.image-container{max-width: 100%;width: 100%;padding: 4px;margin:0 0 20px;background-color: #fff;display: inline-block;}
 .products{min-height:270px;overflow:hidden;margin:0 0 10px;}
 .products h3{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;
     white-space: inherit;margin-top: 0;text-overflow: initial;text-align: left;}
@@ -320,3 +320,13 @@ small {font-size: 60%;line-height: inherit;}
 .product-main .price_color{font-size: 26px;margin-bottom:0;}
 /*----------------------------------------------------------------------------------------------------------------*/
 /* Shop - 360 - Handlebar Mount HD Accessories End */
+
+/* Category Page Start - catalog/list.phtml */
+
+.catalog-category-view .products-grid{clear: both;background: transparent;border-bottom: none;}
+.catalog-category-view .cam-name{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;white-space: inherit;margin-top: 0;text-overflow: initial;text-align: left;margin:3px 0 8px;line-height:1.1;font-style: normal;}
+.catalog-category-view .cam-name a:not(.btn){color:#000;}
+.catalog-category-view .products-list .price-box{float:right;margin:0 0 10px;}
+.catalog-category-view .regular-price .price {font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #7abc31;font-weight: normal;}
+
+/* Category Page End - catalog/list.phtml */

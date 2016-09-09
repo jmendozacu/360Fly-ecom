@@ -104,7 +104,13 @@
         </reference>
     </checkout_cart_index>
 
-    <catalog_product_view>
+    <catalog_category_default>
+		<reference name="product_list">
+			<action method="setColumnCount"><count>4</count></action>
+		</reference>
+	</catalog_category_default>
+
+	<catalog_product_view>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>

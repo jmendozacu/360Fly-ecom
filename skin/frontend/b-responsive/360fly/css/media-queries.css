@@ -70,11 +70,13 @@
 	.pre-footer p{max-width:100%;margin:2.1875rem 0;}
 	.pre-footer{text-align: justify;}
 	.pre-footer h3{margin-top: 1.5rem;}
-	.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header, body div.wrapper .header {height: calc(95px + 5px);}
+	.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header,.customer-account-login .header,.customer-account-create .header, body div.wrapper .header {height: calc(95px + 5px);}
 	.header+.body-wrapper {padding-top: 0px;}
 	/* Home Page Hand */
 	.cms-index-index .pov-mobile img{display: inline-block;max-width: 100%;height:auto;}
-
+	/* Login Page */
+	.customer-account-login .account-login{padding-top:50px;}
+	.customer-account-create .register-container{padding-top:50px;}
 
 }
 
@@ -199,6 +201,9 @@
 	.cms-australia .social-connect p.left.getUpdates{line-height: 60px !important;width: 100%;padding-top: 0px;margin-bottom: 18px;}
 	.cms-australia .social-connect input{width:100%;margin:0;}
 	.social-connect .btn.btn-grey{width: 100%;margin-left: 0px;margin-top: 16px;font-family: "FlySans-Medium", Arial, sans-serif;}
+	/* Ctaegory Page */
+	.catalog-category-view .head{width:100%;}
+	.catalog-category-view .price-box{width:100%;}
 }
 
 /********************************************************************************************************************/
