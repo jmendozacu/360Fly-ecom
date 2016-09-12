@@ -415,3 +415,13 @@ img.camera-logo {margin-bottom: 30px;}
 
 /* Dashboard */
 
+/* Panaroma Video */
+.swipe-icon{background-image:url("../images/swipe-icon.png");height:130px;width:100%;margin:0px auto;background-position:center;background-repeat:no-repeat;margin-top:20px;position:absolute;}
+.video-overlay-content{position:absolute;width:100%;margin-top:10%;}
+.video-overlay-content .video-overlay-text p{color:#f0f0f0;font-size:32px;font-weight:bold;text-align:center;margin:0px;font-family:"FlySans-", Arial, sans-serif !important;position:relative;line-height:1;}
+.video-overlay-content .video-overlay-text p b{font-size:42px;}
+.home-video{width: 100%;height: 85%;position: absolute;}
+.videocontent{position: relative;}
+.vjs-poster{z-index:2;}
+
+

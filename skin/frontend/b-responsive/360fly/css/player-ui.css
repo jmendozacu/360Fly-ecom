@@ -68,11 +68,11 @@ The default control bar that is a container for most of the controls.
 */
 .vjs-default-skin .vjs-control-bar {
   /* Start hidden */
-  display: none;
+  display: block;
   position: absolute;
   /* Place control bar at the bottom of the player box/video.
      If you want more margin below the control bar, add more height. */
-  bottom: -47px;
+  bottom: -35px;
   /* Use left/right to stretch to 100% width of player div */
   left: 0;
   right: 0;
@@ -98,8 +98,8 @@ The default control bar that is a container for most of the controls.
 /* Hide the control bar when the video is playing and the user is inactive  */
 .vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
   display: block;
-  visibility: hidden;
-  opacity: 0;
+  visibility: visible;
+  opacity: 1;
   /* transition */
   -webkit-transition: visibility 1s, opacity 1s;
   -moz-transition: visibility 1s, opacity 1s;
@@ -183,9 +183,11 @@ fonts to show/hide properly.
 --------------------------------------------------------------------------------
 */
 .vjs-default-skin .vjs-play-control {
-  width: 3em;
-  cursor: pointer;
-  font-size: 1em;
+	width: 3em;
+	cursor: pointer;
+	font-size: 1em;
+	background: none;
+	border: none;
 }
 .vjs-default-skin .vjs-play-control:before {
   content: "\e64a";
@@ -216,11 +218,14 @@ fonts to show/hide properly.
   margin-left: -18px;
 }
 .vjs-default-skin .vjs-current-time {
-  float: left;
+	float: left;
+	left: -16px;
+	top: 13px
 }
 .vjs-default-skin .vjs-duration {
   float: right;
   margin-right: 115px;
+  top:13px;
 }
 /* Remaining time is in the HTML, but not included in default design */
 .vjs-default-skin .vjs-remaining-time {
@@ -468,6 +473,8 @@ easily in the skin designer. http://designer.videojs.com/
   /* Center it vertically */
   top: 50%;
   margin-top: -2em;
+  /* Added By Nj on 10Sep*/
+  background:transparent;
 }
 /* Hide if controls are disabled */
 .vjs-default-skin.vjs-controls-disabled .vjs-big-play-button {
@@ -507,7 +514,7 @@ easily in the skin designer. http://designer.videojs.com/
   font-size: 4em;
   line-height: 1;
   text-align: center /* Needed for IE8 */;
-  position: absolute;
+  
   left: 0;
   width: 100%;
   height: 100%;
@@ -650,9 +657,9 @@ easily in the skin designer. http://designer.videojs.com/
 /* Menu Buttons (Captions/Subtitles/etc.)
 --------------------------------------------------------------------------------
 */
-.vjs-default-skin .vjs-menu-button {
+/* .vjs-default-skin .vjs-menu-button {
   display: none;
-}
+} */
 .vjs-default-skin .vjs-menu {
   display: none;
   position: absolute;
@@ -679,21 +686,21 @@ easily in the skin designer. http://designer.videojs.com/
   margin: 0;
   position: absolute;
   width: 10em;
-  bottom: 1.5em;
+  bottom: 0px;
   /* Same bottom as vjs-menu border-top */
 
   max-height: 15em;
-  overflow: auto;
-  left: -5em;
+  /* overflow: auto; */
+  left: -16px;
   /* Width of menu - width of button / 2 */
 
   /* background-color-with-alpha */
-  background-color: #000000;
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.6); */
   /* box-shadow */
-  -webkit-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+  /* -webkit-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
   -moz-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
-  box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+  box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2); */
 }
 .vjs-default-skin .vjs-menu-button:hover .vjs-control-content .vjs-menu,
 .vjs-default-skin .vjs-control-content .vjs-menu.vjs-lock-showing {
