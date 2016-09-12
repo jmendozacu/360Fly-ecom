@@ -333,3 +333,14 @@ small {font-size: 60%;line-height: inherit;}
 .catalog-category-view .regular-price .price {font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #7abc31;font-weight: normal;}
 
 /* Category Page End - catalog/list.phtml */
+
+/* Product Description Page Start */
+
+.product-essential{padding:30px;background-image:none;}
+.std ul{padding-left:40px;color:#333;}
+.availability{display: none;}
+.price-box{margin:0;}
+.regular-price .price{font-weight: 700;color: #333;font-size: 26px;margin-bottom: 0;}
+.catalog-product-view .add-to-cart label{line-height:45px;margin-bottom: 0;margin-right: 10px;color:#333;}
+input.qty{width:100px !important;}
+/* Product Description Page End */

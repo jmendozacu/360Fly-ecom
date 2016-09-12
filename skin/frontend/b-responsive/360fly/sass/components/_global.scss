@@ -292,7 +292,20 @@ a {
 		}
 	}
 }
+.messages, .message ul{
+	position:relative
+}
 
+.success-msg{
+	background-image: none;
+}
+
+li.success-msg:before {
+    content: "\f046";
+    font-family: fontawesome;
+    position: absolute;
+    left: 2%;
+}
 .panel-group {
 	&> .panel {
 		box-shadow: none;

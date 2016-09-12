@@ -70,13 +70,16 @@
 	.pre-footer p{max-width:100%;margin:2.1875rem 0;}
 	.pre-footer{text-align: justify;}
 	.pre-footer h3{margin-top: 1.5rem;}
-	.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header,.customer-account-login .header,.customer-account-create .header, body div.wrapper .header {height: calc(95px + 5px);}
+	.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header,.customer-account-login .header,.customer-account-create .header,.customer-account-index .header, body div.wrapper .header {height: calc(95px + 5px);}
 	.header+.body-wrapper {padding-top: 0px;}
 	/* Home Page Hand */
 	.cms-index-index .pov-mobile img{display: inline-block;max-width: 100%;height:auto;}
 	/* Login Page */
 	.customer-account-login .account-login{padding-top:50px;}
 	.customer-account-create .register-container{padding-top:50px;}
+	/* Sign Up Page After logged in */
+	.module_navigation,.my-account{width: 100%;}
+	.dashboard .welcome-msg{margin:0;padding: 10px;}
 
 }
 
