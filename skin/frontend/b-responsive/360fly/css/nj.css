@@ -155,7 +155,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .hand h2{margin:0;font-size:36px;line-height:2.5625rem;font-weight:900;font-family:"FlySans-Medium";color:#78be20;}
 .hand h3{font-size:24px;line-height:4.625rem;color:#666666;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;margin-bottom:1.25rem;}
 .hand p{font-size:22px;line-height:2.6875rem;margin-bottom:2.1875rem;font-family:"FlySans-Light", Arial, sans-serif;}
-.pre-footer{background-image:url("../images/app-bg.jpg");background-repeat:no-repeat;background-position:center;background-size:cover;padding:75px 0;}
+.pre-footer{background-image:url("../images/app-bg.jpg");background-repeat:no-repeat;background-position:center;background-size:cover;padding:75px 0 50px 0;}
 .desktop_img{position:absolute;width:2000px;left:0px;top:-234px;pointer-events:none;z-index:2}
 .pre-footer h2{color:#78be20;font-size:38px;line-height:0.8em;;font-weight:900;font-family:"FlySans-Medium", Arial, sans-serif;}
 .pre-footer h3{font-size:24px;font-family:"FlySans-", Arial, sans-serif;line-height:2.0625rem;color:#fff;margin-bottom:1.25rem;}
@@ -282,13 +282,13 @@ div.cannondale-container{background:url('../images/athletes/Athlete_Cannondale_T
 div.chad-container{background:url('../images/athletes/Athlete_Chad.jpg') no-repeat; background-size:cover;height:0px;padding-top: 40%;position:relative;}
 div.kalani-container{background:url('../images/athletes/Athlete_Kalani.jpg') no-repeat; background-size:cover;height:0px;padding-top: 40%;position:relative;}
 div.todd-container{background:url('../images/athletes/Athlete_Todd.jpg') no-repeat; background-size:cover;height:0px;padding-top: 40%;position:relative;}
-.covertext.text-contain{position: absolute;bottom: 9%;color: #fff;}
+.covertext.text-contain{position: absolute;bottom: 9%;color: #fff; padding-left:15px;}
 #athlete-marketing  h1.extreme-headline{font-size:60px;font-family: "FlySans-Light", Arial, sans-serif;color:#fff;}
 #athlete-marketing h2.extreme-headline{font-size:40px;margin-top: 10px;color:#fff;}
-
 .community-inner .bio-container{color:#ffffff;}
 .community-inner .bio-left{background: rgb(51,51,51);padding-top: 50px;color: #FFFFFF;padding-bottom: 45px;}
-.community-inner .bio-right{background:#74B83F;};
+.community-inner .bio-right{background:#74B83F;}
+.athlete-social .icons a:hover,.athlete-social .icons a:focus{text-decoration:none}
 /* .community-inner .bio-left .bio-left-child-1{float:right;} */
 .community-inner .bio-left .bio-left-child-1 p{font-family: "FlySans-Light", Arial, sans-serif;font-size: 16px;line-height: 30px;margin-bottom:20px;}
 .terry-adams .bio-right{background: url('../images/athletes/terry_adams_backdrop.jpg') no-repeat;background-size: cover;background-position: bottom center;}
@@ -325,11 +325,13 @@ div.todd-container{background:url('../images/athletes/Athlete_Todd.jpg') no-repe
 .athlete-career{padding-top:50px;color:#FFFFFF;padding:0px;position:relative;}
 .athlete_highlight_text{position:relative;margin-top:50px;padding-left:24px;padding-right:24px;}
 .athlete-social {background-color: #222;height: 153px;font-size: 26px;}
-.athlete-social .athlete-wrapper{max-width: 1000px;padding-top: 50px;padding-left: 66px;}
+.athlete-social .athlete-wrapper{padding-top: 50px;padding-left: 13%;}
 .icons{padding-left: 20px;}
 .icons a:hover,.icons a:visited{text-decoration: none;}
 .athlete-social .icons-wrapper p {color: #fff;padding-top: 5px;font-size: 26px;font-family: "FlySans-", Arial, sans-serif ;line-height: 30px;margin-bottom: 20px;}
 .athlete-social .icons-wrapper .social-links {font-size: 42px;line-height: 1;margin-left: 1px;color:#78be20;}
+.athlete-summary{margin-left:13%;}
+.jorge-container .covertext.text-contain {bottom:1%}
 
 /* Press */
 .press-img{background-color:#D1D3D4;height:260px;background-image:url("../images/press_header_img.jpg");background-size:cover;background-repeat:no-repeat;background-position:center;margin-bottom:77px;}

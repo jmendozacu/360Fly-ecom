@@ -38,16 +38,40 @@
     #top-banner { background-position-x: -630px;}
     .community-banner.small h2 {font-size: 28px;line-height: 28px;}
 	iframe{width:100%;}
+	.dual-video{padding:0px;}
 	/* community inner pages */
 	#athlete-marketing h1.extreme-headline{font-size:44px;line-height:40px;color:#f1f1f2;text-shadow:0px 2px 1px rgba(0, 0, 0, 0.4);font-family:"FlySans-Light", Arial, sans-serif;}
 	div.ta-container{padding-top:650px;background-position:75% center;padding-bottom:30px;background:url('../images/athletes/Athlete_Terry_mobile_sm.jpg');background-position: center center;background-size: cover; }
 	div.matt-container{padding-top:650px;background-position:75% center;padding-bottom:30px;background:url('../images/athletes/Athlete_Matt_mobile.jpg');background-position: center center;background-size: cover; }
+	div.todd-container {padding-top: 650px;padding-bottom: 30px;background: url('../images/athletes/Athlete_Todd_mobile.jpg');background-position: center right;background-size: cover;}
+	div.sunny-container {
+    background: url('../images/athletes/Athlete_Sunny_Garcia-mobile.jpg') no-repeat;
+    background-size: cover;
+    height: 0px;
+    padding-top: 650px;
+	padding-bottom: 30px;
+    position: relative;
+	background-position: center right;
+	}
+	div.pro-container {
+    background: url('../images/athletes/Athlete_Pro_circuit_mobile.jpg') no-repeat;
+    background-size: cover;
+    height: 0px;
+    padding-top: 650px;
+	padding-bottom: 30px;
+    position: relative;
+	background-position: center right;
+	}
+	div.kalani-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/Athlete_Kalani_mobile.jpg');background-position: center right;background-size: cover; }
+	div.jorge-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/athlete_jorge_header_mobile.jpg');background-position: center right;background-size: cover; }
 	.ta-container .extreme-headline{margin-top:20px;}
 	.matt-container .extreme-headline{margin-top:20px;}
-	#athlete-marketing .text-contain{padding-left:24px;padding-right:24px;margin-bottom:0px;}
+	#athlete-marketing .text-contain{margin-bottom:0px;}
 	.community-inner .bio-left,.community-inner .bio-right{width: 100%;display:inline-block;padding-left:24px;padding-right:24px;}
-	.athlete-social .athlete-wrapper{display:inline-block;padding-top: 10px;}
+	.athlete-social .athlete-wrapper{display:inline-block;padding-top: 10px;padding-left:15px;}
 	.athlete-social .icons{padding-left: 0px;}
+	.greenbg .athlete_highlight_text{padding:0px;}
+	.athlete-summary{margin-left:0%;}
 	/*.cannondale .bio-right{width:100%;height:20%;}*/
 	/* press */
 	.read-more{width:100%}
@@ -142,8 +166,9 @@
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:left; width:50%;padding-left:24px;padding-right:24px;}
 	.community-inner .bio-right-content{width:50%;float:left;display:inline-block;}
 	/*.cannondale .bio-right{width:100%;height:20%;}*/
-	.athlete-social .athlete-wrapper{display:inline-block;padding-top: 10px;}
+	.athlete-social .athlete-wrapper{display:inline-block;padding-top: 10px;padding-left:15px;}
 	.athlete-social .icons{padding-left: 0px;}
+	.athlete-summary{margin-left:0%;}
 }
 
 
