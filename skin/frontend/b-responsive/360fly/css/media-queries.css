@@ -52,6 +52,7 @@
 	/* press */
 	.read-more{width:100%}
 	#listings {padding:0px 24px;}
+	.press-img h1{padding-left:0px;}
 	/* Shop-360 Camera */
 	.compare-cameras h1, .compare-cameras-mobile h1 {font-size: 40px;}
 	.compare-cameras h1 span, .compare-cameras-mobile h1 span {font-size: 50px;}
@@ -94,6 +95,8 @@
 	/* accessories page */
 	.products{min-height:300px;}
 	.header #navbar3 ul li a{padding: 0px 12px;margin: 14px 0;border-right: 1px solid #999;}
+	/* About us*/
+	.about-contain{margin-left:15px;}
 }
 
 /********************************************************************************************************************/
