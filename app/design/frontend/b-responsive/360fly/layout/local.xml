@@ -24,6 +24,7 @@
             </action>
 			
 			<!-- Custom Files by Ahy Team -->
+            <action method="addCss"><stylesheet>css/player-ui.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/nj.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/flexslider.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/custom.css</stylesheet></action>
@@ -32,6 +33,7 @@
             <action method="addCss"><stylesheet>css/product_slider.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/harpreet.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/media-queries.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/panaroma/videojs-panorama.css</stylesheet></action>
             <!-- <action method="addCss"><stylesheet>css/360custom.css</stylesheet></action> -->
 			
 			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.js</name></action>	
@@ -41,8 +43,9 @@
 			<action method="addItem"><type>skin_js</type><name>js/animation.gsap.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/slick.min.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/scripts.js</name></action>
-
-
+			<action method="addItem"><type>skin_js</type><name>js/panaroma/three.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs-panorama.v5.min.js</name></action>
         </reference>
 
         <remove name="right_panel"/>

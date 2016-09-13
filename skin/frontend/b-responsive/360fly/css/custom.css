@@ -343,4 +343,16 @@ small {font-size: 60%;line-height: inherit;}
 .regular-price .price{font-weight: 700;color: #333;font-size: 26px;margin-bottom: 0;}
 .catalog-product-view .add-to-cart label{line-height:45px;margin-bottom: 0;margin-right: 10px;color:#333;}
 input.qty{width:100px !important;}
+
 /* Product Description Page End */
+
+/* Product Desc Page Same as landing Page Start */
+
+.category-cameras .landing-img{width: 155%;position: relative;top: -30px;right: 40%;}
+.category-cameras .short-description.std{padding-top: 130px;text-align: right;}
+.category-cameras h3{font-size: 26px;color: #000;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;
+    font-weight: 500;margin:3px 0 8px;}
+.category-cameras p{font-size: 20px;line-height: 1.2;color: #333;font-family: FlySans-,Helvetica,Arial,sans-serif;}
+.category-cameras .camera-info{text-align: right;}
+#landing-cart:hover, #landing-cart-btn:hover{background-color: #60981a;color: #fff;border: 2px solid #60981a;}
+/* Product Desc Page Same as landing Page End */

@@ -37,95 +37,121 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view" class="container"><?php echo $this->getMessagesBlock()->setEscapeMessageFlag(true)->toHtml() ?></div>
-<div class="product-view container">
-    <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-        <?php echo $this->getBlockHtml('formkey') ?>
-        <div class="no-display">
-            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-            <input type="hidden" name="related_product" id="related-products-field" value="" />
-        </div>
-        <div class="product-essential row">
+<div>
+	<div class="container">
+		<form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+			<?php echo $this->getBlockHtml('formkey') ?>
+			<div class="no-display">
+				<input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+				<input type="hidden" name="related_product" id="related-products-field" value="" />
+			</div>
+			<div class="product-essential row">
+				<div class="container-fluid landing-header">		
+					<div class="landing-camera-layer">
+						<div class="container wrapper-width">
+							<div class="row">
+								<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+									<?php echo $this->getChildHtml('media') ?>
+								</div>
+								<div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 camera-info">
+									<?php if ($_product->getShortDescription()):?>
+										<div class="short-description std">
+											<?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+										</div>
+									<?php endif;?>
+									<div class="product-description">
+										<?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
+									</div>
+									<!-- <h3>THE WORLD’S SMARTEST<br> 360° 4K CAMERA.</h3>
+									<p>The 360fly 4K combines a powerful 16-megapixel image sensor with innovative smart camera features — First-Person POV, Motion/Audio Active, Time-Lapse Mode — that redefine what a camera is and does.</p>
+									<p>Water resistant to 1 atm (around 34’), dustproof and shockproof, the 360fly 4K features 64 GB of internal memory and built-in telemetry sensors, including an e-compass and non-assisted GPS.</p>
+									<p class="price_color">$499.99</p> -->
+									<button  type="button" class="btn btn-lg btn-primary landing-header-btn" id="landing-cart" >Add to Cart</button>											
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-xs-12 col-sm-6 col-md-6">
+					<?php //echo $this->getChildHtml('media') ?>
+				</div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <?php echo $this->getChildHtml('media') ?>
-            </div>
+				<!-- <div class="col-xs-12 col-sm-6 col-md-6">
+					
+					<div class="product-main-info">
+						<h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+						
+						<p class="product-ids"><?php echo $this->__('SKU# %s', $this->escapeHtml($_product->getSku())); ?></p>
+						<?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+						<?php echo $this->getChildHtml('alert_urls') ?>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                
-                <div class="product-main-info">
-                    <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                    
-                    <p class="product-ids"><?php echo $this->__('SKU# %s', $this->escapeHtml($_product->getSku())); ?></p>
-                    <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
-                    <?php echo $this->getChildHtml('alert_urls') ?>
+						<?php if ($_product->getShortDescription()):?>
+							<div class="short-description std">
+								<?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
+							</div>
+						<?php endif;?>
 
-                    <?php if ($_product->getShortDescription()):?>
-                        <div class="short-description std">
-                            <?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
-                        </div>
-                    <?php endif;?>
+						<?php echo $this->getChildHtml('product_type_data') ?>
+					</div>
+					<?php echo ($_product->getCanShowPrice() === false) ? '' : $this->getChildHtml('tierprices'); ?>
+					<?php echo $this->getChildHtml('extrahint') ?>
 
-                    <?php echo $this->getChildHtml('product_type_data') ?>
-                </div>
-                <?php echo ($_product->getCanShowPrice() === false) ? '' : $this->getChildHtml('tierprices'); ?>
-                <?php echo $this->getChildHtml('extrahint') ?>
+					<?php if (!$this->hasOptions()):?>
+						<div class="add-to-box">
+							<?php if($_product->isSaleable()): ?>
+								<?php echo $this->getChildHtml('addtocart') ?>
+							<?php endif; ?>
+							<?php echo $this->getChildHtml('addto') ?>
+						</div>
+					<?php else:?>
+						<?php if ($_product->isSaleable() && $this->hasOptions() && $this->getChildChildHtml('container1') ):?>
+							<div class="options-container-small">
+								<?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+							</div>
+						<?php else: ?>
+							<?php echo $this->getChildHtml('addto') ?>
+						<?php endif;?>
+					<?php endif; ?>
 
-                <?php if (!$this->hasOptions()):?>
-                    <div class="add-to-box">
-                        <?php if($_product->isSaleable()): ?>
-                            <?php echo $this->getChildHtml('addtocart') ?>
-                        <?php endif; ?>
-                        <?php echo $this->getChildHtml('addto') ?>
-                    </div>
-                <?php else:?>
-                    <?php if ($_product->isSaleable() && $this->hasOptions() && $this->getChildChildHtml('container1') ):?>
-                        <div class="options-container-small">
-                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                        </div>
-                    <?php else: ?>
-                        <?php echo $this->getChildHtml('addto') ?>
-                    <?php endif;?>
-                <?php endif; ?>
+					<?php if ($_product->isSaleable() && $this->hasOptions() && $this->getChildChildHtml('container2') ):?>
+						<div class="options-container-big">
+							<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+						</div>
+					<?php endif;?>
+					<?php echo $this->getChildHtml('other');?>
+				</div> -->
 
-                <?php if ($_product->isSaleable() && $this->hasOptions() && $this->getChildChildHtml('container2') ):?>
-                    <div class="options-container-big">
-                        <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-                    </div>
-                <?php endif;?>
-                <?php echo $this->getChildHtml('other');?>
-            </div>
-
-        </div>
-        <div class="clearfix">&nbsp;</div>
-        <div>
-            <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
-                <dl id="collateral-tabs" class="collateral-tabs">
-                <?php foreach ($detailedInfoGroup as $alias => $html):?>
-                    <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
-                    <dd class="tab-container">
-                       <div class="tab-content"><?php echo $html ?></div>
-                    </dd>
-                <?php endforeach;?>
-                </dl>
-                <script type="text/javascript">
-                //<![CDATA[
-                    var collateralTabs = new Enterprise.Tabs('collateral-tabs');
-                    Event.observe(window, 'load', function() {
-                        collateralTabs.select();
-                    });
-                //]]>
-                </script>
-            <?php endif; ?>
-        </div>
-        <div class="clearfix">&nbsp;</div>
-        
-    </form>
-        <?php echo $this->getChildHtml('relatedProducts') ?>
-        <?php echo $this->getChildHtml('upsell_products') ?>
-        <?php echo $this->getChildHtml('productTagList') ?>
-        <?php echo $this->getChildHtml('product_additional_data') ?>
+			</div>
+			<div class="clearfix">&nbsp;</div>
+			<div>
+				<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+					<dl id="collateral-tabs" class="collateral-tabs">
+					<?php foreach ($detailedInfoGroup as $alias => $html):?>
+						<dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+						<dd class="tab-container">
+						   <div class="tab-content"><?php echo $html ?></div>
+						</dd>
+					<?php endforeach;?>
+					</dl>
+					<!--<script type="text/javascript">
+					//<![CDATA[
+						var collateralTabs = new Enterprise.Tabs('collateral-tabs');
+						Event.observe(window, 'load', function() {
+							collateralTabs.select();
+						});
+					//]]>
+					</script>-->
+				<?php endif; ?>
+			</div>
+			<div class="clearfix">&nbsp;</div>
+			
+		</form>
+			<?php echo $this->getChildHtml('relatedProducts') ?>
+			<?php echo $this->getChildHtml('upsell_products') ?>
+			<?php echo $this->getChildHtml('productTagList') ?>
+			<?php echo $this->getChildHtml('product_additional_data') ?>
+	</div>
 </div>
-
 <script type="text/javascript">
 //<![CDATA[
     var productAddToCartForm = new VarienForm('product_addtocart_form');

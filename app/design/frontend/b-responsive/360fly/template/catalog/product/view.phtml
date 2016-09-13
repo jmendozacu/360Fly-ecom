@@ -50,7 +50,7 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 product-main">
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                <div class="product-description">
+					<div class="product-description">
                     <p class="product-ids"><?php echo $this->__('SKU# %s', $this->escapeHtml($_product->getSku())); ?></p>
                     <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
                     <?php echo $this->getChildHtml('alert_urls') ?>
