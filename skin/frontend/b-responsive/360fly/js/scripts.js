@@ -1,3 +1,4 @@
+jQuery.noConflict();
 jQuery(document).ready(function(a) {
 	
    /*NAVIGATION MENU ANIMATION START*/

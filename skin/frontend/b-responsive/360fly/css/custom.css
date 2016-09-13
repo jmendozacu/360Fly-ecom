@@ -164,7 +164,7 @@ small {font-size: 60%;line-height: inherit;}
 .right-content .background-image-holder{background-image: url('../images/apps/app-page-director.jpg');background-size: cover;height:43vw;background-position: center;background-repeat: no-repeat;}
 .image-square.right-content .img-right{float:right;padding:0;}
 .download-section{margin:0;padding:0;margin-left:8px;}
-.download-section li{padding: 0 10px 20px;overflow: hidden;display: table;list-style: none;}
+.download-section li{padding: 0 10px 20px;overflow: hidden;display: table;list-style: none;width: 210px;}
 .download-section li .btn-custom{font-size:16px;width: 100%;font-weight: 600;padding: 16px 16px;margin: 0 0 20px;line-height:normal;}
 
 /* 360 Android and iOS apps section end */
