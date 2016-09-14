@@ -77,8 +77,8 @@
 
     <customer_logged_out>
         <reference name="account.links">
-            <action method="addLink" translate="label title" module="customer"><label>Login</label><url helper="customer/getLoginUrl"/><title>Login</title><prepare/><urlParams/><position>10</position><liParams/><aParams>class="link-account"</aParams></action>
-            <action method="addLink" translate="label title" module="customer"><label>Register</label><url helper="customer/getRegisterUrl"/><title>Register</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="link-register"</aParams></action>
+            <action method="addLink" translate="label title" module="customer"><label>Signup</label><url helper="customer/getRegisterUrl"/><title>Register</title><prepare/><urlParams/><position>10</position><liParams/><aParams>class="link-register"</aParams></action>
+            <action method="addLink" translate="label title" module="customer"><label>Login</label><url helper="customer/getLoginUrl"/><title>Login</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="link-account"</aParams></action>
         </reference>
     </customer_logged_out>
 	

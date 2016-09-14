@@ -113,7 +113,9 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
 .community-btn ul{border-radius:0px;}
 .community-content-left{float:left;padding:0 6px 6px 0px;margin:0;}
 .community-content-right{float:right;padding:0 0 6px 6px;margin:0;}
-.community-first-dd a {color: #ffffff;font-weight:bold;}
+.community-first-dd a.dropdown-toggle2{color: #ffffff;}
+.community-first-dd a.dropdown-toggle2:active{color: #ffffff;}
+.community-first-dd a.dropdown-toggle2:focus{color: #ffffff;}
 .nav .community-first-dd.open > a, .nav .community-first-dd.open > a:hover, .nav .community-first-dd.open > a:focus{background-color: transparent;text-align:left;color:#fff;}
 .nav>li.community-first-dd>a:hover{color: #ffffff;font-weight:bold;}
 /*Community Page Ends*/
