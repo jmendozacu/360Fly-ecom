@@ -51,20 +51,20 @@
             <div class="col-xs-12 col-sm-6 col-md-6 product-main">
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
 					<div class="product-description">
-                    <p class="product-ids"><?php echo $this->__('SKU# %s', $this->escapeHtml($_product->getSku())); ?></p>
-                    <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
-                    <?php echo $this->getChildHtml('alert_urls') ?>
+						<p class="product-ids"><?php echo $this->__('SKU# %s', $this->escapeHtml($_product->getSku())); ?></p>
+						<?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+						<?php echo $this->getChildHtml('alert_urls') ?>
 
-                    <?php if ($_product->getShortDescription()):?>
-                        <div class="short-description std">
-                            <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                        </div>
-                    <?php endif;?>
-					<div class="camera-compatibility">
-						<span>Camera Compatibility: </span><img src="images/compatibility/hd.png">
+						<?php if ($_product->getShortDescription()):?>
+							<div class="short-description std">
+								<?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+							</div>
+						<?php endif;?>
+						<div class="camera-compatibility">
+							<span>Camera Compatibility: </span><img src="images/compatibility/hd.png">
+						</div>
+						<?php echo $this->getChildHtml('product_type_data') ?>
 					</div>
-                    <?php echo $this->getChildHtml('product_type_data') ?>
-                </div>
                 <?php echo ($_product->getCanShowPrice() === false) ? '' : $this->getChildHtml('tierprices'); ?>
                 <?php echo $this->getChildHtml('extrahint') ?>
                 <?php if (!$this->hasOptions()):?>

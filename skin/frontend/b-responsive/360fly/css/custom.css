@@ -348,11 +348,26 @@ input.qty{width:100px !important;}
 
 /* Product Desc Page Same as landing Page Start */
 
-.category-cameras .landing-img{width: 155%;position: relative;top: -30px;right: 40%;}
+.category-cameras .landing-img{width: 155%;position: relative;top: 0px;right: 40%;}
 .category-cameras .short-description.std{padding-top: 130px;text-align: right;}
 .category-cameras h3{font-size: 26px;color: #000;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;
     font-weight: 500;margin:3px 0 8px;}
-.category-cameras p{font-size: 20px;line-height: 1.2;color: #333;font-family: FlySans-,Helvetica,Arial,sans-serif;}
+.category-cameras .camera-info p{font-size: 20px;line-height: 1.2;color: #333;font-family: FlySans-,Helvetica,Arial,sans-serif;}
 .category-cameras .camera-info{text-align: right;}
 #landing-cart:hover, #landing-cart-btn:hover{background-color: #60981a;color: #fff;border: 2px solid #60981a;}
+.graybg{background-color:#333333;}
+.landing-page-content,.landing-page-content h2,.landing-page-content li,.landing-page-content p,.landing-page-content ul{color:#fff;}
+.landing-page-content h2{margin:100px 0 20px;}
+.category-cameras .landing-header {background-image: url("../images/camera-details/facet-camera-header.jpg");background-size: cover;background-repeat: no-repeat;display: block;}
+.category-cameras .landing-hand{background-image: url(../images/camera-details/facets-camera-dark.jpg);padding-top: 60px;padding-bottom: 50px;
+    background-size: cover;background-repeat: no-repeat;}
+.category-cameras .landing-camera-layer{padding-bottom:170px;}
+.category-cameras .hand-holding-camera{position: relative;z-index: 2;top: -385px;width: 930px;}
+.category-cameras .hand-holding-camera img{width: 100%;position: absolute;}
+.tech-specs .no-padding {padding-left: 0;padding-right: 5px;}
+.tech-specs{font-weight: 400;font-style: normal;color: #fff!important;padding-top: 10px;margin-top: 10px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;}
+.landing-page-content p{color: #bcbec0;font-size: 14px;margin-bottom: 5px;line-height:1.6;}
+.landing-page-content .table-heading {font-size: 14px;margin-bottom: 5px;font-weight: 400;font-style: normal;color: #fff;padding-top: 10px;margin-top: 10px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;line-height: 1.6;}
+.landing-page-content .no-padding h4{font-size: 26px;margin: 3px 0 8px;color: #fff;}
+.x-hidden{overflow-x: hidden;}
 /* Product Desc Page Same as landing Page End */

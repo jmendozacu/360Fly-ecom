@@ -95,7 +95,7 @@
 	.pre-footer p{max-width:100%;margin:2.1875rem 0;}
 	.pre-footer{text-align: justify;}
 	.pre-footer h3{margin-top: 1.5rem;}
-	.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header,.customer-account-login .header,.customer-account-create .header,.customer-account-index .header, body div.wrapper .header {height: calc(95px + 5px);}
+	.cms-index-index .header, .cms-page-view .header, .catalog-category-view .header,.customer-account-login .header,.customer-account-create .header,.customer-account-index .header,.catalog-product-view .header, body div.wrapper .header {height: calc(95px + 5px);}
 	.header+.body-wrapper {padding-top: 0px;}
 	/* Home Page Hand */
 	.cms-index-index .pov-mobile img{display: inline-block;max-width: 100%;height:auto;}
@@ -105,6 +105,11 @@
 	/* Sign Up Page After logged in */
 	.module_navigation,.my-account{width: 100%;}
 	.dashboard .welcome-msg{margin:0;padding: 10px;}
+	/* Product Desc Page Same as landing Page Start */
+	.category-cameras .landing-img{width:100%;right:0;}
+	.category-cameras .short-description.std{padding-top:0;}
+	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
+	/* Product Desc Page Same as landing Page End */
 
 }
 
@@ -121,6 +126,9 @@
 	.header #navbar3 ul li a{padding: 0px 12px;margin: 14px 0;border-right: 1px solid #999;}
 	/* About us*/
 	.about-contain{margin-left:15px;}
+	/* Product Desc Page Same as landing Page Start */
+	.category-cameras .landing-img{top:120px;}
+	/* Product Desc Page Same as landing Page End */
 }
 
 /********************************************************************************************************************/
@@ -133,6 +141,9 @@
 /********************************************************************************************************************/
 @media screen and (min-width: 992px) and (max-width:1199px){
 	/*.app-content{padding:25px 40px 0;}*/
+	/* Product Desc Page Same as landing Page Start */
+	.category-cameras .hand-holding-camera{right: -250px;}
+	/* Product Desc Page Same as landing Page End */
 }
 
 /********************************************************************************************************************/
@@ -144,7 +155,9 @@
 
 /********************************************************************************************************************/
 @media screen and (min-width:1200px){
-	
+	/* Product Desc Page Same as landing Page Start */
+	.category-cameras .hand-holding-camera{right: -100px;}
+	/* Product Desc Page Same as landing Page End */
 }
 
 /********************************************************************************************************************/
@@ -210,6 +223,9 @@
 .product-block p {max-width: none;}
 .cannondale .bio-right{width:100%;min-height:300px;}
 .cannondale .bio-right{background-position: 0% 0%;}
+/* Product Desc Page Same as landing Page Start */
+	.category-cameras .hand-holding-camera{display: none;}
+/* Product Desc Page Same as landing Page End */
 }
 
 /********************************************************************************************************************/

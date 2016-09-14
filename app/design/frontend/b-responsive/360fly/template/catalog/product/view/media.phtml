@@ -36,32 +36,25 @@
 ?>
 
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
-<!-- media for view-landing.html start-->
 <div class="">
-	<img src="<?php echo $this->getGalleryImages()->getFirstItem()->url; ?>" class="landing-img"/>
-</div>
-<!-- media for view-landing.html End-->
-<!-- media for view.html Start-->
-<!-- <div class="">
 	<div id="main" role="main">
 		<section class="slider">
 			<div class="flexslider">
 				<ul class="slides">
-				 <?php //foreach ($this->getGalleryImages() as $_image): ?>
-					<?php //$imagepath =  $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile());?>
-					<li data-thumb="<?php //echo $imagepath; ?>">	
-						<img src="<?php //echo $imagepath; ?>" />
+				 <?php foreach ($this->getGalleryImages() as $_image): ?>
+					<?php $imagepath =  $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile());?>
+					<li data-thumb="<?php echo $imagepath; ?>">	
+						<img src="<?php echo $imagepath; ?>" />
 					</li>
-				 <?php //endforeach; ?>
+				 <?php endforeach; ?>
 				</ul>
 			</div>
 		</section>
 	</div>
-</div> -->
-<!-- media for view.html Start-->
+</div>
 <script>
-	$(window).load(function(){
-      $('.flexslider').flexslider({
+	jQuery(window).load(function(){
+      jQuery('.flexslider').flexslider({
         animation: "slide",
         controlNav: "thumbnails",
         itemMargin: 5,
