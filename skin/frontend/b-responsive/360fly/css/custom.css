@@ -166,7 +166,7 @@ small {font-size: 60%;line-height: inherit;}
 .download-section{margin:0;padding:0;margin-left:8px;}
 .download-section li{padding: 0 10px 20px;overflow: hidden;display: table;list-style: none;width: 210px;}
 .download-section li .btn-custom{font-size:16px;width: 100%;font-weight: 600;padding: 16px 16px;margin: 0 0 20px;line-height:normal;}
-
+a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-serif;}
 /* 360 Android and iOS apps section end */
 /*----------------------------------------------------------------------------------------------------------------*/
 /* Apps Page End */
