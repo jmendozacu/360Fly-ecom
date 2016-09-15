@@ -44,24 +44,8 @@
 	div.ta-container{padding-top:650px;background-position:75% center;padding-bottom:30px;background:url('../images/athletes/Athlete_Terry_mobile_sm.jpg');background-position: center center;background-size: cover; }
 	div.matt-container{padding-top:650px;background-position:75% center;padding-bottom:30px;background:url('../images/athletes/Athlete_Matt_mobile.jpg');background-position: center center;background-size: cover; }
 	div.todd-container {padding-top: 650px;padding-bottom: 30px;background: url('../images/athletes/Athlete_Todd_mobile.jpg');background-position: center right;background-size: cover;}
-	div.sunny-container {
-    background: url('../images/athletes/Athlete_Sunny_Garcia-mobile.jpg') no-repeat;
-    background-size: cover;
-    height: 0px;
-    padding-top: 650px;
-	padding-bottom: 30px;
-    position: relative;
-	background-position: center right;
-	}
-	div.pro-container {
-    background: url('../images/athletes/Athlete_Pro_circuit_mobile.jpg') no-repeat;
-    background-size: cover;
-    height: 0px;
-    padding-top: 650px;
-	padding-bottom: 30px;
-    position: relative;
-	background-position: center right;
-	}
+	div.sunny-container{background:url('../images/athletes/Athlete_Sunny_Garcia-mobile.jpg') no-repeat;background-size:cover;height:0px;padding-top:650px;padding-bottom:30px;position:relative;background-position:center right;}
+	div.pro-container{background:url('../images/athletes/Athlete_Pro_circuit_mobile.jpg') no-repeat;background-size:cover;height:0px;padding-top:650px;padding-bottom:30px;position:relative;background-position:center right;}
 	div.kalani-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/Athlete_Kalani_mobile.jpg');background-position: center right;background-size: cover; }
 	div.jorge-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/athlete_jorge_header_mobile.jpg');background-position: center right;background-size: cover; }
 	.ta-container .extreme-headline{margin-top:20px;}
@@ -110,7 +94,14 @@
 	.category-cameras .short-description.std{padding-top:0;}
 	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
 	/* Product Desc Page Same as landing Page End */
-
+	/*app page */
+	a#macosx,a#windows{min-width:160px;}
+	/* Director Page */
+	.director-page .download-section li {width: 100%;}
+	/* Australia Page*/
+	.cms-australia .video-overlay h1{font-size: 45px;}
+    .cms-australia .video-overlay .au-r1-container p{font-size: 22px;}
+    .cms-australia .cta-buttons .btn.btn-shop, .cms-australia .cta-buttons .btn.btn-custom{margin-bottom: 15px;}
 }
 
 /********************************************************************************************************************/
@@ -282,4 +273,16 @@
 }
 
 
+/********************************************************************************************************************/
+
+/*
+	Custom Viewport for 300-400 resolution
+	
+	Ideally this should be used, unless necessary
+*/
+
+/*Australia page */
+@media screen and (min-width: 300px) and (max-width: 400px){
+    body.cms-au .cms-australia .video-overlay .au-r1-container{top: 6%;}
+}
 /********************************************************************************************************************/
