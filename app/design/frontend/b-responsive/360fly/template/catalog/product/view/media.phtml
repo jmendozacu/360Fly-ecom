@@ -33,6 +33,7 @@
 <?php
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
+	$productTitle = $_helper->productAttribute($_product, $_product->getName(), 'name');
 ?>
 
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
@@ -44,7 +45,7 @@
 				 <?php foreach ($this->getGalleryImages() as $_image): ?>
 					<?php $imagepath =  $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile());?>
 					<li data-thumb="<?php echo $imagepath; ?>">	
-						<img src="<?php echo $imagepath; ?>" />
+						<img src="<?php echo $imagepath; ?>" alt="<?php echo $productTitle;?>" title="<?php echo $productTitle;?>"/>
 					</li>
 				 <?php endforeach; ?>
 				</ul>
@@ -55,10 +56,13 @@
 <script>
 	jQuery(window).load(function(){
       jQuery('.flexslider').flexslider({
-        animation: "slide",
-        controlNav: "thumbnails",
-        itemMargin: 5,
-		directionNav: false
+		animation: "slide",
+		controlNav: "thumbnails",
+		itemMargin: 0,
+		easing: "swing",
+	  	touch: "true",
+	  	slideshow: "true",
+		directionNav: true
       });
     });
 </script>

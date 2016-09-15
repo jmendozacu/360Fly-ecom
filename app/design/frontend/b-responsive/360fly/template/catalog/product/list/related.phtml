@@ -1,0 +1,86 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+
+?>
+<?php if($this->getItems()->getSize()): ?>
+<div class=" product-promotion block-related wrapper-width">
+    <div class="">
+        <div class="abs related-icon"><img   src="<?php echo $mediaUrl;?>wysiwyg/productview/quik-twist-logo-shadow.png" /> </div>
+        <h2>GO ANYWHERE. MOUNT EVERYWHERE.</h2>
+        <div class="col-sm-10 col-sm-offset-1 product-slider ">
+            <?php foreach($this->getItems() as $_item): ?>
+            <div>
+                <article class="product_pod">
+                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(280);?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="thumbnail"></a>
+
+                    <div class="product_price clearfix">
+                        <p class="product-title"><a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></p>
+
+                        <a href="<?php echo $_item->getProductUrl() ?>" class="btn btn-custom">MORE INFO</a>
+                    </div>
+                </article>
+            </div>
+            <?php endforeach;?>
+        </div>
+    </div>
+</div>
+    <script type="application/javascript">
+        jQuery(document).ready(function($) {
+
+            $('.product-slider').slick({
+                centerMode: true,
+                centerPadding: '0px',
+                slidesToShow: 3,
+                prevArrow: '<i class="slick-prev left fa fa-angle-left abs"></i>',
+                nextArrow: '<i class="slick-next right fa fa-angle-right abs"></i>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            //arrows: true,
+                            //centerMode: true,
+                            //centerPadding: '0px',
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            //arrows: true,
+                            //centerMode: true,
+                            //centerPadding: '0px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+<?php endif ?>

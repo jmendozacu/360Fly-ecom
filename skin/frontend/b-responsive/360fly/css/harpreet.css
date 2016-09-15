@@ -2,11 +2,12 @@
 	Harpreet Singh
 */
 /*MISC CLASSES STARTS*/
-.btn.btn-custom, .btn.btn-shop {width: auto;padding: 6px 35px;margin:10px;}
+.btn.btn-custom, .btn.btn-shop , .btn.btn-custom-inverse {width: auto;padding: 6px 35px;margin:10px;}
 .btn.btn-custom{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: #78be20;color: #fff;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
 .btn.btn-shop{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
 .btn-custom:hover{background: #60981a;border-color: #60981a;}
 .btn-shop:hover {background-color: #78be20;color: #fff;}
+.btn.btn-custom-inverse{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: #fff;color: #78be20;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;text-transform: uppercase;}
 .m0p0{margin:0;padding:0;}
 iframe{border:none;}
 .plr15{padding:0 15px;}
@@ -16,7 +17,7 @@ iframe{border:none;}
 .displaynone, .no-display{display:none;}
 .category-title{display:none;}
 .abs{position:absolute;}
-.wrapper-width{max-width:1000px; width:100%;margin:0 auto;}
+.wrapper-width{max-width:1000px; width:100%;margin:0 auto;position: relative;}
 .h95px{height:95px;}
 .h36px{height:36px;}
 .h5px{height:5px;}
@@ -101,7 +102,7 @@ iframe{border:none;}
 /*Australia Landing Page Ends*/
 
 /*Community Page Starts*/
-.community-btn{max-width: 250px;width: auto;position: absolute;top:95px;z-index:3;padding-left:50px;}
+.community-btn{max-width: 250px;width: auto;position: absolute;top:-36px;z-index:3;padding-left:50px;}
 .community-btn .community-first-dd {height: 36px;line-height: 100%;color: #fff;}
 .community-btn .community-first-dd a{height: 100%;color: #fff;font-size:14px;}
 .community-btn .community-first-dd a:hover{font-weight:bold;color: #fff;}
@@ -137,3 +138,44 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
     text-transform: uppercase;}
 .header li.header-xs-account-links .links li.first a{border-right:none;margin:0;}
 .header li.header-xs-account-links .links li{width:100%;}
+
+/*-------------Camera Custom Product View----------------*/
+.camera-view-template .add-to-cart label, .camera-view-template .add-to-cart .qty{display:none;}
+.camera-info .add-to-box{float:right;margin:0;}
+.camera-info .add-to-box .btn.btn-custom{margin-right:0;margin-left:0;}
+.camera-view-apps-block .pre-footer{background:#dfdfdf;}
+.camera-view-apps-block .pre-footer h2{color: #78be20;font-size: 36px;line-height: 1;text-transform: uppercase;margin-bottom: 0;}
+.camera-view-apps-block .pre-footer h3{color: #666;font-size: 25px;margin-top: 5px;font-family: "FlySans-Medium", Arial, sans-serif;}
+.camera-view-apps-block .pre-footer p{color: #333;font-family: "FlySans-", Arial, sans-serif;max-width:95%;}
+.product-specifications{padding-bottom:80px;}
+.product-specifications h2{margin-top: 100px;margin-bottom: 20px;    color: #fff;font-family: FlySans-Light,Helvetica,Arial,sans-serif;font-size:38px;}
+.product-specifications p.table-heading{color:#fff;font-family: "FlySans-Medium", Helvetica, Arial, sans-serif;}
+.product-specifications p{font-family: "FlySans-Light", Arial, sans-serif;color:#bcbec0;}
+.product-specifications h4{font-size:26px;color:#fff;margin-bottom:20px;}
+.product-media-desc-row{margin-top:200px;color:#666;}
+.flex-control-thumbs li{width:20%;}
+.product-media-desc-row .product-col-right .regular-price .price{color: #78be20;font-size: 32px;font-family: FlySans-,Helvetica,Arial,sans-serif;font-weight: 400;margin-left: 20px;margin-bottom: 20px;clear: both;float: none;}
+.product-media-desc-row .product-col-right .add-to-box{display: inline-block;float: left;}
+.product-media-desc-row .product-col-right .btn.btn-custom-inverse{display: inline-block;float: left;margin-top:20px;}
+.product-media-desc-row .product_description ul{list-style: none;margin-bottom: 0;}
+.product-media-desc-row .product_description ul li{font-size: 20px;margin-bottom: 25px;color: #666;}
+.product-media-desc-row .product_description ul li:before{content: "";background-color: #78be20;position: absolute;margin-left: -20px;width: 6px;height: 6px;font-size: 20px;border-radius: 100px;margin-top: 12px;}
+.product-media-desc-row .product_description p{color: #333;font-size:20px;}
+.product-media-desc-row .product_description h3{color: #78be20;font-size: 36px;margin-top: 30px;margin-bottom: 10px;}
+.block-related .abs.related-icon{top: -40px;left: 50px;}
+.block-related.product-promotion h2{font-family: FlySans-SemiBold,Arial,sans-serif;}
+
+/*-------------For MediaQueries.css file-----------*/
+@media screen and (min-width: 1200px){
+    .camera-view-apps-block .pre-footer .app-img img{transform: scale(1.25);}
+}
+@media screen and (max-width: 767px){
+    .category-cameras .landing-img{position: relative;transform: scale(1.1);}
+    .category-cameras .camera-info{margin-top:50px;}
+    .camera-info .add-to-box{float:left;}
+    .category-cameras .landing-camera-layer{padding-bottom:50px;}
+    .category-cameras .camera-hero-img{padding-bottom:50px;}
+}
+@media screen and (max-width: 991px) and (min-width: 768px){
+    .category-cameras .landing-img {top: 50px!important;}
+}

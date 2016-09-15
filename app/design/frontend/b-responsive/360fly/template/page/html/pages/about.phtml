@@ -5,16 +5,23 @@
 * @package Mage_Page
 * @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
 */
-
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
 ?>
-
+<div class="wrapper-width">
+	<?php echo $this->getLayout()->createBlock('core/template')
+				->setTemplate('page/html/pages/about-submenu.phtml')
+				->toHtml();
+	?>
+</div>
 <div class="main-container">
 	<div class="about_img">
 		<div class= "col-sm-12 about_img_text">
 			<h1>About 360fly</h1>
 		</div>
 	</div>
-	<div class="container about-contain">
+	<div class="container about-contain" id="overView">
 		
 			<div class="col-sm-9 col-md-9 col-lg-8 no-gutter">   
 				<h2>About Us</h2>
@@ -25,7 +32,7 @@
 			</div>
 		
 	</div>
-	<div class="container about-contain">
+	<div class="container about-contain" id="ourHistory">
 		
 			<div class="col-sm-9 col-md-9 col-lg-8 no-gutter">   
 				<h2>Our History</h2>
@@ -36,7 +43,7 @@
 			</div>
 		
 	</div>
-	<div class="container about-contain career-section">
+	<div class="container about-contain career-section" id="careersSection">
 		
 			<div class="col-sm-9 col-md-9 col-lg-8 no-gutter">   
 				<h2>Careers</h2>

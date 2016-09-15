@@ -348,8 +348,9 @@ input.qty{width:100px !important;}
 
 /* Product Desc Page Same as landing Page Start */
 
-.category-cameras .landing-img{width: 155%;position: relative;top: 0px;right: 40%;}
-.category-cameras .short-description.std{padding-top: 130px;text-align: right;}
+.category-cameras .landing-img{width: 100%;position: absolute;top: 30px;right: -35px;transform: scale(1.65);}
+.category-cameras .camera-4k .landing-img{top: 220px;right: 10px;}
+.category-cameras .short-description.std{padding-top: 250px;text-align: right;}
 .category-cameras h3{font-size: 26px;color: #000;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;
     font-weight: 500;margin:3px 0 8px;}
 .category-cameras .camera-info p{font-size: 20px;line-height: 1.2;color: #333;font-family: FlySans-,Helvetica,Arial,sans-serif;}
@@ -371,3 +372,10 @@ input.qty{width:100px !important;}
 .landing-page-content .no-padding h4{font-size: 26px;margin: 3px 0 8px;color: #fff;}
 .x-hidden{overflow-x: hidden;}
 /* Product Desc Page Same as landing Page End */
+
+/* About us Sub menu Navbar Start */
+.cms-page-nav.sub-nav-bar {color: #fff;clear: both;float: none;height: 36px;z-index: 3;top:-36px;left:20px;display: block;position: absolute;}
+.cms-page-nav .sub-nav{margin: 0;padding: 0;display: block;height:100%;}
+.cms-page-nav .sub-nav li {display: inline-block;height:100%;}
+.cms-page-nav .sub-nav li a {font-size: 14px;height:100%;line-height:36px;width: 70px; display: inline-block;text-align: center;;font-family: "FlySans-", Arial, sans-serif;cursor: pointer;}
+/* About us Sub menu Navbar End */
