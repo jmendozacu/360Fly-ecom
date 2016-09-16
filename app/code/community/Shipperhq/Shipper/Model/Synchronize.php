@@ -87,8 +87,9 @@ class Shipperhq_Shipper_Model_Synchronize extends Mage_Core_Model_Abstract
         return $result;
     }
 
-    public function checkSynchStatus()
+    public function checkSynchStatus($saveTime = false)
     {
+        $result = false;
         if(Mage::getStoreConfig('carriers/shipper/active')) {
 
             $synchCheckUrl = Mage::helper('shipperhq_shipper')->getCheckSynchronizedUrl();
@@ -120,10 +121,15 @@ class Shipperhq_Shipper_Model_Synchronize extends Mage_Core_Model_Abstract
                 }
                 return false;
             }
-
-            $result = $synchResult->synchronized == 1 ? '1' : "Required";
-            return $result;
+            $currentVal = Mage::getStoreConfig(Shipperhq_Shipper_Helper_Data::SHIPPERHQ_LAST_SYNC);
+            $latestSync = $synchResult->lastSynchronization;
+            $result = $latestSync == $currentVal ? '1' : "Required";
+            if($saveTime) {
+                Mage::helper('shipperhq_shipper')->saveConfig(Shipperhq_Shipper_Helper_Data::SHIPPERHQ_LAST_SYNC, $latestSync, 'default', 0, false);
+            }
         }
+        return $result;
+
     }
 
     /**
@@ -259,10 +265,10 @@ class Shipperhq_Shipper_Model_Synchronize extends Mage_Core_Model_Abstract
                         $storeId = '';
                             //AUTO_REMOVE_ATTRIBUTE_OPTION
                         foreach($trackValues as $key => $option) {
-                            $numberAssigned = Mage::helper('shipperhq_shipper')->getProductsWithAttributeValue(
-                                $attribute->code,  $option['value'], $storeId, true, true);
+                            $isAssigned = Mage::helper('shipperhq_shipper')->getIsAttributeValueUsed(
+                                $attribute->code,  $option['value'], true);
                             $deleteFlag = self::AUTO_REMOVE_ATTRIBUTE_OPTION;
-                            if($numberAssigned > 0) {
+                            if($isAssigned) {
                                 $deleteFlag = self::REMOVE_ATTRIBUTE_OPTION;
                             }
 
@@ -344,6 +350,7 @@ class Shipperhq_Shipper_Model_Synchronize extends Mage_Core_Model_Abstract
                 Mage::helper('wsalogger/log')->postDebug('Shipperhq_Shipper', 'Saving synch data',
                     'No attribute changes required, 0 rows saved');
             }
+            $this->checkSynchStatus(true);
             return $result;
         }
 
@@ -355,6 +362,7 @@ class Shipperhq_Shipper_Model_Synchronize extends Mage_Core_Model_Abstract
             $newUpdate->clearInstance();
             $result++;
         }
+
         return $result;
 
     }
@@ -417,15 +425,7 @@ class Shipperhq_Shipper_Model_Synchronize extends Mage_Core_Model_Abstract
 
 
         if ($result >= 0) {
-            $synchSetUrl = Mage::helper('shipperhq_shipper')->getSetSynchronizedUrl();
-            $timeout = Mage::helper('shipperhq_shipper')->getWebserviceTimeout();
-            $shipperMapper = $this->_getShipperMapper();
-            $request = $shipperMapper->getCredentialsTranslation();
-            $setSynchResult = $this->_getShipperInstance()->sendAndReceive($request, $synchSetUrl, $timeout);
-            if (Mage::helper('shipperhq_shipper')->isDebug()) {
-                Mage::helper('wsalogger/log')->postInfo('Shipperhq_Shipper', 'Setting synchronized status: ',
-                    $setSynchResult['result']);
-            }
+            $this->checkSynchStatus(true);
         }
       return $result;
     }

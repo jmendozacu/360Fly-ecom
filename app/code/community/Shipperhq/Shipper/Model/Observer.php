@@ -154,6 +154,11 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
         $quote = Mage::helper('shipperhq_shipper')->getQuote();
         $quoteStorage = Mage::helper('shipperhq_shipper')->getQuoteStorage($quote);
         $shipping = $quote->getShippingAddress();
+        if(Mage::helper('shipperhq_shipper')->isModuleEnabled('Shipperhq_Shipper', 'carriers/shipper/active')
+           && Mage::helper('shipperhq_shipper')->isModuleEnabled('Shipperhq_Splitrates')
+            && !$shipping->getIsCheckout()) {
+           $shipping->setCollectShippingRates(true);
+        } //SHQ16-1134
         $shipping->setIsCheckout(1);
         $billing = $quote->getBillingAddress();
         $billing->setIsCheckout(1);
@@ -161,11 +166,7 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
         $quoteStorage->setSelectedDeliveryArray(null);
         $quoteStorage->setPickupArray(null);
 
-        if(Mage::helper('shipperhq_shipper')->isModuleEnabled('Shipperhq_Shipper', 'carriers/shipper/active')
-            && Mage::helper('shipperhq_shipper')->isModuleEnabled('Shipperhq_Splitrates')) {
-           // Mage::getSingleton('checkout/session')->setCarriergroupSelected(null);
-            $shipping->setCollectShippingRates(true);
-        }
+
     }
 
     public function saveOrderAfter($observer)
@@ -182,15 +183,16 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
 
                 $shippingAddress = $quote->getShippingAddress();
                 $orderId = $order->getId();
-                $carrierGroupDetail = json_decode($shippingAddress->getCarriergroupShippingDetails());
+                $carrierGroupDetail = Mage::helper('shipperhq_shipper')->decodeShippingDetails(
+                    $shippingAddress->getCarriergroupShippingDetails());
                 if(is_array($carrierGroupDetail)){
-                    foreach($carrierGroupDetail as $carrier_group) {
-                        if(!isset($carrier_group->carrierGroupId)) {
+                    foreach($carrierGroupDetail as $carrierGroup) {
+                        if(!isset($carrierGroup['carrierGroupId'])) {
                             continue;
                         }
-                        $carrierGroupId = $carrier_group->carrierGroupId;
-                        $carrier_code = $carrier_group->carrier_code;
-                        $shippingMethodCode = $carrier_group->code;
+                        $carrierGroupId = $carrierGroup['carrierGroupId'];
+                        $carrier_code = $carrierGroup['carrier_code'];
+                        $shippingMethodCode = $carrierGroup['code'];
                         $packagesColl= Mage::getModel('shipperhq_shipper/quote_packages')
                             ->loadByCarrier($shippingAddress->getAddressId(), $carrierGroupId, $carrier_code. '_' .$shippingMethodCode);
                         if(count($packagesColl) < 1) {
@@ -210,17 +212,19 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
                                 ->setItems($box->getItems());
                             $package->save();
                         }
-                        if($recordOrderPackages && count($packagesColl) > 0)
-                        {
-                            $boxText = Mage::helper('shipperhq_shipper')->getPackageBreakdownText($packagesColl);
-                            $order->addStatusToHistory($order->getStatus(), $boxText, false);
-                        }
-                        $order->addStatusToHistory($order->getStatus(), 'ShipperHQ Transaction ID: ' .$carrier_group->transaction, false);
-                        $order->save();
 
+                        if (Mage::helper('shipperhq_shipper')->storeDimComments()) {
+                            if ($recordOrderPackages && count($packagesColl) > 0) {
+                                $boxText = Mage::helper('shipperhq_shipper')->getPackageBreakdownText($packagesColl, $carrierGroup['name']);
+                                $order->addStatusToHistory($order->getStatus(), $boxText, false);
+                            }
+                        }
+
+                        //SHIPPERHQ-1635
+                        $order->addStatusToHistory($order->getStatus(), 'ShipperHQ Transaction ID: ' . $carrierGroup['transaction'], false);
+                        $order->save();
                     }
-                }
-                else {
+                } else {
                     $shippingMethod = $order->getShippingMethod();
                     if($rate = $quote->getShippingAddress()->getShippingRateByCode($shippingMethod)) {
                         $packagesColl= Mage::getModel('shipperhq_shipper/quote_packages')
@@ -238,7 +242,8 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
                                 ->setItems($box->getItems());
                             $package->save();
                         }
-                        if($recordOrderPackages && count($packagesColl) > 0)
+                        if(Mage::helper('shipperhq_shipper')->storeDimComments() &&
+                            $recordOrderPackages && count($packagesColl) > 0)
                         {
                             $boxText = Mage::helper('shipperhq_shipper')->getPackageBreakdownText($packagesColl);
                             $order->addStatusToHistory($order->getStatus(), $boxText, false);
@@ -263,22 +268,23 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
             $post = $observer->getRequestModel()->getPost();
             if(isset($post['order'])) {
                 $data = $post['order'];
+
                 $found = false;
                 $customCarrierGroupData = array();
-
+                $carriergroupId = isset($data['carriergroup_id']) ? $data['carriergroup_id'] : '';
                 if (isset($data['shipping_amount'])) {
-                    $customCarrierGroupData[''] = array('customPrice' => $data['shipping_amount'], 'carriergroup' => '');
+                    $customCarrierGroupData[$carriergroupId]  = array('customPrice' => $data['shipping_amount'], 'carriergroup' => $carriergroupId);
                     $found = true;
                 }
 
                 if (isset($data['shipping_description'])) {
-                    if(array_key_exists('', $customCarrierGroupData)) {
-                        $shipArray = $customCarrierGroupData[''];
+                    if(array_key_exists($carriergroupId, $customCarrierGroupData)) {
+                        $shipArray = $customCarrierGroupData[$carriergroupId];
                         $shipArray['customCarrier'] = $data['shipping_description'];
-                        $customCarrierGroupData[''] = $shipArray;
+                        $customCarrierGroupData[$carriergroupId] = $shipArray;
                     }
                     else {
-                        $customCarrierGroupData[''] = array('customCarrier' => $data['shipping_description'],  'carriergroup' => '');
+                        $customCarrierGroupData[$carriergroupId]  = array('customCarrier' => $data['shipping_description'],  'carriergroup' => $carriergroupId);
                     }
                     $found = true;
                 }
@@ -320,7 +326,7 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
     {
         return Mage::getSingleton('checkout/session');
     }
-        
+
     public function setCurrentQuoteObjectInAdmin(Varien_Event_Observer $observer)
     {
         Mage::helper('shipperhq_shipper')->setQuote(
@@ -340,7 +346,7 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
         $request = $observer->getRequestModel();
         if ($request->getActionName() === 'save') {
             $orderData = $request->getPost('order');
-            
+
             if (isset($orderData['shipping_address'])) {
                 unset($orderData['shipping_address']);
             }
@@ -348,7 +354,7 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
             if (isset($orderData['billing_address'])) {
                 unset($orderData['billing_address']);
             }
-            
+
             if (isset($orderData['shipping_method'])) {
                 unset($orderData['shipping_method']);
             }
@@ -356,13 +362,13 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
             $request->setPost('order', $orderData);
             $request->setPost('shipping_as_billing', 0);
         }
-        
+
         Mage::helper('shipperhq_shipper')->setQuote($observer->getOrderCreateModel()->getQuote());
     }
 
     /**
      * Loads storage data for quote if it was not loaded
-     * 
+     *
      * @param Varien_Event_Observer $observer
      */
     public function onQuoteAfterLoad(Varien_Event_Observer $observer)
@@ -372,8 +378,8 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
     }
 
     /**
-     * Saves storage data if quote is saved 
-     * 
+     * Saves storage data if quote is saved
+     *
      * @param Varien_Event_Observer $observer
      * @return $this
      * @throws Exception
@@ -387,10 +393,10 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
     }
 
     /**
-     * Saves modified data objects on post dispatch, 
+     * Saves modified data objects on post dispatch,
      * if modifications has been done after quote has been saved
-     * 
-     * 
+     *
+     *
      */
     public function onPostDispatch()
     {
@@ -402,10 +408,10 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
             }
         }
     }
-    
+
     /**
      * Saves storage instance
-     * 
+     *
      * @param Shipperhq_Shipper_Model_Storage $storage
      * @return $this
      * @throws Exception
@@ -426,14 +432,14 @@ class Shipperhq_Shipper_Model_Observer extends Mage_Core_Model_Abstract
         if (!$storage->isValid(true)) {
             return $this;
         }
-        
+
         try {
             $storage->save();
         } catch (Exception $e) {
             Mage::logException($e);
             // Do not break quote save process
         }
-        
+
         return $this;
     }
 }
