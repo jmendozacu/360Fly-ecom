@@ -9,11 +9,14 @@ $baseUrl = $this->getBaseUrl();
 $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $skinUrl = $this->getSkinUrl();
 ?>
-<div class="wrapper-width">
-	<?php echo $this->getLayout()->createBlock('core/template')
-				->setTemplate('page/html/pages/about-submenu.phtml')
-				->toHtml();
-	?>
+<div class="wrapper-width po-rel">
+	<section class="sub-nav-bar row hidden-xs">
+		<ul class="sub-nav">
+			<li><a href="#overView">Overview</a></dd>
+			<li><a href="#ourHistory">History</a></dd>
+			<li><a href="#careersSection">Careers</a></dd>
+		</ul>
+	</section>
 </div>
 <div class="main-container">
 	<div class="about_img">

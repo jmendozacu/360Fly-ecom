@@ -24,7 +24,7 @@ a:hover, a:focus {color: #67a31c;}
 .footer-wrapper{max-width: 1170px;width:100%;padding:0 15px;}
 .footer-360 .social-icon{margin-right: -8px;margin-left: -8px;margin-top: 20px;margin-bottom: 8px;}
 .footer-360 .social-icon li{clear: both;float: none;display: inline-block;margin:0;}
-.footer-360 .social-icon li:last-child a{border: none;padding-left: 0px;}
+.footer-360 .social-icon li:last-child a{border: none;}
 .footer-360 .social-icon li a{border: none;font-size: 32px;color: #666666;padding: 0px 5px;}
 .footer-360 .social-icon li a:hover{text-decoration: none;color: #fff;}
 .athlete-social .icons-wrapper .social-links:hover,.footer-360 .social-icon li a:hover{text-decoration: none;color: #fff;}
@@ -174,7 +174,8 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /*----------------------------------------------------------------------------------------------------------------*/
 /* Shop 360 home page Start */
 
-.pageheader{padding-top: 50px;background-color: #fff;background-image: url('../images/facets-home-light.jpg');overflow: hidden;}
+.pageheader{padding-top: 50px;background-color: #fff;background-image: url('../images/facets-home-light.jpg');overflow: hidden;background-size: cover;
+    background-repeat: no-repeat;}
 .pageheader h1 {color: #78be20;font-size: 62px;line-height: 1;margin:3px 0 8px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
 .pageheader p{font-size:20px;margin-bottom: 20px;}
 .pageheader p b {font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;font-weight: 700;}
@@ -340,7 +341,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .std ul{padding-left:40px;color:#333;}
 .availability{display: none;}
 .price-box{margin:0;}
-.regular-price .price{font-weight: 700;color: #333;font-size: 26px;margin-bottom: 0;}
+.regular-price .price{font-weight: 700;margin-bottom: 0;color: #78be20 ;font-size: 32px;}
 .catalog-product-view .add-to-cart label{line-height:45px;margin-bottom: 0;margin-right: 10px;color:#333;}
 input.qty{width:100px !important;}
 
@@ -349,7 +350,7 @@ input.qty{width:100px !important;}
 /* Product Desc Page Same as landing Page Start */
 
 .category-cameras .landing-img{width: 100%;position: absolute;top: 30px;right: -35px;transform: scale(1.65);}
-.category-cameras .camera-4k .landing-img{top: 220px;right: 10px;}
+.category-cameras .camera-4k .landing-img{top: 220px;right: 110px;}
 .category-cameras .short-description.std{padding-top: 250px;text-align: right;}
 .category-cameras h3{font-size: 26px;color: #000;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;
     font-weight: 500;margin:3px 0 8px;}
@@ -374,8 +375,8 @@ input.qty{width:100px !important;}
 /* Product Desc Page Same as landing Page End */
 
 /* About us Sub menu Navbar Start */
-.cms-page-nav.sub-nav-bar {color: #fff;clear: both;float: none;height: 36px;z-index: 3;top:-36px;left:20px;display: block;position: absolute;}
-.cms-page-nav .sub-nav{margin: 0;padding: 0;display: block;height:100%;}
-.cms-page-nav .sub-nav li {display: inline-block;height:100%;}
-.cms-page-nav .sub-nav li a {font-size: 14px;height:100%;line-height:36px;width: 70px; display: inline-block;text-align: center;;font-family: "FlySans-", Arial, sans-serif;cursor: pointer;}
+.cms-about-360fly .sub-nav-bar {color: #fff;clear: both;float: none;height: 36px;z-index: 3;top:-36px;left:20px;display: block;position: absolute;}
+.cms-about-360fly .sub-nav{margin: 0;padding: 0;display: block;height:100%;}
+.cms-about-360fly .sub-nav li {display: inline-block;height:100%;text-align: center;}
+.cms-about-360fly .sub-nav li a {font-size: 14px;height:100%;line-height:36px;width: 80px; display: inline-block;text-align: center;;font-family: "FlySans-", Arial, sans-serif;cursor: pointer;}
 /* About us Sub menu Navbar End */
