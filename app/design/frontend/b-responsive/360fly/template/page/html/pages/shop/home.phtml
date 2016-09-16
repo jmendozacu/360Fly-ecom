@@ -10,6 +10,8 @@ $baseUrl = $this->getBaseUrl();
 $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $skinUrl = $this->getSkinUrl();
 
+$hdUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-hd')->getProductUrl();
+$fourkUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-4k')->getProductUrl();
 ?>
 
 <div class="pageheader home-shop">
@@ -22,8 +24,8 @@ $skinUrl = $this->getSkinUrl();
               <a href="<?php echo $baseUrl ?>cameras" class="btn btn-custom">Shop Cameras</a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 camera-layers hidden-xs hidden-sm ">
-                <a href="<?php echo $baseUrl ?>catalogue/360fly4K_3/" class="camera-4k-link"></a>
-                <a href="<?php echo $baseUrl ?>catalogue/360fly_1/" class="camera-hd-link"></a>
+                <a href="<?php echo $fourkUrl;?>" class="camera-4k-link"></a>
+                <a href="<?php echo $hdUrl;?>" class="camera-hd-link"></a>
             </div>
         </div>
       </div>

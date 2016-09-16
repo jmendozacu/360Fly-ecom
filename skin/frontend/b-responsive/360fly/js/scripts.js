@@ -1,5 +1,5 @@
-jQuery.noConflict();
 
+jQuery.noConflict();
 function adjustBioLeftWidth(){
     var wrap_width = jQuery('.wrapper-width').width();
     var bio_left_width = jQuery('.bio-container .bio-left .bio-left-child-x').width();
@@ -43,14 +43,25 @@ jQuery(document).ready(function(a) {
         }
     );
 
+    a(".menu1.is-shop-page-container").hover(
+        function() {
+            a(".submenu1.is-shop-page").css("display", "inline-flex");
+        },
+        function() {
+            a(".submenu1.is-shop-page").css("display", "inline-flex");
+        }
+    );
     a(".menu2").hover(
         function() {
             a(".submenu2").css("display", "inline-flex");
+            a(".submenu1.is-shop-page").css("display", "none");
         },
         function() {
             a(".submenu2").css("display", "none");
+            a(".submenu1.is-shop-page").css("display", "inline-flex");
         }
     );
+
     /*NAVIGATION MENU ANIMATION ENDS*/
     a( ".hamburger-menu .toggle-topbar" ).click(function() {
         if(a(this).hasClass('open-hbm')){

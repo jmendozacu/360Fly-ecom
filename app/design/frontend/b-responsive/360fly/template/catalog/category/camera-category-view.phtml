@@ -1,0 +1,414 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $baseUrl = $this->getBaseUrl();
+    $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+    $skinUrl = $this->getSkinUrl();
+    $hdUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-hd')->getProductUrl();
+    $fourkUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-4k')->getProductUrl();
+
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+    $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }
+?>
+<div class="compare-cameras  hidden-sm hidden-xs">
+    <div class="container wrapper-width-camera">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1>THE CAMERAS THAT MISS NOTHING.<br>
+                    <span>AND CHANGE EVERYTHING.</span></h1>
+                <div class="cameras-contain">
+                    <!-- put images of camers here  -->
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 no-padding text-center">
+                        <a href="<?php echo $fourkUrl; ?>">
+                            <img class="camera-4k-size img-responsive" src="<?php echo $skinUrl ?>images/shop-camera/4k-camera-compare.png" alt="4K Camera" title="4K Camera">
+                        </a>
+                        <a class="btn btn-shop" href="<?php echo $fourkUrl;?>">SHOP 4K</a>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 no-padding text-center">
+                        <a href="<?php echo $hdUrl ?>">
+                            <img src="<?php echo $skinUrl; ?>images/shop-camera/hd-camera-compare.png" alt="HD Camera" title="HD Camera" class="img-responsive">
+                        </a>
+                        <a class="btn btn-shop" href="<?php echo $hdUrl ?>">SHOP HD</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 spec-chart collapse" id="camera-chart">
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Depth: 61mm x Height: 59.5mm</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>size</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Depth: 61mm x Height: 59.5mm</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>172g</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>weight</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>138g</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>64 GB</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>capacity</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>32 GB</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>2880 x 2880 pixels</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>resolution</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>1504 x 1504 pixels</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Wi-Fi [802.11b/g/n], Bluetooth 4.0</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>connectivity</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Wi-Fi [802.11b/g/n], Bluetooth 4.0</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>50 Mbps</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>recording rate</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>20 Mbps</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>1.5 hours of video recording<br>14 hours standby</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>battery</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Up to 3 hours of video recording</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Stereo AAC 48KHz 96Kbps</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>audio format</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Mono AAC 48KHz 64Kbps</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>built-in dual omnidirectional</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>microphone</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>built-in</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>accelerometer, e-compass, non-assisted GPS, gyroscope</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>sensors</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>accelerometer</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>built-in li-polymer battery (1780mAh)</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>power source</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>built-in li-polymer battery (1630mAh)</p>
+                    </div>
+                </div>
+                <div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Approx. 2.5 hours with 1.5A charger</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p><b>charging time</b></p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        <p>Approx. 2.5 hours with 1A charger</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 button-contain">
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                    <p class="price_color">$499.99</p>
+                    <form id="add-to-basket-3" action="/basket/add/3/" method="post" class="add-to-basket">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0">
+                        <input id="id_quantity" name="quantity" type="hidden" value="1">
+                        <input type="hidden" name="action" value="cancel">
+                        <button id="add-to-basket-button-3" type="button" class="btn btn-primary btn-custom" onclick="compatibility(3, 'False')" data-loading-text="Adding...">Add to Cart</button>
+                    </form>
+                    <div id="compatibility-3" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog" aria-labelledby="compatibility-modal-label" aria-hidden="true">
+                        <div class="col-sm-12 col-md-6 model-content">
+                            <div class="modal-header">
+                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">×</button>
+                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-left">This product is incompatible with a product in your cart.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">Cancel</button>
+                                <button class="btn btn-primary" onclick="$('#add-to-basket-3').submit()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <p class="text-center spec-txt">VIEW MORE SPECS</p>
+                    <button class="expand btn center-block" data-toggle="collapse" data-target="#camera-chart" aria-expanded="false" aria-controls="camera-chart">
+                        <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
+                        <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
+                    </button>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                    <p class="price_color">$299.99</p>
+                    <form id="add-to-basket-1" action="/basket/add/1/" method="post" class="add-to-basket">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0">
+                        <input id="id_quantity" name="quantity" type="hidden" value="1">
+                        <input type="hidden" name="action" value="cancel">
+                        <button id="add-to-basket-button-1" type="button" class="btn btn-primary btn-custom" onclick="compatibility(1, 'False')" data-loading-text="Adding...">Add to Cart</button>
+                    </form>
+                    <div id="compatibility-1" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog" aria-labelledby="compatibility-modal-label" aria-hidden="true">
+                        <div class="col-sm-12 col-md-6 model-content">
+                            <div class="modal-header">
+                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">×</button>
+                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-left">This product is incompatible with a product in your cart.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">Cancel</button>
+                                <button class="btn btn-primary" onclick="$('#add-to-basket-1').submit()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="compare-cameras-mobile hidden-lg hidden-md">
+    <div class="container wrapper-width-camera">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <h1>THE CAMERAS THAT MISS NOTHING.<br/>
+                    <span>AND CHANGE EVERYTHING.</span></h1>
+            </div>
+            <div class="col-sm-12 col-xs-12 mobile-4k">
+                <img src="<?php echo $baseUrl ?>images/shop-camera/4k-camera-compare.png" class="center-block mobile-camera"/>
+                <a class="btn btn-shop center-block text-center" href="<?php echo $fourkUrl;?>">SHOP 4K</a>
+                <div class="mobile-chart camera-4k-spec col-sm-12 col-xs-12" id="camera4Kchart">
+                    <p class="col-sm-12 col-xs-12 text-center">Depth: 61mm x Height: 59.5mm</p>
+                    <p class="col-sm-12 col-xs-12 text-center">172g</p>
+                    <p class="col-sm-12 col-xs-12 text-center">64 GB</p>
+                    <p class="col-sm-12 col-xs-12 text-center">2880 x 2880 pixels</p>
+                    <p class="col-sm-12 col-xs-12 text-center">Wi-Fi [802.11b/g/n], Bluetooth 4.0</p>
+                    <p class="col-sm-12 col-xs-12 text-center">50 Mbps</p>
+                    <p class="col-sm-12 col-xs-12 text-center">1.5 hours of video recording<br>14 hours standby</p>
+                    <p class="col-sm-12 col-xs-12 text-center">Stereo AAC 48KHz 96Kbps</p>
+                    <p class="col-sm-12 col-xs-12 text-center">built-in dual omnidirectional</p>
+                    <p class="col-sm-12 col-xs-12 text-center">accelerometer, e-compass, non-assisted GPS, gyroscope</p>
+                    <p class="col-sm-12 col-xs-12 text-center">built-in li-polymer battery (1780mAh)</p>
+                    <p class="col-sm-12 col-xs-12 text-center">Approx. 2.5 hours with 1.5A charger</p>
+                </div>
+                <div class="col-sm-12 col-xs-12 mobile-buttons">
+                    <p class="text-center spec-txt spec-txt-4k">VIEW MORE SPECS</p>
+                    <button class="expand-4k expand-mobile center-block" data-toggle="collapse" data-target="#camera4Kchart" aria-expanded="false" aria-controls="camera4Kchart">
+                        <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
+                        <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
+                    </button>
+                    <p class="price_color">$499.99</p>
+                    <form id="add-to-basket-3" action="/basket/add/3/" method="post" class="add-to-basket text-center">
+                        <input type='hidden' name='csrfmiddlewaretoken' value='BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0' />
+                        <input id="id_quantity" name="quantity" type="hidden" value="1" />
+                        <input type="hidden" name="action" value="cancel" />
+                        <button id="add-to-basket-button-3" type="button" class="btn btn-primary btn-custom btn-add-to-basket"
+                                onclick="compatibility(3, 'False')"  data-loading-text="Adding...">Add to Cart</button>
+                    </form>
+                    <div id="compatibility-3" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog"
+                         aria-labelledby="compatibility-modal-label" aria-hidden="true">
+                        <div class="col-sm-12 col-md-6 model-content">
+                            <div class="modal-header">
+                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">×</button>
+                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-left">This product is incompatible with a product in your cart.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">Cancel</button>
+                                <button class="btn btn-primary" onclick="$('#add-to-basket-3').submit()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 mobile-hd">
+                <img src="<?php echo $baseUrl ?>images/shop-camera/hd-camera-compare.png" alt="HD Camera" title="HD Camera" class="center-block mobile-camera"/>
+                <a class="btn btn-shop center-block" href="<?php echo $hdUrl;?>">SHOP HD</a>
+                <div class="mobile-chart camera-hd-spec col-sm-12 col-xs-12" id="cameraHDchart">
+                    <p class="col-sm-12 col-xs-12 text-center">Depth: 61mm x Height: 59.5mm</p>
+                    <p class="col-sm-12 col-xs-12 text-center">138g</p>
+                    <p class="col-sm-12 col-xs-12 text-center">32 GB</p>
+                    <p class="col-sm-12 col-xs-12 text-center">1504 x 1504 pixels</p>
+                    <p class="col-sm-12 col-xs-12 text-center">Wi-Fi [802.11b/g/n], Bluetooth 4.0</p>
+                    <p class="col-sm-12 col-xs-12 text-center">20 Mbps</p>
+                    <p class="col-sm-12 col-xs-12 text-center">Up to 3 hours of video recording</p>
+                    <p class="col-sm-12 col-xs-12 text-center">Mono AAC 48KHz 64Kbps</p>
+                    <p class="col-sm-12 col-xs-12 text-center">built-in</p>
+                    <p class="col-sm-12 col-xs-12 text-center">accelerometer</p>
+                    <p class="col-sm-12 col-xs-12 text-center">built-in li-polymer battery (1630mAh)</p>
+                    <p class="col-sm-12 col-xs-12 text-center">Approx. 2.5 hours with 1A charger</p>
+                </div>
+                <div class="col-sm-12 col-xs-12 mobile-buttons">
+                    <p class="text-center spec-txt">VIEW MORE SPECS</p>
+                    <button class="expand-hd expand-mobile center-block" data-toggle="collapse" data-target="#cameraHDchart" aria-expanded="false" aria-controls="camera4HDchart">
+                        <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
+                        <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
+                    </button>
+                    <p class="price_color">$299.99</p>
+                    <form id="add-to-basket-1" action="/basket/add/1/" method="post" class="add-to-basket text-center">
+                        <input type='hidden' name='csrfmiddlewaretoken' value='BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0' />
+                        <input id="id_quantity" name="quantity" type="hidden" value="1" />
+                        <input type="hidden" name="action" value="cancel" />
+                        <button id="add-to-basket-button-1" type="button" class="btn btn-primary btn-custom btn-add-to-basket"
+                                onclick="compatibility(1, 'False')"  data-loading-text="Adding...">Add to Cart</button>
+                    </form>
+                    <div id="compatibility-1" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog"
+                         aria-labelledby="compatibility-modal-label" aria-hidden="true">
+                        <div class="col-sm-12 col-md-6 model-content">
+                            <div class="modal-header">
+                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">×</button>
+                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-left">This product is incompatible with a product in your cart.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">Cancel</button>
+                                <button class="btn btn-primary" onclick="$('#add-to-basket-1').submit()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.button-contain button').click(function(){
+            if($(this).hasClass('expand btn'))
+            {
+                $(this).addClass('expandedBtn');
+                $(this).removeClass('expand btn');
+            }
+            else
+            {
+                $(this).addClass('expand btn');
+                $(this).removeClass('expandedBtn');
+            }
+        });
+        $('.mobile-buttons button').click(function(){
+            if($(this).hasClass('expand-mobile'))
+            {
+                $(this).addClass('expandedBtn');
+                $(this).removeClass('expand-mobile');
+            }
+            else
+            {
+                $(this).addClass('expand-mobile');
+                $(this).removeClass('expandedBtn');
+            }
+        });
+
+        $("#4k").on("click",function(){
+            $("iframe").attr('src',"videos/promotional_4k.mp4");
+
+        });
+        $("#hd").on("click",function(){
+            //alert("dfa");
+
+            $("iframe").attr('src',"videos/grass.mp4");
+
+        });
+
+    });
+</script>

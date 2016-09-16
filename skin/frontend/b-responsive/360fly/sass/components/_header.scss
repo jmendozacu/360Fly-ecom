@@ -1,10 +1,13 @@
 .header {
     padding: 0;
-    position: fixed;
     top: 0;
-    height: 55px;
     width: 100%;
     background:$color5;
+    height: calc(95px + 36px);
+    z-index:1;
+    border: none;
+    background-color: transparent;
+    position: relative;
     .brand {
         width: 100px;
         margin: 0 auto;
@@ -237,10 +240,6 @@
 
 @media screen and (min-width: 768px) {
     .header {
-        position: static;
-        text-align: left;
-        padding: 0px;
-        height: auto;
         @include clearfix();
         .brand {
             width: auto;
