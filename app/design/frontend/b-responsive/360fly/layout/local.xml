@@ -120,6 +120,7 @@
         </reference>
 		<reference name="content">
 			<remove name="product.info.addto"/>
+			<block type="catalog/product_list_related" name="catalog.product.related" as="relatedProducts" template="catalog/product/list/related.phtml" />
         </reference>
 		<reference name="head">
 			<action method="addItem"><type>skin_js</type><name>js/jquery.flexslider.js</name></action>

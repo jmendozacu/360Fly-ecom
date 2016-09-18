@@ -69,7 +69,7 @@ ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
 /* wrapper-width - common for all end */
 
 /* globe section start */
-.video_background .valign{padding: 107px 0;}
+/*.video_background .valign{padding: 107px 0;}*/
 .video_background .valign h2{margin: 0;line-height: 41px;font-weight: 900;font-family: "FlySans-Medium", Arial, sans-serif;color: #78be20;font-size:38px;}
 .video_background .valign h3{color: #666666;margin-bottom: 20px;font-family: "FlySans-", Arial, sans-serif;font-style: normal;font-weight: normal;
     margin-top: 3px;}
@@ -224,16 +224,17 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .compare-cameras h1, .compare-cameras-mobile h1 {color: #78be20;margin-bottom: 90px;font-size: 45px;line-height: .85;margin-top:3px;}
 .compare-cameras h1 span, .compare-cameras-mobile h1 span {font-size: 68px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
 .btn-shop {width: 175px;line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;
-    border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;padding: 0 20px;padding-top: 3px;padding-bottom: 3px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
+    border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;padding: 3px 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
 .cameras-contain .btn-shop:hover,.mobile-4k .btn-shop:hover, .mobile-hd .btn-shop:hover {background-color: #78be20;color: #fff;}
-
+.cameras-contain .btn.btn-shop{width:175px;padding:3px 20px;margin-bottom: 30px;}
+.compare-cameras .hidden-sm .hidden-xs button.expand.btn.center-block{width: 36px;height: 36px;position: relative;font-weight: 700;cursor: pointer;color: #B1B1B1;padding: 0;border-radius: 100%;background-color: transparent;border: 1px solid #B1B1B1;}
 /* compare camera End */
 
 /* comparison table start */
 
 /* Desktop compare Start */
 .button-contain .btn-custom,.mobile-buttons .btn-custom{text-transform:uppercase;}
-.spec-chart.collapse {height: 300px !important;overflow: hidden;display: block;margin-bottom: 40px;}
+.spec-chart.collapse {height: 300px !important;overflow: hidden;display: block !important;margin-bottom: 40px;}
 .spec-chart.collapse.in {height: auto !important;}
 .camera-spec:nth-child(odd) {background: linear-gradient(to right,rgba(229,229,229,0) 0,#e5e5e5 18%,#e5e5e5 89%,rgba(229,229,229,0) 100%);}
 .camera-spec {margin-bottom: 5px;padding: 10px 0;color: #B1B1B1;}
@@ -244,13 +245,12 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .camera-spec div:nth-child(2) b{font-weight:700;}
 .button-contain .price_color {font-size: 20px;text-align: center;color: #78be20;margin-bottom: 10px;font-weight:700;}
 .compare-cameras .spec-txt,.compare-cameras-mobile .spec-txt{margin-bottom: 0;color: #B1B1B1;font-size: 14px;}
+.expand .glyphicon, .expand-hd .glyphicon, .expand-4k .glyphicon,.expandedBtn .glyphicon{font-family:'FontAwesome';font-size: 35px;}
 .center-block {display: block;margin-left: auto;margin-right: auto;}
-/*.collapse .btn[data-toggle=collapse], */.expand, .expand-mobile {width: 36px;height: 36px;position: relative;font-weight: 700;cursor: pointer;
-    color: #B1B1B1;padding: 0;border-radius: 100%;background-color: transparent;border: 1px solid #B1B1B1;}
-/*.collapse .btn[data-toggle=collapse], */.expandedBtn, .expand-mobile {width: 36px;height: 36px;position: relative;font-weight: 700;cursor: pointer;
-    color: #B1B1B1;padding: 0;border-radius: 100%;background-color: transparent;border: 1px solid #B1B1B1;}
-.collapse .btn[data-toggle=collapse] .minus, .collapse .btn[data-toggle=collapse] .plus, .expand .minus, .expand .plus, .expand-mobile .minus, .expand-mobile .plus {width: 34px;height: 34px;display: block;position: absolute;top: 7px;left: 0;text-align: center;transition: .5s all ease-out;}
-.collapse .btn[data-toggle=collapse] .minus, .collapse .btn[data-toggle=collapse] .plus, .expandedBtn .minus, .expandedBtn .plus, .expand-mobile .minus, .expandedBtn-mobile .plus {width: 34px;height: 34px;display: block;position: absolute;top: 7px;left: 0;text-align: center;transition: .5s all ease-out;}
+.expand, .expand-mobile {width: 36px;height: 36px;position: relative;font-weight: 700;cursor: pointer;color: #B1B1B1;padding: 0;border-radius: 100%;background-color: transparent;border: 1px solid #B1B1B1;}
+.expandedBtn, .expand-mobile {width: 36px;height: 36px;position: relative;font-weight: 700;cursor: pointer;color: #B1B1B1;padding: 0;border-radius: 100%;background-color: transparent;border: 1px solid #B1B1B1;}
+.collapse .btn[data-toggle=collapse] .minus, .collapse .btn[data-toggle=collapse] .plus, .expand .minus, .expand .plus, .expand-mobile .minus, .expand-mobile .plus {width: 34px;height: 34px;display: block;position: absolute;top: -5px;left: 0;text-align: center;transition: .5s all ease-out;}
+.collapse .btn[data-toggle=collapse] .minus, .collapse .btn[data-toggle=collapse] .plus, .expandedBtn .minus, .expandedBtn .plus, .expand-mobile .minus, .expandedBtn-mobile .plus {width: 34px;height: 34px;display: block;position: absolute;top: -5px;left: 0;text-align: center;transition: .5s all ease-out;}
 .expandedBtn .plus {opacity: 0;-webkit-transform: rotate(90deg);transform: rotate(90deg);display: none;}
 .expandedBtn .minus {opacity: 1;-webkit-transform: rotate(0);transform: rotate(0);}
 /* Desktop compare End */
@@ -380,3 +380,11 @@ input.qty{width:100px !important;}
 .cms-about-360fly .sub-nav li {display: inline-block;height:100%;text-align: center;}
 .cms-about-360fly .sub-nav li a {font-size: 14px;height:100%;line-height:36px;width: 80px; display: inline-block;text-align: center;;font-family: "FlySans-", Arial, sans-serif;cursor: pointer;}
 /* About us Sub menu Navbar End */
+
+
+/* Camera Category Start */
+
+.show-lg-md{display: none;}
+.show-mobile-4k{display: none;}
+
+/* Camera Category End */

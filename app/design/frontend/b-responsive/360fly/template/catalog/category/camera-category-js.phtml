@@ -1,0 +1,44 @@
+<?php 
+	
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+?>
+<script>
+var $jQ = jQuery.noConflict();
+$jQ(document).ready(function($) {
+	$('.button-contain button').click(function(e){
+		if($(this).hasClass('expand'))
+		{
+			$(this).addClass('expandedBtn');
+			$(this).removeClass('expand btn');
+			$('.show-lg-md').css({'display':'block'});
+		}
+		else
+		{
+			$(this).addClass('expand');
+			$(this).removeClass('expandedBtn');
+			$('.show-lg-md').css('display','none');
+			$('.spec-chart').removeClass('in');
+			e.stopPropagation();
+		}
+	});
+	$('.mobile-buttons button').click(function(e){
+		if($(this).hasClass('expand-mobile'))
+		{
+			$(this).addClass('expandedBtn');
+			$(this).removeClass('expand-mobile');
+		}
+		else
+		{
+			$(this).addClass('expand-mobile');
+			$(this).removeClass('expandedBtn');
+			$('.camera-4k-spec').removeClass('in');
+			$('.camera-hd-spec').removeClass('in');
+			e.stopPropagation();
+		}
+	});
+ });
+</script>
