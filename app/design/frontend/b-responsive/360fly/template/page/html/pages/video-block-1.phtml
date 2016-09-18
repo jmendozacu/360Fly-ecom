@@ -1,0 +1,55 @@
+<?php
+/*Write conditions here to switch video source based on request URL*/
+$videoId = '6Hi1VkNPJHA';
+?>
+
+<div class="video-player" id="player">
+    <div class="video-container">
+        <div id="video">
+            <section id="one-up">
+                <div class="videocontent embed-responsive embed-responsive-16by9">
+                    <div class="video-overlay-content">
+                        <div class="video-overlay-text">
+                            <p>CLICK AND DRAG BELOW TO</p>
+                            <p><b>EXPERIENCE 360&deg;</b></p>
+                        </div>
+                        <div class="swipe-icon">
+                        </div>
+                    </div>
+                    <div class="youtube-player" data-id="<?php echo $videoId;?>"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = getVideoThumb(v[n].dataset.id);
+                div.onclick = ytIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function getVideoThumb(id) {
+        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function ytIframe() {
+        var iframe = document.createElement("iframe");
+        var embed = "https://www.youtube.com/embed/<?php echo $videoId;?>?autoplay=1";
+        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "1");
+        this.parentNode.replaceChild(iframe, this);
+    }
+
+</script>

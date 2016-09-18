@@ -20,7 +20,7 @@
 						padding-right: 0;
 						a {
 							display: block;
-							width: 50px;
+							width: auto;
 							margin: 0 auto;
 						}
 					}
@@ -114,9 +114,10 @@
 		margin: 0 -10px;
 		text-align: center;
 		padding: 20px 0 30px;
+		clear:both;
 		ul {
 			margin: 0;
-			text-align: center;
+			text-align: right;
 		}
 		.table {
 			font-family: $font3;
@@ -198,11 +199,10 @@
 						display: block;
 						&.cell-product-img {
 							display: table-cell;
-							min-width: 50px;
-							width: 50px;
+							width: auto;
 							border-bottom: 1px solid #eee;
 							a {
-								width: 30px;
+								width: auto;
 							}
 						}
 						&.product-info {
@@ -385,14 +385,6 @@
 			.text04 {
 				margin-right: 20px;
 			}
-		}
-	}
-}
-
-@media screen and (min-width: 1200px){
-	.cart {
-		.cart-totals {
-			margin-right: 35px;
 		}
 	}
 }

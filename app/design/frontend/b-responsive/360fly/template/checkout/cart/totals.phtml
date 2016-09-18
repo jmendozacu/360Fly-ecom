@@ -33,14 +33,16 @@
  */
 ?>
 <?php if ($this->canApplyMsrp()): ?>
-    <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
+	<div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
 <?php else: ?>
-	<?php // echo $this->renderTotals('footer'); ?>
-	<?php $total = Mage::getSingleton('checkout/session')->getQuote()->getSubtotal(); ?>
-	<tr>
-		<td class="empty">&nbsp;</td>
-		<td class="empty">&nbsp;</td>
-		<td class="a-left"><?php echo $this->__("Total") ?></td>
-		<td colspan="2" class="a-left"><span class="price"><?php echo Mage::helper('checkout')->formatPrice($total); ?></span></td>
-	</tr>
+	<table id="shopping-cart-totals-table">
+		<col />
+		<col width="1" />
+		<tfoot>
+		<?php echo $this->renderTotals('footer'); ?>
+		</tfoot>
+		<tbody>
+		<?php echo $this->renderTotals(); ?>
+		</tbody>
+	</table>
 <?php endif; ?>

@@ -144,6 +144,10 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
 .header li.header-xs-account-links .links li.first a{border-right:none;margin:0;}
 .header li.header-xs-account-links .links li{width:100%;}
 
+/*-------------Accessory Product List----------------*/
+.accessory_top_bar .camera_4k_badge{background-position: 100%;}
+.accessory_top_bar .camera_hd_badge{background-position: 0%;}
+ul.product-grid li .product-title-container{min-height:50px;}
 /*-------------Camera Custom Product View----------------*/
 .camera-view-template .add-to-cart label, .camera-view-template .add-to-cart .qty{display:none;}
 .camera-info .add-to-box{float:right;margin:0;}
@@ -169,6 +173,13 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
 .product-media-desc-row .product_description h3{color: #78be20;font-size: 36px;margin-top: 30px;margin-bottom: 10px;}
 .block-related .abs.related-icon{top: -40px;left: 50px;}
 .block-related.product-promotion h2{font-family: FlySans-SemiBold,Arial,sans-serif;}
+
+/*--------------------CART&CHECKOUT--------------------*/
+.table tbody tr td, .onestepcheckout-index-index #onestepcheckout-form div.checkoutcontainer .onestepcheckout-summary table tbody tr td{background-color: transparent;}
+input#coupon_code {border: 1px solid #ddd;}
+table#shopping-cart-totals-table{float: right;clear:both;font-size:20px;}
+table#shopping-cart-totals-table .a-right{padding-right:15px;}
+.panel-default > .panel-heading{background-image: none;background-color: transparent;}
 
 /*-------------For MediaQueries.css file-----------*/
 @media screen and (min-width: 1200px){
