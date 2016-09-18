@@ -23,10 +23,10 @@ $skinUrl = $this->getSkinUrl();
 			<h2 class="ls-l" data-ls="offsetyin: bottom; offsetyout: bottom;" style="top: 43%; left: 0px; width: 550px; white-space: nowrap; text-align: right; font-size: 126px; line-height: 160px; color: #76bd1d !important; vertical-align: top; font-family: 'FlySans-Bold', Arial, sans-serif;">IT'S BACK!</h2>
 			<h3 class="ls-l" data-ls="offsetyin: bottom; offsetyout: bottom;" style="top: 54%; left: 0px; width: 550px; white-space: nowrap; text-align: right; font-size: 39px; line-height: 60px; color: #000000  ; ">THE 360fly HD $<strong>299</strong> DEAL IS BACK</h3>
 			<p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 60%; left: 0px; width: 550px; text-align: right; font-size: 22px; line-height: 26px; color: #000000">For a limited time only.</p>
-			  <!-- anchor style for desktop size -->
-			<a href="<?php echo $baseUrl;?>cameras" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 50%; top: 84%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 70px;border-radius: 50px;background: #76bd1d; white-space: nowrap; width:150px;" class="ls-l button round hidden-xs">BUY NOW</a>
-		  <!-- anchor style for phone and tablet size -->
-		  <a href="https://shop.360fly.com/catalogue/category/cameras_1/" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 42%; top: 70%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 70px; white-space: nowrap; width:150px;" class="ls-l button round hidden-lg hidden-md hidden-sm btn-custom">BUY NOW</a>
+			<!-- anchor style for desktop size -->
+			<a href="<?php echo $baseUrl;?>cameras" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 50%; top: 84%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 70px;border-radius: 50px;background: #76bd1d; white-space: nowrap; width:150px;" class="ls-l button round hidden-xs slider-buy-now btn">BUY NOW</a>
+			<!-- anchor style for phone and tablet size -->
+			<a href="https://shop.360fly.com/catalogue/category/cameras_1/" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 42%; top: 70%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 70px; white-space: nowrap; width:150px;" class="ls-l button round hidden-lg hidden-md hidden-sm btn-custom slider-buy-now btn">BUY NOW</a>
 		</div>
 		<div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
 			<div class="ls-l ls-background" style="left: 50%; top: 50%; height: 100%; width: 120%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-01/bg.jpg) no-repeat center; background-size: cover;" data-ls="parallaxlevel: 10;"> 
@@ -299,6 +299,7 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 	</div>
 </div>
+
 
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/homejs.phtml')->toHtml(); ?>
