@@ -2,5 +2,6 @@ app/etc/local.xml
 var/*
 media/videos/*
 skin/frontend/b-responsive/360fly/.sass-cache/*
+skin/frontend/b-responsive/360fly/css/360fly.css
 .idea/*
 media/catalog/product/cache/*
