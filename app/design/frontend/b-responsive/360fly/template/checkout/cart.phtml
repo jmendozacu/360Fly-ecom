@@ -81,7 +81,6 @@
         </table>
         <script type="text/javascript">decorateTable('shopping-cart-table')</script>
     </form>
-    <?php echo $this->getChildHtml('coupon') ?>
     <div class="cart-totals">
         <?php if(!$this->hasError()): ?>
         <ul class="checkout-types">
@@ -93,7 +92,8 @@
         </ul>
         <?php endif; ?>
     </div>
-    <?php echo $this->getChildHtml('shipping') ?>
-
-
+    <div class="coupon-shipping-container">
+        <?php echo $this->getChildHtml('coupon') ?>
+        <?php //echo $this->getChildHtml('shipping') ?>
+    </div>
 </div>

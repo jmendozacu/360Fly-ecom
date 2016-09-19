@@ -25,7 +25,7 @@
  */
 ?>
 <?php /** @var $this Mage_Checkout_Block_Cart_Shipping */ ?>
-<div class="panel panel-default col-md-4 col-sm-6 col-lg-4 col-xs-12">
+<div class="panel panel-default col-md-4 col-sm-6 col-lg-4 col-xs-12 cart-shipping-block">
     <div class="panel-heading">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -34,7 +34,7 @@
             </a>
         </h4>
     </div>
-    <div id="collapseOne" class="">
+    <div id="collapseOne" class="collapse in">
         <div class="panel-body">
             <form action="<?php echo $this->getUrl('checkout/cart/estimatePost') ?>" method="post" id="shipping-zip-form" role="form">
                 <fieldset>

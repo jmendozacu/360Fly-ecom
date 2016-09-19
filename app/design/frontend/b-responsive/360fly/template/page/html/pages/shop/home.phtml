@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * @category Mage
@@ -30,39 +30,7 @@ $fourkUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fl
         </div>
       </div>
 </div>
-<div class="video-player" id="player">
-	<div class="video-container">
-		<div id="video">
-			<section id="one-up">
-				<div class="videocontent embed-responsive embed-responsive-16by9">
-					<div class="video-overlay-content">
-						<div class="video-overlay-text">
-							<p>CLICK AND DRAG BELOW TO</p>
-							<p><b>EXPERIENCE 360&deg;</b></p>
-						</div>
-						<div class="swipe-icon">
-						</div>
-					</div>
-					<video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
-					poster="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg" data-setup="{}" crossorigin="anonymous">
-						<source src="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4" type='video/mp4'>
-					</video>
-				</div>
-			</section>
-		</div>
-	</div>
-</div>
-<!--<div id="player">
-  <div id="video">
-    <section id="one-up">
-      <div class="videocontent">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="images/shop360/grass.mp4"></iframe>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>-->
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-2.phtml')->toHtml(); ?>
 <div class="row product-block">
     <div class="container wrapper-width">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

@@ -109,7 +109,7 @@
 		}
 	}
 	.cart-totals {
-		background-color: $color1;
+		background-color: transparent;
 		color: #fff;
 		margin: 0 -10px;
 		text-align: center;
@@ -159,19 +159,19 @@
 .module_coupon {
 	padding: 0 10px 20px;
 	margin: 0 -10px;
-	background-color: $color1;
+	background-color: transparent;
 	text-align: center;
 	fieldset {
 		max-width: 240px;
 		margin: 0 auto;
 	}
 	label {
-		color: $color3;
+		color: $color5;
 		margin-bottom: 10px;
 	}
 	.form-control {
 		margin-bottom: 10px;
-		background-color: darken($color1, 5%);
+		background-color: transparent;
 	}
 	.btn {
 		font-size: 12px;
@@ -361,7 +361,7 @@
 		float: left;
 		background-color: transparent;
 		padding: 0;
-		margin: -27px 0 0;
+		margin: 25px 0 0;
 		text-align: left;
 		fieldset {
 			max-width: 100%;

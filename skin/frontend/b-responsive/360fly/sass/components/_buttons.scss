@@ -20,7 +20,7 @@
 	&:not(.btn-link){
 		@include border-radius(30px);
 		@media screen and (max-width: 767px){
-			min-width: 260px;
+			min-width: auto;
 		}
 	}
 	&:active, &:focus, &:disabled {

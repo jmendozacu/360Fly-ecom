@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * @category Mage
@@ -29,7 +29,7 @@ $skinUrl = $this->getSkinUrl();
 			<a href="https://shop.360fly.com/catalogue/category/cameras_1/" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 42%; top: 70%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 70px; white-space: nowrap; width:150px;" class="ls-l button round hidden-lg hidden-md hidden-sm btn-custom slider-buy-now btn">BUY NOW</a>
 		</div>
 		<div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
-			<div class="ls-l ls-background" style="left: 50%; top: 50%; height: 100%; width: 120%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-01/bg.jpg) no-repeat center; background-size: cover;" data-ls="parallaxlevel: 10;"> 
+			<div class="ls-l ls-background" style="left: 50%; top: 50%; height: 100%; width: 120%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-01/bg.jpg) no-repeat center; background-size: cover;" data-ls="parallaxlevel: 10;">
 			</div>
 		<!-- text layers -->
 			<h2 class="ls-l flyslim" data-ls="offsetxin: left; offsetxout: right;" style="top: 40%; left: 50%; white-space: nowrap;color:white;font-size: 88px;">ONE LENS. NO SEAMS.</h2>
@@ -39,7 +39,7 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 		<div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
 			<div class="ls-l ls-background" style="left: 50%; top: 50%; height: 100%; width: 110%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-02/bg.jpg) no-repeat center; background-size: cover;" data-ls="parallaxlevel: -5;">
-				
+
 			</div>
 			 <!-- parallax layers -->
 			<img src="<?php echo $skinUrl;?>images/layerslider/slide-02/camera-bottom.png" alt="360 Camera" title="360 Camera" data-ls="offsetyin: top; offsetyout: top;" style="left: 70%; top: 38%;" class="ls-l" alt="" />
@@ -71,30 +71,9 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 	</div>
 </div>
-<div class="video-player" id="player">
-	<div class="video-container">
-		<div id="video">
-			<section id="one-up">
-				<div class="videocontent embed-responsive embed-responsive-16by9">
-					<div class="video-overlay-content">
-						<div class="video-overlay-text">
-							<p>CLICK AND DRAG BELOW TO</p>
-							<p><b>EXPERIENCE 360&deg;</b></p>
-						</div>
-						<div class="swipe-icon">
-						</div>
-					</div>
-					<video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
-					poster="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg" data-setup="{}" crossorigin="anonymous">
-						<source src="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4" type='video/mp4'>
-					</video>
-				</div>
-			</section>
-		</div>
-	</div>
-</div>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-1.phtml')->toHtml(); ?>
 <div class="video_background globe">
-  <div class="container wrapper-width">    
+  <div class="container wrapper-width">
 		<div class="col-sm-12 col-md-7 col-lg-7 text-center" id="globe-wrap">
 			<img src="<?php echo $skinUrl?>images/parallax/fov/fov__imagesequence_54.png" class="img-responsive margin-center" alt="360_rotate image" title="360_rotate image">
 		</div>
@@ -115,7 +94,7 @@ $skinUrl = $this->getSkinUrl();
 		  </div>
 		</div>
 	</div>
-</div>              
+</div>
 <div class="pov row">
 	<div class="container wrapper-width">
 		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 text-left" >
@@ -130,12 +109,12 @@ $skinUrl = $this->getSkinUrl();
 			</div>
 			<div id="pov-mobile" class="visible-xs">
 				<img src="<?php echo $skinUrl;?>images/parallax/pov/pov_mobile.png" />
-			</div>			
+			</div>
       	</div>
-	</div>	
+	</div>
 </div>
 <div class="dirt ">
-	<div class="video_img2">        
+	<div class="video_img2">
 		<div class="container wrapper-width">
 			<div class="col-sm-12 col-md-6">
 				<h2 class="large">
@@ -164,12 +143,12 @@ $skinUrl = $this->getSkinUrl();
 				</div>
 			</div>
 		</div>
-	</div>              
-							
-</div>  
-<div class=" product-promotion">  
+	</div>
+
+</div>
+<div class=" product-promotion">
 	<div class="container">
-		<h2>GO ANYWHERE. 
+		<h2>GO ANYWHERE.
 			MOUNT EVERYWHERE.
 		</h2>
 		<div class="col-sm-10 col-sm-offset-1 product-slider ">
@@ -282,7 +261,7 @@ $skinUrl = $this->getSkinUrl();
 					  <a href="<?php echo $baseUrl;?>handle-bar-mount-4k" class="learn_more_small">MORE INFO</a>
 				   </div>
 				</article>
-			</div>		
+			</div>
 		</div>
 	</div>
 </div>
@@ -301,5 +280,5 @@ $skinUrl = $this->getSkinUrl();
 </div>
 
 
-<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
+<?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/homejs.phtml')->toHtml(); ?>

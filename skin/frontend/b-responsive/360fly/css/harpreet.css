@@ -56,6 +56,9 @@ iframe{border:none;}
 /*HOMEPAGE STARTS*/
 .slider-wrapper #layerslider h2{font-family: "FlySans-Bold", Arial, sans-serif;}
 .slider-wrapper #layerslider h2.flyslim{font-family: "FlySans-", Arial, sans-serif;}
+.video-player #video section#one-up{cursor: pointer;}
+.video-player #video .swipe-icon-yt{background-image: url(../images/video-play.png);background-repeat: no-repeat;    height: 150px; display: inline-block;    width: 100%;    background-size: contain;   background-position: center;    margin-top: 12%;}
+.video-overlay-content{padding-bottom: 56.25%;}
 /*HOMEPAGE ENDS*/
 /*Australia Landing Page Starts*/
 .cms-australia .video-container{height:650px;overflow:hidden;}
@@ -114,8 +117,8 @@ iframe{border:none;}
 ul.community-dropdown li a:hover{background:#666;}
 .community-btn a{color:#000;}
 .community-btn span.icon-drop-arrow.sub-menu-arrow {margin-left: 10px;font-size: 0.7em;}
-ul.community-dropdown{position: relative;top: 0px;left:0px;} 
-.community-first-dd ul{background:#414042;border:1px solid #fff;} 
+ul.community-dropdown{position: relative;top: 0px;left:0px;}
+.community-first-dd ul{background:#414042;border:1px solid #fff;}
 .community-btn ul{border-radius:0px;}
 .community-content-left{float:left;padding:0 6px 6px 0px;margin:0;}
 .community-content-right{float:right;padding:0 0 6px 6px;margin:0;}
@@ -176,10 +179,13 @@ ul.product-grid li .product-title-container{min-height:50px;}
 
 /*--------------------CART&CHECKOUT--------------------*/
 .table tbody tr td, .onestepcheckout-index-index #onestepcheckout-form div.checkoutcontainer .onestepcheckout-summary table tbody tr td{background-color: transparent;}
-input#coupon_code {border: 1px solid #ddd;}
-table#shopping-cart-totals-table{float: right;clear:both;font-size:20px;}
+input#coupon_code {border: 1px solid #ddd;display:block;margin:10px 0;box-shadow: none;height: 45px;background-color: #f0f0f0;-webkit-border-radius: 3px;-moz-border-radius: 3px;-ms-border-radius: 3px;border-radius: 3px; border: none;padding-right: 25px;color: #444;font-weight: 300;font-size: 16px;  -webkit-appearance: none;}
+table#shopping-cart-totals-table{float: right;clear:both;font-size:20px;margin:20px 0;max-width:35%;}
 table#shopping-cart-totals-table .a-right{padding-right:15px;}
 .panel-default > .panel-heading{background-image: none;background-color: transparent;}
+.module_coupon {float: left;}
+.cart-shipping-block{margin:25px;width: auto;min-width:300px;}
+.coupon-shipping-container{display:inline-block;max-width: 60%;width:60%;margin-bottom: 20px;}
 
 /*-------------For MediaQueries.css file-----------*/
 @media screen and (min-width: 1200px){
@@ -191,8 +197,16 @@ table#shopping-cart-totals-table .a-right{padding-right:15px;}
     .camera-info .add-to-box{float:left;}
     .category-cameras .landing-camera-layer{padding-bottom:50px;}
     .category-cameras .camera-hero-img{padding-bottom:50px;}
+    .module_coupon {float: none;}
+    table#shopping-cart-totals-table{max-width: 100%;width:100%;}
+    .coupon-shipping-container{max-width: 100%;width:100%;}
+    .cart-shipping-block{max-width:90%;margin:0;width:90%;}
+    input#coupon_code{margin:15px auto;}
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
     .category-cameras .landing-img {top: 50px!important;}
     .category-cameras .camera-4k .landing-img {top: 210px!important;}
+    .coupon-shipping-container {display: inline-block; max-width: 55%;}
+    .module_coupon{margin-left:25px;}
+    table#shopping-cart-totals-table{font-size:15px;}
 }
