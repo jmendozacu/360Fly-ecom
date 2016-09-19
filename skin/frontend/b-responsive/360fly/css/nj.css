@@ -125,7 +125,7 @@
   font-weight: normal;
   text-rendering: optimizeLegibility; }
 
-  
+
 body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;background:#fff;}
 .cms-index-index .btn.btn-custom {margin:0px;}
 .cms-index-index .product-slider .product_pod p{margin-bottom:5px!important;}
@@ -441,10 +441,12 @@ img.camera-logo {margin-bottom: 30px;}
 .cms-australia ul.download-section{margin-left: 0;}
 .cms-australia ul.download-section li{padding-left: 0;}
 .cms-australia .social-connect .social-links:hover{color: #fff;}
+.cms-australia .btn.btn-shop,.cms-australia .btn.au-video-btn {width:200px;padding:10px 35px;min-width: 0px;}
+.cms-australia .product-block .product-img {margin-top: 20px}
+
 /*App page*/
 #compatible-section ul {list-style-type:disc;}
 
 /*Shop Page starts*/
 .home-shop a.btn.btn-custom{margin-left: 0;}
 .product-block p.center{margin: 0 auto 30px;}
-
