@@ -61,7 +61,7 @@ ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
   src: url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.eot?ycz9j5");
   src: url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.eot?ycz9j5#iefix") format("embedded-opentype"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.woff2?ycz9j5") format("woff2"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.ttf?ycz9j5") format("truetype"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.woff?ycz9j5") format("woff"), url("//d3a58tk6tptbgs.cloudfront.net/static/public/fonts/360fly.svg?ycz9j5#360fly") format("svg");
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
 }
 
 /* wrapper-width - common for all start */
@@ -273,9 +273,11 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /* video start */
 
 .player-toggle{max-width:854px;margin:0 auto;position:relative;}
-.quality-head{float:left;position:absolute;right: 1%;top: -45px;z-index: 1;margin:0;padding:0;list-style-type:none;}
+.quality-head{z-index: 1;margin:0;padding:0;list-style-type:none;top: 30px;right: 70px;}
 .quality-head li{display:inline-block;width:40px;height:40px;border:2px solid #b1b1b1;border-radius:50%;position:relative;}
-.quality-head button{background-color:transparent;border:none;color:#b1b1b1;font-size:18px;position:absolute;top:-8%;line-height: 40px;left: 5%;font-weight: normal;font-family: 'Flysans-Medium';}
+.quality-head button{    background-color: transparent;border: none;color: #b1b1b1;font-size: 18px;line-height: 1;font-weight: normal;font-family:'Flysans-Medium';height: 100%;width: 100%;}
+.quality-head button:hover,.quality-head li:hover,.quality-head li.active{color:#7ABC31;border-color:#7ABC31;}
+.quality-head li.active button{color:#7ABC31;}
 /*.quality-head li a{position:absolute;line-height:35px;left: 20%;font-size: 18px;font-family: 'Flysans-Medium';font-weight: bold;color: #b1b1b1;}
 .quality-head li a:hover{text-decoration: none;}*/
 /* video End */

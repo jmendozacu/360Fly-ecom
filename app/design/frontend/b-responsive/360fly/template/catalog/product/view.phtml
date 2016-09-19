@@ -31,8 +31,10 @@
  * @see Mage_Review_Block_Product_View
  */
 ?>
+<?php $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
+<?php $productCompatibility = strtolower($_product->getAttributeText('camera_compatibility'));?>
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
@@ -60,9 +62,11 @@
 								<?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
 							</div>
 						<?php endif;?>
+            <?php if($productCompatibility !== 'both'):?>
 						<div class="camera-compatibility">
-							<span>Camera Compatibility: </span><img src="images/compatibility/hd.png">
+							<span>Camera Compatibility: </span><img src="<?php echo $mediaUrl; ?>wysiwyg/<?php echo $productCompatibility ?>-badge.png">
 						</div>
+          <?php endif;?>
 						<?php echo $this->getChildHtml('product_type_data') ?>
 					</div>
                 <?php echo ($_product->getCanShowPrice() === false) ? '' : $this->getChildHtml('tierprices'); ?>
@@ -89,13 +93,6 @@
                         <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
                     </div>
                 <?php endif;?>
-
-                <!-- <?php //if ($this->canEmailToFriend()): ?>
-                    <div class="a-right">
-                        <a href="<?php //echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-envelope mr-3"></span><?php //echo $this->__('Email to a Friend') ?></a>
-                    </div>
-                <?php //endif; ?> -->
-
                 <?php echo $this->getChildHtml('other');?>
             </div>
         </div>
@@ -113,7 +110,7 @@
             <?php endif; ?>
         </div>
         <div class="clearfix">&nbsp;</div>
-        
+
     </form>
         <?php //echo $this->getChildHtml('relatedProducts') ?>
         <?php echo $this->getChildHtml('upsell_products') ?>
@@ -123,7 +120,7 @@
 	<div class="accessory-bar">
 		<?php echo $this->getLayout()->createBlock('core/template')
 					->setTemplate('catalog/product/product-block.phtml')
-					->toHtml(); 
+					->toHtml();
 		?>
 	</div>
 <script type="text/javascript">

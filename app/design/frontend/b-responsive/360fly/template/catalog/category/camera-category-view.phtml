@@ -35,9 +35,13 @@
     $baseUrl = $this->getBaseUrl();
     $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
     $skinUrl = $this->getSkinUrl();
-    $hdUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-hd')->getProductUrl();
-    $fourkUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-4k')->getProductUrl();
-
+    $productObj = Mage::getSingleton('catalog/product');
+    $hdUrl =  $productObj->loadByAttribute('sku','360fly-hd')->getProductUrl();
+    $fourkUrl =  $productObj->loadByAttribute('sku','360fly-4k')->getProductUrl();
+    $hdPrice =  Mage::helper('core')->currency($productObj->loadByAttribute('sku','360fly-hd')->getPrice(),true,false);
+    $fourkPrice =  Mage::helper('core')->currency($productObj->loadByAttribute('sku','360fly-4k')->getPrice(),true,false);
+    $hdAddToCartUrl =  Mage::helper('checkout/cart')->getAddUrl($productObj->loadByAttribute('sku','360fly-hd'));
+    $fourKAddToCartUrl =  Mage::helper('checkout/cart')->getAddUrl($productObj->loadByAttribute('sku','360fly-4k'));
     $_helper    = $this->helper('catalog/output');
     $_category  = $this->getCurrentCategory();
     $_imgHtml   = '';
@@ -48,6 +52,12 @@
 ?>
 <div class="compare-cameras  hidden-sm hidden-xs">
     <div class="container wrapper-width-camera">
+	<form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form" enctype="multipart/form-data">
+        <?php echo $this->getBlockHtml('formkey') ?>
+		<!-- <div class="no-display">
+            <input type="hidden" name="product" value="<?php //echo $_product->getId() ?>" />
+            <input type="hidden" name="related_product" id="related-products-field" value="" />
+        </div> -->
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1>THE CAMERAS THAT MISS NOTHING.<br>
@@ -206,28 +216,8 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12 button-contain">
                 <div class="col-sm-4 col-md-4 col-lg-4 text-center">
-                    <p class="price_color">$499.99</p>
-                    <form id="add-to-basket-3" action="/basket/add/3/" method="post" class="add-to-basket">
-                        <input type="hidden" name="csrfmiddlewaretoken" value="BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0">
-                        <input id="id_quantity" name="quantity" type="hidden" value="1">
-                        <input type="hidden" name="action" value="cancel">
-                        <button id="add-to-basket-button-3" type="button" class="btn btn-custom" onclick="compatibility(3, 'False')" data-loading-text="Adding...">Add to Cart</button>
-                    </form>
-                    <div id="compatibility-3" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog" aria-labelledby="compatibility-modal-label" aria-hidden="true">
-                        <div class="col-sm-12 col-md-6 model-content">
-                            <div class="modal-header">
-                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">×</button>
-                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
-                            </div>
-                            <div class="modal-body">
-                                <p class="text-left">This product is incompatible with a product in your cart.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">Cancel</button>
-                                <button class="btn btn-primary" onclick="$('#add-to-basket-3').submit()">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="price_color"><?php echo $fourkPrice;?></p>
+                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4">
                     <p class="text-center spec-txt">VIEW MORE SPECS</p>
@@ -237,31 +227,12 @@
                     </button>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 text-center">
-                    <p class="price_color">$299.99</p>
-                    <form id="add-to-basket-1" action="/basket/add/1/" method="post" class="add-to-basket">
-                        <input type="hidden" name="csrfmiddlewaretoken" value="BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0">
-                        <input id="id_quantity" name="quantity" type="hidden" value="1">
-                        <input type="hidden" name="action" value="cancel">
-                        <button id="add-to-basket-button-1" type="button" class="btn btn-custom" onclick="compatibility(1, 'False')" data-loading-text="Adding...">Add to Cart</button>
-                    </form>
-                    <div id="compatibility-1" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog" aria-labelledby="compatibility-modal-label" aria-hidden="true">
-                        <div class="col-sm-12 col-md-6 model-content">
-                            <div class="modal-header">
-                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">×</button>
-                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
-                            </div>
-                            <div class="modal-body">
-                                <p class="text-left">This product is incompatible with a product in your cart.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">Cancel</button>
-                                <button class="btn btn-primary" onclick="$('#add-to-basket-1').submit()">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="price_color"><?php echo $hdPrice;?></p>
+					<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $hdAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
             </div>
-        </div>
+			</div>
+	</form>
     </div>
 </div>
 <div class="compare-cameras-mobile hidden-lg hidden-md">
@@ -294,30 +265,8 @@
                         <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
                         <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
                     </button>
-                    <p class="price_color">$499.99</p>
-                    <form id="add-to-basket-3" action="/basket/add/3/" method="post" class="add-to-basket text-center">
-                        <input type='hidden' name='csrfmiddlewaretoken' value='BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0' />
-                        <input id="id_quantity" name="quantity" type="hidden" value="1" />
-                        <input type="hidden" name="action" value="cancel" />
-                        <button id="add-to-basket-button-3" type="button" class="btn btn-custom btn-add-to-basket"
-                                onclick="compatibility(3, 'False')"  data-loading-text="Adding...">Add to Cart</button>
-                    </form>
-                    <div id="compatibility-3" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog"
-                         aria-labelledby="compatibility-modal-label" aria-hidden="true">
-                        <div class="col-sm-12 col-md-6 model-content">
-                            <div class="modal-header">
-                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">×</button>
-                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
-                            </div>
-                            <div class="modal-body">
-                                <p class="text-left">This product is incompatible with a product in your cart.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-3').button('reset');">Cancel</button>
-                                <button class="btn btn-primary" onclick="$('#add-to-basket-3').submit()">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="price_color"><?php echo $fourkPrice;?></p>
+                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
             </div>
             <div class="col-sm-12 col-xs-12 mobile-hd">
@@ -343,35 +292,97 @@
                         <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
                         <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
                     </button>
-                    <p class="price_color">$299.99</p>
-                    <form id="add-to-basket-1" action="/basket/add/1/" method="post" class="add-to-basket text-center">
-                        <input type='hidden' name='csrfmiddlewaretoken' value='BUqRhYCTiD8ciaalKAq4D0s1EAjbpAy0' />
-                        <input id="id_quantity" name="quantity" type="hidden" value="1" />
-                        <input type="hidden" name="action" value="cancel" />
-                        <button id="add-to-basket-button-1" type="button" class="btn btn-custom btn-add-to-basket"
-                                onclick="compatibility(1, 'False')"  data-loading-text="Adding...">Add to Cart</button>
-                    </form>
-                    <div id="compatibility-1" class="modal fade compatibilityModal modal-white" tabindex="-1" role="dialog"
-                         aria-labelledby="compatibility-modal-label" aria-hidden="true">
-                        <div class="col-sm-12 col-md-6 model-content">
-                            <div class="modal-header">
-                                <button type="button" class="close hidden-sm hidden-xs" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">×</button>
-                                <h3 id="compatibility-modal-label" class="text-left">Are you sure?</h3>
-                            </div>
-                            <div class="modal-body">
-                                <p class="text-left">This product is incompatible with a product in your cart.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="$('.modal-backdrop').remove(); $('#add-to-basket-button-1').button('reset');">Cancel</button>
-                                <button class="btn btn-primary" onclick="$('#add-to-basket-1').submit()">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="price_color"><?php echo $hdPrice;?></p>
+                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $hdAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
+<div class="container-fluid no-gutter ">
+    <div class="wrapper-width container po-rel">
+        <ul class="quality-head abs">
+        	<li class="toggle-4k active" data-id="4k"><button id="4k">4K</button></li>
+        	<li class="toggle-hd" data-id="hd"><button id="hd">HD</button></li>
+        </ul>
+    </div>
+    <div class=" cat-video-container">
+        <div class="video-cat 4k-vblock" style="display:none;">
+            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-1.phtml')->toHtml();?>
+        </div>
+        <div class="video-cat hd-vblock" style="display:none;">
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function($){
+        $('.4k-vblock').show();
+        $('.quality-head li').click(function(){
+            var video_block = $(this).attr('data-id');
+            if(video_block == 'hd'){
+                return false;
+            } else if (video_block == '4k'){
+                console.log('asd');
+                $('.quality-head').find('li').removeClass('active');
+                $('.quality-head li.toggle-'+video_block).addClass('active');
+                $('.cat-video-container').find('div.video-cat').hide();
+                $('.cat-video-container .'+video_block+'-vblock').show();
+            }
+        });
+    });
+</script>
+
+<?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('catalog/category/camera-category-js.phtml')->toHtml(); ?>
-<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
+<?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
+<script type="text/javascript">
+//<![CDATA[
+    var productAddToCartForm = new VarienForm('product_addtocart_form');
+    productAddToCartForm.submit = function(button, url) {
+        if (this.validator.validate()) {
+            var form = this.form;
+            var oldUrl = form.action;
+
+            if (url) {
+               form.action = url;
+            }
+            var e = null;
+            try {
+                this.form.submit();
+            } catch (e) {
+            }
+            this.form.action = oldUrl;
+            if (e) {
+                throw e;
+            }
+
+            if (button && button != 'undefined') {
+                button.disabled = true;
+            }
+        }
+    }.bind(productAddToCartForm);
+
+    productAddToCartForm.submitLight = function(button, url){
+        if(this.validator) {
+            var nv = Validation.methods;
+            delete Validation.methods['required-entry'];
+            delete Validation.methods['validate-one-required'];
+            delete Validation.methods['validate-one-required-by-name'];
+            // Remove custom datetime validators
+            for (var methodName in Validation.methods) {
+                if (methodName.match(/^validate-datetime-.*/i)) {
+                    delete Validation.methods[methodName];
+                }
+            }
+
+            if (this.validator.validate()) {
+                if (url) {
+                    this.form.action = url;
+                }
+                this.form.submit();
+            }
+            Object.extend(Validation.methods, nv);
+        }
+    }.bind(productAddToCartForm);
+//]]>
+</script>
