@@ -3,7 +3,7 @@
         <reference name="head">
             <action method="addItem">
                 <type>skin_css</type>
-                <name>adminlogo/customheader.css</name>
+                <name>admincustomization/customheader.css</name>
             </action>
         </reference>
     </default>

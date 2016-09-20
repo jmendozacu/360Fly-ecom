@@ -17,9 +17,9 @@
             </adminhtml>
         </blocks>
         <helpers>
-            <magenyc_adminlogo>
+            <magenyc_admincustomization>
                 <class>MageNYC_AdminCustomization_Helper</class>
-            </magenyc_adminlogo>
+            </magenyc_admincustomization>
         </helpers>
         <models>
             <adminhtml>
@@ -32,9 +32,9 @@
     <adminhtml>
         <layout>
             <updates>
-                <magenyc_adminlogo>
+                <magenyc_admincustomization>
                     <file>magenyc/admincustomization.xml</file>
-                </magenyc_adminlogo>
+                </magenyc_admincustomization>
             </updates>
         </layout>
     </adminhtml>

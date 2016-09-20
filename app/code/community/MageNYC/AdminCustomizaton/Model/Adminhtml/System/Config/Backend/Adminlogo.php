@@ -9,7 +9,7 @@ class MageNYC_AdminCustomization_Model_Adminhtml_System_Config_Backend_Adminlogo
     /**
      * The tail part of directory path for uploading
      */
-    const UPLOAD_DIR                = 'adminhtml/default/default/adminlogo';
+    const UPLOAD_DIR                = 'adminhtml/default/default/admincustomization';
 
     /**
      * Token for the root part of directory path for uploading

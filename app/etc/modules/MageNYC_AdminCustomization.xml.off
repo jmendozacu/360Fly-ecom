@@ -2,7 +2,7 @@
 <config>
     <modules>
         <MageNYC_AdminCustomization>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
         </MageNYC_AdminCustomization>
     </modules>
