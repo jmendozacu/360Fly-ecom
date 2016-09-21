@@ -42,7 +42,7 @@
             <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
                 <li class="info-box">
                     <h4 class="box-title"><?php echo $this->__('Billing Address') ?>
-                        <a class="pull-right" href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>"><span class="fa-pencil-square-o edit-icon"></span></a>
+                        <a class="pull-right" href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>">(Edit)<span class="fa-pencil-square-o edit-icon"></span></a>
                     </h4>
                     <address class="box-content">
                     <?php echo $this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>
@@ -58,7 +58,7 @@
             <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping()): ?>
                 <li class="info-box">
                     <h4 class="box-title"><?php echo $this->__('Shipping Address') ?>
-                        <a class="pull-right" href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>"><span class="fa-pencil-square-o edit-icon"></span></a>
+                        <a class="pull-right" href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>">(Edit)<span class="fa-pencil-square-o edit-icon"></span></a>
                     </h4>
                     <address class="box-content">
                         <?php echo $this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>

@@ -219,7 +219,7 @@
 		.legend {
 			background-color: $color2;
 			padding: 11px 10px;
-			color: $color5;
+			color: $color7;
 			margin: 0 -10px 15px;
 			text-transform: uppercase;
 			font-family: $font3;
@@ -962,6 +962,13 @@
 	.checkbox {
 		label {
 			font-size:15px !important;
+		}
+	}
+}
+.my-account {
+	.panel {
+		.panel-heading {
+			color:#fff;
 		}
 	}
 }

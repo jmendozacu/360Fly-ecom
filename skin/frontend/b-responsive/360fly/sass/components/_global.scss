@@ -276,16 +276,17 @@ a {
 
 .messages {
 	&> li {
-		background-color: $color1 !important;
+		background-color: transparent !important;
 		margin-bottom: 30px !important;
-		border: none !important;
-		color: $color8 !important;
+		/*border: none !important;*/
+		color: $color5 !important;
 		text-shadow: none;
-		text-align: center;
-		font-size: 14px !important;
+		text-align: left;
+		font-size: 20px !important;
 		font-weight: 300 !important;
+		position: relative;
 		a {
-			color: $color8 !important;
+			color: $color5 !important;
 		}
 		li {
 			line-height: normal;
@@ -296,8 +297,18 @@ a {
 	position:relative
 }
 
+.messages{
+	padding:0 15px !important;
+}
 .success-msg{
 	background-image: none;
+	background-color: transparent !important;
+	color: #000 !important;
+	border: 2px solid rgba(0,0,0,.2) !important;
+	border-width: 2px !important;
+	border-radius: 4px;
+	text-align: left !important;
+	padding: 15px 15px 15px 40px !important;
 }
 
 li.success-msg:before {
@@ -305,9 +316,13 @@ li.success-msg:before {
     font-family: fontawesome;
     position: absolute;
     left: 2%;
+	color:#7ABC31;
 }
 .error-msg{
 	background-image: none;
+	padding: 15px 15px 15px 40px !important;
+	border-width: 2px !important;
+	border-radius: 4px;
 }
 li.error-msg:before {
     content: "\f057";

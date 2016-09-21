@@ -52,7 +52,7 @@
 ?>
 <div class="compare-cameras  hidden-sm hidden-xs">
     <div class="container wrapper-width-camera">
-	<form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form" enctype="multipart/form-data">
+	<!-- <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form" enctype="multipart/form-data"> -->
         <?php echo $this->getBlockHtml('formkey') ?>
 		<!-- <div class="no-display">
             <input type="hidden" name="product" value="<?php //echo $_product->getId() ?>" />
@@ -215,7 +215,7 @@
 				</div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center add-to-cart-btn-block">
                     <p class="price_color"><?php echo $fourkPrice;?></p>
                     <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
@@ -226,13 +226,13 @@
                         <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
                     </button>
                 </div>
-                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center add-to-cart-btn-block">
                     <p class="price_color"><?php echo $hdPrice;?></p>
 					<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $hdAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
             </div>
 			</div>
-	</form>
+	<!-- </form> -->
     </div>
 </div>
 <div class="compare-cameras-mobile hidden-lg hidden-md">

@@ -95,7 +95,7 @@ ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
 
 .pre-footer h3{font-size: 25px;line-height: 33px;color:#fff;margin-bottom:24px;margin-top:3px;}
 .pre-footer p{color: #999999;margin-bottom: 35px;}
-.pre-footer .app-img{text-align: center;line-height: 440px;}
+.pre-footer .app-img{text-align: center;line-height: 220px;}
 #apps-img{display: inline-block;max-width:100%;}
 
 /* THE APPS THAT POWER IT ALL section end */
@@ -390,3 +390,14 @@ input.qty{width:100px !important;}
 .show-mobile-4k{display: none;}
 .edit-icon{font-family:'FontAwesome';font-size:15px;margin-left:5px;}
 /* Camera Category End */
+/* Account Dashboard Start */
+
+.customer-account-index .container-fluid,.customer-account-edit .container-fluid, .customer-address-index .container-fluid,.customer-address-form .container-fluid{overflow-x:hidden;}
+
+/* Account Dashboard End */
+
+/* card management start */
+
+.customer-cardmanagement-new .title-buttons .btn.btn-custom{margin:0;}
+
+/* card management end */
