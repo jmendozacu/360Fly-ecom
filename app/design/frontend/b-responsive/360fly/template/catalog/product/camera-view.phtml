@@ -54,7 +54,7 @@
 				<input type="hidden" name="related_product" id="related-products-field" value="" />
 			</div>
 			<div class="">
-				<div class="container-fluid landing-header">		
+				<div class="container-fluid landing-header">
 					<div class="landing-camera-layer camera-<?php echo $productResolution;?>">
 						<div class="container wrapper-width">
 							<div class="row">
@@ -112,7 +112,7 @@
 					</div>
 				</div>
 				<div class="hand-holding-camera pull-right hidden-xs hidden-sm ">
-					<img src="<?php echo $skinUrl;?>images/camera-details/hand-4k.png" alt="hand camera" title="Hand Camera">
+					<img src="<?php echo $skinUrl;?>images/camera-details/hand-<?php echo $productResolution;?>.png" alt="hand camera" title="Hand Camera">
 				</div>
 			</div>
 			<div class="container-fluid no-gutter wrapper-width product-media-desc-row">
@@ -146,7 +146,13 @@
 				</div>
 			</div>
 		</form>
-		<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
+		<?php
+		 	if($productResolution == 'hd'){
+				echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-2.phtml')->toHtml();
+			} elseif($productResolution == '4k'){
+				echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-1.phtml')->toHtml();
+			}
+		?>
 		<div class="camera-view-apps-block container-fluid no-gutter">
 			<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/apps-block.phtml')->toHtml(); ?>
 		</div>
@@ -161,7 +167,6 @@
 		</div>
 	</div>
 </div>
-<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
 <script type="text/javascript">
 //<![CDATA[
     var productAddToCartForm = new VarienForm('product_addtocart_form');

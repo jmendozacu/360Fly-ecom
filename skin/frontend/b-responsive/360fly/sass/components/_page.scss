@@ -488,9 +488,9 @@ Adwords Landingpage
             }
         }
     }
-    
+
 }
-.body-wrapper{min-height:60vh;}
+.body-wrapper{min-height:55vh;}
 .cms{
     &-magento-optimized-hosting{
         .body-wrapper > .container {
@@ -720,7 +720,7 @@ Adwords Landingpage
 //     }
 //     + .pager {
 //         border-top:1px solid green;
-        
+
 //     }
 // }
 .module_navigation {
@@ -859,8 +859,8 @@ dt.text07{
         }
     }
 }
-@media only screen 
-and (min-device-width : 768px) 
+@media only screen
+and (min-device-width : 768px)
 and (max-device-width : 1024px)  {
     #plans .plan .actions {
         .price{
@@ -902,7 +902,7 @@ and (max-device-width : 1024px)  {
     .is-blog #post-list .item {
         height: auto!important
     }
-    .cms-magento-optimized-hosting {        
+    .cms-magento-optimized-hosting {
         .header{
             background-color: #3a334d;
             position: fixed;

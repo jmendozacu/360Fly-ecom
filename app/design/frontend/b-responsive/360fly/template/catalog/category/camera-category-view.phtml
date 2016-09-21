@@ -214,12 +214,12 @@
 					</div>
 				</div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12 button-contain">
+            <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="col-sm-4 col-md-4 col-lg-4 text-center">
                     <p class="price_color"><?php echo $fourkPrice;?></p>
                     <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-sm-4 col-md-4 col-lg-4 button-contain">
                     <p class="text-center spec-txt">VIEW MORE SPECS</p>
                     <button class="expand center-block" data-toggle="collapse" data-target="#camera-chart" aria-expanded="false" aria-controls="camera-chart">
                         <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
@@ -261,12 +261,14 @@
                 </div>
                 <div class="col-sm-12 col-xs-12 mobile-buttons">
                     <p class="text-center spec-txt spec-txt-4k">VIEW MORE SPECS</p>
-                    <button class="expand-4k expand-mobile center-block" data-toggle="collapse" data-target="#camera4Kchart" aria-expanded="false" aria-controls="camera4Kchart">
+                    <button class="expand-4k expand-mobile center-block plus-minus" data-toggle="collapse" data-target="#camera4Kchart" aria-expanded="false" aria-controls="camera4Kchart">
                         <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
                         <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
                     </button>
                     <p class="price_color"><?php echo $fourkPrice;?></p>
-                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    <div class="col-sm-12 col-xs-12">
+                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-12 col-xs-12 mobile-hd">
@@ -288,12 +290,14 @@
                 </div>
                 <div class="col-sm-12 col-xs-12 mobile-buttons">
                     <p class="text-center spec-txt">VIEW MORE SPECS</p>
-                    <button class="expand-hd expand-mobile center-block" data-toggle="collapse" data-target="#cameraHDchart" aria-expanded="false" aria-controls="camera4HDchart">
+                    <button class="expand-hd expand-mobile center-block plus-minus" data-toggle="collapse" data-target="#cameraHDchart" aria-expanded="false" aria-controls="camera4HDchart">
                         <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
                         <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
                     </button>
                     <p class="price_color"><?php echo $hdPrice;?></p>
-                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $hdAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    <div class="col-sm-12 col-xs-12">
+                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $hdAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -307,34 +311,29 @@
         </ul>
     </div>
     <div class=" cat-video-container">
-        <div class="video-cat 4k-vblock" style="display:none;">
+        <div class="video-cat">
             <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-1.phtml')->toHtml();?>
-        </div>
-        <div class="video-cat hd-vblock" style="display:none;">
         </div>
     </div>
 </div>
 <script>
     jQuery(document).ready(function($){
-        $('.4k-vblock').show();
         $('.quality-head li').click(function(){
             var video_block = $(this).attr('data-id');
             if(video_block == 'hd'){
-                return false;
+                player.loadVideoById('CVvPPQ3SvAQ');
             } else if (video_block == '4k'){
-                console.log('asd');
-                $('.quality-head').find('li').removeClass('active');
-                $('.quality-head li.toggle-'+video_block).addClass('active');
-                $('.cat-video-container').find('div.video-cat').hide();
-                $('.cat-video-container .'+video_block+'-vblock').show();
+                player.loadVideoById('6Hi1VkNPJHA');
             }
+            player.stopVideo();
+            $('.quality-head').find('li').removeClass('active');
+            $('.quality-head li.toggle-'+video_block).addClass('active');
         });
     });
 </script>
 
 <?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('catalog/category/camera-category-js.phtml')->toHtml(); ?>
-<?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
 <script type="text/javascript">
 //<![CDATA[
     var productAddToCartForm = new VarienForm('product_addtocart_form');

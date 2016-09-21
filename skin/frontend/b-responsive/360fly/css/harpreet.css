@@ -41,7 +41,7 @@ iframe{border:none;}
 .header #navbar3 ul li.shopping-cart a{border-right:none;}
 .header #navbar3 ul li a:hover{color:#7ABC31;font-weight:bold;}
 .header li{list-style:none;}
-.header #navbar3 .submenu{left:-35px;}
+.header #navbar3 .submenu{left:5px;}
 .header #navbar3 .submenu li a{color:#ffffff;padding:0 10px;margin:10px 0;border-right: 1px solid #fff;}
 .header #navbar3 .submenu li a:hover{color:#ffffff;font-weight:bold;}
 .header .mobilenav{height: 50px;width: 50px;border: 2px solid #999;color:#999;border-radius:50%;background:transparent;}
@@ -137,6 +137,7 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
 .hamburger-menu{width:100%;}
 .hamburger-menu ul{display:inline-block;}
 .hamburger-menu ul li.toggle-topbar{height: 50px;width: 50px;border: 2px solid #999;border-radius: 100%;}
+.hamburger-menu ul li.toggle-topbar.open{background-image:none;text-indent: 0px;}
 .hamburger-menu ul li.toggle-topbar a{display: inline-block;height: auto;width: 100%;text-align: center;margin-top: 35%;}
 .hamburger-menu ul li span.icon-bar{background-color: #888;display: block;width: 22px;height: 2px;border-radius: 1px;margin: 0px auto 4px auto;}
 .hamburger-menu section.top-bar-section{float:left;text-align:left;margin:0;padding:15px;position:absolute;left:10px;background:#000;width:100%;max-height: 90vh;overflow-y: scroll;padding-bottom: 50px;}
@@ -186,6 +187,9 @@ table#shopping-cart-totals-table .a-right{padding-right:15px;}
 .module_coupon {float: left;}
 .cart-shipping-block{margin:25px;width: auto;min-width:300px;}
 .coupon-shipping-container{display:inline-block;max-width: 60%;width:60%;margin-bottom: 20px;}
+
+/*-------------Success And Failure Page -----------------------*/
+.checkout-onepage-success .page-title,.checkout-onepage-failure .page-title  {text-align: center;}
 
 /*-------------For MediaQueries.css file-----------*/
 @media screen and (min-width: 1200px){

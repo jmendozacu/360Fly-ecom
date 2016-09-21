@@ -16,7 +16,7 @@
 	}
 	#onestepcheckout-form {
 		.group-select {
-			padding: 0 !important; 
+			padding: 0 !important;
 		}
 		.onestepcheckout-description {
 			@extend .text04;
@@ -59,10 +59,14 @@
 				padding: 0;
 			}
 			.onestepcheckout-numbers {
-				@extend .heading;
+				background-color: $color8;
+				color: $color7;
+				text-transform: uppercase;
+				font-family: $font3;
+				padding:10px 20px;
 			}
 			#billing_address {
-				padding: 15px 10px;
+				padding: 0px 10px;
 				ul {
 					margin: 0;
 					&#billing_address_list {
@@ -180,8 +184,9 @@
 				}
 			}
 			.onestepcheckout-place-order {
-				margin: 30px auto;
+				margin: 30px 0;
 				display: block;
+				float: right;
 			}
 			.onestepcheckout-summary {
 				table {

@@ -7,7 +7,7 @@ $videoId = 'CVvPPQ3SvAQ';
     <div class="video-container">
         <div id="video">
             <section id="one-up">
-                <div class="videocontent embed-responsive" onclick="ytIframe2()" data-id="<?php echo $videoId;?>">
+                <div class="videocontent embed-responsive embed-responsive-16by9">
                     <div class="video-overlay-content">
                         <div class="video-overlay-text no-display">
                             <p>CLICK AND DRAG BELOW TO</p>
@@ -16,7 +16,7 @@ $videoId = 'CVvPPQ3SvAQ';
                         <div class="swipe-icon-yt">
                         </div>
                     </div>
-                    <div class="youtube-player" data-id="<?php echo $videoId;?>"></div>
+                    <div class="youtube-player" id="player-yt" data-id="<?php echo $videoId;?>"></div>
                 </div>
             </section>
         </div>
@@ -24,40 +24,26 @@ $videoId = 'CVvPPQ3SvAQ';
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded",
-        function() {
-            var div, n,
-                v = document.getElementsByClassName("youtube-player");
-            for (n = 0; n < v.length; n++) {
-                div = document.createElement("div");
-                div.setAttribute("data-id", v[n].dataset.id);
-                div.innerHTML = getVideoThumb(v[n].dataset.id);
-                div.onclick = ytIframe;
-                v[n].appendChild(div);
-            }
-        });
 
-    function getVideoThumb(id) {
-        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" style="width:100%;cursor:pointer;">',
-            play = '<div class="play"></div>';
-        return thumb.replace("ID", id) + play;
-    }
+    var tag = document.createElement('script');
 
-    function ytIframe() {
-        var iframe = document.createElement("iframe");
-        var embed = "https://www.youtube.com/embed/<?php echo $videoId;?>?autoplay=1";
-        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
-        iframe.setAttribute("frameborder", "0");
-        iframe.setAttribute("allowfullscreen", "1");
-        this.parentNode.replaceChild(iframe, this);
-    }
-    function ytIframe2() {
-        var video_id = jQuery(this).attr('data-id');
-        var iframe = document.createElement("iframe");
-        var embed = "https://www.youtube.com/embed/<?php echo $videoId;?>?autoplay=1";
-        iframe.setAttribute("src", embed.replace("ID", video_id));
-        iframe.setAttribute("frameborder", "0");
-        iframe.setAttribute("allowfullscreen", "1");
-        jQuery('.youtube-player').html(iframe);
-    }
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+     function onYouTubeIframeAPIReady() {
+       player = new YT.Player('player-yt', {
+         height: '100%',
+         width: '100%',
+         videoId: '<?php echo $videoId;?>',
+         events: {
+           //'onReady': onPlayerReady,
+         }
+       });
+     }
+     function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
 </script>
