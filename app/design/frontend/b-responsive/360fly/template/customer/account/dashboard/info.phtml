@@ -28,7 +28,7 @@
     <div class="col-sm-6 col-md-6">
         <div class="info-box">
             <h4 class="box-title"><?php echo $this->__('Contact Information') ?>
-                <a class="pull-right" href="<?php echo $this->getUrl('customer/account/edit') ?>">(Edit)<span class="glyphicon glyphicon-edit font12"></span></a>
+                <a class="pull-right" href="<?php echo $this->getUrl('customer/account/edit') ?>">(Edit)<span class="fa-pencil-square-o edit-icon"></span></a>
             </h4>
             <p class="box-content">
                 <?php echo $this->htmlEscape($this->getCustomer()->getName()) ?><br />
@@ -41,7 +41,7 @@
     <div class="col-sm-6 col-md-6">
         <div class="info-box">
             <h4 class="box-title"><?php echo $this->__('Newsletters') ?>
-                <a class="pull-right" href="<?php echo $this->getUrl('newsletter/manage') ?>">(Edit)<span class="glyphicon glyphicon-edit font12"></span></a>
+                <a class="pull-right" href="<?php echo $this->getUrl('newsletter/manage') ?>">(Edit)<span class="fa-pencil-square-o edit-icon"></span></a>
             </h4>
             <p class="box-content">
                 <?php if( $this->getIsSubscribed() ): ?>

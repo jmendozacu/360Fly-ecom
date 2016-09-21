@@ -233,7 +233,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /* comparison table start */
 
 /* Desktop compare Start */
-.button-contain .btn-custom,.mobile-buttons .btn-custom{text-transform:uppercase;}
+.add-to-cart-btn-block .btn-custom,.mobile-buttons .btn-custom{text-transform:uppercase;}
 .spec-chart.collapse {height: 300px !important;overflow: hidden;display: block !important;margin-bottom: 40px;}
 .spec-chart.collapse.in {height: auto !important;}
 .camera-spec:nth-child(odd) {background: linear-gradient(to right,rgba(229,229,229,0) 0,#e5e5e5 18%,#e5e5e5 89%,rgba(229,229,229,0) 100%);}
@@ -243,7 +243,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .camera-spec div:nth-child(2) {color: #78be20;}
 .camera-spec div:nth-child(2) p{font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
 .camera-spec div:nth-child(2) b{font-weight:700;}
-.button-contain .price_color {font-size: 20px;text-align: center;color: #78be20;margin-bottom: 10px;font-weight:700;}
+.add-to-cart-btn-block .price_color {font-size: 20px;text-align: center;color: #78be20;margin-bottom: 10px;font-weight:700;}
 .compare-cameras .spec-txt,.compare-cameras-mobile .spec-txt{margin-bottom: 0;color: #B1B1B1;font-size: 14px;}
 .expand .glyphicon, .expand-hd .glyphicon, .expand-4k .glyphicon,.expandedBtn .glyphicon{font-family:'FontAwesome';font-size: 35px;}
 .center-block {display: block;margin-left: auto;margin-right: auto;}
@@ -388,5 +388,5 @@ input.qty{width:100px !important;}
 
 .show-lg-md{display: none;}
 .show-mobile-4k{display: none;}
-
+.edit-icon{font-family:'FontAwesome';font-size:15px;margin-left:5px;}
 /* Camera Category End */

@@ -306,6 +306,16 @@ li.success-msg:before {
     position: absolute;
     left: 2%;
 }
+.error-msg{
+	background-image: none;
+}
+li.error-msg:before {
+    content: "\f057";
+    font-family: fontawesome;
+    position: absolute;
+    left: 2%;
+	color:red;
+}
 .panel-group {
 	&> .panel {
 		box-shadow: none;

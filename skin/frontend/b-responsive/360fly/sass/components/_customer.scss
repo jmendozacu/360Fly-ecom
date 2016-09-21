@@ -267,7 +267,7 @@
 		background-color: #fff;
 		padding: 0 10px 1px;
 		.sub-title {
-			background-color: $color3;
+			background-color: $color8;
 			padding: 11px 10px;
 			color: #fff;
 			margin: 0 -10px 15px;
@@ -955,6 +955,13 @@
 			ul {
 				margin: 0 25%;
 			}
+		}
+	}
+}
+.my-account {
+	.checkbox {
+		label {
+			font-size:15px !important;
 		}
 	}
 }
