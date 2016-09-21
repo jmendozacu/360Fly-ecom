@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * @category Mage
@@ -43,7 +43,7 @@
 				  <li class="menu1 <?php echo $menuClass?>-container" ><a class="<?php echo $menuClass?>-anchor" href="<?php echo $baseUrl;?>shop">SHOP</a>
 					<ul class="submenu1 submenu <?php echo $menuClass;?>">
                         <?php echo $this->getChildHtml('category.links');?>
-                        <li><a href="<?php echo $baseUrl;?>/faq/">FAQ</a></li>
+                        <li><a href="<?php echo $baseUrl;?>faq/">FAQ</a></li>
 
 					</ul>
 				  </li>
@@ -54,7 +54,7 @@
 
 					</ul>
 				  </li>
-				  <li class="divider-vertical"><a href="<?php echo $baseUrl;?>videos">VIDEO</a></li>
+				  <li class="divider-vertical"><a href="https://360fly.com/videos/">VIDEO</a></li>
 				  <li class="divider-vertical <?php echo $communityClass?>-container" "><a class="<?php echo $communityClass?>-anchor" href="<?php echo $baseUrl;?>community">COMMUNITY</a></li>
 				  <li class="divider-vertical"><a href="http://support.360fly.com/">SUPPORT</a></li>
 				  <li class="shopping-cart hide-mobile">
@@ -87,7 +87,10 @@
 				<!-- Right Nav Section -->
 				<ul class="">
 					<li class="shopping-cart show-mobile">
-						<a class="cart-color" href="<?php echo $baseUrl;?>checkout/cart""><span class="icon-shopping-cart"></span></a>
+						<a class="cart-color cart-count" href="<?php echo $baseUrl;?>checkout/cart">
+							<?php echo $cartCount > 0 ? $cartCount : ''; ?>
+							<span class="icon-shopping-cart"></span>
+						</a>
 					</li>
 					<li class="show-mobile"><a href="<?php echo $baseUrl;?>shop">Shop</a></li>
 					<li class="show-mobile"><a href="<?php echo $baseUrl;?>apps">APPS</a></li>

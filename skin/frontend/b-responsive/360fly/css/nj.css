@@ -127,6 +127,7 @@
 
 
 body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;background:#fff;}
+.cms-index-index .pov .pov-para{margin: 0 0 20px;}
 .cms-index-index .btn.btn-custom {margin:0px;}
 .cms-index-index .product-slider .product_pod p{margin-bottom:5px!important;}
 .cms-index-index .ls-background {margin-top: 0px !important;}
@@ -183,7 +184,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .footer-360 .footer-bottom-nav{margin-top:22px !important;}
 .footer-360 #mc-embedded-subscribe-form{display:inline-block;width:120px;margin-right:12px;margin-left:12px;margin-bottom:0px;}
 .footer-360 .btn-footer, .footer-360 #mc-embedded-subscribe-form .btn-footer{border-color:#666666;border-radius:50px;border-width:2px;-webkit-transition:all .5s;-moz-transition:all .5s;transition:all .5s;}
-.footer-360 #mc-embedded-subscribe-form .btn-footer{width:120px;background-color:transparent;margin-bottom:0;min-width: 120px;font-weight:100;}
+.footer-360 #mc-embedded-subscribe-form .btn-footer{width:120px;background-color:transparent;margin-bottom:0;min-width: 120px;font-weight:100;cursor: initial;}
 .footer-360 .contact{margin-top:46px;}
 .footer-360 .btn-footer:hover{background-color:#666666;color:#999999;}
 .footer-360 a:hover{text-decoration:none;color:#fff;}
@@ -450,3 +451,9 @@ img.camera-logo {margin-bottom: 30px;}
 /*Shop Page starts*/
 .home-shop a.btn.btn-custom{margin-left: 0;}
 .product-block p.center{margin: 0 auto 30px;}
+
+/*Mobile Footer */
+a.cart-count{color: #78BE20!important;}
+.header #navbar3 .submenu li:last-child a {border-right:none;}
+.footer-360 .email:focus{outline:none;}
+.footer-360 .btn.btn-custom{-webkit-user-select: initial;moz-user-select: none;ms-user-select: none;-select: none;}
