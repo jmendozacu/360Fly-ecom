@@ -75,6 +75,8 @@
 	}
 }
 
+button.button span{border:none;background: transparent;}
+
 @media screen and (min-width: 768px){
 	.btn {
 		&.btn-default {
