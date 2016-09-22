@@ -190,6 +190,17 @@ table#shopping-cart-totals-table .a-right{padding-right:15px;}
 
 /*-------------Success And Failure Page -----------------------*/
 .checkout-onepage-success .page-title,.checkout-onepage-failure .page-title  {text-align: center;}
+.checkout-onepage-success h1{font-size:40px;color:#111;text-align: center;}
+.checkout-onepage-success p.order-date{font-weight:bold;padding-left:5px;}
+.checkout-onepage-success h2{font-size: 25px;color:#222;clear: both;}
+.checkout-onepage-success address{line-height: 20px;font-size: 15px;letter-spacing: 2px;}
+.checkout-onepage-success .col2-set .col1c{float: left;    border: 2px solid #aaa;    margin: 5px;border-radius: 5px;}
+.checkout-onepage-success .col2-set{clear: both;}
+.checkout-onepage-success .ml20{margin-left:20px;}
+.checkout-onepage-success .print-container,.print-head{width:1000px;margin:0 auto;}
+.checkout-onepage-success table{width:70%;margin-left: 20px;}
+.checkout-onepage-success table thead th{text-align:left;font-size:15px;color: #222;background: beige;font-weight: bold;padding: 10px 0;}
+.checkout-onepage-success table tfoot td, table tfoot td span,table tfoot td strong{text-align: right; font-size:18px;font-weight: bold;color: #111;}
 
 /*-------------For MediaQueries.css file-----------*/
 @media screen and (min-width: 1200px){
@@ -206,6 +217,8 @@ table#shopping-cart-totals-table .a-right{padding-right:15px;}
     .coupon-shipping-container{max-width: 100%;width:100%;}
     .cart-shipping-block{max-width:90%;margin:0;width:90%;}
     input#coupon_code{margin:15px auto;}
+    .checkout-onepage-success .col2-set .col1c{text-align: center;}
+    .checkout-onepage-success .page-title{margin:25px 0;}
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
     .category-cameras .landing-img {top: 50px!important;}
@@ -213,4 +226,5 @@ table#shopping-cart-totals-table .a-right{padding-right:15px;}
     .coupon-shipping-container {display: inline-block; max-width: 55%;}
     .module_coupon{margin-left:25px;}
     table#shopping-cart-totals-table{font-size:15px;}
+    .checkout-onepage-success .col2-set .col1c{margin:5px;text-align: center;}
 }
