@@ -147,7 +147,15 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
     <?php endif; ?>
     </td>
-
+    <td class="a-left quantity" style="min-width:100px;">
+      <div>
+          <span class="cell-label"><?php echo $this->__('Qty:') ?></span>
+          <span>
+              <input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="form-control qty" maxlength="12" />
+              <button type="submit" title="<?php echo $this->__('Update Shopping Cart') ?>" class="button btn-update glyphicon glyphicon-refresh">&nbsp;</button>
+          </span>
+      </div>
+    </td>
 
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-left subtotal">

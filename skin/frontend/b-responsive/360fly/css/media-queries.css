@@ -103,7 +103,7 @@
 	background-color: white;}
 	/* Login Page */
 	.customer-account-login .account-login{padding-top:50px;}
-	.customer-account-create .register-container{padding-top:50px;}
+	.customer-account-create .register-container{padding-top:50px;} 
 	/* Sign Up Page After logged in */
 	.module_navigation,.my-account{width: 100%;}
 	.dashboard .welcome-msg{margin:0;padding: 10px;}
@@ -123,6 +123,21 @@
 	.cms-australia .au-r4-container .container {padding: 0 25px;}
 	body.cms-au .cms-australia .video-overlay .au-r1-container{top: 10%;}
 	body.cms-au .app-content .apps-button {margin-bottom: 25px;}
+	/* Error & Success message */
+	li.success-msg:before,li.error-msg:before{left:4%;}
+	/* Checkout Page Start */
+	.checkout-cart-index .cart .cart-table tbody tr td.cell-product-img{display: -webkit-box;padding-left: 0;}
+	.checkout-cart-index .cart .cart-table tbody tr td.product-info{display: -webkit-box;}
+	.checkout-cart-index .cart .cart-table tbody tr td .product-name{margin: 0 auto;}
+	.checkout-cart-index .cart .cart-table tbody tr td.unit-price{padding-left: 15px;width: 100%;text-align: center !important;}
+	.checkout-cart-index .cart .cart-table tbody tr td .cell-label{width: 100%;display: table;text-align: center;}
+	.checkout-cart-index .cart .cart-table tbody tr td.subtotal{width: 100%;}
+	.checkout-cart-index span.cart-price{display: block;text-align: center;}
+	.checkout-cart-index .cart-totals .checkout-types{text-align:center;}
+	.checkout-cart-index td.a-left.quantity{clear:both;}
+	.checkout-cart-index td.a-left.quantity div{text-align:center;}
+	.checkout-cart-index .cart-table .btn-update{float:none;top:0;}
+	/* Checkout Page End */
 }
 
 /********************************************************************************************************************/
@@ -141,6 +156,10 @@
 	/* Product Desc Page Same as landing Page Start */
 	.category-cameras .landing-img{top:120px;}
 	/* Product Desc Page Same as landing Page End */
+	/* Checkout index start */
+	.checkout-cart-index input.qty{width:65px !important;margin-top: 15px;}
+	.checkout-cart-index .cart-table .btn-update {top: -30px;left: 25px;}
+	/* Checkout index End */
 }
 
 /********************************************************************************************************************/

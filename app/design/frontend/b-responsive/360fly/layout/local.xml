@@ -22,7 +22,7 @@
                 <params/>
                 <if>IE</if>
             </action>
-			
+
 			<!-- Custom Files by Ahy Team -->
             <action method="addCss"><stylesheet>css/player-ui.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/nj.css</stylesheet></action>
@@ -35,8 +35,8 @@
             <action method="addCss"><stylesheet>css/media-queries.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/panaroma/videojs-panorama.css</stylesheet></action>
             <!-- <action method="addCss"><stylesheet>css/360custom.css</stylesheet></action> -->
-			
-			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.js</name></action>	
+
+			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>	 -->
 			<action method="addItem"><type>skin_js</type><name>js/scrollmagic.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/tweenmax.min.js</name></action>
@@ -81,7 +81,7 @@
             <action method="addLink" translate="label title" module="customer"><label>Login</label><url helper="customer/getLoginUrl"/><title>Login</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="link-account"</aParams></action>
         </reference>
     </customer_logged_out>
-	
+
 	<cms_index_index>
 		<reference name="head">
 			<action method="addCss"><stylesheet>css/layerslider.css</stylesheet></action>
@@ -115,21 +115,21 @@
 	</catalog_category_default>
 
 	<catalog_product_view>
-        <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
-        </reference>
+    <reference name="root">
+        <action method="setTemplate"><template>page/1column.phtml</template></action>
+    </reference>
 		<reference name="content">
 			<remove name="product.info.addto"/>
 			<block type="catalog/product_list_related" name="catalog.product.related" as="relatedProducts" template="catalog/product/list/related.phtml" />
-        </reference>
+    </reference>
 		<reference name="head">
 			<action method="addItem"><type>skin_js</type><name>js/jquery.flexslider.js</name></action>
 		</reference>
-        <reference name="product.info">
-            <block type="catalog/product_list_related" name="catalog.product.related" as="relatedProducts" template="catalog/product/list/related.phtml" />
-        </reference>
+    <reference name="product.info">
+        <!-- <block type="catalog/product_list_related" name="catalog.product.related" as="relatedProducts" template="catalog/product/list/related.phtml" /> -->
+    </reference>
     </catalog_product_view>
-	
+
     <customer_account>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -167,7 +167,7 @@
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
     </checkout_onepage_success>
-	
+
 	<cms_index_noroute translate="label">
         <label>CMS No-Route Page</label>
         <reference name="content">
@@ -180,6 +180,5 @@
             </block> -->
         </reference>
     </cms_index_noroute>
-	
-</layout>
 
+</layout>

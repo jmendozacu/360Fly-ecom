@@ -401,3 +401,10 @@ input.qty{width:100px !important;}
 .customer-cardmanagement-new .title-buttons .btn.btn-custom{margin:0;}
 
 /* card management end */
+
+/* Checkout index start */
+
+.checkout-cart-index input.qty{display: inline-block;}
+.checkout-cart-index .cart-table .btn-update{top:13px;}
+
+/* Checkout index End */
