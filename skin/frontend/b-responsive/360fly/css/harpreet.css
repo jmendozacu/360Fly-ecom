@@ -179,10 +179,17 @@ ul.product-grid li .product-title-container{min-height:50px;}
 .block-related.product-promotion h2{font-family: FlySans-SemiBold,Arial,sans-serif;}
 
 /*--------------------CART&CHECKOUT--------------------*/
+.checkout-cart-index input.qty, .checkout-cart-index .cart-table .btn-update{float:left;}
+.cart .cart-table tbody tr td .product-name a{font-size: 24px;}
+.cart .cart-table tbody tr td{font-size: 24px;}
+.cart .cart-table thead tr th{font-size: 22px;}
+.checkout-cart-index .cart-table .btn-update {height: 100%;display: inline-block; line-height: 1.5;top:0;}
+.cart-table td.quantity span{display: inline-block;height: 100%;}
 .table tbody tr td, .onestepcheckout-index-index #onestepcheckout-form div.checkoutcontainer .onestepcheckout-summary table tbody tr td{background-color: transparent;}
 input#coupon_code {border: 1px solid #ddd;display:block;margin:10px 0;box-shadow: none;height: 45px;background-color: #f0f0f0;-webkit-border-radius: 3px;-moz-border-radius: 3px;-ms-border-radius: 3px;border-radius: 3px; border: none;padding-right: 25px;color: #444;font-weight: 300;font-size: 16px;  -webkit-appearance: none;}
-table#shopping-cart-totals-table{float: right;clear:both;font-size:20px;margin:20px 0;max-width:35%;}
+table#shopping-cart-totals-table{float: right;clear:both;font-size:24px;margin:20px 0;max-width:35%;}
 table#shopping-cart-totals-table .a-right{padding-right:15px;}
+table#shopping-cart-totals-table tr td strong, table#shopping-cart-totals-table tr td strong span{font-size: 24px;}
 .panel-default > .panel-heading{background-image: none;background-color: transparent;}
 .module_coupon {float: left;}
 .cart-shipping-block{margin:25px;width: auto;min-width:300px;}
@@ -219,6 +226,7 @@ table#shopping-cart-totals-table .a-right{padding-right:15px;}
     input#coupon_code{margin:15px auto;}
     .checkout-onepage-success .col2-set .col1c{text-align: center;}
     .checkout-onepage-success .page-title{margin:25px 0;}
+    .checkout-cart-index input.qty, .checkout-cart-index .cart-table .btn-update{float:none;}
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
     .category-cameras .landing-img {top: 50px!important;}
@@ -227,4 +235,5 @@ table#shopping-cart-totals-table .a-right{padding-right:15px;}
     .module_coupon{margin-left:25px;}
     table#shopping-cart-totals-table{font-size:15px;}
     .checkout-onepage-success .col2-set .col1c{margin:5px;text-align: center;}
+    .checkout-cart-index .cart-table .btn-update {top: -40px!important;left: 60px!important;}
 }

@@ -10,8 +10,8 @@ $baseUrl = $this->getBaseUrl();
 $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $skinUrl = $this->getSkinUrl();
 
-$hdUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-hd')->getProductUrl();
-$fourkUrl =  Mage::getSingleton('catalog/product')->loadByAttribute('sku','360fly-4k')->getProductUrl();
+$hdUrl =  Mage::getSingleton('catalog/product')->load(2)->getProductUrl();
+$fourkUrl =  Mage::getSingleton('catalog/product')->load(1)->getProductUrl();
 ?>
 
 <div class="pageheader home-shop">

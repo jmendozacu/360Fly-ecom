@@ -54,8 +54,8 @@
         <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
             <thead>
                 <tr>
-                    <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
-                    <th rowspan="<?php echo $mergedCells; ?>" class="a-left"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
+                    <!-- <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th> -->
+                    <th colspan="2" rowspan="<?php echo $mergedCells; ?>" class="a-left"><span class="nobr"><?php echo $this->__('Item') ?></span></th>
                     <th rowspan="<?php echo $mergedCells; ?>" class="a-left"><?php echo $this->__('Unit Price') ?></th>
                     <th class="a-left" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Qty') ?></th>
                     <th class="a-left" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Total') ?></th>
