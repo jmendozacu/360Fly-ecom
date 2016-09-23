@@ -35,9 +35,8 @@
     $baseUrl = $this->getBaseUrl();
     $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
     $skinUrl = $this->getSkinUrl();
-    $productObj = Mage::getSingleton('catalog/product');
-    $hdObj = $productObj->load(2);
-    $fourkObj = $productObj->load(1);
+    $hdObj = Mage::getModel('catalog/product')->load(2);
+    $fourkObj = Mage::getModel('catalog/product')->load(1);
     $hdUrl =  $hdObj->getProductUrl();
     $fourkUrl =  $fourkObj->getProductUrl();
     $hdPrice =  Mage::helper('core')->currency($hdObj->getPrice(),true,false);
