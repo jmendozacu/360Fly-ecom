@@ -1,0 +1,53 @@
+<?php
+/*Write conditions here to switch video source based on request URL*/
+$videoId = 'uF6tYRPqoo0';
+if(count($this->videoid)> 0){
+    $videoId = $this->videoid;
+}
+?>
+
+
+<div class="video-player" id="player">
+    <div class="video-container">
+        <div id="video">
+            <section id="one-up">
+                <div class="videocontent embed-responsive embed-responsive-16by9">
+                    <div class="video-overlay-content">
+                        <div class="video-overlay-text no-display">
+                            <p>CLICK AND DRAG BELOW TO</p>
+                            <p><b>EXPERIENCE 360&deg;</b></p>
+                        </div>
+                        <div class="swipe-icon-yt">
+                        </div>
+                    </div>
+                    <div class="youtube-player" id="player-yt" data-id="<?php echo $videoId;?>"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+     function onYouTubeIframeAPIReady() {
+       player = new YT.Player('player-yt', {
+         height: '100%',
+         width: '100%',
+         videoId: '<?php echo $videoId;?>',
+         events: {
+           //'onReady': onPlayerReady,
+         }
+       });
+     }
+     function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+</script>

@@ -147,11 +147,18 @@
 			</div>
 		</form>
 		<?php
-		 	if($productResolution == 'hd'){
-				echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-2.phtml')->toHtml();
-			} elseif($productResolution == '4k'){
-				echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-1.phtml')->toHtml();
-			}
+			$ytVideoId = $_product->getYtVideoId();
+			//echo $this->getLayout()->createBlock('core/template')->setData('videoid', $ytVideoId)->setTemplate('page/html/blocks/video-block-dyn.phtml')->toHtml();
+			// 	if($productResolution == 'hd'){
+			// 	echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-2.phtml')->toHtml();
+			// } elseif($productResolution == '4k'){
+			// 	echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-1.phtml')->toHtml();
+			// }
+		?>
+		<?php echo $this->getLayout()->createBlock('core/template')
+					->setData('videoid', $ytVideoId)
+					->setTemplate('page/html/blocks/video-block-dyn.phtml')
+					->toHtml();
 		?>
 		<div class="camera-view-apps-block container-fluid no-gutter">
 			<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/apps-block.phtml')->toHtml(); ?>

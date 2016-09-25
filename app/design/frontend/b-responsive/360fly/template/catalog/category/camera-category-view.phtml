@@ -39,6 +39,8 @@
     $fourkObj = Mage::getModel('catalog/product')->load(1);
     $hdUrl =  $hdObj->getProductUrl();
     $fourkUrl =  $fourkObj->getProductUrl();
+    $hdVideo = $hdObj->getYtVideoId();
+    $fourkVideo = $fourkObj->getYtVideoId();
     $hdPrice =  Mage::helper('core')->currency($hdObj->getPrice(),true,false);
     $fourkPrice =  Mage::helper('core')->currency($fourkObj->getPrice(),true,false);
     $hdAddToCartUrl =  Mage::helper('checkout/cart')->getAddUrl($hdObj);
@@ -313,7 +315,7 @@
     </div>
     <div class=" cat-video-container">
         <div class="video-cat">
-            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-1.phtml')->toHtml();?>
+            <?php echo $this->getLayout()->createBlock('core/template')->setData('videoid',$fourkVideo)->setTemplate('page/html/blocks/video-block-dyn.phtml')->toHtml();?>
         </div>
     </div>
 </div>
@@ -322,9 +324,9 @@
         $('.quality-head li').click(function(){
             var video_block = $(this).attr('data-id');
             if(video_block == 'hd'){
-                player.loadVideoById('Pllco4cJCVU');
+                player.loadVideoById('<?php echo $hdVideo;?>');
             } else if (video_block == '4k'){
-                player.loadVideoById('6Hi1VkNPJHA');
+                player.loadVideoById('<?php echo $fourkVideo;?>');
             }
             player.stopVideo();
             $('.quality-head').find('li').removeClass('active');
