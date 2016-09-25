@@ -72,4 +72,19 @@ jQuery(document).ready(function(a) {
             a(this).addClass('open-hbm');
         }
      });
+     /* Search Icon */
+     var oldSearchWidth;
+     a("#search").click(function(){
+         oldSearchWidth = a('.search-link-header .form-group').width();
+         a('.search-link-header .form-group').css('width','95%');
+         a('.search-link-header .form-group').css('padding','5px 0');
+         a('.search-link-form .form-control').css('border','1px solid #fff');
+     });
+     a('body').click(function(e){
+         if( a(e.target).closest("#search").length > 0 ) {
+             return false;
+     }
+         a('.search-link-header .form-group').css('width',oldSearchWidth);
+         a('.search-link-form .form-control').css('border','none');
+     });
 });
