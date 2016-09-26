@@ -34,15 +34,15 @@ $catalogSearchHelper =  $this->helper('catalogsearch');
             <div class="form-group has-feedback search-link-form">
         		<label for="search" class="sr-only">Search</label>
         		<input type="text" class="form-control" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" id="search" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" placeholder="search">
-          		<span class="glyphicon glyphicon-search form-control-feedback"></span>
         	</div>
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
         <!-- </form> -->
     </li>
 </ul>
 <div id="search_autocomplete" class="search-autocomplete"></div>
 <script type="text/javascript">
 //<![CDATA[
-    var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Enter search keyword') ?>');
+    var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Search') ?>');
     searchForm.initAutocomplete('<?php echo $catalogSearchHelper->getSuggestUrl() ?>', 'search_autocomplete');
 //]]>
 </script>

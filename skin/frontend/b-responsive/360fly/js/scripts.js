@@ -76,15 +76,17 @@ jQuery(document).ready(function(a) {
      var oldSearchWidth;
      a("#search").click(function(){
          oldSearchWidth = a('.search-link-header .form-group').width();
-         a('.search-link-header .form-group').css('width','95%');
-         a('.search-link-header .form-group').css('padding','5px 0');
+         a('.search-link-header .form-group').css('width','155px');
+         a('.search-link-header .form-group').css('padding','5px 0 5px 5px');
          a('.search-link-form .form-control').css('border','1px solid #fff');
+         a('.search-link-form .form-control').css('cursor','initial');
      });
      a('body').click(function(e){
          if( a(e.target).closest("#search").length > 0 ) {
              return false;
      }
-         a('.search-link-header .form-group').css('width',oldSearchWidth);
+         a('.search-link-header .form-group').css('width','32px');
          a('.search-link-form .form-control').css('border','none');
+         a('.search-link-form .form-control').css('cursor','pointer');
      });
 });
