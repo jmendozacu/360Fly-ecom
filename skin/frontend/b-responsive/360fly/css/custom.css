@@ -418,16 +418,25 @@ input.qty{width:100px !important;}
  /* Search Icon Start */
  .inline-block{display: inline-block;}
 .search-link-header .form-group{float:right !important;transition:all 0.3s, border-radius 0s;width:32px;height:32px;background-color:transparent;border-radius:25px;margin-bottom:0px;padding:5px 0;transition:all 0.3s ease-in-out;}
-.search-link-header .form-group input.form-control{padding-right:20px;border:0 none;background:transparent;box-shadow:none;display:block;height:22px;border-radius:50px;cursor:pointer;font-size:14px;color:#fff;margin:2px 0;}
+.search-link-header .form-group input.form-control{padding-right:20px;border:0 none;background:transparent;box-shadow:none;display:block;height:23px;border-radius:50px;cursor:pointer;font-size:14px;color:#fff;margin:2px 0;}
 .search-link-header .form-group input.form-control::-webkit-input-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control:-moz-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control::-moz-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control:-ms-input-placeholder{color:#fff;}
 .search-link-header .form-group span.form-control-feedback{position:absolute;top:1px;right:-2px;z-index:2;display:block;width:34px;height:34px;line-height:34px;text-align:center;color:#fff;left:initial;font-size:14px;}
-.links .last a{border-right:1px solid #fff;}
+.hidden-xs .header-account-links .links .last a{border-right:1px solid #fff;}
+.header-mobile .top-bar-section form{display: block;}
+.header-mobile .top-bar-section .form-control{-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius:5px;}
+.header-mobile .top-bar-section .form-control:focus{border-color: #66afe9;outline: 0;box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+
  /* Search Icon End */
 /* Search Page Start */
 .catalogsearch-result-index .search-title{border-bottom: 1px solid transparent;text-transform: inherit;padding:30px 15px 20px;}
 .catalogsearch-result-index .search-title h1{font-size: 30px;line-height: 40px;margin-bottom: 0;margin-top: 3px;font-family: FlySans-,Helvetica,Arial,sans-serif;font-weight: 500;color:#333;}
 .catalogsearch-result-index .note{font-family: FlySans-,Helvetica,Arial,sans-serif;line-height: 1.42;color:#333;font-size: 16px;margin-bottom: 20px;}
+.catalogsearch-result-index .product-grid .cam-name{line-height: 1.42857143;font-weight: 700;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+    margin-top: 4px;font-size: 18px;margin-bottom: 0;}
+.catalogsearch-result-index .product-grid .cam-name a,.catalogsearch-result-index .product-grid h3.cam-name{color:#000 !important;}
+.catalogsearch-result-index .product-grid .price-box{display: block;text-align: center;width: 100%;}
+.catalogsearch-result-index .product-grid .regular-price .price {font-weight: 500;margin-bottom: 0;color: #1a1a1a;font-size: 20px;}
 /* Search Page End */

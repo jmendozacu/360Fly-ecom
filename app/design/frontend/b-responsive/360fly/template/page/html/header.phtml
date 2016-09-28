@@ -95,6 +95,14 @@
 			<section class="top-bar-section" style="display:none;">
 				<!-- Right Nav Section -->
 				<ul class="">
+					<?php $catalogSearchHelper =  $this->helper('catalogsearch');?>
+					<li class="visible-xs">
+					    <form  id="search-mini-form" class="navbar-form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
+					        <div class="form-group">
+					            <input type="text" class="form-control" id="search-mobile" maxlength="128" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" placeholder="Search">
+					        </div>
+					    </form>
+					</li>
 					<li class="shopping-cart show-mobile">
 						<a class="cart-color cart-count" href="<?php echo $baseUrl;?>checkout/cart">
 							<?php echo $cartCount > 0 ? $cartCount : ''; ?>

@@ -38,19 +38,6 @@
 
 <!-- Ahy Team's Custom Code Starts-->
 
-<div class="product-intro">
-  <div class="container wrapper-width">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <div class="container wrapper-width">
-        <div class="col-md-6 col-sm-12">
-              <h3>EVERYWHERE IS WHERE YOUR 360fly GOES.</h3>
-              <p class="medium-font">The 1/4-20 and QuickTwist mounts and gear you need to capture it all.</p>
-              <p>From bikes to boards, backyard barbeques to base jumping, 360fly has the mounts and accessories you need to fit your camera seamlessly into your active lifestyle. Choose from 1/4-20 and QuickTwist systems based on your camera's design.</p>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Ahy Team's Custom Code Ends-->
 
@@ -64,9 +51,9 @@
     <?php // List mode ?>
 
 <?php // Grid Mode ?>
-<div class="container-fluid accessories">
+<div class="container-fluid">
   <div class="container wrapper-width page-inner">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-gutter">
+    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-gutter">
       <div class="accessory_top_bar">
         <label for="camera_type">Select your camera:</label>
           <div class="camera_4k_badge acc-badge"></div>
@@ -75,22 +62,20 @@
           <option value="hd">360fly HD</option>
         </select>
       </div>
-    </div>
+    </div> -->
 <?php $_collectionSize = $_productCollection->count() ?>
 <?php $_columnCount = $this->getColumnCount(); ?>
 <ul class="product-grid">
 <?php $i=0; foreach ($_productCollection as $_product): ?>
-    <?php $productCompatibility = strtolower($_product->getAttributeText('camera_compatibility'));?>
         <li class="col-lg-3 col-md-3 col-sm-4 col-xs-6<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> products-list <?php echo $productCompatibility;?>-block">
             <div class="image-container">
 				<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class=""><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(235); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img-responsive" /></a>
 			</div>
-			<div class="col-sm-8 col-xs-8 head no-gutter product-title-container">
+			<div class="col-sm-9 col-xs-9 head no-gutter">
 				<h3 class="cam-name">
 					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>  </a>
 				</h3>
             </div>
-			<!--<h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>-->
             <?php if($_product->getRatingSummary()): ?>
             <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
             <?php endif; ?>
@@ -128,20 +113,3 @@
     <?php //echo $this->getToolbarHtml() ?>
 </div>
 <?php endif; ?>
-<script type="application/javascript">
-    jQuery(document).ready(function($){
-        $('li.hd-block').hide();
-        $('#camera_type').change(function(){
-            var option_val = $('#camera_type option:selected').val();
-            if(option_val == 'hd'){
-                $('li.4k-block').hide();
-                $('li.hd-block').show();
-                $('.accessory_top_bar .acc-badge').removeClass('camera_4k_badge').addClass('camera_hd_badge');
-            } else if(option_val == '4k'){
-                $('li.hd-block').hide();
-                $('li.4k-block').show();
-                $('.accessory_top_bar .acc-badge').removeClass('camera_hd_badge').addClass('camera_4k_badge');
-            }
-        })
-    });
-</script>
