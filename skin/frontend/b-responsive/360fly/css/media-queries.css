@@ -103,7 +103,7 @@
 	background-color: white;}
 	/* Login Page */
 	.customer-account-login .account-login{padding-top:50px;}
-	.customer-account-create .register-container{padding-top:50px;} 
+	.customer-account-create .register-container{padding-top:50px;}
 	/* Sign Up Page After logged in */
 	.module_navigation,.my-account{width: 100%;}
 	.dashboard .welcome-msg{margin:0;padding: 10px;}
@@ -138,6 +138,11 @@
 	.checkout-cart-index td.a-left.quantity div{text-align:center;}
 	.checkout-cart-index .cart-table .btn-update{float:none;top:0;}
 	/* Checkout Page End */
+	/* 360fly 4k start*/
+	.category-cameras .camera-4k .landing-img{top:46px;right:10px;}
+	.category-cameras .camera-4k .camera-hero-img{padding-bottom: 0;}
+	.category-cameras .camera-4k .camera-info{margin-top:0;}
+	/* 360fly 4k end*/
 }
 
 /********************************************************************************************************************/
@@ -214,6 +219,10 @@
 	.athlete-social .athlete-wrapper{display:inline-block;padding-left:15px;}
 	/* .athlete-social .icons{padding-left: 0px;} */
 	.athlete-summary{margin-left:0%;}
+	/* 360fly 4k Start */
+	.category-cameras .camera-4k .landing-img{top:300px;}
+	.category-cameras .camera-4k .short-description.std{padding-top: 202px;}
+	/* 360fly 4k End */
 }
 
 

@@ -440,3 +440,6 @@ input.qty{width:100px !important;}
 .catalogsearch-result-index .product-grid .price-box{display: block;text-align: center;width: 100%;}
 .catalogsearch-result-index .product-grid .regular-price .price {font-weight: 500;margin-bottom: 0;color: #1a1a1a;font-size: 20px;}
 /* Search Page End */
+/* 404 Erro Page Start */
+.cms-index-noroute{background: #000;}
+/* 404 Erro Page End */

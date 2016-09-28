@@ -230,7 +230,7 @@ table#shopping-cart-totals-table tr td strong, table#shopping-cart-totals-table 
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
     .category-cameras .landing-img {top: 50px!important;}
-    .category-cameras .camera-4k .landing-img {top: 210px!important;}
+    .category-cameras .camera-4k .landing-img {top: 300px!important;}
     .coupon-shipping-container {display: inline-block; max-width: 55%;}
     .module_coupon{margin-left:25px;}
     table#shopping-cart-totals-table{font-size:15px;}
