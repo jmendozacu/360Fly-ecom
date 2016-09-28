@@ -30,7 +30,7 @@
     <?php if ($this->helper('rss/catalog')->getTagFeedUrl()): ?>
         <a href="<?php echo $this->helper('rss/catalog')->getTagFeedUrl() ?>" class="nobr link-rss"><?php echo $this->__('Subscribe to Feed') ?></a>
     <?php endif; ?>
-    <h1><?php echo ($this->getHeaderText() || $this->getHeaderText() === false) ? $this->getHeaderText() : $this->__("Product matching '%s'", $this->helper('catalogsearch')->getEscapedQueryText()) ?></h1>
+    <h1><?php echo ($this->getHeaderText() || $this->getHeaderText() === false) ? $this->getHeaderText() : $this->__("Product matching \"%s\"", $this->helper('catalogsearch')->getEscapedQueryText()) ?></h1>
 </div>
 <p class="note wrapper-width plr15">Found <strong><?php echo $this->getResultCount(); ?></strong> results.</p>
     <!-- <?php //if ($messages = $this->getNoteMessages()):?>
@@ -43,7 +43,7 @@
     <?php echo $this->getProductListHtml() ?>
 <?php else: ?>
 <div class="wrapper-width search-title">
-    <h1><?php echo ($this->getHeaderText() || $this->getHeaderText() === false) ? $this->getHeaderText() : $this->__("Product matching '%s'", $this->helper('catalogsearch')->getEscapedQueryText()) ?></h1>
+    <h1><?php echo ($this->getHeaderText() || $this->getHeaderText() === false) ? $this->getHeaderText() : $this->__("Product matching \"%s\"", $this->helper('catalogsearch')->getEscapedQueryText()) ?></h1>
 </div>
 <p class="note wrapper-width plr15">Found <strong><?php echo $this->getResultCount(); ?></strong> results.</p>
 <!-- <p class="note-msg wrapper-width">

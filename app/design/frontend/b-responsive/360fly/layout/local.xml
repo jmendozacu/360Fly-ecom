@@ -186,5 +186,8 @@
           <template>page/1column.phtml</template>
         </action>
       </reference>
+      <reference name="search_result_list">
+        <action method="setTemplate"><template>searchresult/list.phtml</template></action>
+    </reference>
     </catalogsearch_result_index>
 </layout>
