@@ -2,8 +2,8 @@
 
 /**
  * Product:       Xtento_XtCore (1.1.7)
- * ID:            UkPw/HNCTGTNeNACl67A1tsc5/yF+olcWhzGXPJ/t28=
- * Packaged:      2016-09-21T14:35:43+00:00
+ * ID:            pdPxsRjlYe/jzWvrh39yYtb/LukbtTgwOebmpEnEWD0=
+ * Packaged:      2016-09-28T05:01:00+00:00
  * Last Modified: 2013-10-30T18:29:25+01:00
  * File:          app/code/local/Xtento/XtCore/Model/Observer/Event.php
  * Copyright:     Copyright (c) 2016 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.

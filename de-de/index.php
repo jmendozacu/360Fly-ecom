@@ -80,6 +80,6 @@ umask(0);
 /* Run store or run website */
 //$mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
 
-Mage::run('de_de', 'store');
+Mage::run('germany', 'website');
 
 
