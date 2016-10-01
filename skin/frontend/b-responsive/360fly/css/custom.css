@@ -96,7 +96,7 @@ ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
 
 .pre-footer h3{font-size: 25px;line-height: 33px;color:#fff;margin-bottom:24px;margin-top:3px;}
 .pre-footer p{color: #999999;margin-bottom: 35px;}
-.pre-footer .app-img{text-align: center;line-height: 220px;}
+.pre-footer .app-img{text-align: center;line-height: 440px;}
 #apps-img{display: inline-block;max-width:100%;}
 
 /* THE APPS THAT POWER IT ALL section end */
@@ -390,6 +390,8 @@ input.qty{width:100px !important;}
 .show-lg-md{display: none;}
 .show-mobile-4k{display: none;}
 .edit-icon{font-family:'FontAwesome';font-size:15px;margin-left:5px;}
+.cameras-contain .btn.btn-shop-4k{margin:0 0 30px 70px;float: left;}
+.cameras-contain .btn.btn-shop-hd{margin:0 70px 30px 0;float: right;}
 /* Camera Category End */
 /* Account Dashboard Start */
 
@@ -418,17 +420,23 @@ input.qty{width:100px !important;}
  /* Search Icon Start */
  .inline-block{display: inline-block;}
 .search-link-header .form-group{float:right !important;transition:all 0.3s, border-radius 0s;width:32px;height:32px;background-color:transparent;border-radius:25px;margin-bottom:0px;padding:5px 0;transition:all 0.3s ease-in-out;}
-.search-link-header .form-group input.form-control{padding-right:20px;border:0 none;background:transparent;box-shadow:none;display:block;height:23px;border-radius:50px;cursor:pointer;font-size:14px;color:#fff;margin:2px 0;}
+.search-link-header .form-group input.form-control{padding-right:20px;border:0 none;background:transparent;box-shadow:none;display:block;height:23px;border-radius:50px;cursor:pointer;font-size:14px;color:#fff;margin:1px 0;}
 .search-link-header .form-group input.form-control::-webkit-input-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control:-moz-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control::-moz-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control:-ms-input-placeholder{color:#fff;}
 .search-link-header .form-group span.form-control-feedback{position:absolute;top:1px;right:-2px;z-index:2;display:block;width:34px;height:34px;line-height:34px;text-align:center;color:#fff;left:initial;font-size:14px;}
+.search-link-header .form-control-feedback{font-size: 12px;}
 .hidden-xs .header-account-links .links .last a{border-right:1px solid #fff;}
 .header-mobile .top-bar-section form{display: block;}
 .header-mobile .top-bar-section .form-control{-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius:5px;}
 .header-mobile .top-bar-section .form-control:focus{border-color: #66afe9;outline: 0;box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
-
+.search-autocomplete{background: #efeded;border: 1px solid #cac7c7;color: #333;text-align: center;font-family: Flysans-medium;text-transform: lowercase;top: 31px;padding:0 2%;}
+.search-autocomplete:hover{cursor:pointer;}
+.search-autocomplete .amount{padding-right: 5px;}
+.search-autocomplete ul{margin-bottom: 0;}
+.search-autocomplete ul li:after{border-bottom: 1px solid #c7c7c7;width:50%;margin:0 auto;}
+.search-autocomplete ul li:last-child:after{border-bottom: none;}
  /* Search Icon End */
 /* Search Page Start */
 .catalogsearch-result-index .search-title{border-bottom: 1px solid transparent;text-transform: inherit;padding:30px 15px 20px;}

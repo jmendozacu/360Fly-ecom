@@ -87,6 +87,8 @@ iframe{border:none;}
 /* .cms-australia .au-r3-container .btn.btn-grey{height: 58px;margin: 0 25px;} */
 .social-connect .btn.btn-grey{background-color: #000000;border: 2px solid #808285;color: #808285;margin-left: 10px;margin-top: -10px;text-transform: none;
     font-family: "FlySans-Medium", Arial, sans-serif;padding: 16px 32px 17px;margin-bottom: 20px;display: inline-block;float: right;font-size:16px;}
+.social-connect .btn.btn-grey:hover{background-color: #808285;border: 2px solid #808285;color: white;}
+.social-connect .btn.btn-grey:active:focus{outline: 0px auto -webkit-focus-ring-color;}
 .cms-australia .au-r4-container .container{margin-top:100px;}
 .cms-australia .au-r4-container .au-intro{background-image: url('../images/accessory_header.jpg');background-repeat: no-repeat;background-size: cover;min-height:485px;overflow:hidden;width:100%;}
 .cms-australia .au-r4-container h3 {font-family: "FlySans-Medium",Helvetica,Arial,sans-serif;color: #78be20;font-size: 45px;line-height: .9;margin-bottom: 20px;margin-top: 3px;}

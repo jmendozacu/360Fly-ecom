@@ -32,7 +32,17 @@
  */
 ?>
 <?php
-    $_productCollection=$this->getLoadedProductCollection();
+    $cat_id = Mage::getSingleton('catalog/layer')->getCurrentCategory()->getId();
+    // $_productsAll = Mage::getModel('catalog/product')->getCollection();
+    // $_productCollection=$this->getLoadedProductCollection();
+    $_productCollection = Mage::getResourceModel('catalog/product_collection')
+       ->addAttributeToFilter('language', array('eq' => array('English')))
+       ->addAttributeToSelect('*')
+       ->addCategoryFilter(Mage::getSingleton('catalog/category')->load($cat_id))
+       ->setVisibility(
+           Mage::getSingleton('catalog/product_visibility')->getVisibleInCatalogIds()
+       );
+    //echo '<pre>';print_r($_productCollection->getData());exit;
     $_helper = $this->helper('catalog/output');
 ?>
 

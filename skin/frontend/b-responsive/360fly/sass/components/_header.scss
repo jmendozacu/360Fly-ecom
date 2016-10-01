@@ -390,3 +390,14 @@
 }
 .header .links, .search-link-header{float: left;}
 .header .search-link-header{height:36px;}
+.header{
+	.links{
+		li{
+			font-size:14px;
+			line-height:14px;
+			a{
+				margin:10px 0 12px;
+			}
+		}
+	}
+}

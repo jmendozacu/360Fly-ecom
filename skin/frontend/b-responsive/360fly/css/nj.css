@@ -128,7 +128,7 @@
 
 body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;background:#fff;}
 .cms-index-index .pov .pov-para{margin: 0 0 20px;}
-.cms-index-index .btn.btn-custom {margin:0px;}
+.cms-index-index .btn.btn-custom {margin:0px 0 20px;}
 .cms-index-index .product-slider .product_pod p{margin-bottom:5px!important;}
 .cms-index-index .ls-background {margin-top: 0px !important;}
 .cms-index-index .google-btn-link,.cms-index-index .apple-btn-link{float:left;margin-left:8px;}
@@ -155,7 +155,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .learn_more_small a:hover,.learn_more_large:hover{color:white;}
 .video_background .valign h3 {line-height: 26px;font-size: 25px;}
 .dir{padding-bottom:48px;overflow:hidden;}
-.video_img2{background-image:url("../images/elements/dirt/dirt-bg.jpg");background-size:cover;overflow: visible; min-height: 828px;width: 100%;background-repeat: no-repeat;background-position: center;padding: 78px 0;}
+.video_img2{background-image:url("../images/elements/snow/snow-bg.jpg");background-size:cover;overflow: visible; min-height: 828px;width: 100%;background-repeat: no-repeat;background-position: center;padding: 78px 0;}
 .hand{background-color:#fff;padding:3.75rem 0 3.125rem;}
 .hand h2{margin:0;font-size:36px;line-height:2.5625rem;font-weight:900;font-family:"FlySans-Medium";color:#78be20;}
 .hand h3{font-size:24px;line-height:4.625rem;color:#666666;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;margin-bottom:1.25rem;}

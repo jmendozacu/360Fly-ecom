@@ -11,20 +11,52 @@
 	$currentUrl = Mage::helper('core/url')->getCurrentUrl();
 	$cleanBaseUrl = Mage::getStoreConfig(Mage_Core_Model_Url::XML_PATH_SECURE_URL);
 	$shopUrl = $cleanBaseUrl.'shop';
-	$communityUrl = $cleanBaseUrl.'community';
+	if(strpos($currentUrl, "chad-reed"))
+	{
+		$communityUrl = $cleanBaseUrl.'chad-reed';
+	}
+	elseif(strpos($currentUrl, "terry-adams")) {
+		$communityUrl = $cleanBaseUrl.'terry-adams' ;
+	}
+	elseif(strpos($currentUrl, "jorge-lorenzo")) {
+		$communityUrl = $cleanBaseUrl.'jorge-lorenzo' ;
+	}
+	elseif(strpos($currentUrl, "matt-cordova")) {
+		$communityUrl = $cleanBaseUrl.'matt-cordova' ;
+	}
+	elseif(strpos($currentUrl, "sunny-garcia")) {
+		$communityUrl = $cleanBaseUrl.'sunny-garcia' ;
+	}
+	elseif(strpos($currentUrl, "cannondale")) {
+		$communityUrl = $cleanBaseUrl.'cannondale' ;
+	}
+	elseif(strpos($currentUrl, "pro-circuit")) {
+		$communityUrl = $cleanBaseUrl.'pro-circuit' ;
+	}
+	else {
+		$communityUrl = $cleanBaseUrl.'community' ;
+	}
 	$appsUrl = $cleanBaseUrl.'apps';
 	$cartCount = $this->helper('checkout/cart')->getSummaryCount();
 	$appsClass = 'x';
 	$communityClass = 'x';
 	$menuClass = 'non-shop-page';
-	if( strpos($currentUrl, $shopUrl) !== false ){
+	if( strpos($currentUrl, "shop") !== false ){
+		$menuClass = 'is-shop-page';
+	}
+	elseif(strpos($currentUrl, "faq")) {
 		$menuClass = 'is-shop-page';
 	}
 	if( strpos($currentUrl, $communityUrl) !== false ){
 		$communityClass = 'is-community-page';
 	}
-	if( strpos($currentUrl, $appsUrl) !== false ){
-		$appsClass = 'is-apps-page';
+	if( strpos($currentUrl, "apps") !== false ){
+		$appsUrl = $cleanBaseUrl.'apps';
+		$appsClass = "is-apps-page";
+	}
+	elseif(strpos($currentUrl, "Director")) {
+		$appsUrl = $cleanBaseUrl.'Director' ;
+		$appsClass = "is-apps-page";
 	}
 ?>
 <!-- New Header Starts -->
@@ -67,7 +99,7 @@
 			  </div>
 		</div>
         <div class="abs header-account-links">
-			<div class="po-rel">
+			<div class="po-rel h36px">
 				<div class="inline-block">
 				<?php echo $this->getChildHtml('accountLinks');?>
 				</div>
