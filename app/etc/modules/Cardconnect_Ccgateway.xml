@@ -39,7 +39,7 @@
 <config>
     <modules>
         <Cardconnect_Ccgateway>
-            <active>false</active>
+            <active>True</active>
             <codePool>community</codePool>
 	    <depends>
                 <Mage_Sales/>
