@@ -66,6 +66,10 @@
 						<div class="camera-compatibility">
 							<span>Camera Compatibility: </span><img src="<?php echo $mediaUrl; ?>wysiwyg/<?php echo $productCompatibility ?>-badge.png">
 						</div>
+                        <?php else: ?>
+                            <div class="camera-compatibility">
+    							<span>Camera Compatibility: </span><img src="<?php echo $mediaUrl; ?>wysiwyg/<?php echo $productCompatibility ?>-badge.png">
+    						</div>
           <?php endif;?>
 						<?php echo $this->getChildHtml('product_type_data') ?>
 					</div>

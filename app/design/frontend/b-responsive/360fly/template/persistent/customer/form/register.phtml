@@ -31,6 +31,7 @@
  * @see app/design/frontend/base/default/template/customer/form/register.phtml
  */
 /** @var $this Mage_Customer_Block_Form_Register */
+$baseUrl = $this->getBaseUrl();
 ?>
 <div class="register-container">
     <?php echo $this->getChildHtml('form_fields_before')?>
@@ -42,7 +43,7 @@
                 <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
                 <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="page-title wrapper-width">
+					<div class="page-title wrapper-width join360fly">
 						<h2><?php echo $this->__('Join 360fly') ?></h2>
 					</div>
                     <ul>
@@ -171,6 +172,7 @@
         <div class="container-fluid register-wrapper">
             <div class="row wrapper-width">
                 <div class="register-btn a-left col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <p class="agree">By signing up, you agree to the <a href="<?php echo $baseUrl;?>terms-use/">Terms of Use</a> and <a href="<?php echo $baseUrl;?>privacy-policy/">Privacy Policy.</a></p>
                     <button type="submit" title="<?php echo $this->__('Submit') ?>" class="btn btn-custom"><span><span><?php echo $this->__('Submit') ?></span></span></button>
                     <p class="clearfix required"><?php echo $this->__('* Required Fields') ?></p>
                 </div>

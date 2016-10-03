@@ -47,6 +47,12 @@
 	elseif(strpos($currentUrl, "faq")) {
 		$menuClass = 'is-shop-page';
 	}
+	elseif(strpos($currentUrl, "checkout/cart")) {
+		$menuClass = 'is-shop-page';
+	}
+	elseif(strpos($currentUrl, "onestepcheckout")) {
+		$menuClass = 'is-shop-page';
+	}
 	if( strpos($currentUrl, $communityUrl) !== false ){
 		$communityClass = 'is-community-page';
 	}

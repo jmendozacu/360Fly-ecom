@@ -155,7 +155,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .learn_more_small a:hover,.learn_more_large:hover{color:white;}
 .video_background .valign h3 {line-height: 26px;font-size: 25px;}
 .dir{padding-bottom:48px;overflow:hidden;}
-.video_img2{background-image:url("../images/elements/snow/snow-bg.jpg");background-size:cover;overflow: visible; min-height: 828px;width: 100%;background-repeat: no-repeat;background-position: center;padding: 78px 0;}
+.video_img2{background-image:url("../images/elements/dirt/dirt-bg.jpg");background-size:cover;overflow: visible; min-height: 828px;width: 100%;background-repeat: no-repeat;background-position: center;padding: 78px 0;}
 .hand{background-color:#fff;padding:3.75rem 0 3.125rem;}
 .hand h2{margin:0;font-size:36px;line-height:2.5625rem;font-weight:900;font-family:"FlySans-Medium";color:#78be20;}
 .hand h3{font-size:24px;line-height:4.625rem;color:#666666;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;margin-bottom:1.25rem;}
@@ -423,7 +423,8 @@ img.camera-logo {margin-bottom: 30px;}
 .register-wrapper .checkbox label{color:#000;}
 .register-wrapper .register-btn,.login-wrapper .login-btn{padding-bottom:7px}
 .customer-account-create .page-title h1{padding:0;margin:0;width:auto;}
-
+.agree{font-size:16px;font-family: FlySans-,Helvetica,Arial,sans-serif;}
+.agree a:focus{text-decoration: none;}
 /* Dashboard */
 
 /* Panaroma Video */

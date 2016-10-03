@@ -38,7 +38,7 @@ $skinUrl = $this->getSkinUrl();
             <?php foreach($this->getItems() as $_item): ?>
             <div>
                 <article class="product_pod">
-                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(280);?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="thumbnail"></a>
+                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(280);?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="thumbnail no-border"></a>
 
                     <div class="product_price clearfix">
                         <p class="product-title"><a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></p>

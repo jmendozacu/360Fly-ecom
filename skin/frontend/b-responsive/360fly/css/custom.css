@@ -1,9 +1,11 @@
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
 /* Misc Custom */
 .no-gutter{padding:0;}
+.no-border{border:0px;}
 .clear{clear:both;}
 /*.btn:hover, .btn:focus, .btn.focus{outline:none;color:#B1B1B1;}*/
 button:focus{outline:none;}
+.required{color:red;}
 h1,h2,h3,h4,h5,h6{color: #78be20;font-family: "FlySans-", Arial, sans-serif;}
 p{font-family: "FlySans-Light", Arial, sans-serif;}
 .margin-center{margin: 0 auto;}
@@ -451,3 +453,6 @@ input.qty{width:100px !important;}
 /* 404 Erro Page Start */
 .cms-index-noroute{background: #000;}
 /* 404 Erro Page End */
+/* CMS store Locator Start */
+.cms-store-locator input#search_button:focus{outline: -webkit-focus-ring-color auto 0px;}
+/* CMS store Locator End */

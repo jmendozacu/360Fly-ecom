@@ -103,6 +103,7 @@
 	/* Login Page */
 	.customer-account-login .account-login{padding-top:50px;}
 	.customer-account-create .register-container{padding-top:50px;}
+	.join360fly{margin-bottom: 30px;}
 	/* Sign Up Page After logged in */
 	.module_navigation,.my-account{width: 100%;}
 	.dashboard .welcome-msg{margin:0;padding: 10px;}

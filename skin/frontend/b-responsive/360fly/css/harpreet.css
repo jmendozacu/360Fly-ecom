@@ -13,7 +13,9 @@ iframe{border:none;}
 .plr15{padding:0 15px;}
 .btn.retailer, .btn.mailSignUp {background-color: transparent;padding: 6px 12px;font-size: 14px;color: #fff;}
 .btn.retailer{color:#999;}
-
+.btn.btn-custom:active:focus,.btn:active:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+}
 /*MISC CLASSES ENDS*/
 .po-rel{position:relative;}
 .displaynone, .no-display{display:none;}
@@ -108,7 +110,7 @@ iframe{border:none;}
     border-width: 0;text-decoration: none;display: inline-block;float: left;clear:both;}
 /* Author - GT End */
 .cms-australia .mobile-desktop-apps{border-bottom: none;margin-bottom: 0px;}
-
+.cms-australia .follow .social-icons a:focus{text-decoration: none;outline-offset: 0px;}
 /*Australia Landing Page Ends*/
 
 /*Community Page Starts*/
