@@ -3,6 +3,7 @@ var/*
 media/videos/*
 skin/frontend/b-responsive/360fly/.sass-cache/*
 skin/frontend/b-responsive/360fly/css/360fly.css
+skin/frontend/b-responsive/360fly/css/ie.css
 .idea/*
 media/catalog/product/cache/*
 sitemap.xml
