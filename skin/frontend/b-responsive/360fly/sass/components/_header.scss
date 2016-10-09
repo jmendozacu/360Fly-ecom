@@ -59,9 +59,9 @@
                 display: block;
                 color: $color7;
             }
-            &:hover{
-                font-weight:bold;
-            }
+            // &:hover{
+            //     font-weight:bold;
+            // }
         }
         li.first{
             a{
@@ -398,6 +398,10 @@
 			a{
 				margin:10px 0 12px;
 			}
+            a:hover{
+                font-family: 'Flysans-SemiBold';
+                font-weight: normal;
+            }
 		}
 	}
 }

@@ -50,7 +50,7 @@
 .ls-inner {
 	position: relative;
 	background-position: center center;
-	z-index: 2;
+	z-index: 0;
 	overflow: hidden;
 }
 

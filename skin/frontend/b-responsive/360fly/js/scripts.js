@@ -2,9 +2,10 @@
 jQuery.noConflict();
 function adjustBioLeftWidth(){
     var wrap_width = jQuery('.wrapper-width').width();
+    var window_width = jQuery('window').width();
     var bio_left_width = jQuery('.bio-container .bio-left .bio-left-child-x').width();
     var bio_left_element = jQuery('.bio-container .bio-left .bio-left-child-x .bio-left-child-container');
-    if(wrap_width == 1000){
+    if(wrap_width == 1000 && window_width == 1024){
         var bio_left_child_container = ((450 / bio_left_width) * 100)+'%';
         bio_left_element.css('width', bio_left_child_container);
         bio_left_element.css('float', 'right');

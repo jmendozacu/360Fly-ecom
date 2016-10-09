@@ -35,11 +35,11 @@
 <div class="account-login container-fluid login-wrapper">
     <!-- <div class="page-title wrapper-width">
         <h2><?php //echo $this->__('Sign In') ?></h2>
-    </div> -->    
-    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    </div> -->
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
 		<?php echo $this->getBlockHtml('formkey')?>
         <div class="row wrapper-width">
+            <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
             <div class="col-md-5 form-bg">
 				<div class="page-title">
 					<h2><?php echo $this->__('Sign In') ?></h2>
@@ -65,8 +65,8 @@
                     <div class="login-btn">
                         <p><a href="<?php echo $this->getForgotPasswordUrl() ?>"><?php echo $this->__("I've forgotten my password") ?></a></p>
                         <button type="submit" class="btn btn-custom" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
-                    </div>               
-            </div>  
+                    </div>
+            </div>
 			<div class="col-xs-12 col-sm-6 new-users">
                 <div class="">
                     <div class="page-title"><h2><?php echo $this->__('New Customers') ?></h2></div>

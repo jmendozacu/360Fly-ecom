@@ -35,11 +35,11 @@ $baseUrl = $this->getBaseUrl();
 ?>
 <div class="register-container">
     <?php echo $this->getChildHtml('form_fields_before')?>
-    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" role="form">
     <?php echo $this->getBlockHtml('formkey'); ?>
         <div class="container-fluid register-wrapper">
             <div class="row wrapper-width">
+                <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
                 <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
                 <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

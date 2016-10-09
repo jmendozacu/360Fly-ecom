@@ -144,7 +144,7 @@
     <h1><?php echo $this->__('Card Management') ?></h1>
     <button type="button" title="<?php echo $this->__('Add New Card') ?>" class="btn btn-custom" onclick="window.location = '<?php echo $this->getAddUrl() ?>';"><span><span><?php echo $this->__('Add New Card') ?></span></span></button>
 </div>
-<div id="cardManagementGrid">
+<div id="cardManagementGrid" class="plr15">
     <table cellpadding="2" cellspacing="1" border="1" name="cardListGrid" id="cardListGrid" width="100%">
         <?php $walletProfile = $this->getCCProfileName();
         if (count($walletProfile) != 0) {
@@ -183,7 +183,3 @@
      <?php } ?>
     </table>
 </div>
-
-
-
-

@@ -41,11 +41,11 @@ iframe{border:none;}
 .header #navbar3 ul li a{color:#999999;text-decoration:none;padding: 0 15px;margin: 15px 0;
     border-right:1px solid #999;}
 .header #navbar3 ul li.shopping-cart a{border-right:none;}
-.header #navbar3 ul li a:hover{color:#7ABC31;font-weight:bold;}
+.header #navbar3 ul li a:hover{color:#7ABC31;font-family: 'Flysans-Medium';}
 .header li{list-style:none;}
 .header #navbar3 .submenu{left:5px;}
 .header #navbar3 .submenu li a{color:#ffffff;padding:0 10px;margin:10px 0;border-right: 1px solid #fff;}
-.header #navbar3 .submenu li a:hover{color:#ffffff;font-weight:bold;}
+.header #navbar3 .submenu li a:hover{color:#ffffff;font-family: 'Flysans-SemiBold';}
 .header .mobilenav{height: 50px;width: 50px;border: 2px solid #999;color:#999;border-radius:50%;background:transparent;}
 .navbar-inverse .navbar-toggle{border-color:transparent;}
 .hamburger-menu{right:10px;height:auto;top:22.5px;}
@@ -53,8 +53,8 @@ iframe{border:none;}
 .hamburger-menu .navbar-toggle:hover{background-color: transparent;}
 .abs.header-account-links{right:30px;top:95px;color:#fff;text-transform:uppercase;}
 .submenu.is-shop-page{display:inline-flex;}
-.header #navbar3 ul li.is-shop-page-container a.is-shop-page-anchor, .header #navbar3 ul li.is-community-page-container a.is-community-page-anchor, .header #navbar3 ul li.is-apps-page-container a.is-apps-page-anchor{color: #7abc31;font-family: "FlySans-SemiBold",helvetica,arial,sans-serif;}
-
+.header #navbar3 ul li.is-shop-page-container a.is-shop-page-anchor, .header #navbar3 ul li.is-community-page-container a.is-community-page-anchor, .header #navbar3 ul li.is-apps-page-container a.is-apps-page-anchor,.is-video-page-anchor{color: #7abc31;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
+.top-bar-section a.is-shop-page-anchor,.top-bar-section a.is-apps-page-anchor,.top-bar-section a.is-community-page-anchor,.top-bar-section a.is-video-page-anchor{color: #7abc31 !important;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
 /*HOMEPAGE STARTS*/
 .slider-wrapper #layerslider h2{font-family: "FlySans-Bold", Arial, sans-serif;}
 .slider-wrapper #layerslider h2.flyslim{font-family: "FlySans-", Arial, sans-serif;}
@@ -144,7 +144,7 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
 .hamburger-menu ul li.toggle-topbar.open{background-image:none;text-indent: 0px;}
 .hamburger-menu ul li.toggle-topbar a{display: inline-block;height: auto;width: 100%;text-align: center;margin-top: 35%;}
 .hamburger-menu ul li span.icon-bar{background-color: #888;display: block;width: 22px;height: 2px;border-radius: 1px;margin: 0px auto 4px auto;}
-.hamburger-menu section.top-bar-section{float:left;text-align:left;margin:0;padding:15px;position:absolute;left:10px;background:#000;width:100%;max-height: 90vh;overflow-y: scroll;padding-bottom: 50px;}
+.hamburger-menu section.top-bar-section{float:left;text-align:left;margin:0;padding:15px;position:absolute;left:10px;background:#000;width:100%;max-height: 90vh;overflow-y: scroll;padding-bottom: 50px;z-index:1;}
 .hamburger-menu li.toggle-topbar.open-hbm{background:#ddd;}
 .header.header-mobile{z-index:3;}
 .hamburger-menu section.top-bar-section ul{width:100%;transition: left 300ms ease-out;

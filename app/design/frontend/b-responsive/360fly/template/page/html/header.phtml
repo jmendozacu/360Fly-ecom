@@ -64,6 +64,16 @@
 		$appsUrl = $cleanBaseUrl.'Director' ;
 		$appsClass = "is-apps-page";
 	}
+	$videoClass = 'x';
+	if(strpos($currentUrl, "videos")){
+		$videosUrl = $cleanBaseUrl.'Director' ;
+		$videoClass = 'is-video-page';
+	}
+	$supportClass = 'x';
+	if(strpos($currentUrl, "support")){
+		$supportUrl = $cleanBaseUrl.'support' ;
+		$supportClass = 'is-support-page';
+	}
 ?>
 <!-- New Header Starts -->
 <div class="container-fluid header-bg-black h95px"></div>
@@ -92,9 +102,9 @@
 
 					</ul>
 				  </li>
-				  <li class="divider-vertical"><a href="https://360fly.com/videos/">VIDEO</a></li>
+				  <li class="divider-vertical"><a href="https://360fly.com/videos/" class="<?php echo $videoClass?>-anchor">VIDEO</a></li>
 				  <li class="divider-vertical <?php echo $communityClass?>-container" "><a class="<?php echo $communityClass?>-anchor" href="<?php echo $baseUrl;?>community">COMMUNITY</a></li>
-				  <li class="divider-vertical"><a href="http://support.360fly.com/">SUPPORT</a></li>
+				  <li class="divider-vertical"><a href="http://support.360fly.com/" class="<?php echo $supportClass?>-anchor">SUPPORT</a></li>
 				  <li class="shopping-cart hide-mobile">
 					<a class="cart-color" href="<?php echo $this->helper('checkout/cart')->getCartUrl();?>">
 						<?php echo $cartCount > 0 ? $cartCount : ''; ?>
@@ -147,12 +157,12 @@
 							<span class="icon-shopping-cart"></span>
 						</a>
 					</li>
-					<li class="show-mobile"><a href="<?php echo $baseUrl;?>shop">Shop</a></li>
-					<li class="show-mobile"><a href="<?php echo $baseUrl;?>apps">APPS</a></li>
-					<li><a href="videos.360lfy.com/">VIDEO</a></li>
-					<li><a href="<?php echo $baseUrl;?>/community">COMMUNITY</a></li>
+					<li class="show-mobile"><a href="<?php echo $baseUrl;?>shop" class="<?php echo $menuClass?>-anchor">Shop</a></li>
+					<li class="show-mobile"><a href="<?php echo $baseUrl;?>apps" class="<?php echo $appsClass?>-anchor">APPS</a></li>
+					<li><a href="https://360fly.com/videos/" class="<?php echo $videoClass?>-anchor">VIDEO</a></li>
+					<li><a href="<?php echo $baseUrl;?>community" class="<?php echo $communityClass?>-anchor">COMMUNITY</a></li>
 
-					<li><a href="https://support.360fly.com">SUPPORT</a></li>
+					<li><a href="https://support.360fly.com" class="<?php echo $supportClass?>-anchor">SUPPORT</a></li>
 					<hr/>
 					<?php echo $this->getChildHtml('category.links');?>
 					<hr/>

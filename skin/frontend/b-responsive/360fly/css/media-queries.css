@@ -101,8 +101,8 @@
 	.cms-index-index #player{background-image: none;background-repeat: no-repeat;padding:0px;background-color: white;}
 	.pre-footer .app-img{line-height: initial;}
 	/* Login Page */
-	.customer-account-login .account-login{padding-top:50px;}
-	.customer-account-create .register-container{padding-top:50px;}
+	.customer-account-login .account-login{padding-top:10px;}
+	.customer-account-create .register-container{padding-top:10px;}
 	.join360fly{margin-bottom: 30px;}
 	/* Sign Up Page After logged in */
 	.module_navigation,.my-account{width: 100%;}
@@ -113,7 +113,7 @@
 	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
 	/* Product Desc Page Same as landing Page End */
 	/*app page */
-	a#macosx,a#windows{min-width:160px;}
+	.cms-australia a#macosx,.cms-australia a#windows{min-width:100%;}
 	/* Director Page */
 	.director-page .download-section li {width: 100%;}
 	/* Australia Page*/
@@ -144,6 +144,27 @@
 	.category-cameras .camera-4k .camera-hero-img{padding-bottom: 0;}
 	.category-cameras .camera-4k .camera-info{margin-top:0;}
 	/* 360fly 4k end*/
+	/* Account Forgot Start */
+	.customer-account-forgotpassword .page-title,.customer-account-logoutsuccess .page-title{margin:25px 0 25px;}
+	/* Account Forgot End */
+	/* Sales order view Start */
+	.sales-order-view .my-account{padding:0 15px;}
+	.sales-order-view .reorder-print{padding:0 11px;margin:6px 0 10px;}
+	.sales-order-view .my-account .order-items{overflow-x: hidden;}
+	.sales-order-view .my-account .panel .panel-body{overflow-x: auto;}
+	/* Sales order view End */
+	/* Product page start */
+	.catalog-product-view .product-essential{padding: 10px;}
+	/* Product page End */
+	/* Onestepcheckout start */
+	#addressreview #buttons div{float: none !important;text-align: center;margin: 0 !important;}
+	#addressreview button.onestepcheckout-place-order{padding: 6px 12px;margin: 0 auto;}
+	.onestepcheckout-index-index #onestepcheckout-form div.checkoutcontainer .onestepcheckout-place-order{margin:30px 20px;}
+	/* Onestepcheckout End */
+	/* Fly 20420 terms start */
+	.fly20420-hero{display: inline-block;height:auto;max-width: 100%;}
+	.fly20420 .btn.btn-custom{width:100%;margin:0;}
+	/* Fly 20420 terms End */
 }
 
 /********************************************************************************************************************/
@@ -168,6 +189,10 @@
 	/* Checkout index End */
 	/* camera category Page button style */
 	.mobile-buttons .btn-custom{width:175px;margin:0 auto 30px;display:block;}
+	/* Australia Page start */
+	.cms-australia a#macosx{float: left;display: inline-block;margin-right: 5px;}
+	.cms-australia a#windows{float: none;}
+	/* Australia Page End */
 }
 
 /********************************************************************************************************************/
@@ -221,6 +246,7 @@
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:left; width:50%;padding-left:24px;padding-right:24px;}
 	.community-inner .bio-right-content{width:50%;float:left;display:inline-block;}
 	.community-inner .bio-right-content:nth-of-type(2n+1){clear: both;}
+	.community-inner .bio-left .bio-left-child-1{width: 100%;}
 	/*.cannondale .bio-right{width:100%;height:20%;}*/
 	.athlete-social .athlete-wrapper{display:inline-block;padding-left:15px;}
 	/* .athlete-social .icons{padding-left: 0px;} */
@@ -229,6 +255,9 @@
 	.category-cameras .camera-4k .landing-img{top:300px;}
 	.category-cameras .camera-4k .short-description.std{padding-top: 202px;}
 	/* 360fly 4k End */
+	/* Reset Password Page Start */
+	.customer-account-changeforgotten .page-title{padding: 25px 15px;}
+	/* Reset Password Page End */
 }
 
 
@@ -256,6 +285,7 @@
 	/* community inner pages start */
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:right; width:75%;padding-left:24px;padding-right:24px;}
 	/* community inner pages end */
+	.body-wrapper{min-height:77vh;}
 }
 
 
@@ -282,7 +312,7 @@
 /* Product Desc Page Same as landing Page End */
 
 /* Au Page starts */
-.cms-australia .app-content{padding-bottom: 60px;padding-left: 25px;padding-right: 25px;}
+.cms-australia .app-content{padding:60px 25px;}
 /* Community Inner page */
 .athlete-social .icons-wrapper p {width:100%}
 .icons{padding-left: 0px;}
@@ -312,6 +342,8 @@
 	.cms-australia .social-connect p.left.getUpdates{line-height: 60px !important;width: 100%;padding-top: 0px;margin-bottom: 18px;}
 	.cms-australia .social-connect input{width:100%;margin:0;}
 	.social-connect .btn.btn-grey{width: 100%;margin-left: 0px;margin-top: 16px;font-family: "FlySans-Medium", Arial, sans-serif;}
+	.cms-australia a#windows{margin-bottom: 75px;}
+	.cms-australia .director-info{padding:0;}
 	/* Ctaegory Page */
 	.catalog-category-view .head{width:100%;}
 	.catalog-category-view .price-box{width:100%;}
@@ -350,8 +382,15 @@
 @media screen and (min-width: 1899px){
 	/* 360 home page hand */
 	#pov-wrap{left:550px;}
-
 }
 
 
+/********************************************************************************************************************/
+/*
+	above 992px
+*/
+/********************************************************************************************************************/
+@media screen and (min-width: 992px){
+	.sales-order-view .reorder-print{margin:6px 0 10px;float:right;}
+}
 /********************************************************************************************************************/
