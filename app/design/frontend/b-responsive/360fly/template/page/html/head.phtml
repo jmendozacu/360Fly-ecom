@@ -30,23 +30,28 @@
 <meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--
+
+<?php $skinUrl = $this->getSkinUrl('favicon/');?>
+
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
--->
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-57x57.37eb440e331e.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-114x114.7d4d1aceb18d.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-72x72.e9b40b845800.png">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-144x144.e622a554705d.png">
-<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-60x60.faabb81618b8.png">
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-120x120.71bd903a888c.png">
-<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-76x76.12e9a168e3be.png">
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/apple-touch-icon-152x152.7ef82ef809a1.png">
-<link rel="icon" type="image/png" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/favicon-196x196.6dc2ef65a5e5.png" sizes="196x196">
-<link rel="icon" type="image/png" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/favicon-96x96.72cf30379e4d.png" sizes="96x96">
-<link rel="icon" type="image/png" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/favicon-32x32.4f9e048bd678.png" sizes="32x32">
-<link rel="icon" type="image/png" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/favicon-16x16.2088c3bf4d0d.png" sizes="16x16">
-<link rel="icon" type="image/png" href="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/favicon/favicon-128.c003a12fc3c8.png" sizes="128x128">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo $skinUrl;?>apple-icon-57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo $skinUrl;?>apple-icon-60x60.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $skinUrl;?>apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo $skinUrl;?>/apple-icon-76x76.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $skinUrl;?>apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $skinUrl;?>apple-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $skinUrl;?>apple-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $skinUrl;?>apple-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $skinUrl;?>apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo $skinUrl;?>android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $skinUrl;?>favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="<?php echo $skinUrl;?>favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $skinUrl;?>favicon-16x16.png">
+<link rel="manifest" href="<?php echo $skinUrl;?>manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <!--[if lt IE 7]>
 <script type="text/javascript">
