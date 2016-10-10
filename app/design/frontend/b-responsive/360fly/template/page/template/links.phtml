@@ -1,6 +1,6 @@
 <?php
 /**
- * Magento Enterprise Edition
+ * Magento Community Edition
  *
  * NOTICE OF LICENSE
  *
@@ -29,16 +29,42 @@
  * @see Mage_Page_Block_Template_Links
  */
 ?>
-<?php $_links = $this->getLinks(); ?>
-<?php if(count($_links)>0): ?>
-<ul class="links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
-    <?php foreach($_links as $_link): ?>
-        <?php if ($_link instanceof Mage_Core_Block_Abstract):?>
-            <?php echo $_link->toHtml() ?>
-        <?php else: ?>
-            <li<?php if($_link->getIsFirst()||$_link->getIsLast()): ?> class="<?php if($_link->getIsFirst()): ?>first<?php endif; ?><?php if($_link->getIsLast()): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $_link->getLiParams() ?>><?php echo $_link->getBeforeText() ?><a href="<?php echo $_link->getUrl() ?>" title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>><?php echo $_link->getLabel() ?></a><?php echo $_link->getAfterText() ?>
-        	</li>
-        <?php endif;?>
-    <?php endforeach; ?>
-</ul>
+<?php 
+	//Check if static pages (Non-ecommerce)
+    $currentUrl = Mage::helper('core/url')->getCurrentUrl(); 
+	$shopUrl = parse_url($currentUrl, PHP_URL_PATH);
+	$pathToChange = array('apps', 'community', 'director', 'about-360fly', 'press', 'b2b', 'contact', 'terms-use', 'privacy-policy', 'cannondale', 'chad-reed', 'jorge-lorenzo', 'pro-circuit', 'terry-adams', 'matt-cordova', 'sunny-garcia', 'store-locator');
+    $isEcommercePage = true;
+	foreach ($pathToChange as $key => $value) {
+	    if(stripos($shopUrl, $value)){
+		    $isEcommercePage =  false;
+		  }
+	  }
+	//Check if homepage
+	if(Mage::getBlockSingleton('page/html_header')->getIsHomePage()) {
+		 $isEcommercePage =  false;
+	}
+?>
+<!-- Show customer login on Ecommerce pages-->
+<?php  if($isEcommercePage) :   ?>
+	<?php $_links = $this->getLinks(); ?>
+	<?php if(count($_links)>0): ?>
+	<ul class="links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
+	    <?php foreach($_links as $_link): ?>
+	        <?php if ($_link instanceof Mage_Core_Block_Abstract):?>
+	            <?php echo $_link->toHtml() ?>
+	        <?php else: ?>
+	            <li<?php if($_link->getIsFirst()||$_link->getIsLast()): ?> class="<?php if($_link->getIsFirst()): ?>first<?php endif; ?><?php if($_link->getIsLast()): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $_link->getLiParams() ?>><?php echo $_link->getBeforeText() ?><a href="<?php echo $_link->getUrl() ?>" title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>><?php echo $_link->getLabel() ?></a><?php echo $_link->getAfterText() ?>
+	        	</li>
+	        <?php endif;?>
+	    <?php endforeach; ?>
+	</ul>
+	<?php endif; ?>
+<!-- Show Website login on Non-Ecommerce pages -->
+<?php else: ?>
+	<ul class="links">
+        <li class="first"><a href="https://360fly.com/account/login/" title="Register" class="link-register">Signup</a></li>
+        <li class=" last"><a href="https://360fly.com/account/register/" title="Login" class="link-account">Login</a></li>
+    </ul>
+
 <?php endif; ?>
