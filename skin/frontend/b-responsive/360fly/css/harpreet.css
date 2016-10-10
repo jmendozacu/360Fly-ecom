@@ -39,7 +39,7 @@ iframe{border:none;}
 .header .navbar{float:right;}
 .header #navbar3{font-size:20px;margin-top:45px;}
 .header #navbar3 ul li a{color:#999999;text-decoration:none;padding: 0 15px;margin: 15px 0;
-    border-right:1px solid #999;}
+    border-right:1px solid #999;font-family: 'Flysans-Medium';}
 .header #navbar3 ul li.shopping-cart a{border-right:none;}
 .header #navbar3 ul li a:hover{color:#7ABC31;font-family: 'Flysans-Medium';}
 .header li{list-style:none;}

@@ -11,32 +11,7 @@
 	$currentUrl = Mage::helper('core/url')->getCurrentUrl();
 	$cleanBaseUrl = Mage::getStoreConfig(Mage_Core_Model_Url::XML_PATH_SECURE_URL);
 	$shopUrl = $cleanBaseUrl.'shop';
-	if(strpos($currentUrl, "chad-reed"))
-	{
-		$communityUrl = $cleanBaseUrl.'chad-reed';
-	}
-	elseif(strpos($currentUrl, "terry-adams")) {
-		$communityUrl = $cleanBaseUrl.'terry-adams' ;
-	}
-	elseif(strpos($currentUrl, "jorge-lorenzo")) {
-		$communityUrl = $cleanBaseUrl.'jorge-lorenzo' ;
-	}
-	elseif(strpos($currentUrl, "matt-cordova")) {
-		$communityUrl = $cleanBaseUrl.'matt-cordova' ;
-	}
-	elseif(strpos($currentUrl, "sunny-garcia")) {
-		$communityUrl = $cleanBaseUrl.'sunny-garcia' ;
-	}
-	elseif(strpos($currentUrl, "cannondale")) {
-		$communityUrl = $cleanBaseUrl.'cannondale' ;
-	}
-	elseif(strpos($currentUrl, "pro-circuit")) {
-		$communityUrl = $cleanBaseUrl.'pro-circuit' ;
-	}
-	else {
-		$communityUrl = $cleanBaseUrl.'community' ;
-	}
-	$appsUrl = $cleanBaseUrl.'apps';
+	$communityArr = array('chad-reed', 'terry-adams', 'jorge-lorenzo', 'matt-cordova', 'sunny-garcia', 'cannondale', 'pro-circuit', 'community');
 	$cartCount = $this->helper('checkout/cart')->getSummaryCount();
 	$appsClass = 'x';
 	$communityClass = 'x';
@@ -53,25 +28,23 @@
 	elseif(strpos($currentUrl, "onestepcheckout")) {
 		$menuClass = 'is-shop-page';
 	}
-	if( strpos($currentUrl, $communityUrl) !== false ){
-		$communityClass = 'is-community-page';
+	foreach($communityArr as $communityUrlKeys){
+		if( strpos($currentUrl, $communityUrlKeys) !== false ){
+			$communityClass = 'is-community-page';
+		}
 	}
 	if( strpos($currentUrl, "apps") !== false ){
-		$appsUrl = $cleanBaseUrl.'apps';
 		$appsClass = "is-apps-page";
 	}
 	elseif(strpos($currentUrl, "Director")) {
-		$appsUrl = $cleanBaseUrl.'Director' ;
 		$appsClass = "is-apps-page";
 	}
 	$videoClass = 'x';
 	if(strpos($currentUrl, "videos")){
-		$videosUrl = $cleanBaseUrl.'Director' ;
 		$videoClass = 'is-video-page';
 	}
 	$supportClass = 'x';
 	if(strpos($currentUrl, "support")){
-		$supportUrl = $cleanBaseUrl.'support' ;
 		$supportClass = 'is-support-page';
 	}
 ?>

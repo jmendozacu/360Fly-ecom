@@ -9,9 +9,19 @@
 $baseUrl = $this->getBaseUrl();
 $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $skinUrl = $this->getSkinUrl();
+$hdId = 2;
+$producthd = Mage::getModel('catalog/product')->getCollection()
+   ->addAttributeToFilter('entity_id', $hdId)
+   ->addAttributeToSelect('*')
+   ->getFirstItem();
+$hdUrl = $producthd->getProductUrl();
 
-$hdUrl =  Mage::getSingleton('catalog/product')->load(2)->getProductUrl();
-$fourkUrl =  Mage::getSingleton('catalog/product')->load(1)->getProductUrl();
+$fourkId = 1;
+$productfourk = Mage::getModel('catalog/product')->getCollection()
+   ->addAttributeToFilter('entity_id', $fourkId)
+   ->addAttributeToSelect('*')
+   ->getFirstItem();
+$fourkUrl = $productfourk->getProductUrl();
 ?>
 
 <div class="pageheader home-shop">
