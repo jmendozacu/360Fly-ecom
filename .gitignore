@@ -4,6 +4,7 @@ media/videos/*
 skin/frontend/b-responsive/360fly/.sass-cache/*
 skin/frontend/b-responsive/360fly/css/360fly.css
 skin/frontend/b-responsive/360fly/css/ie.css
+skin/adminhtml/default/default/images/logoadmin.png
 .idea/*
 media/catalog/product/cache/*
 sitemap.xml

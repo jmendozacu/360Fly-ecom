@@ -8,7 +8,9 @@ User-agent: *
 # Crawl-delay: 30
 
 ## Magento sitemap: uncomment and replace the URL to your Magento sitemap file
-#Sitemap: http://127.0.0.1/gt/360flymagento/sitemap.xml
+
+#Sitemap: https://www.360fly.com/sitemap.xml
+#Sitemap: http://www.360fly.com/sitemap.xml
 
 ## DEVELOPMENT RELATED SETTINGS
 
