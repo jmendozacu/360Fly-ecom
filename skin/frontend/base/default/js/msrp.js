@@ -351,17 +351,4 @@ $(document).observe('bundle:reload-price', function (event) { //reload price
             $$('.full-product-price').each(function(e){
                 $(e).hide();
             });
-            $$('.map-info').each(function(e){
-                $(e).show();
-            });
-            event.noReloadPrice = true;
-        } else {
-            $$('.full-product-price').each(function(e){
-                $(e).show();
-            });
-            $$('.map-info').each(function(e){
-                $(e).hide();
-            });
-        }
-    }
-});
+       

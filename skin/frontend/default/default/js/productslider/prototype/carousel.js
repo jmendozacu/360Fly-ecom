@@ -314,14 +314,4 @@ Object.extend(Object.extend(Effect.SmoothScroll.prototype, Effect.Base.prototype
 		this.originalLeft = this.element.scrollLeft;
 		this.originalTop  = this.element.scrollTop;
 
-		if (this.options.mode == 'absolute') {
-			this.options.x -= this.originalLeft;
-			this.options.y -= this.originalTop;
-        }
-    },
-
-	update: function (position) {
-		this.element.scrollLeft = this.options.x * position + this.originalLeft;
-		this.element.scrollTop  = this.options.y * position + this.originalTop;
-    }
-});
+		if (this.

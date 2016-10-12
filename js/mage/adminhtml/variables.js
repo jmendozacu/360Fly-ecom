@@ -155,10 +155,4 @@ MagentovariablePlugin = {
         if (this.textareaId) {
             Variables.init(this.textareaId);
             Variables.insertVariable(value);
-        } else {
-            Variables.closeDialogWindow();
-            this.editor.execCommand('mceInsertContent', false, value);
         }
-        return;
-    }
-};

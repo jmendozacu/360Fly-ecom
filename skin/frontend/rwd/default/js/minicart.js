@@ -216,12 +216,3 @@ Minicart.prototype = {
         $j(this.selectors.error).fadeOut('slow');
         $j(this.selectors.success).fadeOut('slow');
     },
-
-    showError: function(message) {
-        $j(this.selectors.error).text(message).fadeIn('slow');
-    },
-
-    showSuccess: function(message) {
-        $j(this.selectors.success).text(message).fadeIn('slow');
-    }
-};

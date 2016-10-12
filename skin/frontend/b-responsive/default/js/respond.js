@@ -320,21 +320,4 @@
 	//translate CSS
 	ripCSS();
 
-	//expose update for re-running respond later on
-	respond.update = ripCSS;
-
-	//expose getEmValue
-	respond.getEmValue = getEmValue;
-
-	//adjust on resize
-	function callMedia(){
-		applyMedia( true );
-	}
-
-	if( w.addEventListener ){
-		w.addEventListener( "resize", callMedia, false );
-	}
-	else if( w.attachEvent ){
-		w.attachEvent( "onresize", callMedia );
-	}
-})(this);
+	//expose update for re-running respond lat

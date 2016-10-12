@@ -104,9 +104,4 @@ Accordion.prototype = {
         }
     },
 
-    closeExistingSection: function() {
-        if(this.currentSection) {
-            this.closeSection(this.currentSection);
-        }
-    }
-}
+    closeExistingSection: function() 

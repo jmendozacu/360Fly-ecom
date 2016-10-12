@@ -237,17 +237,4 @@
 	height: 18px !important;
 	background-image: none !important;
 	border: 2px solid #999 !important;
-	border-radius: 50% !important;
-	margin: 0 4px !important;
-	position: relative;
-}
-.ls-bottom-slidebuttons a.ls-nav-active::after {
-	content: " ";
-	position: absolute;
-	width: 14px;
-	height: 14px;
-	border-radius: 50%;
-	background-color: #78be20;
-	left: 2px;
-	top: 2px;
-}
+	border-radius: 50% !important

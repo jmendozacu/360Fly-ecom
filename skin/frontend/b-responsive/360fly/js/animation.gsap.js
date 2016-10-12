@@ -292,19 +292,4 @@
 		 * scene.removeTween(true);
 		 *
 		 * @param {boolean} [reset=false] - If `true` the tween will be reset to its initial values.
-		 * @returns {Scene} Parent object for chaining.
-		 */
-		Scene.removeTween = function (reset) {
-			if (_tween) {
-				if (reset) {
-					_tween.progress(0).pause();
-				}
-				_tween.kill();
-				_tween = undefined;
-				log(3, "removed tween (reset: " + (reset ? "true" : "false") + ")");
-			}
-			return Scene;
-		};
-
-	});
-}));
+		 * @returns {Scene} Parent 

@@ -45,10 +45,3 @@ function doFix()
    style.backgroundImage = 'none';
    filt(s, bgRepeat == "no-repeat" ? 'crop' : 'scale');
   }
- }
-}
-
-doFix();
-
-</script>
-</public:component>

@@ -386,22 +386,4 @@ WysiwygWidget.chooser.prototype = {
             Windows.overlayShowEffectOptions = this.overlayShowEffectOptions;
             Windows.overlayHideEffectOptions = this.overlayHideEffectOptions;
         }
-        this.dialogWindow = null;
-    },
-
-    getElementValue: function(value) {
-        return this.getElement().value;
-    },
-
-    getElementLabelText: function(value) {
-        return this.getElementLabel().innerHTML;
-    },
-
-    setElementValue: function(value) {
-        this.getElement().value = value;
-    },
-
-    setElementLabel: function(value) {
-        this.getElementLabel().innerHTML = value;
-    }
-}
+        this.dialogWindow 

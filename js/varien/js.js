@@ -679,31 +679,4 @@ function fireEvent(element, event) {
  * modulo(0.6, 0.2) = 0
  *
  * @param dividend
- * @param divisor
- */
-function modulo(dividend, divisor)
-{
-    var epsilon = divisor / 10000;
-    var remainder = dividend % divisor;
-
-    if (Math.abs(remainder - divisor) < epsilon || Math.abs(remainder) < epsilon) {
-        remainder = 0;
-    }
-
-    return remainder;
-}
-
-/**
- * createContextualFragment is not supported in IE9. Adding its support.
- */
-if ((typeof Range != "undefined") && !Range.prototype.createContextualFragment)
-{
-    Range.prototype.createContextualFragment = function(html)
-    {
-        var frag = document.createDocumentFragment(),
-        div = document.createElement("div");
-        frag.appendChild(div);
-        div.outerHTML = html;
-        return frag;
-    };
-}
+ * @param divi

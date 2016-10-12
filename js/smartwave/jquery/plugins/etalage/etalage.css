@@ -97,5 +97,4 @@
 .etalage_zoom_preview{ position:absolute; z-index:998 }
 .etalage_zoom_img, .etalage_hint{ z-index:999 }
 .etalage{ direction:ltr; float: none; }
-div.etalage_description{ position:absolute; bottom:0; left:0; z-index:999 }
-div.etalage_description.rtl{ direction:rtl; text-align:right }
+div.etalage_description{ position:absol

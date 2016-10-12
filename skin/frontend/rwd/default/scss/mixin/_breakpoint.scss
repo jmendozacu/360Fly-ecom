@@ -84,10 +84,4 @@ $mq-fixed-value: 1024;
 }
 
 // Renders at fixed value
-@include bp (max-width, 1200px) { 
-    div { color:#888; }
-}
-
-// ----------------------------------------------
-*/
-
+@include bp (max-width, 1200px

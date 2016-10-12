@@ -32,5 +32,4 @@
 }
 
 @function white-fallback ($opacity) {
-    @return darken(#FFFFFF, (1 - $opacity));
-}
+    @return d

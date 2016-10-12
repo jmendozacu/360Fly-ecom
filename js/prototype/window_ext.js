@@ -107,9 +107,4 @@ WindowCloseKey = {
       if (win.cancelCallback) 
         top.Dialog.cancelCallback();      
       else if (win.okCallback) 
-        top.Dialog.okCallback();
-      else
-        top.Windows.close(top.Windows.focusedWindow.getId());
-    }
-  }
-}
+        

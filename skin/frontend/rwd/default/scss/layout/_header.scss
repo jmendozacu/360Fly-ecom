@@ -320,22 +320,4 @@ a.skip-link {
     #header-account li:last-child a,
     .nav-primary li.level0:last-child a.level0 {
         border-bottom: 0;
-    }
-
-    .no-touch #header-account a:hover,
-    .no-touch .nav-primary a:hover {
-        background-color: $c-module-background;
-        text-decoration: none;
-    }
-
-}
-
-.account-cart-wrapper {
-    position: absolute;
-    top:0px;
-    right:0px;
-
-    @include bp(max-width, $bp-medium) {
-        position: static;
-    }
-}
+  

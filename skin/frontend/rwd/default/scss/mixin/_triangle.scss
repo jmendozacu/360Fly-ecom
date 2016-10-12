@@ -58,7 +58,4 @@
     @if $direction == left {
         border-top: $size solid transparent;
         border-bottom: $size solid transparent;
-        border-right: $size solid $color;
-        border-left: none;
-    }
-}
+        border-ri

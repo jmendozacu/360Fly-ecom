@@ -232,17 +232,4 @@
         .links {
             width: $links-width;
             margin-right: 0;
-        }
-
-        .links:nth-child(odd) {
-            margin-right: $links-trim;
-            clear: both;
-        }
-
-        .block-subscribe {
-            clear: both;
-            float: left;
-            width: 100%;
-        }
-    }
-}
+    

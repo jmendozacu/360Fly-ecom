@@ -351,14 +351,4 @@ tinyMceWysiwygSetup.prototype =
 
     saveContent: function(o) {
         if (this.config.add_widgets) {
-            o.content = this.decodeWidgets(o.content);
-            o.content = this.decodeDirectives(o.content);
-        } else if (this.config.add_directives) {
-            o.content = this.decodeDirectives(o.content);
-        }
-    },
-
-    widgetPlaceholderExist: function(filename) {
-        return this.config.widget_placeholders.indexOf(filename) != -1;
-    }
-}
+            o.

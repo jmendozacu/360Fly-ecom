@@ -110,10 +110,4 @@
 				authorurl : 'http://tinymce.moxiecode.com',
 				infourl : 'http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/autoresize',
 				version : tinymce.majorVersion + "." + tinymce.minorVersion
-			};
-		}
-	});
-
-	// Register plugin
-	tinymce.PluginManager.add('autoresize', tinymce.plugins.AutoResizePlugin);
-})();
+			};

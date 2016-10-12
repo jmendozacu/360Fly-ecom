@@ -128,7 +128,7 @@
 
 body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;background:#fff;}
 .cms-index-index .pov .pov-para{margin: 0 0 20px;}
-.cms-index-index .btn.btn-custom {margin:0px 0 20px;}
+.cms-index-index .btn.btn-custom {margin:0px;}
 .cms-index-index .product-slider .product_pod p{margin-bottom:5px!important;}
 .cms-index-index .ls-background {margin-top: 0px !important;}
 .cms-index-index .google-btn-link,.cms-index-index .apple-btn-link{float:left;margin-left:8px;}
@@ -184,7 +184,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .footer-360 .footer-bottom-nav{margin-top:22px !important;}
 .footer-360 #mc-embedded-subscribe-form{display:inline-block;width:120px;margin-right:12px;margin-left:12px;margin-bottom:0px;}
 .footer-360 .btn-footer, .footer-360 #mc-embedded-subscribe-form .btn-footer{border-color:#666666;border-radius:50px;border-width:2px;-webkit-transition:all .5s;-moz-transition:all .5s;transition:all .5s;}
-.footer-360 #mc-embedded-subscribe-form .btn-footer{width:120px;background-color:transparent;margin-bottom:0;min-width: 120px;font-weight:100;cursor: initial;-webkit-user-select:text;}
+.footer-360 #mc-embedded-subscribe-form .btn-footer{width:120px;background-color:transparent;margin-bottom:0;min-width: 120px;font-weight:100;cursor: initial;}
 .footer-360 .contact{margin-top:46px;}
 .footer-360 .btn-footer:hover{background-color:#666666;color:#999999;}
 .footer-360 a:hover{text-decoration:none;color:#fff;}
@@ -423,8 +423,7 @@ img.camera-logo {margin-bottom: 30px;}
 .register-wrapper .checkbox label{color:#000;}
 .register-wrapper .register-btn,.login-wrapper .login-btn{padding-bottom:7px}
 .customer-account-create .page-title h1{padding:0;margin:0;width:auto;}
-.agree{font-size:16px;font-family: FlySans-,Helvetica,Arial,sans-serif;}
-.agree a:focus{text-decoration: none;}
+
 /* Dashboard */
 
 /* Panaroma Video */
@@ -457,4 +456,6 @@ img.camera-logo {margin-bottom: 30px;}
 a.cart-count{color: #78BE20!important;}
 .header #navbar3 .submenu li:last-child a {border-right:none;}
 .footer-360 .email:focus{outline:none;}
+.footer-360 .btn.btn-custom{-webkit-user-select: initial;moz-user-select: none;ms-user-select: none;-select: none;}
+mail:focus{outline:none;}
 .footer-360 .btn.btn-custom{-webkit-user-select: initial;moz-user-select: none;ms-user-select: none;-select: none;}

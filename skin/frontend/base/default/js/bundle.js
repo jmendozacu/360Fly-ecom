@@ -263,12 +263,4 @@ Product.Bundle.prototype = {
         var container = $(elmId).up('ul.options-list');
         if (typeof container != 'undefined') {
             if (result == 'failed') {
-                container.removeClassName('validation-passed');
-                container.addClassName('validation-failed');
-            } else {
-                container.removeClassName('validation-failed');
-                container.addClassName('validation-passed');
-            }
-        }
-    }
-}
+                container.removeClassN

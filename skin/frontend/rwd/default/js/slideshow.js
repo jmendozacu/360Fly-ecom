@@ -39,6 +39,4 @@ $j(document).ready(function () {
             swipe: true,
             prev: '.slideshow-prev',
             next: '.slideshow-next',
-            fx: 'scrollHorz'
-        });
-});
+    

@@ -72,6 +72,4 @@ var ConfigurableSwatchesList = {
     }
 }
 
-$j(document).on('configurable-media-images-init', function(){
-    ConfigurableSwatchesList.init();
-});
+$j(document).on('configurable

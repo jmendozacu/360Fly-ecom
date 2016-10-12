@@ -887,46 +887,4 @@
 		// Add reset handler
 		self.onReset.add(function() {
 			self.setContent(self.startContent, {format : 'raw'});
-		});
-
-		// Add shortcuts
-		function handleShortcut(e, execute) {
-			if (e.altKey || e.ctrlKey || e.metaKey) {
-				each(self.shortcuts, function(shortcut) {
-					var ctrlState = tinymce.isMac ? e.metaKey : e.ctrlKey;
-
-					if (shortcut.ctrl != ctrlState || shortcut.alt != e.altKey || shortcut.shift != e.shiftKey)
-						return;
-
-					if (e.keyCode == shortcut.keyCode || (e.charCode && e.charCode == shortcut.charCode)) {
-						e.preventDefault();
-
-						if (execute) {
-							shortcut.func.call(shortcut.scope);
-						}
-
-						return true;
-					}
-				});
-			}
-		};
-
-		self.onKeyUp.add(function(ed, e) {
-			handleShortcut(e);
-		});
-
-		self.onKeyPress.add(function(ed, e) {
-			handleShortcut(e);
-		});
-
-		self.onKeyDown.add(function(ed, e) {
-			handleShortcut(e, true);
-		});
-
-		if (tinymce.isOpera) {
-			self.onClick.add(function(ed, e) {
-				e.preventDefault();
-			});
-		}
-	};
-})(tinymce);
+		

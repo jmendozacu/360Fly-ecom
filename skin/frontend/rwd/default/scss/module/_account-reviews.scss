@@ -116,11 +116,4 @@
 // ---------------------------------------------
 
 @include bp(max-width, 320px) {
-    .product-review {
-        .ratings-table {
-            tr {
-                float: none;
-            }
-        }
-    }
-}
+    .pr

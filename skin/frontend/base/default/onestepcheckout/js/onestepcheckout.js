@@ -1167,47 +1167,4 @@ var oscAdvancedGoogle = Class.create({
 
                         if(Array.isArray(e[0])) {
                             e[0].invoke('observe', e[1], function() {
-                                that.trackEvent(e[2]);
-                            }.bind(this));
-                        } else {
-                            e[0].observe(e[1], function() {
-                                that.trackEvent(e[2]);
-                            }.bind(this));
-                        }
-                    }
-                }
-            });
-        },
-
-        hasTracked: function(args) {
-
-            if(this.config.track_multiple === "1") {
-               return false;
-            }
-            var has_tracked = false;
-
-            this.pushed_events.each(function(i) {
-                if(args[2] === i[2]) {
-                    has_tracked = true;
-                }
-            });
-
-            return has_tracked;
-        },
-
-        trackEvent: function(msg) {
-            if(this._gaq) {
-                var push_args = [
-                    '_trackEvent',
-                    'OneStepCheckout',
-                    msg
-                ];
-
-                if (!this.hasTracked(push_args)) {
-                    this.pushed_events.push(push_args);
-                    this._gaq.push(push_args);
-                }
-            }
-        }
-
-});
+           

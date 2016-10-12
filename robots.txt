@@ -9,7 +9,7 @@ User-agent: *
 
 ## Magento sitemap: uncomment and replace the URL to your Magento sitemap file
 
-#Sitemap: https://www.360fly.com/sitemap.xml
+Sitemap: https://www.360fly.com/sitemap.xml
 #Sitemap: http://www.360fly.com/sitemap.xml
 
 ## DEVELOPMENT RELATED SETTINGS

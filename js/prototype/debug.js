@@ -128,10 +128,4 @@ var Debug = {
 			delete(container.opened)
 		} else {
 			sibling = container.parentNode.insertBefore($E({tag: "div", className: "child"}), container.nextSibling)
-			if (container.toInspect)
-				Debug.inspectObj(container.toInspect, sibling)
-			container.opened = sibling
-		}
-	}
-}
-var inspect = Debug.inspect;
+			if (container.

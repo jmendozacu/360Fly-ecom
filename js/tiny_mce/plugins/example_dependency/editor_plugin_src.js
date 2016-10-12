@@ -46,5 +46,4 @@
 	 * plugins in a depends list should typically be specified using the short name).  If neccesary this can be done
 	 * with an object which has the url to the plugin and the shortname.
 	 */
-	tinymce.PluginManager.add('example_dependency', tinymce.plugins.ExampleDependencyPlugin, ['example']);
-})();
+	tinymce.PluginManager.add('example_dependency', tinymce.plugi

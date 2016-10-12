@@ -177,15 +177,4 @@
   color: #ffffff;
 }
 
-/* Custom classes / mods - PIXEDEN */
-.pe-va {
-  vertical-align: middle;
-}
-
-.pe-border {
-  border: solid 0.08em #eaeaea;
-}
-
-[class^="pe-7s-"], [class*=" pe-7s-"] {
-  display: inline-block;
-}
+/* Custom c

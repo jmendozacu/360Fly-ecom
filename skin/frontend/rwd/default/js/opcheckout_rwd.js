@@ -43,6 +43,3 @@ Checkout.prototype.gotoSection = function (section, reloadProgressBlock) {
     }
 
     if (!reloadProgressBlock) {
-        this.resetPreviousSteps();
-    }
-}

@@ -379,17 +379,4 @@ Mediabrowser.prototype = {
         if ($(id) != undefined) {
             $(id).removeClassName('no-display');
             $(id).show();
-        }
-    },
-
-    onAjaxSuccess: function(transport) {
-        if (transport.responseText.isJSON()) {
-            var response = transport.responseText.evalJSON()
-            if (response.error) {
-                throw response;
-            } else if (response.ajaxExpired && response.ajaxRedirect) {
-                setLocation(response.ajaxRedirect);
-            }
-        }
-    }
-}
+        

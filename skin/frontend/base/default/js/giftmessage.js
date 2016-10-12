@@ -121,9 +121,3 @@ GiftMessageWindow.prototype = {
             this.parentObject.url = url
             this.parentObject.reloadContainer(buttonUrl);
         }
-        setTimeout(function(){
-            window.opener.focus();
-            window.close();
-        }, 3000);
-    }
-};

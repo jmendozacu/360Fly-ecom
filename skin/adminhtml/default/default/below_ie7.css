@@ -56,4 +56,4 @@
 .product-options .options-list li { zoom:1; }
 
 /* Hover Fix */
-iframe.hover-fix { position:absolute; left:-1px; top:-1px; z-index:-1; background:transparent; filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0); }
+iframe.hover-fix { position:absolute; left:-1px; top:-1px; z-index:-1; background:transparent; filter:prog

@@ -361,25 +361,4 @@ p.required,
     margin-top: 10px;
 
     label {
-        float: none;
-    }
-    .radio,
-    .checkbox {
-        margin-right: 6px;
-    }
-    .input-box {
-        clear: none;
-        display: inline-block;
-        width: auto;
-        padding: 0;
-    }
-}
-
-form {
-    .form-instructions {
-        font-style: italic;
-        font-family: $f-stack-serif;
-        font-size: $f-size-s;
-        color: $c-text-gray;
-    }
-}
+        

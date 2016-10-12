@@ -109,9 +109,4 @@
 			return false;
 		}
 
-		// Must not alter options, thus extending a fresh object...
-		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
-		return !$.cookie(key);
-	};
-
-}));
+		// Must not alter options, thus extending a f

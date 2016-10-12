@@ -32,6 +32,4 @@ function showResponse(a) {
 	jQuery('#fullajax_loader').hide()
 }
 function setLocation(b){
-    myhost = new RegExp(location.host);
-    reloadData(b)
-}
+    myhost = new RegExp(l

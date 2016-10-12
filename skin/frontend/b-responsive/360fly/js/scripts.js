@@ -2,10 +2,9 @@
 jQuery.noConflict();
 function adjustBioLeftWidth(){
     var wrap_width = jQuery('.wrapper-width').width();
-    var window_width = jQuery('window').width();
     var bio_left_width = jQuery('.bio-container .bio-left .bio-left-child-x').width();
     var bio_left_element = jQuery('.bio-container .bio-left .bio-left-child-x .bio-left-child-container');
-    if(wrap_width == 1000 && window_width == 1024){
+    if(wrap_width == 1000){
         var bio_left_child_container = ((450 / bio_left_width) * 100)+'%';
         bio_left_element.css('width', bio_left_child_container);
         bio_left_element.css('float', 'right');
@@ -87,7 +86,6 @@ jQuery(document).ready(function(a) {
              return false;
      }
          a('.search-link-header .form-group').css('width','32px');
-         a('.search-link-form .form-control').css('border','none');
-         a('.search-link-form .form-control').css('cursor','pointer');
+         a('.search-link-form .form-control').css('border','none'.search-link-form .form-control').css('cursor','pointer');
      });
 });

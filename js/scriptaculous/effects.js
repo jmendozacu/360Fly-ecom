@@ -1094,37 +1094,4 @@ if (document.defaultView && document.defaultView.getComputedStyle) {
 }
 
 Effect.Methods = {
-  morph: function(element, style) {
-    element = $(element);
-    new Effect.Morph(element, Object.extend({ style: style }, arguments[2] || { }));
-    return element;
-  },
-  visualEffect: function(element, effect, options) {
-    element = $(element);
-    var s = effect.dasherize().camelize(), klass = s.charAt(0).toUpperCase() + s.substring(1);
-    new Effect[klass](element, options);
-    return element;
-  },
-  highlight: function(element, options) {
-    element = $(element);
-    new Effect.Highlight(element, options);
-    return element;
-  }
-};
-
-$w('fade appear grow shrink fold blindUp blindDown slideUp slideDown '+
-  'pulsate shake puff squish switchOff dropOut').each(
-  function(effect) {
-    Effect.Methods[effect] = function(element, options){
-      element = $(element);
-      Effect[effect.charAt(0).toUpperCase() + effect.substring(1)](element, options);
-      return element;
-    };
-  }
-);
-
-$w('getInlineOpacity forceRerendering setContentZoom collectTextNodes collectTextNodesIgnoreClass getStyles').each(
-  function(f) { Effect.Methods[f] = Element[f]; }
-);
-
-Element.addMethods(Effect.Methods);
+  morph: function

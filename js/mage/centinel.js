@@ -104,9 +104,4 @@ CentinelAuthenticate.prototype = {
             }
             if (this._isCentinelBlocksLoaded()) {
                 $(this.centinelBlockId).hide();
-                $(this.iframeId).src = '';
-            }
-            this._isAuthenticationStarted = false;
-        }
-    }
-};
+                $(thi

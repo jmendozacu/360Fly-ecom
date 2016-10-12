@@ -31,8 +31,8 @@
  * @see Mage_Review_Block_Product_View
  */
 	$skinUrl = $this->getSkinUrl();
-	$hdUrl =  Mage::getSingleton('catalog/product')->load(2)->getProductUrl();
-	$fourkUrl =  Mage::getSingleton('catalog/product')->load(1)->getProductUrl();
+	$hdUrl =  Mage::getModel('catalog/product')->load(2)->getProductUrl();
+	$fourkUrl =  Mage::getModel('catalog/product')->load(1)->getProductUrl();
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
@@ -77,6 +77,7 @@
 										$productPriceBlock = $this->getLayout()->createBlock('catalog/product_price');
 										//$productPriceBlock = $this->getLayout()->createBlock('catalog/product_list_related');
 										echo $productPriceBlock->getPriceHtml($_product);
+										//echo Mage_Catalog_Block_Product::getPriceHtml($_product, true)
 									?>
 									<p>On sale for a limited time!</p>
 									<?php if (!$this->hasOptions()):?>

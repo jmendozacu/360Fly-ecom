@@ -1064,41 +1064,4 @@ and (max-device-width : 1024px)  {
                 background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
                 background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
                 background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-                background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-                background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
-            }
-        }
-    }
-    input[type=radio]:not(old){
-        + label > span{
-            border-radius:2rem;
-            overflow:hidden;
-        }
-        &:checked+label > span{
-            border-color:#3a334d;
-            > span{
-                display          : block;
-                width            : 1.5em;
-                height           : 1.5em;
-                border-radius    : 0.125em;
-                background       : #3a334d
-            }
-        }
-    }
-
-    input[type=checkbox]:not(old){
-        &:checked {
-            + label > span:before{
-                content     : '✓';
-                display     : block;
-                width       : 1.2rem;
-                color       : #3a334d;
-                font-size   : 0.875em;
-                line-height : 1.4rem;
-                text-align  : center;
-                text-shadow : 0 0 0.0714em rgb(115,153,77);
-                font-weight : bold;
-            }
-        }
-    }
-}
+                background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));

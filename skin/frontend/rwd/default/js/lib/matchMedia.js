@@ -40,7 +40,4 @@ window.matchMedia || (window.matchMedia = function() {
     return function(media) {
         return {
             matches: styleMedia.matchMedium(media || 'all'),
-            media: media || 'all'
-        };
-    };
-}());
+            medi

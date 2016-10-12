@@ -125,13 +125,4 @@ varienEvents.prototype = {
                     }
                     else {
                         alert("error: error in [unknown object].fireEvent():\n\nevent name: " + eventName + "\n\nerror message: " + e.message);
-                    }
-                }
-            }
-        }
-        return results;
-    }
-};
-
-varienGlobalEvents = new varienEvents();
-
+             

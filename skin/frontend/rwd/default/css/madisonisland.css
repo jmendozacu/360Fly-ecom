@@ -337,14 +337,4 @@ body .promos > li {
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.three-dots,
-.catalog-category-view div.categoryland-caption span.three-dots {
-  background: url(../images/bg_threeDots.png) no-repeat center center;
-  display: block;
-  height: 20px;
-}
-
-.cms-home #homepage-main-slides div.slides_control div div.slideshow-caption p.desc,
-.catalog-category-view div.categoryland-caption p.desc {
-  font: italic 18px/28px Georgia, "Times New Roman", Times, serif;
-  color: #656565;
-}
+.catalog-category-view div.categoryland-caption span.three-dots 

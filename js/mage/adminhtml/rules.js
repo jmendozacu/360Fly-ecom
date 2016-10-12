@@ -370,14 +370,4 @@ VarienRulesForm.prototype = {
     },
 
     chooserGridCheckboxCheck: function (grid, element, checked) {
-        if (checked) {
-            if (!element.up('th')) {
-                this.chooserSelectedItems.set(element.value,1);
-            }
-        } else {
-            this.chooserSelectedItems.unset(element.value);
-        }
-        grid.reloadParams = {'selected[]':this.chooserSelectedItems.keys()};
-        this.updateElement.value = this.chooserSelectedItems.keys().join(', ');
-    }
-}
+        if (checke

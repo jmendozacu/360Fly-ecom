@@ -216,10 +216,4 @@ TranslateInline.prototype = {
 
     escapeHTML: function(str) {
         this.helperDiv.innerHTML = '';
-        var text = document.createTextNode(str);
-        this.helperDiv.appendChild(text);
-        var escaped = this.helperDiv.innerHTML;
-        escaped = escaped.replace(/"/g, '&quot;');
-        return escaped;
-    }
-}
+    

@@ -181,12 +181,4 @@ AdminBackup.prototype = {
             'marginTop': -$(divId).getDimensions().height / 2 + 'px'
         });
         $('popup-window-mask').setStyle({
-            height: $('html-body').getHeight() + 'px'
-        }).show();
-    },
-
-    hidePopups: function() {
-        $$('.backup-dialog').each(Element.hide);
-        $('popup-window-mask').hide();
-    }
-}
+            height: $('

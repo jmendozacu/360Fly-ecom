@@ -310,21 +310,4 @@
                         }
 
                         .paypal-or {
-                            line-height: 1.6;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@include bp(max-width, $bp-small) {
-    .header-minicart {
-        .minicart-actions {
-            .checkout-button {
-                width: 100%;
-            }
-        }
-    }
-}
+            

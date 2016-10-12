@@ -431,24 +431,4 @@ OrderReviewController.prototype = {
         );
         this._canSubmitOrder = !isDisabled;
         if (this.formSubmit) {
-            this._toggleButton(this.formSubmit, isDisabled);
-        }
-    },
-
-    /**
-     * Enable/Disable button
-     *
-     * @param button
-     * @param disable
-     */
-    _toggleButton : function(button, disable)
-    {
-        button.disabled = disable;
-        button.removeClassName('no-checkout');
-        button.setStyle({opacity:1});
-        if (disable) {
-            button.addClassName('no-checkout');
-            button.setStyle({opacity:.5});
-        }
-    }
-};
+            this._toggleButton(this.formSubmit

@@ -237,16 +237,4 @@ body[class*="checkout-multishipping-"] {
 
 @include bp(max-width, $bp-small) {
     .checkout-multishipping-addresses .linearize-table tbody td[data-rwd-label] {
-        text-align: left;
-        padding-left: 10px;
-        margin-top: 12px;
-    }
-}
-
-@include bp(max-width, $bp-xsmall) {
-    body[class*="checkout-multishipping-"] {
-        .buttons-set .back-link {
-            display: block;
-        }
-    }
-}
+        text

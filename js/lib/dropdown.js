@@ -33,4 +33,4 @@ dropdown = function() {
         }
     }
 }
-if (window.attachEvent) window.attachEvent("onload", dropdown);
+if (window.attachEvent) windo

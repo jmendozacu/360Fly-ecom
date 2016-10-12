@@ -417,27 +417,4 @@
             }
         }
 
-        .product-img-box {
-            width: auto;
-            max-width: 50%;
-
-            > a {
-                width: 100%;
-            }
-
-            .product-image {
-                width: 100%;
-            }
-        }
-    }
-}
-
-@include bp('max-width', $bp-medium) {
-    .review-product-view {
-        .product-review {
-            .product-img-box {
-                max-width: 100%;
-            }
-        }
-    }
-}
+   

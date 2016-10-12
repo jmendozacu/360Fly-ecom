@@ -200,13 +200,4 @@ Moneybookers.prototype = {
                 $("moneybookers_settings_secret_key").setValue(this.infoOrig.key);
                 $("moneybookers_settings_secret_key_inherit").click();
                 $("moneybookers_settings_activationstatus_inherit").click();
-                this.setStatus(this.infoOrig.status);
-            }
-        }
-        this.changeUi();
-    },
-
-    isStoreView: function() {
-        return $("moneybookers_settings_moneybookers_email_inherit") != undefined;
-    }
-}
+                this.setStatus

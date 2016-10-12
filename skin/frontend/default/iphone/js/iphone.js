@@ -1201,33 +1201,4 @@ document.observe("dom:loaded", function() {
             var parent = n.up('a'),
                 clone  = n.up().clone(true).addClassName('cloned');
             parent.insert(clone.wrap('div', {'class' : 'cloned-wrap'}));
-
-            new webkit_draggable(clone.up(), { handle : clone.select('.product-image')[0], revert : true, scroll : true, onStart : function(r, e) {
-                    r.setStyle({'opacity':'100'}).down('.wrap').addClassName('drop-start');
-                },
-                onEnd : function(r, e) {
-                    r.setStyle({'opacity':'0'}).down('.wrap').removeClassName('drop-start');
-                }
-            });
-        });
-        webkit_drop.add($('menu'),
-        {
-            onDrop : function(elem, e) { e.preventDefault(); setLocation(elem.up('li').down('.actions li:last-child a').readAttribute('href')); elem.remove(); },
-            onOver : function(elem, e) { e.preventDefault(); elem.down().addClassName('to-cart-animate'); },
-            onOut  : function(elem) { elem.down().removeClassName('to-cart-animate'); }
-        });
-
-    }
-
-    if ( $('customer-reviews') ) {
-        $('customer-reviews').select('dt > a').each(function (a) {
-            a.replace('<h3>' + a.innerHTML + '</h3>');
-        });
-    }
-
-    var filters = $$('.filters-block .currently')[0];
-    if ( filters ) {
-        $$('.toolbar')[0].insert({ 'after' : Element.clone(filters, true) });
-    }
-
-});
+

@@ -1,11 +1,9 @@
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
 /* Misc Custom */
 .no-gutter{padding:0;}
-.no-border{border:0px;box-shadow:0px 0px 0px transparent;}
 .clear{clear:both;}
 /*.btn:hover, .btn:focus, .btn.focus{outline:none;color:#B1B1B1;}*/
 button:focus{outline:none;}
-/*.required{color:red;}*/
 h1,h2,h3,h4,h5,h6{color: #78be20;font-family: "FlySans-", Arial, sans-serif;}
 p{font-family: "FlySans-Light", Arial, sans-serif;}
 .margin-center{margin: 0 auto;}
@@ -98,7 +96,7 @@ ul.submenu1 li:last-child a,ul.submenu2 li:last-child a{border-right:none;}
 
 .pre-footer h3{font-size: 25px;line-height: 33px;color:#fff;margin-bottom:24px;margin-top:3px;}
 .pre-footer p{color: #999999;margin-bottom: 35px;}
-.pre-footer .app-img{text-align: center;line-height: 440px;}
+.pre-footer .app-img{text-align: center;line-height: 220px;}
 #apps-img{display: inline-block;max-width:100%;}
 
 /* THE APPS THAT POWER IT ALL section end */
@@ -320,7 +318,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .accessory-bar p{color: #666;font-size: 25px;margin: 0 0 20px;}
 .product-promotions{padding-top: 30px;clear: both;float: none;background-color: #fff;}
 .product-main{font-family: FlySans-,Helvetica,Arial,sans-serif;}
-.product-main h1{font-size: 38px;margin:3px 0 8px;font-weight: 600;color:#78be20;}
+.product-main h1{font-size: 38px;margin:3px 0 8px;font-weight: 600;color:#333;}
 .product-description p{font-size: 20px;margin: 0 0 20px;color: #333;line-height: 1.42857143;}
 .product-description ul{margin-bottom:20px;}
 .product-description ul li{font-size:16px;}
@@ -343,7 +341,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /* Product Description Page Start */
 
 .product-essential{padding:30px;background-image:none;}
-.std ul{padding-left:40px;color:#333;list-style: none;}
+.std ul{padding-left:40px;color:#333;}
 .availability{display: none;}
 .price-box{margin:0;}
 .regular-price .price{font-weight: 700;margin-bottom: 0;color: #78be20 ;font-size: 32px;}
@@ -357,7 +355,6 @@ input.qty{width:100px !important;}
 .category-cameras .landing-img{width: 100%;position: absolute;top: 30px;right: -35px;transform: scale(1.65);}
 .category-cameras .camera-4k .landing-img{top: 220px;right: 110px;}
 .category-cameras .short-description.std{padding-top: 250px;text-align: right;}
-.short-description ul li:before{content: "";background-color: #78be20;position: absolute;margin-left: -20px;width: 7px;height: 7px;font-size: 20px;border-radius: 100px;margin-top: 7px;}
 .category-cameras h3{font-size: 26px;color: #000;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;
     font-weight: 500;margin:3px 0 8px;}
 .category-cameras .camera-info p{font-size: 20px;line-height: 1.2;color: #333;font-family: FlySans-,Helvetica,Arial,sans-serif;}
@@ -393,8 +390,6 @@ input.qty{width:100px !important;}
 .show-lg-md{display: none;}
 .show-mobile-4k{display: none;}
 .edit-icon{font-family:'FontAwesome';font-size:15px;margin-left:5px;}
-.cameras-contain .btn.btn-shop-4k{margin:0 0 30px 70px;float: left;}
-.cameras-contain .btn.btn-shop-hd{margin:0 70px 30px 0;float: right;}
 /* Camera Category End */
 /* Account Dashboard Start */
 
@@ -411,8 +406,6 @@ input.qty{width:100px !important;}
 /* Checkout index start */
 .checkout-cart-index input.qty{display: inline-block;}
 .checkout-cart-index .cart-table .btn-update{top:13px;}
-.onestepcheckout-index-index #onestepcheckout-form div.checkoutcontainer #shipping_address{padding: 0 10px;}
-.onestepcheckout-error:before{content: "\f057";font-family: fontawesome;position: absolute;left: 2%;color: red;}
 /* Checkout index End */
 /* B2B Page Start */
  .cms-b2b .graybg{background: #191919;}
@@ -425,12 +418,20 @@ input.qty{width:100px !important;}
  /* Search Icon Start */
  .inline-block{display: inline-block;}
 .search-link-header .form-group{float:right !important;transition:all 0.3s, border-radius 0s;width:32px;height:32px;background-color:transparent;border-radius:25px;margin-bottom:0px;padding:5px 0;transition:all 0.3s ease-in-out;}
-.search-link-header .form-group input.form-control{padding-right:20px;border:0 none;background:transparent;box-shadow:none;display:block;height:23px;border-radius:50px;cursor:pointer;font-size:14px;color:#fff;margin:1px 0;}
+.search-link-header .form-group input.form-control{padding-right:20px;border:0 none;background:transparent;box-shadow:none;display:block;height:22px;border-radius:50px;cursor:pointer;font-size:14px;color:#fff;margin:2px 0;}
 .search-link-header .form-group input.form-control::-webkit-input-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control:-moz-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control::-moz-placeholder{color:#fff;}
 .search-link-header .form-group input.form-control:-ms-input-placeholder{color:#fff;}
 .search-link-header .form-group span.form-control-feedback{position:absolute;top:1px;right:-2px;z-index:2;display:block;width:34px;height:34px;line-height:34px;text-align:center;color:#fff;left:initial;font-size:14px;}
+.links .last a{border-right:1px solid #fff;}
+ /* Search Icon End */
+/* Search Page Start */
+.catalogsearch-result-index .search-title{border-bottom: 1px solid transparent;text-transform: inherit;padding:30px 15px 20px;}
+.catalogsearch-result-index .search-title h1{font-size: 30px;line-height: 40px;margin-bottom: 0;margin-top: 3px;font-family: FlySans-,Helvetica,Arial,sans-serif;font-weight: 500;color:#333;}
+.catalogsearch-result-index .note{font-family: FlySans-,Helvetica,Arial,sans-serif;line-height: 1.42;color:#333;font-size: 16px;margin-bottom: 20px;}
+/* Search Page End */
+ght:34px;text-align:center;color:#fff;left:initial;font-size:14px;}
 .search-link-header .form-control-feedback{font-size: 12px;}
 .hidden-xs .header-account-links .links .last a{border-right:1px solid #fff;}
 .header-mobile .top-bar-section form{display: block;}

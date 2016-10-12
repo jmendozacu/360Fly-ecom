@@ -301,9 +301,7 @@ a {
 	padding:0 15px !important;
 }
 .messages ul{
-	// padding: 0 0 0 15px !important;
-	position: relative;
-	left: 3%;
+	padding: 0 0 0 15px !important;
 }
 .success-msg{
 	background-image: none;
@@ -313,8 +311,7 @@ a {
 	border-width: 2px !important;
 	border-radius: 4px;
 	text-align: left !important;
-	padding: 15px 40px 15px 40px !important;
-	word-wrap: break-word;
+	padding: 15px 15px 15px 40px !important;
 }
 
 li.success-msg:before {
@@ -326,7 +323,7 @@ li.success-msg:before {
 }
 .error-msg{
 	background-image: none;
-	padding: 15px 40px 15px 40px !important;
+	padding: 15px 15px 15px 40px !important;
 	border-width: 2px !important;
 	border-radius: 4px;
 }
@@ -367,29 +364,7 @@ li.error-msg:before {
 			}
 		}
 	}
-	@media screen and (min-width: 768px){
-		&> .panel {
-			&> .panel-heading {
-				background-color: #f9f9f9;
-				&+ .panel-collapse {
-					&> .panel-body {
-						background-color: #fff;
-					}
-				}
-			}
-		}
-	}
-}
-
-ul.disc {
-	list-style: disc outside;
-	padding-left: 15px;
-	li {
-		list-style: disc outside;
-	}
-}
-.accessories{
-	label[for=camera_type]{
+	@media screen anlabel[for=camera_type]{
 		font-size: 20px !important;
 	}
 }

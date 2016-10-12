@@ -276,18 +276,4 @@
 
             if(query) {
                 if(handler) {
-                    query.removeHandler(handler);
-                }
-                else {
-                    query.clear();
-                    delete this.queries[q];
-                }
-            }
-
-            return this;
-        }
-    };
-
-    return new MediaQueryDispatch();
-
-}));
+           

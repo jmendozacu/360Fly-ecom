@@ -175,14 +175,4 @@
                 &.current:after {
                     @include triangle(down, 4px, $c-action);
                     left: 6px;
-                    top: 50%;
-                    margin-top: -3px;
-                }
-            }
-
-            > dd.current {
-                display: block;
-            }
-        }
-    }
-}
+               

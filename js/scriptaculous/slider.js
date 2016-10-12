@@ -265,13 +265,4 @@ Control.Slider = Class.create({
     this.dragging = false;
   },
   finishDrag: function(event, success) {
-    this.active = false;
-    this.dragging = false;
-    this.updateFinished();
-  },
-  updateFinished: function() {
-    if (this.initialized && this.options.onChange)
-      this.options.onChange(this.values.length>1 ? this.values : this.value, this);
-    this.event = null;
-  }
-});
+    this.acti

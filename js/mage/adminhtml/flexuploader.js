@@ -355,18 +355,4 @@ if(!window.Flex) {
             if (container && Element.descendantOf(this.container, container) && !this.checkAllComplete()) {
                 if (! confirm('There are files that were selected but not uploaded yet. After switching to another tab your selections will be lost. Do you wish to continue ?')) {
                     return 'cannotchange';
-                } else {
-                    this.removeAllFiles();
                 }
-            }
-        },
-        checkAllComplete: function() {
-            if (this.files) {
-                return !this.files.any(function(file) {
-                    return (file.status !== 'full_complete')
-                });
-            }
-            return true;
-        }
-    }
-}

@@ -655,34 +655,4 @@ var webkit_click = function(r, ip)
     this.touchMove = function()
     {
         this.moved = true;
-        this.root.removeEventListener("touchmove", this.tm);
-        this.bound = false;
-    }
-
-    this.touchEnd = function()
-    {e.preventSwipe = true;
-        if(this.moved == false)
-        {
-            this.p.onClick();
-        }
-    }
-
-    this.setEvent = function(f)
-    {
-        if(typeof(f) == 'function')
-        {
-            this.p.onClick = f;
-        }
-    }
-
-    this.unbind = function()
-    {
-        var root = this.root;
-        root.removeEventListener("touchstart", this.ts);
-        root.removeEventListener("touchmove", this.tm);
-        root.removeEventListener("touchend", this.te);
-    }
-
-    //call constructor
-    this.initialize(r, ip);
-}
+        this.

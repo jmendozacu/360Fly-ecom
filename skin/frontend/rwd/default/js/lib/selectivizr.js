@@ -541,21 +541,4 @@ References:
         init = function(e) {
             if (e.type == "readystatechange" && doc.readyState != "complete") return;
             (e.type == "load" ? win : doc).detachEvent("on" + e.type, init, false);
-            if (!done && (done = true)) fn.call(win, e.type || e);
-        },
-        poll = function() {
-            try { root.doScroll("left"); } catch(e) { setTimeout(poll, 50); return; }
-            init('poll');
-        };
-
-        if (doc.readyState == "complete") fn.call(win, EMPTY_STRING);
-        else {
-            if (doc.createEventObject && root.doScroll) {
-                try { top = !win.frameElement; } catch(e) { }
-                if (top) poll();
-            }
-            addEvent(doc,"readystatechange", init);
-            addEvent(win,"load", init);
-        }
-    };
-})(this);
+            if (!done && (done = true)) fn.call(win, e.typ

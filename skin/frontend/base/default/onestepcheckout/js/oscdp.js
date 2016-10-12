@@ -130,10 +130,4 @@ var oscDeliverydate = Class
                                             a.options.postBody = Object
                                                     .toQueryString(a.options.parameters);
                                         }
-                                    }
-                                }
-                            });
-
-                }
-            }
-        });
+                 

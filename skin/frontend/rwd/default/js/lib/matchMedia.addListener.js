@@ -66,10 +66,4 @@
             for (var i = 0, il = listeners.length; i < il; i++){
                 if (listeners[i] === listener){
                     listeners.splice(i, 1);
-                }
-            }
-        };
-
-        return mql;
-    };
-}());
+         

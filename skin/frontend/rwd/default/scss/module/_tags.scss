@@ -70,9 +70,4 @@
         }
     }
 }
-@include bp (max-width, $bp-medium) {
-    .tags-list > li,
-    .tags-list {
-        float: none;
-    }
-}
+@include bp (max-width, $bp-mediu

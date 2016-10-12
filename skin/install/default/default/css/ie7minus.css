@@ -36,5 +36,4 @@ h1#logo { display:inline; }
 .error-msg, .success-msg, .note-msg { height:23px; }
 .currency-switcher h4 { height:21px; }
 .base-mini .head h4, .shopping-cart-collaterals h4 { height:16px; }
-.login-box h4 { height:16px; }
-.login-box .content { height:230px; }
+.login-box h4 { height:16px; }

@@ -124,9 +124,4 @@ var mainNav = function() {
 };
 
 document.observe("dom:loaded", function() {
-    //run navigation without delays and with default id="#nav"
-    //mainNav();
-
-    //run navigation with delays
-    mainNav("nav", {"show_delay":"100","hide_delay":"100"});
-});
+    //run navigation without delays and with default 

@@ -38,7 +38,4 @@ Catalog.Map.showHelp = Catalog.Map.showHelp.wrap(function (parent, event) {
         } else if (event.pageX - (Element.getWidth(helpBox) / 2) < 0) {
             helpBox.addClassName('map-popup-right');
         }
-    } else {
-        parent(event);
-    }
-});
+    } 

@@ -71,8 +71,4 @@
 @include bp(min-width, $bp-medium) {
     .col1-layout {
         .col-main .widget {
-            @include product-grid(4, 960, "widget");
-            @include product-grid(5, 960, "widget");
-        }
-    }
-}
+            @include product-grid(4, 960, "widget")

@@ -77,10 +77,4 @@ body.customer-account .my-account .title-buttons.recurring-profiles-title-button
 
 .recurring-profiles-messages {
     &:after {
-        @include clearfix;
-    }
-}
-
-#recurring_start_date_trig {
-    display: inline;
-}
+        @

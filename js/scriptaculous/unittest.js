@@ -550,19 +550,4 @@ Test.context = function(name, spec, log){
     switch(specName){
       case "setup":
       case "teardown":
-        compiledSpec[specName] = spec[specName];
-        break;
-      default:
-        var testName = 'test'+specName.gsub(/\s+/,'-').camelize();
-        var body = spec[specName].toString().split('\n').slice(1);
-        if(/^\{/.test(body[0])) body = body.slice(1);
-        body.pop();
-        body = body.map(function(statement){ 
-          return statement.strip()
-        });
-        compiledSpec[testName] = body.join('\n');
-        titles[testName] = specName;
-    }
-  }
-  new Test.Unit.Runner(compiledSpec, { titles: titles, testLog: log || 'testlog', context: name });
-};
+        compiledSpec[specNa

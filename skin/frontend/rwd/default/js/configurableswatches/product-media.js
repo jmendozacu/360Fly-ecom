@@ -225,11 +225,3 @@ var ConfigurableMediaImages = {
     },
 
     setImageFallback: function(productId, imageFallback) {
-        ConfigurableMediaImages.productImages[productId] = imageFallback;
-    },
-
-    init: function(imageType) {
-        ConfigurableMediaImages.imageType = imageType;
-        ConfigurableMediaImages.wireOptions();
-    }
-};

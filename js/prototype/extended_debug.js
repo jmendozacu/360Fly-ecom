@@ -105,9 +105,4 @@ function clearDebug() {
 		
 	win.innerHTML=" ";
 	//clear inspections too
-	var divs = document.getElementsByClassName('inspector');
-	divs.each(function(div){
-		Element.remove(div);
-	});
-}
-
+	var div

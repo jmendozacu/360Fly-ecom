@@ -58,10 +58,4 @@ function doFix()
    filt(s, 'crop');
    // IE link fix.
    for (var n = 0; n < childNodes.length; n++)
-    if (childNodes[n].style) childNodes[n].style.position = 'relative';
-  }
-  else filt();
- }
-}
-
-doFix();
+    if (childNodes[n].style) childNodes[n].sty

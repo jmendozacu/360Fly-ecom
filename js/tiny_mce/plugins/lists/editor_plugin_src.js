@@ -925,31 +925,4 @@
 			indentAmount = parseInt(indentAmount, 10);
 			return function(element) {
 				var currentIndent, newIndentAmount;
-				currentIndent = parseInt(ed.dom.getStyle(element, 'margin-left') || 0, 10) + parseInt(ed.dom.getStyle(element, 'padding-left') || 0, 10);
-				if (isIndent) {
-					newIndentAmount = currentIndent + indentAmount;
-				} else {
-					newIndentAmount = currentIndent - indentAmount;
-				}
-				ed.dom.setStyle(element, 'padding-left', '');
-				ed.dom.setStyle(element, 'margin-left', newIndentAmount > 0 ? newIndentAmount + indentUnits : '');
-			};
-		},
-
-		selectedBlocks: function() {
-			var ed = this.ed, selectedBlocks = ed.selection.getSelectedBlocks();
-			return selectedBlocks.length == 0 ? [ ed.dom.getRoot() ] : selectedBlocks;
-		},
-
-		getInfo: function() {
-			return {
-				longname : 'Lists',
-				author : 'Moxiecode Systems AB',
-				authorurl : 'http://tinymce.moxiecode.com',
-				infourl : 'http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/lists',
-				version : tinymce.majorVersion + "." + tinymce.minorVersion
-			};
-		}
-	});
-	tinymce.PluginManager.add("lists", tinymce.plugins.Lists);
-}());
+				currentIndent = parseInt(ed.dom.getStyle(element, 'margin-left') || 0, 10

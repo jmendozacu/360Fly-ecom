@@ -1234,45 +1234,4 @@ var ProductMediaManager = {
                 //reveal new image
                 targetImage.addClass('visible');
 
-                //wire zoom on new image
-                ProductMediaManager.createZoom(targetImage);
-            });
-
-        }
-    },
-
-    wireThumbnails: function() {
-        //trigger image change event on thumbnail click
-        $j('.product-image-thumbs .thumb-link').click(function(e) {
-            e.preventDefault();
-            var jlink = $j(this);
-            var target = $j('#image-' + jlink.data('image-index'));
-
-            ProductMediaManager.swapImage(target);
-        });
-    },
-
-    initZoom: function() {
-        ProductMediaManager.createZoom($j(".gallery-image.visible")); //set zoom on first image
-    },
-
-    init: function() {
-        ProductMediaManager.imageWrapper = $j('.product-img-box');
-
-        // Re-initialize zoom on viewport size change since resizing causes problems with zoom and since smaller
-        // viewport sizes shouldn't have zoom
-        $j(window).on('delayed-resize', function(e, resizeEvent) {
-            ProductMediaManager.initZoom();
-        });
-
-        ProductMediaManager.initZoom();
-
-        ProductMediaManager.wireThumbnails();
-
-        $j(document).trigger('product-media-loaded', ProductMediaManager);
-    }
-};
-
-$j(document).ready(function() {
-    ProductMediaManager.init();
-});
+          

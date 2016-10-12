@@ -597,39 +597,3 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
                 width: 75px;
                 margin-left: auto;
                 margin-right: auto;
-            }
-
-            .product-name {
-                display: block;
-            }
-        }
-
-        .fieldset {
-            margin-left: 200px;
-        }
-    }
-}
-
-@include bp('max-width', $bp-medium) {
-    .gift-message-form {
-
-        .giftmessage-area{
-            max-width: 100%;
-        }
-
-        .gift-item {
-            .product-img-box {
-                width: 100%;
-                float: none;
-            }
-
-            .fieldset {
-                margin-left: 0px;
-
-                textarea {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}

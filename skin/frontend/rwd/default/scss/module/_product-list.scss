@@ -566,37 +566,4 @@ $productsGridActionHeight: 85px;
     .block-layered-nav dl ol > li > a {
         @include touch-button;
 
-        &:hover {
-            text-decoration: none;
-            background: $c-module-background-hover;
-        }
-    }
-}
-
-.block-layered-nav .currently {
-    .block-subtitle {
-        display: block;
-        @include h4;
-    }
-
-    ol {
-        padding-left: $box-spacing;
-        margin-bottom: $box-spacing;
-    }
-    ol li {
-        margin-bottom: 5px;
-
-        .label {
-            font-weight: bold;
-        }
-
-        &:after {
-            @include clearfix;
-        }
-    }
-}
-
-.block-layered-nav .actions {
-    text-align: right;
-    margin-bottom: $element-spacing;
-}
+        &:

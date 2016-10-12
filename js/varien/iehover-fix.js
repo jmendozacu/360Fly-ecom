@@ -58,7 +58,4 @@ ieHover = function() {
     }
     $$('.tool-tip', '#checkout-step-payment').each(function(el) {
         el.hide();
-        el.setStyle({'visibility':'visible'})
-    })
-}
-Event.observe(window, 'load', ieHover);
+        el.setStyle({'visibility':'

@@ -164,13 +164,4 @@ body .promos > li {
 
 .cms-index-index h2.subtitle {
   padding: 6px 0;
-  text-align: center;
-  color: #3399cc;
-  font-weight: 600;
-  border-bottom: 1px solid #cccccc;
-  border-top: 1px solid #cccccc;
-}
-
-.cms-index-noroute h2.subtitle {
-  display: none;
-}
+  text-align: cent

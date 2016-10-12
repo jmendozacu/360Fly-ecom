@@ -733,33 +733,4 @@ ProductConfigure.prototype = {
                     this.blockFormConfirmed.childElements().each(function(blockItem) {
                         var scopeArr = blockItem.id.match(/.*\[(\w+)\]\[([^\]]+)\]$/);
                         var listType = scopeArr[1];
-                        _renameFields(method, blockItem, listInfo.complexTypes ? listType : null);
-                        this.blockConfirmed.insert(blockItem);
-                    }.bind(this));
-            break;
-        }
-    },
-
-    /**
-     * Check if qty selected correctly
-     *
-     * @param object element
-     * @param object event
-     */
-    changeOptionQty: function(element, event)
-    {
-        var checkQty = true;
-        if ('undefined' != typeof event) {
-            if (event.keyCode == 8 || event.keyCode == 46) {
-                checkQty = false;
-            }
-        }
-        if (checkQty && (Number(element.value) <= 0 || isNaN(Number(element.value)))) {
-            element.value = 1;
-        }
-    }
-};
-
-Event.observe(window, 'load',  function() {
-    productConfigure = new ProductConfigure();
-});
+                        _renameFields(method, blockItem, listInfo.complexTypes ? listType : nu

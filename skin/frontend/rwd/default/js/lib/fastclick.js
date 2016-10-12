@@ -742,36 +742,4 @@ FastClick.notNeeded = function(layer) {
         }
     }
 
-    // IE10 with -ms-touch-action: none, which disables double-tap-to-zoom (issue #97)
-    if (layer.style.msTouchAction === 'none') {
-        return true;
-    }
-
-    return false;
-};
-
-
-/**
- * Factory method for creating a FastClick object
- *
- * @param {Element} layer The layer to listen on
- */
-FastClick.attach = function(layer) {
-    'use strict';
-    return new FastClick(layer);
-};
-
-
-if (typeof define !== 'undefined' && define.amd) {
-
-    // AMD. Register as an anonymous module.
-    define(function() {
-        'use strict';
-        return FastClick;
-    });
-} else if (typeof module !== 'undefined' && module.exports) {
-    module.exports = FastClick.attach;
-    module.exports.FastClick = FastClick;
-} else {
-    window.FastClick = FastClick;
-}
+    // IE1

@@ -85,7 +85,4 @@ if(!window.Flex) {
             this.flex.getBridge().resize(parseFloat(this.getInnerElement('width').value), parseFloat(this.getInnerElement('height').value));
         },
         getImage: function() {
-            this.getInnerElement('b64').value = this.flex.getBridge().getBase64Image();
-        }
-    }
-}
+            this.ge

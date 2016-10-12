@@ -162,17 +162,4 @@
     }
 
     &:after {
-        @include clearfix;
-    }
-
-    .fieldset .legend + .required {
-        margin: 0;
-    }
-}
-
-@include bp(max-width, $bp-medium) {
-
-    #contactForm {
-        padding-left: 0;
-    }
-}
+        @include clearfi

@@ -347,32 +347,4 @@
 		}
 		.designby {
 			clear: both;
-			text-align: left;
-			padding-bottom: 10px;
-		}
-	}
-}
-
-@media screen and (min-width: 992px){
-	.footer {
-		.footer-links {
-			.links {
-				li {
-					font-size: 14px;
-					&+ li {
-						margin-left: 30px;
-					}
-				}
-				&+ .links {
-					margin-top: 5px;
-					li {
-						font-size: 12px;
-						&+ li {
-							margin-left: 20px;
-						}
-					}
-				}
-			}
-		}
-	}
-}
+			text-align

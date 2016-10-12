@@ -31,8 +31,4 @@ function enableAlphaImages(){
 				img.style.height = img.height + "px";
 				img.style.filter =
 				"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+src+"', sizingMethod='crop')"
-				img.src = BLANK_IMG;
-			}
-		}
-	}
-}
+				i

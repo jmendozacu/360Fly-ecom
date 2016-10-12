@@ -348,31 +348,3 @@
 						font-size: 20px;
 					}
 				}
-			}
-		}
-		.slider-controls {
-			a {
-				top: 62px;
-			}
-		}
-
-		&:not(.featured){
-			.testimonial {
-				padding-top: 100px;
-				.quote {
-					.detail {
-						width: 300px;
-						margin-top: -115px;
-						.avatar {
-							width: 200px;
-							height: 200px;
-						}
-					}
-					.blockquote {
-						margin-left: 300px;
-					}
-				}
-			}
-		}
-	}				
-}

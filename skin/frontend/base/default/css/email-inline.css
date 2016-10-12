@@ -712,39 +712,4 @@ p.sku {
   color: #a0a0a0;
 }
 
-/* -------------------------------------------- *
- * Price Box - Special
- */
-.price-box .old-price,
-.price-box .special-price {
-  display: inline-block;
-}
-.price-box .old-price .price-label,
-.price-box .special-price .price-label {
-  display: none;
-}
-.price-box .old-price .price,
-.price-box .special-price .price {
-  display: inline-block;
-}
-
-.price-box .old-price .price {
-  color: #a0a0a0;
-  text-decoration: line-through;
-}
-
-.price-box .special-price {
-  color: #3399cc;
-  padding-left: 1em;
-}
-.price-box .special-price .price-label {
-  color: #D84D3C;
-}
-
-/* -------------------------------------------- *
- * Price Box - Taxes
- */
-.price-box .price-excluding-tax,
-.price-box .price-including-tax {
-  display: block;
-}
+/* -----

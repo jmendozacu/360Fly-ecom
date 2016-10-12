@@ -774,30 +774,4 @@ Product.ConfigurableSwatches.prototype = {
             var option;
             for (var i=0; i<optionsLen; i++) {
                 option = attr._e.optionSelect.options[i];
-                if (option.value == opt.id) {
-                    optionElement = option;
-                    throw $break;
-                };
-            }
-            return optionElement;
-        },
-        /**
-         *
-         * Find intersecting items from an array of arrays
-         *
-         * @var lists - array
-         * Example: intersectAll([ [1,2,3], [2,3,4] ]); returns [2,3]
-         **/
-        intersectAll: function(lists) {
-            if (lists.length == 0) return [];
-            else if (lists.length == 1) return lists[0];
-
-            var result = lists[0];
-            for (var i = 1; i < lists.length; i++) {
-                if (!result.length) break;
-                result = result.intersect(lists[i]);
-            }
-            return result;
-        }
-    }
-}
+                if 

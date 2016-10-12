@@ -7,4 +7,4 @@ javascripts_dir = "../js"
 relative_assets = true
 
 output_style = :expanded
-environment = :production
+environment = :pr

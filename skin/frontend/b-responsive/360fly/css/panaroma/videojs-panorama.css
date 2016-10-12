@@ -93,7 +93,4 @@
   .video-js.vjs-panorama.vjs-panorama-mobile-inline-video-buffering .vjs-loading-spinner:before {
     border-top-color: white; }
   .video-js.vjs-panorama.vjs-panorama-mobile-inline-video-buffering .vjs-loading-spinner:after,
-  .video-js.vjs-panorama.vjs-panorama-mobile-inline-video-buffering .vjs-loading-spinner:after {
-    border-top-color: white;
-    -webkit-animation-delay: 0.44s;
-    animation-delay: 0.44s; }
+  .video-js.vjs-panorama.vjs-panorama-mobile-inline-video-buffering .vjs-loading-spinner:after {

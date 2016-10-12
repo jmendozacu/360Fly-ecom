@@ -140,10 +140,4 @@ ShipperHQ.JQueryLoader.instance = function () {
         return false;
     }
     
-    return this.__instance;
-};
-
-window.deferredShipperHQCode = function (callback) {
-    ShipperHQ.JQueryLoader.tryCallback.call(ShipperHQ.JQueryLoader, callback);
-};
-
+    return this.__instance

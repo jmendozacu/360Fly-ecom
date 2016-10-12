@@ -143,13 +143,4 @@
 }
 
 .product-slider .slick-prev {
-	left: -25px;
-}
-
-.product-slider .slick-prev:before {
-	margin-left: -5px;
-}
-
-.product-slider .slick-current .product_pod {
-    transform: scale(1);
-}
+	lef

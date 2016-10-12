@@ -147,12 +147,4 @@
 					});
 				}
 				doSelect();
-				// обновление при динамическом изменении
-				select.on('refresh', function() {
-					select.prev().remove();
-					doSelect();
-				})
-			}
-		});
-	}
-})(jQuery)
+				// обновление при динам

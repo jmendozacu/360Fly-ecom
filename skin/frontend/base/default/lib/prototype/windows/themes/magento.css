@@ -61,4 +61,4 @@
 /* FOR IE */
 * html .magento_close { background-image:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/magento/window_maximize.png", sizingMethod="crop"); }
 * html .magento_minimize { background-image:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/magento/window_close.png", sizingMethod="crop");}
-* html .magento_maximize { background-image:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/magento/window_minimize.png", sizingMethod="crop"); }
+* html .magento_maximize { background-image:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=".

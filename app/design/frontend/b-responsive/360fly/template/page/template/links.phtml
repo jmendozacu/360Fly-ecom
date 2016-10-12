@@ -46,7 +46,8 @@
 	}
 ?>
 <!-- Show customer login on Ecommerce pages-->
-<?php  if($isEcommercePage) :   ?>
+<?php if($isEcommercePage):?>
+	<input type="hidden" name="isEcom" value="<?php echo $isEcommercePage;?>" />
 	<?php $_links = $this->getLinks(); ?>
 	<?php if(count($_links)>0): ?>
 	<ul class="links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>

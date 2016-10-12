@@ -238,18 +238,4 @@
 
 @include bp(max-width, $bp-xsmall) {
     .linearize-table {
-        @include linearize-table;
-    }
-}
-
-@include bp(max-width, $bp-small) {
-    .linearize-table-large {
-        @include linearize-table;
-    }
-}
-
-@include bp(min-width, $bp-small + 1) {
-    .linearize-table .linearize-collapse {
-        display: none;
-    }
-}
+        @include lineariz
