@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config>
-    <modules>
-        <MageNYC_AdminCustomization>
-            <active>false</active>
-            <codePool>community</codePool>
-        </MageNYC_AdminCustomization>
-    </modules>
-</config>
