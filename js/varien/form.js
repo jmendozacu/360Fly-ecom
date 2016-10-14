@@ -399,4 +399,17 @@ ZipUpdater.prototype = {
 
         // Make Zip and its label required/optional
         if (optionalZipCountries.indexOf(this.country) != -1) {
-            while (t
+            while (this.zipElement.hasClassName('required-entry')) {
+                this.zipElement.removeClassName('required-entry');
+            }
+            if (wildCard != undefined) {
+                wildCard.hide();
+            }
+        } else {
+            this.zipElement.addClassName('required-entry');
+            if (wildCard != undefined) {
+                wildCard.show();
+            }
+        }
+    }
+}

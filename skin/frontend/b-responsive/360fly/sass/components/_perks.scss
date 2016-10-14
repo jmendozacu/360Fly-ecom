@@ -76,4 +76,12 @@
 			text-align: center;
 			margin-top: 10px;
 		}
-		.col-xs-12:not(.support
+		.col-xs-12:not(.support) {
+			.icon {
+				span:before {
+					margin-right: -36px;
+				}
+			}
+		}
+	}
+}

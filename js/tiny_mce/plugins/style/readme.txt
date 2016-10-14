@@ -16,4 +16,4 @@ and populates the dialogue checkboxes accordingly.  There is no differentiation
 between styles set in all the blocks versus styles set in some of the blocks.
 
 When the [Update] or [Apply] buttons are pressed, the styles selected in the
-checkboxes are applied to all blocks that surround t
+checkboxes are applied to all blocks that surround the selected text.

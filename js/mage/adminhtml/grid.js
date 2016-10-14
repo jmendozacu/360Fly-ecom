@@ -896,4 +896,30 @@ serializerController.prototype = {
         this.getOldCallback('init_row')(grid, row);
     },
 
-    //St
+    //Stuff methods
+    getGridDataHash: function (_object){
+        return $H(this.multidimensionalMode ? _object : this.convertArrayToObject(_object))
+    },
+    getDataForReloadParam: function(){
+        return this.multidimensionalMode ? this.gridData.keys() : this.gridData.values();
+    },
+    serializeObject: function(){
+        if(this.multidimensionalMode){
+            var clone = this.gridData.clone();
+            clone.each(function(pair) {
+                clone.set(pair.key, encode_base64(Object.toQueryString(pair.value)));
+            });
+            return clone.toQueryString();
+        }
+        else{
+            return this.gridData.values().join('&');
+        }
+    },
+    convertArrayToObject: function (_array){
+        var _object = {};
+        for(var i = 0, l = _array.length; i < l; i++){
+            _object[_array[i]] = _array[i];
+        }
+        return _object;
+    }
+};

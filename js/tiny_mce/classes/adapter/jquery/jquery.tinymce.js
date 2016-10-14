@@ -327,4 +327,15 @@
 			}
 
 			if (value !== undef) {
-		
+				loadOrSave.call(self.filter(":tinymce"), value);
+				jQueryFn.attr.apply(self.not(":tinymce"), args);
+
+				return self; // return original set for chaining
+			} else {
+				var node = self[0], ed = tinyMCEInstance(node);
+
+				return ed ? ed.getContent({save: true}) : jQueryFn.attr.apply($(node), args);
+			}
+		};
+	}
+})(jQuery);

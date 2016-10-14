@@ -174,4 +174,11 @@
 				author : 'Moxiecode Systems AB',
 				authorurl : 'http://tinymce.moxiecode.com',
 				infourl : 'http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/autolink',
-		
+				version : tinymce.majorVersion + "." + tinymce.minorVersion
+			};
+		}
+	});
+
+	// Register plugin
+	tinymce.PluginManager.add('autolink', tinymce.plugins.AutolinkPlugin);
+})();

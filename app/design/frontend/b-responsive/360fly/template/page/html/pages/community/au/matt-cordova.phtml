@@ -1,0 +1,122 @@
+<?php 
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+$communityIndex = 'matt-cordova';
+$athleteName = 'Matt Cordova';
+
+?>
+
+
+<div class="wrapper-width po-rel">
+	<?php echo $this->getLayout()->createBlock('core/template')
+				->setData('ci', $communityIndex)
+				->setData('athlete_name', $athleteName)
+				->setTemplate('page/html/pages/community/au/community-au-dropdown.phtml')
+				->toHtml(); 
+	?>
+</div>
+<div class="community-inner matt-cordova" id="athlete-marketing">
+	<div class="matt-container" id="">
+		<div class="container wrapper-width">
+			<div class="covertext text-contain">
+				<h1 class="extreme-headline">
+					<b>Matt Cordova</b>
+				</h1>
+				 <h2 class="extreme-headline">BMX</h2>
+			</div>
+		</div>
+	</div>
+	<div class="bio-container">
+		<div class="bio-left greybg ">
+			<div class="bio-left-child-1 bio-left-child-x">
+				<div class="bio-left-child-container">
+				  <h3>Matt's Bio</h3>
+					<div class="stats-box">
+					  <span class="stats pull-left">Age:</span><span class="pull-left ">25</span>
+					  <span class="clear"></span>
+					  <span class="stats pull-left">Location:</span><span class="pull-left ">Wildomar, California</span>
+					  <span class="clear"></span>
+					  <span class="stats pull-left">Sport:</span><span class="pull-left ">BMX </span>
+					  <span class="clear"></span>
+					</div>
+				</div>
+			</div>
+			<div class="bio-left-child-2 bio-left-child-x">
+				<div class="bio-left-child-container">
+				  <h3>Q &amp; A</h3>
+					<p class="question col-xs-1 col-sm-1 pull-left">Q.</p>
+					<p class="question col-xs-11 col-sm-11 pull-left space-left">Biggest  accomplishment?</p>
+					<p class="col-xs-1 col-sm-1">A.</p>
+					<p class="answer col-xs-11 col-sm-11 ">Nominee for Dew Tour Rookie of the Year in 2011. </p>
+
+					<p class="question col-xs-1 col-sm-1 pull-left">Q.</p>
+					<p class="question col-xs-11 col-sm-11 pull-left">Coolest place you've ever been?</p>
+					<p class="col-xs-1 col-sm-1">A.</p>
+					<p class="answer col-xs-11 col-sm-11">I recently went to Mexico City and had a pretty rad time. Right now that is my top spot.</p>
+
+					<p class="question col-xs-1 pull-left">Q.</p>
+					<p class=" question col-xs-11 col-sm-11 pull-left">Favorite riding trails or area?</p>
+					<p class="col-xs-1 col-sm-1">A.</p>
+					<p class="answer col-xs-11 col-sm-11">Its a toss up between FOD Trails, or the Boulder Skatepark in Colorado. </p>
+					<p class="question col-xs-1 pull-left">Q.</p>
+					<p class=" question col-xs-11 col-sm-11 pull-left">Favorite Food?</p>
+					<p class="col-xs-1 col-sm-1">A.</p>
+					<p class="answer col-xs-11 col-sm-11">You can never go wrong with some pepperoni pizza! </p>
+					<p class="question col-xs-1 pull-left">Q.</p>
+					<p class=" question col-xs-11 col-sm-11 pull-left">Never leave home without?</p>
+					<p class="col-xs-1 col-sm-1">A.</p>
+					<p class="answer col-xs-11 col-sm-11">My bike, camera, sunglasses, and iPod. </p>
+					<p class="question col-xs-1 pull-left">Q.</p>
+					<p class=" question col-xs-11 col-sm-11 pull-left">What music are you listening to?</p>
+					<p class="col-xs-1 col-sm-1">A.</p>
+					<p class="answer col-xs-11 col-sm-11">I listen mostly to metal and classic rock. </p>
+					<p class="question col-xs-1 pull-left">Q.</p>
+					<p class=" question col-xs-11 col-sm-11 pull-left">What inspires you?</p>
+					<p class="col-xs-1 col-sm-1">A.</p>
+					<p class="answer col-xs-11 col-sm-11">What inspires me is trying to be a better person on and off my bike and always improving both. Just trying to live the raddest life the good Lord has blessed me with. </p>
+					<p class="question col-xs-1 pull-left">Q.</p>
+					<p class=" question col-xs-11 col-sm-11 pull-left">Favorite Trick?</p>
+					<p class="col-xs-1 col-sm-1">A.</p><p class="answer col-xs-11 col-sm-11">I like the classic trails tricks, tabletop and nac naps. </p>
+				</div>
+			</div>
+		</div>
+		<div class="bio-right greenbg">
+			<div class="">
+				<div class="athlete_highlight_text">
+					<h4>Career Highlights</h4>
+					<div class="bio-right-content">
+						<p class="date-highlight">2015</p>
+						 <p class="indent">10th at Vans US Open</p>
+						<p class="indent">Texas Toast Cowbell Winner</p>
+						<p class="indent">X-Games Alternate</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2014</p>
+						<p class="indent">11th at Redbull Dreamline</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="athlete-social">
+	<div class="athlete-wrapper wrapper-width">
+		<div class="col-sm-12 col-md-12 col-lg-12 icons-wrapper">
+	        <div class="athlete-social-name"><p class="pull-left follow">Follow Matt</p></div>
+	      	<div class="pull-left icons">
+		        <a href="https://twitter.com/matt_cordova" target="_blank"><span class="icon-twitter-jul15 social-links"></span></a>
+		        <a href="https://www.facebook.com/matt.cordova.148" target="_blank"><span class="icon-facebook-jul15 social-links"></span></a>
+		        <a href="https://instagram.com/matt_cordova/" target="_blank"><span class="icon-instagram-jul15 social-links"></span></a>
+	        </div>
+      	</div>
+	</div>
+</div>
+

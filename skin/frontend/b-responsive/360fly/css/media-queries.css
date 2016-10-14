@@ -43,7 +43,8 @@
 	.dual-video{padding:0px;}
 	.community-content-left ,.community-content-right {padding:0px;}
 	/* community inner pages */
-	#athlete-marketing h1.extreme-headline{font-size:44px;line-height:40px;color:#f1f1f2;text-shadow:0px 2px 1px rgba(0, 0, 0, 0.4);font-family:"FlySans-Light", Arial, sans-serif;}
+	#athlete-marketing h1.extreme-headline{font-size:36px;line-height:40px;color:#f1f1f2;text-shadow:0px 2px 1px rgba(0, 0, 0, 0.4);font-family:"FlySans-Light", Arial, sans-serif;}
+	#athlete-marketing h2.extreme-headline{font-size: 36px;}
 	div.ta-container{padding-top:650px;background-position:75% center;padding-bottom:30px;background:url('../images/athletes/Athlete_Terry_mobile_sm.jpg');background-position: center center;background-size: cover; }
 	div.matt-container{padding-top:650px;background-position:75% center;padding-bottom:30px;background:url('../images/athletes/Athlete_Matt_mobile.jpg');background-position: center center;background-size: cover; }
 	div.todd-container {padding-top: 650px;padding-bottom: 30px;background: url('../images/athletes/Athlete_Todd_mobile.jpg');background-position: center right;background-size: cover;}
@@ -51,7 +52,7 @@
 	div.pro-container{background:url('../images/athletes/Athlete_Pro_circuit_mobile.jpg') no-repeat;background-size:cover;height:0px;padding-top:650px;padding-bottom:30px;position:relative;background-position:center right;}
 	div.kalani-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/Athlete_Kalani_mobile.jpg');background-position: center right;background-size: cover; }
 	div.jorge-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/athlete_jorge_header_mobile.jpg');background-position: center right;background-size: cover; }
-	div.cannondale-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/Athlete_Cannondale_Team_mobile.jpg');background-position: center center;background-size: cover; }
+	div.cannondale-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/Athlete_Cannondale_Team_mobile.jpg');background-position: center center;background-size: cover;padding-top:85%;}
 	div.chad-container{padding-top:650px;padding-bottom:30px;background:url('../images/athletes/Athlete_Chad_mobile.jpg');background-position: center center;background-size: cover; }
 	.ta-container .extreme-headline{margin-top:20px;}
 	.matt-container .extreme-headline{margin-top:20px;}
@@ -95,15 +96,14 @@
 	.front,.back{left:50%;margin-left:-295px;}
 	#dirt-camera{margin-left:-95px;left:50%;}
 	/* Home Page */
-	.cms-index-index .btn.btn-custom {width:100%}
+	.cms-index-index .btn.btn-custom {width:100%;margin-bottom: 20px;}
 	.pre-footer .line-break{display:block;}
-	.cms-index-index #player{background-image: none;
-    background-repeat: no-repeat;
-    padding:0px;
-	background-color: white;}
+	.cms-index-index #player{background-image: none;background-repeat: no-repeat;padding:0px;background-color: white;}
+	.pre-footer .app-img{line-height: initial;}
 	/* Login Page */
-	.customer-account-login .account-login{padding-top:50px;}
-	.customer-account-create .register-container{padding-top:50px;} 
+	.customer-account-login .account-login{padding-top:10px;}
+	.customer-account-create .register-container{padding-top:10px;}
+	.join360fly{margin-bottom: 30px;}
 	/* Sign Up Page After logged in */
 	.module_navigation,.my-account{width: 100%;}
 	.dashboard .welcome-msg{margin:0;padding: 10px;}
@@ -113,7 +113,7 @@
 	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
 	/* Product Desc Page Same as landing Page End */
 	/*app page */
-	a#macosx,a#windows{min-width:160px;}
+	.cms-australia a#macosx,.cms-australia a#windows{min-width:100%;}
 	/* Director Page */
 	.director-page .download-section li {width: 100%;}
 	/* Australia Page*/
@@ -123,6 +123,7 @@
 	.cms-australia .au-r4-container .container {padding: 0 25px;}
 	body.cms-au .cms-australia .video-overlay .au-r1-container{top: 10%;}
 	body.cms-au .app-content .apps-button {margin-bottom: 25px;}
+	.cms-australia .au-r5-container p{padding: 0 25px;}
 	/* Error & Success message */
 	li.success-msg:before,li.error-msg:before{left:4%;}
 	/* Checkout Page Start */
@@ -138,6 +139,44 @@
 	.checkout-cart-index td.a-left.quantity div{text-align:center;}
 	.checkout-cart-index .cart-table .btn-update{float:none;top:0;}
 	/* Checkout Page End */
+	/* 360fly 4k start*/
+	.category-cameras .camera-4k .landing-img{top:46px;right:10px;}
+	.category-cameras .camera-4k .camera-hero-img{padding-bottom: 0;}
+	.category-cameras .camera-4k .camera-info{margin-top:0;}
+	/* 360fly 4k end*/
+	/* Account Forgot Start */
+	.customer-account-forgotpassword .page-title,.customer-account-logoutsuccess .page-title{margin:25px 0 25px;}
+	/* Account Forgot End */
+	/* Sales order view Start */
+	.sales-order-view .my-account{padding:0 15px;}
+	.sales-order-view .reorder-print{padding:0 11px;margin:6px 0 10px;}
+	.sales-order-view .my-account .order-items{overflow-x: hidden;}
+	.sales-order-view .my-account .panel .panel-body{overflow-x: auto;}
+	/* Sales order view End */
+	/* Product page start */
+	.catalog-product-view .product-essential{padding: 10px;}
+	/* Product page End */
+	/* Onestepcheckout start */
+	#addressreview #buttons div{float: none !important;text-align: center;margin: 0 !important;}
+	#addressreview button.onestepcheckout-place-order{padding: 6px 12px;margin: 0 auto;}
+	.onestepcheckout-index-index #onestepcheckout-form div.checkoutcontainer .onestepcheckout-place-order{margin:30px 20px;}
+	/* Onestepcheckout End */
+	/* Fly 20420 terms start */
+	.fly20420-hero{display: inline-block;height:auto;max-width: 100%;}
+	.fly20420 .btn.btn-custom{width:100%;margin:0;}
+	/* Fly 20420 terms End */
+	/* patent start */
+	.patents-table{margin-left: 0;}
+	/* patent end */
+	/* LED Page Start */
+	.cms-led .led-camera{width:290px;margin:0 auto;}
+	.led-camera .triangle{position: absolute;z-index: 9999;height: 15px;top: 126px;left: 17px;width: 20px;}
+	.led {height: 310px;overflow: auto;padding: 10px 20px;}
+	.btn.btn-led{float: left;}
+	/* LED Page End */
+	/* editing page start */
+	.editing-main .no-dull h2,.editing-main .no-dull h2 span{font-size: 20px;}
+	/* editing page end */
 }
 
 /********************************************************************************************************************/
@@ -160,6 +199,17 @@
 	.checkout-cart-index input.qty{width:65px !important;margin-top: 15px;}
 	.checkout-cart-index .cart-table .btn-update {top: -30px;left: 25px;}
 	/* Checkout index End */
+	/* camera category Page button style */
+	.mobile-buttons .btn-custom{width:175px;margin:0 auto 30px;display:block;}
+	/* Australia Page start */
+	.cms-australia a#macosx{float: left;display: inline-block;margin-right: 5px;}
+	.cms-australia a#windows{float: none;}
+	/* Australia Page End */
+	/* LED Page Start */
+	.cms-led .led-camera{width:600px;margin:0 auto;}
+	.led-camera .triangle{position: absolute;z-index: 9999;height: 26px;top: 239px;left: 45px;width:20px;}
+	.btn.btn-led{float: left;}
+	/* LED Page End */
 }
 
 /********************************************************************************************************************/
@@ -189,6 +239,9 @@
 	/* Product Desc Page Same as landing Page Start */
 	.category-cameras .hand-holding-camera{right: -100px;}
 	/* Product Desc Page Same as landing Page End */
+	/* Australia Page Start */
+	.cms-australia .product-block .fly-camera{margin:0 40px;}
+	/* Australia Page End */
 }
 
 /********************************************************************************************************************/
@@ -210,10 +263,21 @@
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:left; width:50%;padding-left:24px;padding-right:24px;}
 	.community-inner .bio-right-content{width:50%;float:left;display:inline-block;}
 	.community-inner .bio-right-content:nth-of-type(2n+1){clear: both;}
+	.community-inner .bio-left .bio-left-child-1{width: 100%;}
 	/*.cannondale .bio-right{width:100%;height:20%;}*/
 	.athlete-social .athlete-wrapper{display:inline-block;padding-left:15px;}
 	/* .athlete-social .icons{padding-left: 0px;} */
 	.athlete-summary{margin-left:0%;}
+	/* 360fly 4k Start */
+	.category-cameras .camera-4k .landing-img{top:300px;}
+	.category-cameras .camera-4k .short-description.std{padding-top: 202px;}
+	/* 360fly 4k End */
+	/* Reset Password Page Start */
+	.customer-account-changeforgotten .page-title{padding: 25px 15px;}
+	/* Reset Password Page End */
+	/* LED Page Start */
+	.led{padding: 0 0 0 20px;}
+	/* LED Page End */
 }
 
 
@@ -238,8 +302,10 @@
 /********************************************************************************************************************/
 @media screen and (min-width: 1024px){
 	.base-content{min-height:50%;margin: 0;}
-	/* community inner pages */
+	/* community inner pages start */
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:right; width:75%;padding-left:24px;padding-right:24px;}
+	/* community inner pages end */
+	.body-wrapper{min-height:77vh;}
 }
 
 
@@ -250,14 +316,14 @@
 @media screen and (max-width: 1023px){
 /*.wrapper-width{padding: 0 24px;}*/
 /* Home Page */
-.video_background {padding-top:5px;}
+.video_background {padding-top:48px;}
 /* shop-360 home page */
 .product-block .mobile-center {display: block;margin: 0 auto;}
 .product-block .md-left {float: left;max-width: 50%;position: relative;padding-left: 0px;padding-right: 0px;padding-top: 25px;}
 .shop-btn-container a.btn.btn-custom{min-width: auto;}
 /* .product-block .mobile-center {display: table;margin: 0 auto;}
 .product-block .md-left {float: left;max-width: 50%;position: relative;padding-left: 15px;padding-right: 15px;padding-top: 25px;} */
-.product-block .fly-camera {margin: 0 auto;}
+.product-block .fly-camera {margin: 0 auto;position: relative;left: -20px;}
 .product-block p {max-width: none;}
 .cannondale .bio-right{width:100%;min-height:300px;}
 .cannondale .bio-right{background-position: 0% 0%;}
@@ -266,80 +332,13 @@
 /* Product Desc Page Same as landing Page End */
 
 /* Au Page starts */
-.cms-australia .app-content{padding-bottom: 60px;padding-left: 25px;padding-right: 25px;}
+.cms-australia .app-content{padding:60px 25px;}
 /* Community Inner page */
 .athlete-social .icons-wrapper p {width:100%}
 .icons{padding-left: 0px;}
 .athlete-social .athlete-wrapper {padding-top: 25px;}
 .cannondale .bio-left .bio-left-child-1{width:100%;}
-
-
-}
-
-/********************************************************************************************************************/
-/*
-	upto 991PX;
-*/
-@media screen and (max-width: 991px){
-	/* apps page */
-	.left-content .background-image-holder,.right-content .background-image-holder{height:70vw;padding-bottom:75%;}
-	.image-square .content{position:relative;}
-	.image-square.right-content .img-right{float:none;}
-	/* community */
-	.community-banner.small{background-size:cover;}
-	.community-info{padding:10px;}
-	/* Australia Page */
-	.cms-australia .social-connect{padding:30px 0;height:auto;}
-	.social-connect .follow, .social-connect .update{margin-top:0px;}
-	.cms-australia .social-connect p{margin-left: 0px;width: 100%;line-height: 60px !important;margin-bottom: 17px;}
-	.social-connect .social-icons{margin-left: 3px;margin-bottom: 22px;}
-	.cms-australia .social-connect p.left.getUpdates{line-height: 60px !important;width: 100%;padding-top: 0px;margin-bottom: 18px;}
-	.cms-australia .social-connect input{width:100%;margin:0;}
-	.social-connect .btn.btn-grey{width: 100%;margin-left: 0px;margin-top: 16px;font-family: "FlySans-Medium", Arial, sans-serif;}
-	/* Ctaegory Page */
-	.catalog-category-view .head{width:100%;}
-	.catalog-category-view .price-box{width:100%;}
-	/* Home Page */
-	.globe .valign{padding:0px;}
-	/* Community inner page*/
-	.community-inner .greenbg .athlete_highlight_text {margin-top:30px;}
-	.community-inner .greenbg{padding-bottom:40px;}
-
-}
-
-/********************************************************************************************************************/
-/*
-	upto 1199px;
-*/
-@media screen and (max-width: 1199px){
-	/* shop-360 home page  */
-	.mounts-img {margin-top: 21px;}
-	/* Accessories Product Page */
-	.accessory-bar{background-position: center;}
-}
-/********************************************************************************************************************/
-/*
-	Custom Viewport for higher resolution
-
-	Ideally this should be used, unless necessary
-*/
-
-/********************************************************************************************************************/
-
-/*
-	above 1899px
-*/
-
-/********************************************************************************************************************/
-@media screen and (min-width: 1899px){
-	/* 360 home page hand */
-	#pov-wrap{left:550px;}
-
-}
-
-
-/********************************************************************************************************************/
- .question,.bio-left .bio-left-child-2 p,.community-inner .bio-right p{font-size:20px;}
+.community-inner .bio-left .bio-left-child-1 p,.bio-left .bio-left-child-2 .question,.bio-left .bio-left-child-2 p,.community-inner .bio-right p{font-size:20px;}
 .community-inner .greenbg{padding-bottom:40px;}
 }
 
@@ -372,7 +371,15 @@
 	.globe .valign{padding:0px;}
 	/* Community inner page*/
 	.community-inner .greenbg .athlete_highlight_text {margin-top:30px;}
-
+	/* LED Page Start */
+	.led-cam{margin-top: 20px;}
+	/* LED Page End */
+	/*  Editing Page start*/
+	.editing-bkg{background-image: url(../images/editing/facets-mobile.jpg);background-size: cover;background-repeat: no-repeat;padding-top: 20px;padding-bottom: 1px;}
+	.mobile-hands {margin: 30px auto 0px auto;display: block;vertical-align: bottom;}
+	.editing-nav .small-block-grid-3 li,.effects-nav .small-block-grid-3 li,.share-nav .small-block-grid-3 li {text-align: center;padding: 0px 0px 0px 0px;}
+	.editing-nav .small-block-grid-3 li a h3,.effects-nav .small-block-grid-3 li a h3,.share-nav .small-block-grid-3 li a h3 {font-size: 15px;color: black;text-transform: uppercase;}
+	/*  Editing Page End*/
 
 }
 

@@ -86,4 +86,5 @@ tinyMCE.addI18n({en:{
     });
 
     // Register plugin
-   
+    tinymce.PluginManager.add('magentowidget', tinymce.plugins.MagentowidgetPlugin);
+})();

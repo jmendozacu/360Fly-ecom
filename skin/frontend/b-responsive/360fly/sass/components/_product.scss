@@ -479,4 +479,26 @@
             }
             &+ .add-to-box {
                 width: auto;
-                left: calc(100% - 250px
+                left: calc(100% - 250px);
+                bottom: 80px;
+                position: absolute;
+                margin: 0;
+                .btn-success {
+                    font-size: 18px;
+                    height: auto;
+                    padding: 10px 25px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .catalog-product-view {
+        .product-shop {
+            .add-to-box {
+                left: calc(100% - 300px);
+            }
+        }
+    }
+}

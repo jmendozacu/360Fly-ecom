@@ -59,4 +59,6 @@ function quoteAttribute(s, preserveCR) {
          (but it's not necessary).
          Or for XML, only if the named entities are defined in its DTD.
          */
-        .replace(/\r\n/g, preserveCR)/* Must be before the ne
+        .replace(/\r\n/g, preserveCR)/* Must be before the next replacement. */
+        .replace(/[\r\n]/g, preserveCR);
+}

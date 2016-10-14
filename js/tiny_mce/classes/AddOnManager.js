@@ -346,4 +346,13 @@
  *     }
  * });
  * 
- * // Re
+ * // Register plugin
+ * tinymce.PluginManager.add('example', tinymce.plugins.ExamplePlugin);
+ * 
+ * // Initialize TinyMCE with the new plugin and button
+ * tinyMCE.init({
+ *    ...
+ *    plugins : '-example', // - means TinyMCE will not try to load it
+ *    theme_advanced_buttons1 : 'mylistbox' // Add the new mylistbox control to the toolbar
+ * });
+ */

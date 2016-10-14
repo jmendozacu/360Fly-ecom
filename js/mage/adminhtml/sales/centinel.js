@@ -64,4 +64,8 @@ centinelValidator.prototype = {
         this.getContainer().style.display = 'none';
     },
 
-    getCont
+    getContainer : function() {
+        return $(this.containerId);
+    }
+
+}

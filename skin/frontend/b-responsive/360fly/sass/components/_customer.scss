@@ -897,4 +897,78 @@
 		.order-status-date {
 			.order-date {
 				font-size: 14px;
-			
+			}
+		}
+		.order-sp {
+			.info-box {
+				border: none;
+				min-height: 175px;
+				.box-title {
+					color: $color3;
+				}
+			}
+		}
+	}
+	.order-items {
+		.table {
+			thead {
+				tr {
+					th {
+						border-bottom: 1px solid #ddd;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+	.module_affiliate {
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+		dl {
+			background-color: #fff;
+			padding: 10px;
+			&+ dl {
+				padding-top: 10px;
+				border: none;
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	.my-account {
+		.row {
+			.col-md-6 {
+				&.col-md-offset-3 {
+					ul {
+						width: 50%;
+						margin: 0 auto 30px;
+					}
+				}
+			}
+		}
+	}
+	.simple_contact {
+		.payment-methods {
+			ul {
+				margin: 0 25%;
+			}
+		}
+	}
+}
+.my-account {
+	.checkbox {
+		label {
+			font-size:15px !important;
+		}
+	}
+}
+.my-account {
+	.panel {
+		.panel-heading {
+			color:#fff;
+		}
+	}
+}

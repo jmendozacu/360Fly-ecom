@@ -239,4 +239,20 @@ function MultiSelector( list_target, field_name, max, new_element_html, delete_t
 
     };
 
-    //delete r
+    //delete row
+    this.deleteRow = function ( table, row ){
+
+        table.deleteRow(row);
+
+    };
+
+    //delete last row
+    this.deleteRow = function ( table ){
+
+        noOfRows = table.rows.length;
+        table.deleteRow(noOfRows-1);
+
+    };
+
+
+};

@@ -85,4 +85,8 @@ var oscDeliverydate = Class
                             range: [(now.getFullYear()), (now.getFullYear()+1)]
                         }
 
-                        Calendar.s
+                        Calendar.setup(calendarSetup);
+                    }
+                }
+            }
+        });

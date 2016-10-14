@@ -360,4 +360,31 @@
 	.module_coupon {
 		float: left;
 		background-color: transparent;
-		paddin
+		padding: 0;
+		margin: 25px 0 0;
+		text-align: left;
+		fieldset {
+			max-width: 100%;
+		}
+		.form-control {
+			background-color: #fff;
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	.cart {
+		.cart-empty {
+			span {
+				display: inline-block;
+				vertical-align: middle;
+				&+ span {
+					margin-top: 0;
+				}
+			}
+			.text04 {
+				margin-right: 20px;
+			}
+		}
+	}
+}

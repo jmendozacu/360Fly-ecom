@@ -558,4 +558,39 @@
 					padding: 0 10px;
 					margin-top: 30px;
 					.onestepcheckout-numbers {
-						backgro
+						background-color: transparent;
+						padding: 0;
+						h2 {
+							color: $color3;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	.onestepcheckout-index-index {
+		#onestepcheckout-form {
+			div.checkoutcontainer {
+				&> div {
+					width: 33.33%;
+					clear: none;
+					float: left;
+				}
+				.onestepcheckout-column-left {
+					width: 33.33%;
+				}
+				.onestepcheckout-column-middle {
+					width: 33.33%;
+				}
+				.onestepcheckout-summary {
+					padding-top: 30px;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
+		}
+	}
+}

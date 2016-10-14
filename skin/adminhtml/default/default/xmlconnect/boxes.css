@@ -114,4 +114,5 @@
 .image-edit-popup-content .action input { width:98%; }
 .image-edit-popup .buttons-set { margin:0; padding:0 10px 10px; text-align:right; }
 .image-edit-popup .buttons-set button { margin:0 0 0 5px; }
-.image-edit-popup .buttons-set button
+.image-edit-popup .buttons-set button.delete { float:left; margin:0; }
+.image-edit-popup .buttons-set button.delete span { background:none; padding:0; }

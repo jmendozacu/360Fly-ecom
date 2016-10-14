@@ -403,4 +403,12 @@ directPost.prototype = {
             var src = $(this.iframeId).readAttribute('src');
             var name = $(this.iframeId).readAttribute('name');
             $(this.iframeId).stopObserving();
-            $(this.
+            $(this.iframeId).remove();
+            var iframe = '<iframe id="' + this.iframeId + 
+                '" allowtransparency="true" frameborder="0"  name="' + name + 
+                '" style="display:none;width:100%;background-color:transparent" src="' + src + '" />';
+            Element.insert(nextElement, {'before':iframe});
+            $(this.iframeId).observe('load', this.onLoadIframe);
+        }
+    }
+};

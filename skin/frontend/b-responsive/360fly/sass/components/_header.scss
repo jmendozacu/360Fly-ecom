@@ -377,7 +377,28 @@
         }
     }
 }
-.sub-nav{            a:hover{
+.sub-nav{
+    li {
+        a{
+            color: #fff;
+        }
+        a:hover{
+            color: #fff;
+            font-family: "FlySans-SemiBold", Arial, sans-serif;
+        }
+    }
+}
+.header .links, .search-link-header{float: left;}
+.header .search-link-header{height:36px;}
+.header{
+	.links{
+		li{
+			font-size:14px;
+			line-height:14px;
+			a{
+				margin:10px 0 12px;
+			}
+            a:hover{
                 font-family: 'Flysans-SemiBold';
                 font-weight: normal;
             }

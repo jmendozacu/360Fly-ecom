@@ -65,4 +65,7 @@
 	-moz-backface-visibility:    hidden;
 	-ms-backface-visibility:     hidden;
   -webkit-transform: translate3d(0,0,0);
-  -moz-tran
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+

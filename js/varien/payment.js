@@ -61,4 +61,8 @@ paymentForm.prototype = {
             var elements = form.getElementsByTagName('input');
             for (var i=0; i<elements.length; i++) elements[i].disabled = false;
             var elements = form.getElementsByTagName('select');
-            for (var i=0; i<elements.length; i++) elements[i].disabled = fal
+            for (var i=0; i<elements.length; i++) elements[i].disabled = false;
+            this.currentMethod = method;
+        }
+    }
+}

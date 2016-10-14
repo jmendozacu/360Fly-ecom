@@ -79,4 +79,5 @@ border:1px}
 .istore .border { border-right:1px solid #dbdbdb; }
 .istore .border + td { border-left:1px solid #fff; }
 
-.androidmarket { 
+.androidmarket { border-collapse:collapse; border-spacing:0; }
+.androidmarket td { padding:2px; }

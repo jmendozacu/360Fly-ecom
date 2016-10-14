@@ -39,6 +39,12 @@
 
 <?php
 	$productResolution = strtolower($_product->getAttributeText('camera_resolution'));
+	if($productResolution == 'hd'){
+		$display_block = 'compatible-visible';
+	}
+	else{
+		$display_block = 'no-display';
+	}
 ?>
 
 <script type="text/javascript">
@@ -77,9 +83,9 @@
 										$productPriceBlock = $this->getLayout()->createBlock('catalog/product_price');
 										//$productPriceBlock = $this->getLayout()->createBlock('catalog/product_list_related');
 										echo $productPriceBlock->getPriceHtml($_product);
-										//echo Mage_Catalog_Block_Product::getPriceHtml($_product, true)
 									?>
-									<p>On sale for a limited time!</p>
+									<h3 class="compatible-hd <?php echo $display_block?>">Now ¼-20 system compatible!</h3>
+									<!-- <p>On sale for a limited time!</p> -->
 									<?php if (!$this->hasOptions()):?>
 										<div class="add-to-box">
 											<?php if($_product->isSaleable()): ?>

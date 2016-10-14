@@ -157,4 +157,8 @@
 }
 
 * html .nuncio_minimize {
-	background-color: t
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/nuncio/minimize.png", sizingMethod="crop");
+}
+

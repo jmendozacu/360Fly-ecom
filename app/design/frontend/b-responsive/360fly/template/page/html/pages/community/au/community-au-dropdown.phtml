@@ -1,0 +1,18 @@
+<?php 
+	$baseUrl = $this->getBaseUrl();
+?>
+
+
+<ul class="nav nav-pills community-btn hidden-xs">
+  <li class="community-first-dd">
+    <a class="dropdown-toggle2" href="#">
+		<?php echo $this->athlete_name;?><span class=" icon-drop-arrow sub-menu-arrow"></span>
+  	</a>
+    <ul class="dropdown-menu community-dropdown">
+		<li class="<?php if($this->ci == 'terry-adams'){echo 'active';}?>"><a tabindex="-1" href="<?php echo $baseUrl;?>au/terry-adams/">Terry Adams</a></li>
+		<li class="<?php if($this->ci == 'matt-cordova'){echo 'active';}?>"><a tabindex="-1" href="<?php echo $baseUrl;?>au/matt-cordova/">Matt Cordova</a></li>
+		<li class="<?php if($this->ci == 'chad-reed'){echo 'active';}?>"><a tabindex="-1" href="<?php echo $baseUrl;?>au/chad-reed/">Chad Reed</a></li>
+		<li class="<?php if($this->ci == 'jamie-whincup'){echo 'active';}?>"><a tabindex="-1" href="<?php echo $baseUrl;?>au/jamie-whincup/">Jamie Whincup</a></li>
+    </ul>
+  </li>
+</ul>

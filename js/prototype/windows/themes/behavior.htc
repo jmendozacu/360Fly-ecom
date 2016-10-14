@@ -43,4 +43,9 @@ function fixImage() {
    }
    else {
       // remove filter
-      element.runtimeStyle.filte
+      element.runtimeStyle.filter = "";
+   }
+}
+
+</script>
+</public:component>

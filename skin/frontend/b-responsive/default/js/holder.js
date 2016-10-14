@@ -400,4 +400,20 @@ app.run = function (o) {
 	return app;
 };
 
-contentL
+contentLoaded(win, function () {
+	if (window.addEventListener) {
+		window.addEventListener("resize", fluid_update, false);
+		window.addEventListener("orientationchange", fluid_update, false);
+	} else {
+		window.attachEvent("onresize", fluid_update)
+	}
+	preempted || app.run();
+});
+
+if (typeof define === "function" && define.amd) {
+	define("Holder", [], function () {
+		return app;
+	});
+}
+
+})(Holder, window);

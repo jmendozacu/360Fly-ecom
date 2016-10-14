@@ -23779,4 +23779,690 @@ module.exports = exports['default'];
     // the right from there.
     if (cue.vertical === "") {
       this.applyStyles({
-        left:  this.formatStyle(textPos, "
+        left:  this.formatStyle(textPos, "%"),
+        width: this.formatStyle(cue.size, "%")
+      });
+    // Vertical box orientation; textPos is the distance from the top edge of the
+    // area to the top edge of the box and cue.size is the height extending
+    // downwards from there.
+    } else {
+      this.applyStyles({
+        top: this.formatStyle(textPos, "%"),
+        height: this.formatStyle(cue.size, "%")
+      });
+    }
+
+    this.move = function(box) {
+      this.applyStyles({
+        top: this.formatStyle(box.top, "px"),
+        bottom: this.formatStyle(box.bottom, "px"),
+        left: this.formatStyle(box.left, "px"),
+        right: this.formatStyle(box.right, "px"),
+        height: this.formatStyle(box.height, "px"),
+        width: this.formatStyle(box.width, "px")
+      });
+    };
+  }
+  CueStyleBox.prototype = _objCreate(StyleBox.prototype);
+  CueStyleBox.prototype.constructor = CueStyleBox;
+
+  // Represents the co-ordinates of an Element in a way that we can easily
+  // compute things with such as if it overlaps or intersects with another Element.
+  // Can initialize it with either a StyleBox or another BoxPosition.
+  function BoxPosition(obj) {
+    var isIE8 = (/MSIE\s8\.0/).test(navigator.userAgent);
+
+    // Either a BoxPosition was passed in and we need to copy it, or a StyleBox
+    // was passed in and we need to copy the results of 'getBoundingClientRect'
+    // as the object returned is readonly. All co-ordinate values are in reference
+    // to the viewport origin (top left).
+    var lh, height, width, top;
+    if (obj.div) {
+      height = obj.div.offsetHeight;
+      width = obj.div.offsetWidth;
+      top = obj.div.offsetTop;
+
+      var rects = (rects = obj.div.childNodes) && (rects = rects[0]) &&
+                  rects.getClientRects && rects.getClientRects();
+      obj = obj.div.getBoundingClientRect();
+      // In certain cases the outter div will be slightly larger then the sum of
+      // the inner div's lines. This could be due to bold text, etc, on some platforms.
+      // In this case we should get the average line height and use that. This will
+      // result in the desired behaviour.
+      lh = rects ? Math.max((rects[0] && rects[0].height) || 0, obj.height / rects.length)
+                 : 0;
+
+    }
+    this.left = obj.left;
+    this.right = obj.right;
+    this.top = obj.top || top;
+    this.height = obj.height || height;
+    this.bottom = obj.bottom || (top + (obj.height || height));
+    this.width = obj.width || width;
+    this.lineHeight = lh !== undefined ? lh : obj.lineHeight;
+
+    if (isIE8 && !this.lineHeight) {
+      this.lineHeight = 13;
+    }
+  }
+
+  // Move the box along a particular axis. Optionally pass in an amount to move
+  // the box. If no amount is passed then the default is the line height of the
+  // box.
+  BoxPosition.prototype.move = function(axis, toMove) {
+    toMove = toMove !== undefined ? toMove : this.lineHeight;
+    switch (axis) {
+    case "+x":
+      this.left += toMove;
+      this.right += toMove;
+      break;
+    case "-x":
+      this.left -= toMove;
+      this.right -= toMove;
+      break;
+    case "+y":
+      this.top += toMove;
+      this.bottom += toMove;
+      break;
+    case "-y":
+      this.top -= toMove;
+      this.bottom -= toMove;
+      break;
+    }
+  };
+
+  // Check if this box overlaps another box, b2.
+  BoxPosition.prototype.overlaps = function(b2) {
+    return this.left < b2.right &&
+           this.right > b2.left &&
+           this.top < b2.bottom &&
+           this.bottom > b2.top;
+  };
+
+  // Check if this box overlaps any other boxes in boxes.
+  BoxPosition.prototype.overlapsAny = function(boxes) {
+    for (var i = 0; i < boxes.length; i++) {
+      if (this.overlaps(boxes[i])) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  // Check if this box is within another box.
+  BoxPosition.prototype.within = function(container) {
+    return this.top >= container.top &&
+           this.bottom <= container.bottom &&
+           this.left >= container.left &&
+           this.right <= container.right;
+  };
+
+  // Check if this box is entirely within the container or it is overlapping
+  // on the edge opposite of the axis direction passed. For example, if "+x" is
+  // passed and the box is overlapping on the left edge of the container, then
+  // return true.
+  BoxPosition.prototype.overlapsOppositeAxis = function(container, axis) {
+    switch (axis) {
+    case "+x":
+      return this.left < container.left;
+    case "-x":
+      return this.right > container.right;
+    case "+y":
+      return this.top < container.top;
+    case "-y":
+      return this.bottom > container.bottom;
+    }
+  };
+
+  // Find the percentage of the area that this box is overlapping with another
+  // box.
+  BoxPosition.prototype.intersectPercentage = function(b2) {
+    var x = Math.max(0, Math.min(this.right, b2.right) - Math.max(this.left, b2.left)),
+        y = Math.max(0, Math.min(this.bottom, b2.bottom) - Math.max(this.top, b2.top)),
+        intersectArea = x * y;
+    return intersectArea / (this.height * this.width);
+  };
+
+  // Convert the positions from this box to CSS compatible positions using
+  // the reference container's positions. This has to be done because this
+  // box's positions are in reference to the viewport origin, whereas, CSS
+  // values are in referecne to their respective edges.
+  BoxPosition.prototype.toCSSCompatValues = function(reference) {
+    return {
+      top: this.top - reference.top,
+      bottom: reference.bottom - this.bottom,
+      left: this.left - reference.left,
+      right: reference.right - this.right,
+      height: this.height,
+      width: this.width
+    };
+  };
+
+  // Get an object that represents the box's position without anything extra.
+  // Can pass a StyleBox, HTMLElement, or another BoxPositon.
+  BoxPosition.getSimpleBoxPosition = function(obj) {
+    var height = obj.div ? obj.div.offsetHeight : obj.tagName ? obj.offsetHeight : 0;
+    var width = obj.div ? obj.div.offsetWidth : obj.tagName ? obj.offsetWidth : 0;
+    var top = obj.div ? obj.div.offsetTop : obj.tagName ? obj.offsetTop : 0;
+
+    obj = obj.div ? obj.div.getBoundingClientRect() :
+                  obj.tagName ? obj.getBoundingClientRect() : obj;
+    var ret = {
+      left: obj.left,
+      right: obj.right,
+      top: obj.top || top,
+      height: obj.height || height,
+      bottom: obj.bottom || (top + (obj.height || height)),
+      width: obj.width || width
+    };
+    return ret;
+  };
+
+  // Move a StyleBox to its specified, or next best, position. The containerBox
+  // is the box that contains the StyleBox, such as a div. boxPositions are
+  // a list of other boxes that the styleBox can't overlap with.
+  function moveBoxToLinePosition(window, styleBox, containerBox, boxPositions) {
+
+    // Find the best position for a cue box, b, on the video. The axis parameter
+    // is a list of axis, the order of which, it will move the box along. For example:
+    // Passing ["+x", "-x"] will move the box first along the x axis in the positive
+    // direction. If it doesn't find a good position for it there it will then move
+    // it along the x axis in the negative direction.
+    function findBestPosition(b, axis) {
+      var bestPosition,
+          specifiedPosition = new BoxPosition(b),
+          percentage = 1; // Highest possible so the first thing we get is better.
+
+      for (var i = 0; i < axis.length; i++) {
+        while (b.overlapsOppositeAxis(containerBox, axis[i]) ||
+               (b.within(containerBox) && b.overlapsAny(boxPositions))) {
+          b.move(axis[i]);
+        }
+        // We found a spot where we aren't overlapping anything. This is our
+        // best position.
+        if (b.within(containerBox)) {
+          return b;
+        }
+        var p = b.intersectPercentage(containerBox);
+        // If we're outside the container box less then we were on our last try
+        // then remember this position as the best position.
+        if (percentage > p) {
+          bestPosition = new BoxPosition(b);
+          percentage = p;
+        }
+        // Reset the box position to the specified position.
+        b = new BoxPosition(specifiedPosition);
+      }
+      return bestPosition || specifiedPosition;
+    }
+
+    var boxPosition = new BoxPosition(styleBox),
+        cue = styleBox.cue,
+        linePos = computeLinePos(cue),
+        axis = [];
+
+    // If we have a line number to align the cue to.
+    if (cue.snapToLines) {
+      var size;
+      switch (cue.vertical) {
+      case "":
+        axis = [ "+y", "-y" ];
+        size = "height";
+        break;
+      case "rl":
+        axis = [ "+x", "-x" ];
+        size = "width";
+        break;
+      case "lr":
+        axis = [ "-x", "+x" ];
+        size = "width";
+        break;
+      }
+
+      var step = boxPosition.lineHeight,
+          position = step * Math.round(linePos),
+          maxPosition = containerBox[size] + step,
+          initialAxis = axis[0];
+
+      // If the specified intial position is greater then the max position then
+      // clamp the box to the amount of steps it would take for the box to
+      // reach the max position.
+      if (Math.abs(position) > maxPosition) {
+        position = position < 0 ? -1 : 1;
+        position *= Math.ceil(maxPosition / step) * step;
+      }
+
+      // If computed line position returns negative then line numbers are
+      // relative to the bottom of the video instead of the top. Therefore, we
+      // need to increase our initial position by the length or width of the
+      // video, depending on the writing direction, and reverse our axis directions.
+      if (linePos < 0) {
+        position += cue.vertical === "" ? containerBox.height : containerBox.width;
+        axis = axis.reverse();
+      }
+
+      // Move the box to the specified position. This may not be its best
+      // position.
+      boxPosition.move(initialAxis, position);
+
+    } else {
+      // If we have a percentage line value for the cue.
+      var calculatedPercentage = (boxPosition.lineHeight / containerBox.height) * 100;
+
+      switch (cue.lineAlign) {
+      case "middle":
+        linePos -= (calculatedPercentage / 2);
+        break;
+      case "end":
+        linePos -= calculatedPercentage;
+        break;
+      }
+
+      // Apply initial line position to the cue box.
+      switch (cue.vertical) {
+      case "":
+        styleBox.applyStyles({
+          top: styleBox.formatStyle(linePos, "%")
+        });
+        break;
+      case "rl":
+        styleBox.applyStyles({
+          left: styleBox.formatStyle(linePos, "%")
+        });
+        break;
+      case "lr":
+        styleBox.applyStyles({
+          right: styleBox.formatStyle(linePos, "%")
+        });
+        break;
+      }
+
+      axis = [ "+y", "-x", "+x", "-y" ];
+
+      // Get the box position again after we've applied the specified positioning
+      // to it.
+      boxPosition = new BoxPosition(styleBox);
+    }
+
+    var bestPosition = findBestPosition(boxPosition, axis);
+    styleBox.move(bestPosition.toCSSCompatValues(containerBox));
+  }
+
+  function WebVTT() {
+    // Nothing
+  }
+
+  // Helper to allow strings to be decoded instead of the default binary utf8 data.
+  WebVTT.StringDecoder = function() {
+    return {
+      decode: function(data) {
+        if (!data) {
+          return "";
+        }
+        if (typeof data !== "string") {
+          throw new Error("Error - expected string data.");
+        }
+        return decodeURIComponent(encodeURIComponent(data));
+      }
+    };
+  };
+
+  WebVTT.convertCueToDOMTree = function(window, cuetext) {
+    if (!window || !cuetext) {
+      return null;
+    }
+    return parseContent(window, cuetext);
+  };
+
+  var FONT_SIZE_PERCENT = 0.05;
+  var FONT_STYLE = "sans-serif";
+  var CUE_BACKGROUND_PADDING = "1.5%";
+
+  // Runs the processing model over the cues and regions passed to it.
+  // @param overlay A block level element (usually a div) that the computed cues
+  //                and regions will be placed into.
+  WebVTT.processCues = function(window, cues, overlay) {
+    if (!window || !cues || !overlay) {
+      return null;
+    }
+
+    // Remove all previous children.
+    while (overlay.firstChild) {
+      overlay.removeChild(overlay.firstChild);
+    }
+
+    var paddedOverlay = window.document.createElement("div");
+    paddedOverlay.style.position = "absolute";
+    paddedOverlay.style.left = "0";
+    paddedOverlay.style.right = "0";
+    paddedOverlay.style.top = "0";
+    paddedOverlay.style.bottom = "0";
+    paddedOverlay.style.margin = CUE_BACKGROUND_PADDING;
+    overlay.appendChild(paddedOverlay);
+
+    // Determine if we need to compute the display states of the cues. This could
+    // be the case if a cue's state has been changed since the last computation or
+    // if it has not been computed yet.
+    function shouldCompute(cues) {
+      for (var i = 0; i < cues.length; i++) {
+        if (cues[i].hasBeenReset || !cues[i].displayState) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // We don't need to recompute the cues' display states. Just reuse them.
+    if (!shouldCompute(cues)) {
+      for (var i = 0; i < cues.length; i++) {
+        paddedOverlay.appendChild(cues[i].displayState);
+      }
+      return;
+    }
+
+    var boxPositions = [],
+        containerBox = BoxPosition.getSimpleBoxPosition(paddedOverlay),
+        fontSize = Math.round(containerBox.height * FONT_SIZE_PERCENT * 100) / 100;
+    var styleOptions = {
+      font: fontSize + "px " + FONT_STYLE
+    };
+
+    (function() {
+      var styleBox, cue;
+
+      for (var i = 0; i < cues.length; i++) {
+        cue = cues[i];
+
+        // Compute the intial position and styles of the cue div.
+        styleBox = new CueStyleBox(window, cue, styleOptions);
+        paddedOverlay.appendChild(styleBox.div);
+
+        // Move the cue div to it's correct line position.
+        moveBoxToLinePosition(window, styleBox, containerBox, boxPositions);
+
+        // Remember the computed div so that we don't have to recompute it later
+        // if we don't have too.
+        cue.displayState = styleBox.div;
+
+        boxPositions.push(BoxPosition.getSimpleBoxPosition(styleBox));
+      }
+    })();
+  };
+
+  WebVTT.Parser = function(window, vttjs, decoder) {
+    if (!decoder) {
+      decoder = vttjs;
+      vttjs = {};
+    }
+    if (!vttjs) {
+      vttjs = {};
+    }
+
+    this.window = window;
+    this.vttjs = vttjs;
+    this.state = "INITIAL";
+    this.buffer = "";
+    this.decoder = decoder || new TextDecoder("utf8");
+    this.regionList = [];
+  };
+
+  WebVTT.Parser.prototype = {
+    // If the error is a ParsingError then report it to the consumer if
+    // possible. If it's not a ParsingError then throw it like normal.
+    reportOrThrowError: function(e) {
+      if (e instanceof ParsingError) {
+        this.onparsingerror && this.onparsingerror(e);
+      } else {
+        throw e;
+      }
+    },
+    parse: function (data) {
+      var self = this;
+
+      // If there is no data then we won't decode it, but will just try to parse
+      // whatever is in buffer already. This may occur in circumstances, for
+      // example when flush() is called.
+      if (data) {
+        // Try to decode the data that we received.
+        self.buffer += self.decoder.decode(data, {stream: true});
+      }
+
+      function collectNextLine() {
+        var buffer = self.buffer;
+        var pos = 0;
+        while (pos < buffer.length && buffer[pos] !== '\r' && buffer[pos] !== '\n') {
+          ++pos;
+        }
+        var line = buffer.substr(0, pos);
+        // Advance the buffer early in case we fail below.
+        if (buffer[pos] === '\r') {
+          ++pos;
+        }
+        if (buffer[pos] === '\n') {
+          ++pos;
+        }
+        self.buffer = buffer.substr(pos);
+        return line;
+      }
+
+      // 3.4 WebVTT region and WebVTT region settings syntax
+      function parseRegion(input) {
+        var settings = new Settings();
+
+        parseOptions(input, function (k, v) {
+          switch (k) {
+          case "id":
+            settings.set(k, v);
+            break;
+          case "width":
+            settings.percent(k, v);
+            break;
+          case "lines":
+            settings.integer(k, v);
+            break;
+          case "regionanchor":
+          case "viewportanchor":
+            var xy = v.split(',');
+            if (xy.length !== 2) {
+              break;
+            }
+            // We have to make sure both x and y parse, so use a temporary
+            // settings object here.
+            var anchor = new Settings();
+            anchor.percent("x", xy[0]);
+            anchor.percent("y", xy[1]);
+            if (!anchor.has("x") || !anchor.has("y")) {
+              break;
+            }
+            settings.set(k + "X", anchor.get("x"));
+            settings.set(k + "Y", anchor.get("y"));
+            break;
+          case "scroll":
+            settings.alt(k, v, ["up"]);
+            break;
+          }
+        }, /=/, /\s/);
+
+        // Create the region, using default values for any values that were not
+        // specified.
+        if (settings.has("id")) {
+          var region = new (self.vttjs.VTTRegion || self.window.VTTRegion)();
+          region.width = settings.get("width", 100);
+          region.lines = settings.get("lines", 3);
+          region.regionAnchorX = settings.get("regionanchorX", 0);
+          region.regionAnchorY = settings.get("regionanchorY", 100);
+          region.viewportAnchorX = settings.get("viewportanchorX", 0);
+          region.viewportAnchorY = settings.get("viewportanchorY", 100);
+          region.scroll = settings.get("scroll", "");
+          // Register the region.
+          self.onregion && self.onregion(region);
+          // Remember the VTTRegion for later in case we parse any VTTCues that
+          // reference it.
+          self.regionList.push({
+            id: settings.get("id"),
+            region: region
+          });
+        }
+      }
+
+      // 3.2 WebVTT metadata header syntax
+      function parseHeader(input) {
+        parseOptions(input, function (k, v) {
+          switch (k) {
+          case "Region":
+            // 3.3 WebVTT region metadata header syntax
+            parseRegion(v);
+            break;
+          }
+        }, /:/);
+      }
+
+      // 5.1 WebVTT file parsing.
+      try {
+        var line;
+        if (self.state === "INITIAL") {
+          // We can't start parsing until we have the first line.
+          if (!/\r\n|\n/.test(self.buffer)) {
+            return this;
+          }
+
+          line = collectNextLine();
+
+          var m = line.match(/^WEBVTT([ \t].*)?$/);
+          if (!m || !m[0]) {
+            throw new ParsingError(ParsingError.Errors.BadSignature);
+          }
+
+          self.state = "HEADER";
+        }
+
+        var alreadyCollectedLine = false;
+        while (self.buffer) {
+          // We can't parse a line until we have the full line.
+          if (!/\r\n|\n/.test(self.buffer)) {
+            return this;
+          }
+
+          if (!alreadyCollectedLine) {
+            line = collectNextLine();
+          } else {
+            alreadyCollectedLine = false;
+          }
+
+          switch (self.state) {
+          case "HEADER":
+            // 13-18 - Allow a header (metadata) under the WEBVTT line.
+            if (/:/.test(line)) {
+              parseHeader(line);
+            } else if (!line) {
+              // An empty line terminates the header and starts the body (cues).
+              self.state = "ID";
+            }
+            continue;
+          case "NOTE":
+            // Ignore NOTE blocks.
+            if (!line) {
+              self.state = "ID";
+            }
+            continue;
+          case "ID":
+            // Check for the start of NOTE blocks.
+            if (/^NOTE($|[ \t])/.test(line)) {
+              self.state = "NOTE";
+              break;
+            }
+            // 19-29 - Allow any number of line terminators, then initialize new cue values.
+            if (!line) {
+              continue;
+            }
+            self.cue = new (self.vttjs.VTTCue || self.window.VTTCue)(0, 0, "");
+            self.state = "CUE";
+            // 30-39 - Check if self line contains an optional identifier or timing data.
+            if (line.indexOf("-->") === -1) {
+              self.cue.id = line;
+              continue;
+            }
+            // Process line as start of a cue.
+            /*falls through*/
+          case "CUE":
+            // 40 - Collect cue timings and settings.
+            try {
+              parseCue(line, self.cue, self.regionList);
+            } catch (e) {
+              self.reportOrThrowError(e);
+              // In case of an error ignore rest of the cue.
+              self.cue = null;
+              self.state = "BADCUE";
+              continue;
+            }
+            self.state = "CUETEXT";
+            continue;
+          case "CUETEXT":
+            var hasSubstring = line.indexOf("-->") !== -1;
+            // 34 - If we have an empty line then report the cue.
+            // 35 - If we have the special substring '-->' then report the cue,
+            // but do not collect the line as we need to process the current
+            // one as a new cue.
+            if (!line || hasSubstring && (alreadyCollectedLine = true)) {
+              // We are done parsing self cue.
+              self.oncue && self.oncue(self.cue);
+              self.cue = null;
+              self.state = "ID";
+              continue;
+            }
+            if (self.cue.text) {
+              self.cue.text += "\n";
+            }
+            self.cue.text += line;
+            continue;
+          case "BADCUE": // BADCUE
+            // 54-62 - Collect and discard the remaining cue.
+            if (!line) {
+              self.state = "ID";
+            }
+            continue;
+          }
+        }
+      } catch (e) {
+        self.reportOrThrowError(e);
+
+        // If we are currently parsing a cue, report what we have.
+        if (self.state === "CUETEXT" && self.cue && self.oncue) {
+          self.oncue(self.cue);
+        }
+        self.cue = null;
+        // Enter BADWEBVTT state if header was not parsed correctly otherwise
+        // another exception occurred so enter BADCUE state.
+        self.state = self.state === "INITIAL" ? "BADWEBVTT" : "BADCUE";
+      }
+      return this;
+    },
+    flush: function () {
+      var self = this;
+      try {
+        // Finish decoding the stream.
+        self.buffer += self.decoder.decode();
+        // Synthesize the end of the current cue or region.
+        if (self.cue || self.state === "HEADER") {
+          self.buffer += "\n\n";
+          self.parse();
+        }
+        // If we've flushed, parsed, and we're still on the INITIAL state then
+        // that means we don't have enough of the stream to parse the first
+        // line.
+        if (self.state === "INITIAL") {
+          throw new ParsingError(ParsingError.Errors.BadSignature);
+        }
+      } catch(e) {
+        self.reportOrThrowError(e);
+      }
+      self.onflush && self.onflush();
+      return this;
+    }
+  };
+
+  global.WebVTT = WebVTT;
+
+}(this, (this.vttjs || {})));
+
+!function(){!function(a){var b=a&&a.videojs;if(b){b.CDN_VERSION="5.11.6";var c="https:"===a.location.protocol?"https://":"http://";b.options.flash.swf=c+"vjs.zencdn.net/swf/5.1.0/video-js.swf"}}(window),function(a,b,c,d,e,f,g){b&&b.HELP_IMPROVE_VIDEOJS!==!1&&(e.random()>.01||(f=b.location,g=b.videojs||{},a.src="//www.google-analytics.com/__utm.gif?utmwv=5.4.2&utmac=UA-16505296-3&utmn=1&utmhn="+d(f.hostname)+"&utmsr="+b.screen.availWidth+"x"+b.screen.availHeight+"&utmul="+(c.language||c.userLanguage||"").toLowerCase()+"&utmr="+d(f.href)+"&utmp="+d(f.hostname+f.pathname)+"&utmcc=__utma%3D1."+e.floor(1e10*e.random())+".1.1.1.1%3B&utme=8(vjsv*cdnv)9("+g.VERSION+"*"+g.CDN_VERSION+")"))}(new Image,window,navigator,encodeURIComponent,Math)}();

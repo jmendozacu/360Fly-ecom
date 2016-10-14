@@ -1042,4 +1042,84 @@
 				margin-top: 5px;
 				color: #fff;
 			}
-		
+		}
+		.post-view {
+			.post-entry {
+				margin-left: 0;
+				margin-right: 0;
+				padding-left: 25px;
+				padding-right: 25px;
+				border-top: none;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	.is-blog {
+		.blog-header {
+			height: 400px;
+			.blog-header-title {
+				.blog-header-title-container {
+					font-size: 48px;
+				}
+			}
+		}
+		.page-title {
+			&.first-page {
+				top: 260px;
+			}
+		}
+		#post-list {
+			@include clearfix();
+			.item {
+				width: 50%;
+				float: left;
+				&.even {
+					margin-left: -1px;
+				}
+			}
+		}
+	}
+	.wordpress-post-view {
+		.post-title {
+			h1 {
+				font-size: 34px;
+			}
+		}
+		.post-view {
+			.post-entry {
+				.list-circle {
+					margin-left: 25px;
+					margin-right: 25px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1200px){
+	.is-blog {
+		.blog-header {
+			height: 450px;
+		}
+		.page-title {
+			&.first-page {
+				top: 290px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1400px){
+	.is-blog {
+		#post-list {
+			.item {
+				width: 33.33%;
+				&.odd {
+					margin-left: -1px;
+				}
+			}
+		}
+	}
+}

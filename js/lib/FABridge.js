@@ -585,4 +585,29 @@ ASProxy = function(bridge, typeName)
     this.typeName = typeName;
     return this;
 };
-//methods ava
+//methods available on each ASProxy object
+ASProxy.prototype =
+{
+    get: function(propName)
+    {
+        return this.bridge.deserialize(this.bridge.getPropertyFromAS(this.fb_instance_id, propName));
+    },
+
+    set: function(propName, value)
+    {
+        this.bridge.setPropertyInAS(this.fb_instance_id, propName, value);
+    },
+
+    call: function(funcName, args)
+    {
+        this.bridge.callASMethod(this.fb_instance_id, funcName, args);
+    }, 
+    
+    addRef: function() {
+        this.bridge.addRef(this);
+    }, 
+    
+    release: function() {
+        this.bridge.release(this);
+    }
+};

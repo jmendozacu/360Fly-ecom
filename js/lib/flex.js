@@ -408,4 +408,20 @@ Flex.Object = Class.create({
      */
     escapeAttributes: function (value) {
         if(typeof value == 'string') {
- 
+            return value.escapeHTML();
+        } else {
+            return value;
+        }
+    },
+    /**
+     * Detects needed flash player version
+     *
+     * @param Number major
+     * @param Number minor
+     * @param Number revision
+     * @return Boolean
+     */
+    detectFlashVersion: function (major, minor, revision) {
+        return Flex.checkFlashPlayerVersion(major, minor, revision);
+    }
+});

@@ -946,4 +946,29 @@ var Sortable = {
 
 // Returns true if child is contained within element
 Element.isParent = function(child, element) {
-  
+  if (!child.parentNode || child == element) return false;
+  if (child.parentNode == element) return true;
+  return Element.isParent(child.parentNode, element);
+};
+
+Element.findChildren = function(element, only, recursive, tagName) {
+  if(!element.hasChildNodes()) return null;
+  tagName = tagName.toUpperCase();
+  if(only) only = [only].flatten();
+  var elements = [];
+  $A(element.childNodes).each( function(e) {
+    if(e.tagName && e.tagName.toUpperCase()==tagName &&
+      (!only || (Element.classNames(e).detect(function(v) { return only.include(v) }))))
+        elements.push(e);
+    if(recursive) {
+      var grandchildren = Element.findChildren(e, only, recursive, tagName);
+      if(grandchildren) elements.push(grandchildren);
+    }
+  });
+
+  return (elements.length>0 ? elements.flatten() : []);
+};
+
+Element.offsetSize = function (element, type) {
+  return element['offset' + ((type=='vertical' || type=='height') ? 'Height' : 'Width')];
+};

@@ -364,7 +364,29 @@ li.error-msg:before {
 			}
 		}
 	}
-	@media screen anlabel[for=camera_type]{
+	@media screen and (min-width: 768px){
+		&> .panel {
+			&> .panel-heading {
+				background-color: #f9f9f9;
+				&+ .panel-collapse {
+					&> .panel-body {
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+ul.disc {
+	list-style: disc outside;
+	padding-left: 15px;
+	li {
+		list-style: disc outside;
+	}
+}
+.accessories{
+	label[for=camera_type]{
 		font-size: 20px !important;
 	}
 }

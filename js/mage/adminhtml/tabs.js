@@ -237,4 +237,12 @@ varienTabs.prototype = {
 
     hideTabContent : function(tab){
         var tabContentElement = $(this.getTabContentElementId(tab));
-        if($(this.destElementId) && 
+        if($(this.destElementId) && tabContentElement){
+           Element.hide(tabContentElement);
+           Element.removeClassName(tab, 'active');
+        }
+        if(varienGlobalEvents){
+            varienGlobalEvents.fireEvent('hideTab', {tab:tab});
+        }
+    }
+}

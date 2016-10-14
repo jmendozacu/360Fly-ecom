@@ -321,4 +321,13 @@
 
 * html .blur_os_x_se {
 	background-color: transparent;
-	background-image: no
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/mac_os_x/BR.png", sizingMethod="crop");
+}
+
+* html .blur_os_x_sizer {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/mac_os_x/BR.png", sizingMethod="crop");
+}
+

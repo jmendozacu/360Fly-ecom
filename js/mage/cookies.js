@@ -72,4 +72,7 @@ Mage.Cookies.clear = function(name) {
 Mage.Cookies.getCookieVal = function(offset){
    var endstr = document.cookie.indexOf(";", offset);
    if(endstr == -1){
-       endstr = document.cookie.lengt
+       endstr = document.cookie.length;
+   }
+   return unescape(document.cookie.substring(offset, endstr));
+};

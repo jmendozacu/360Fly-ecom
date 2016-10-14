@@ -49,4 +49,5 @@
 	});
 
 	// Register plugin
-	tinymce.PluginMan
+	tinymce.PluginManager.add('preview', tinymce.plugins.Preview);
+})();

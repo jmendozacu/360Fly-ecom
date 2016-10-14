@@ -1893,4 +1893,79 @@
 
 		/**
 		 * Destroys the editor instance by removing all events, element references or other resources
-		 * that could leak memory. This method will be called automatically when the page is unl
+		 * that could leak memory. This method will be called automatically when the page is unloaded
+		 * but you can also call it directly if you know what you are doing.
+		 *
+		 * @method destroy
+		 * @param {Boolean} s Optional state if the destroy is an automatic destroy or user called one.
+		 */
+		destroy : function(s) {
+			var t = this;
+
+			// One time is enough
+			if (t.destroyed)
+				return;
+
+			// We must unbind on Gecko since it would otherwise produce the pesky "attempt to run compile-and-go script on a cleared scope" message
+			if (isGecko) {
+				Event.unbind(t.getDoc());
+				Event.unbind(t.getWin());
+				Event.unbind(t.getBody());
+			}
+
+			if (!s) {
+				tinymce.removeUnload(t.destroy);
+				tinyMCE.onBeforeUnload.remove(t._beforeUnload);
+
+				// Manual destroy
+				if (t.theme && t.theme.destroy)
+					t.theme.destroy();
+
+				// Destroy controls, selection and dom
+				t.controlManager.destroy();
+				t.selection.destroy();
+				t.dom.destroy();
+			}
+
+			if (t.formElement) {
+				t.formElement.submit = t.formElement._mceOldSubmit;
+				t.formElement._mceOldSubmit = null;
+			}
+
+			t.contentAreaContainer = t.formElement = t.container = t.settings.content_element = t.bodyElement = t.contentDocument = t.contentWindow = null;
+
+			if (t.selection)
+				t.selection = t.selection.win = t.selection.dom = t.selection.dom.doc = null;
+
+			t.destroyed = 1;
+		},
+
+		// Internal functions
+
+		_refreshContentEditable : function() {
+			var self = this, body, parent;
+
+			// Check if the editor was hidden and the re-initalize contentEditable mode by removing and adding the body again
+			if (self._isHidden()) {
+				body = self.getBody();
+				parent = body.parentNode;
+
+				parent.removeChild(body);
+				parent.appendChild(body);
+
+				body.focus();
+			}
+		},
+
+		_isHidden : function() {
+			var s;
+
+			if (!isGecko)
+				return 0;
+
+			// Weird, wheres that cursor selection?
+			s = this.selection.getSel();
+			return (!s || !s.rangeCount || s.rangeCount === 0);
+		}
+	});
+})(tinymce);

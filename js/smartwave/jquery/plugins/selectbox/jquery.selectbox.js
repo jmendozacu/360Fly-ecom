@@ -147,4 +147,12 @@
 					});
 				}
 				doSelect();
-				// обновление при динам
+				// обновление при динамическом изменении
+				select.on('refresh', function() {
+					select.prev().remove();
+					doSelect();
+				})
+			}
+		});
+	}
+})(jQuery)

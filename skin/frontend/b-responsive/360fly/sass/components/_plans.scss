@@ -520,4 +520,44 @@
 			}
 		}
 		.icons {
-			width: 117
+			width: 1170px;
+			margin-left: -590px;
+			bottom: 300px;
+			div[class*="icon-custom"] {
+				&:before {
+					font-size: 110px;
+				}
+			}
+			.arrow {
+				width: 920px;
+			}
+		}
+	}
+	.category-plans {
+		.body-wrapper {
+			.page-title {
+				width: 1160px;
+			}
+			.text04 {
+				width: 1160px;
+			}
+			.heading {
+				h2 {
+					width: 1160px;
+				}
+			}
+		}
+		#plans {
+			.icons {
+				.icons-companies {
+					.icon-custom-skyscraper {
+						margin-right: -30px;
+						&:before {
+							font-size: 170px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -200,4 +200,12 @@ GiftOptionsTooltip.prototype = {
     /**
      * Update tooltip window content
      *
- 
+     * @param string content
+     */
+    _updateTooltipWindowContent: function (content)
+    {
+        this._tooltipWindowContent.update(content);
+    }
+}
+
+giftOptionsTooltip = new GiftOptionsTooltip();

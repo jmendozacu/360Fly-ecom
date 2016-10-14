@@ -117,4 +117,5 @@
 * html .darkX_close {
 	background-color: transparent;
 	background-image: none;
-	filter: prog
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/darkX/button-close-focused.png", sizingMethod="crop");
+}

@@ -128,3 +128,9 @@ var Builder = {
       "TEXTAREA TFOOT TH THEAD TITLE TR TT U UL VAR").split(/\s+/);
 
     tags.each( function(tag){
+      scope[tag] = function() {
+        return Builder.node.apply(Builder, [tag].concat($A(arguments)));
+      };
+    });
+  }
+};
