@@ -1061,3 +1061,58 @@ tinymce.util.Quirks = function(editor) {
 			}, false);
 		});
 	}
+
+	// All browsers
+	disableBackspaceIntoATable();
+	removeBlockQuoteOnBackSpace();
+	emptyEditorWhenDeleting();
+
+	// WebKit
+	if (tinymce.isWebKit) {
+		keepInlineElementOnDeleteBackspace();
+		cleanupStylesWhenDeleting();
+		inputMethodFocus();
+		selectControlElements();
+		setDefaultBlockType();
+
+		// iOS
+		if (tinymce.isIDevice) {
+			selectionChangeNodeChanged();
+		} else {
+			fakeImageResize();
+			selectAll();
+		}
+	}
+
+	// IE
+	if (tinymce.isIE && !tinymce.isIE11) {
+		removeHrOnBackspace();
+		ensureBodyHasRoleApplication();
+		addNewLinesBeforeBrInPre();
+		removePreSerializedStylesWhenSelectingControls();
+		deleteControlItemOnBackSpace();
+		renderEmptyBlocksFix();
+		keepNoScriptContents();
+	}
+
+	// IE 11+
+	if (tinymce.isIE11) {
+		bodyHeight();
+		fixControlSelection();
+	}
+
+	// Gecko
+	if (tinymce.isGecko && !tinymce.isIE11) {
+		removeHrOnBackspace();
+		focusBody();
+		removeStylesWhenDeletingAccrossBlockElements();
+		setGeckoEditingOptions();
+		addBrAfterLastLinks();
+		removeGhostSelection();
+	}
+
+	// Opera
+	if (tinymce.isOpera) {
+		fakeImageResize();
+	}
+};

@@ -353,4 +353,20 @@ function checkMove(e) {
 		fadeOut();
 		if (CBE&&CBE.IEbugfix) {showSelects();}
 		boxMove=true;
-		CBE
+		CBE=null;
+	}
+}
+
+function showSelects(){
+   var elements = document.getElementsByTagName("select");
+   for (i=0;i< elements.length;i++){
+      elements[i].style.visibility='visible';
+   }
+}
+
+function hideSelects(){
+   var elements = document.getElementsByTagName("select");
+   for (i=0;i< elements.length;i++){
+   elements[i].style.visibility='hidden';
+   }
+}

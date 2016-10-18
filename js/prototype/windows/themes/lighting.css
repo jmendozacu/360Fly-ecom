@@ -931,4 +931,30 @@
 }
 
 * html darkbluelighting_se, * html .darkbluelighting_sizer {
-	background-c
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/lighting/bottom-right-darkblue.png", sizingMethod="crop");
+}
+
+* html .darkbluelighting_close {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/lighting/button-close-darkblue.png", sizingMethod="crop");
+}
+
+* html .darkbluelighting_minimize {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/lighting/button-minimize-darkblue.png", sizingMethod="crop");
+}
+
+* html .darkbluelighting_maximize {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/lighting/button-maximize-darkblue.png", sizingMethod="crop");
+}
+
+* html .darkbluelighting_content {
+	background:#020EBA;
+}
+

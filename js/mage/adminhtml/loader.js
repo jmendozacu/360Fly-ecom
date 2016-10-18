@@ -274,4 +274,12 @@ Ajax.Responders.register(varienLoaderHandler.handler);
 var varienUpdater = Class.create(Ajax.Updater, {
     updateContent: function($super, responseText) {
         if (responseText.isJSON()) {
-      
+            var responseJSON = responseText.evalJSON();
+            if (responseJSON.ajaxExpired && responseJSON.ajaxRedirect) {
+                window.location.replace(responseJSON.ajaxRedirect);
+            }
+        } else {
+            $super(responseText);
+        }
+    }
+});

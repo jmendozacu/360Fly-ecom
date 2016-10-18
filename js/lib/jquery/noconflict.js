@@ -24,4 +24,4 @@
  */
 
 // Avoid PrototypeJS conflicts, assign jQuery to $j instead of $
-var 
+var $j = jQuery.noConflict();

@@ -32,4 +32,8 @@
 
 	// Patch functions after a class is created
 	tinymce.onCreate = function(ty, c, p) {
-		tinymce.extend(p, 
+		tinymce.extend(p, patches[c]);
+	};
+})();
+
+// #endif

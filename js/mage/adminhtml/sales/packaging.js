@@ -801,4 +801,24 @@ Packaging.prototype = {
             var itemWeight = parseFloat(this._getElementText(item.select('.weight')[0]));
             containerWeight.value = parseFloat(containerWeight.value) + (itemWeight * qtyValue);
             var itemCustomsValue = parseFloat(item.select('[name="customs_value"]')[0].value) || 0;
-            containerCustomsValue.value = parseFloat(containerCustomsValue.
+            containerCustomsValue.value = parseFloat(containerCustomsValue.value) + itemCustomsValue * qtyValue;
+            this.packages[packageId]['items'][itemId]['customs_value'] = itemCustomsValue;
+        }.bind(this));
+        containerWeight.value = parseFloat(parseFloat(containerWeight.value).toFixed(4));
+        containerCustomsValue.value = parseFloat(containerCustomsValue.value).toFixed(2);
+        if (containerCustomsValue.value == 0) {
+            containerCustomsValue.value = '';
+        }
+    },
+
+    _getElementText: function(el) {
+        if ('string' == typeof el.textContent) {
+            return el.textContent;
+        }
+        if ('string' == typeof el.innerText) {
+            return el.innerText;
+        }
+        return el.innerHTML.replace(/<[^>]*>/g,'');
+    }
+//******************** End Private functions ******************************//
+};

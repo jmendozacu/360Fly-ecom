@@ -196,4 +196,13 @@ Tooltip.prototype = {
   },
  
   getWindowWidth: function(){
- 
+    var innerWidth;
+	  if (navigator.appVersion.indexOf('MSIE')>0) {
+		  innerWidth = document.body.clientWidth;
+    } else {
+		  innerWidth = window.innerWidth;
+    }
+    return innerWidth;	
+  }
+
+}

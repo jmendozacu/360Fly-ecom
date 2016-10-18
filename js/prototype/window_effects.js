@@ -144,3 +144,14 @@ PopupEffect.prototype = {
       style += ";opacity:" + this.options.fromOpacity;
     new Effect.Morph(this.div ,{style: style, duration: this.options.duration, afterFinish: this._hideDiv.bind(this)});    
   },
+  
+  _showWindow: function() {
+    this.div.hide();
+    this.window.element.show(); 
+  },
+  
+  _hideDiv: function() {
+    this.div.hide();
+  }
+}
+

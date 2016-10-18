@@ -589,3 +589,44 @@
 	content: "\e671";
 }
 .pe-7s-browser:before {
+	content: "\e672";
+}
+.pe-7s-box2:before {
+	content: "\e673";
+}
+.pe-7s-box1:before {
+	content: "\e674";
+}
+.pe-7s-bookmarks:before {
+	content: "\e675";
+}
+.pe-7s-bicycle:before {
+	content: "\e676";
+}
+.pe-7s-bell:before {
+	content: "\e677";
+}
+.pe-7s-battery:before {
+	content: "\e678";
+}
+.pe-7s-ball:before {
+	content: "\e679";
+}
+.pe-7s-back:before {
+	content: "\e67a";
+}
+.pe-7s-attention:before {
+	content: "\e67b";
+}
+.pe-7s-anchor:before {
+	content: "\e67c";
+}
+.pe-7s-albums:before {
+	content: "\e67d";
+}
+.pe-7s-alarm:before {
+	content: "\e67e";
+}
+.pe-7s-airplay:before {
+	content: "\e67f";
+}

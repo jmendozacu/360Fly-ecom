@@ -131,4 +131,7 @@ div.collapseable a               { width:100%; }
 #nav ul a span { zoom:1; }
 
 .grid-severity-critical,
-.g
+.grid-severity-major,
+.grid-severity-minor { margin:3px 0; }
+button.add span,
+button.delete span { display:inline-block; height:16px;}

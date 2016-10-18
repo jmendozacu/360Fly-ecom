@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
 /**
 * @category Mage
 * @package Mage_Page
@@ -8,13 +8,14 @@
 ?>
 <script>
 var $jQ = jQuery.noConflict();
-$jQ(document).ready(function($) {
+$jQ(document).ready(function($){
 	$('.button-contain button').click(function(e){
 		if($(this).hasClass('expand'))
 		{
 			$(this).addClass('expandedBtn');
 			$(this).removeClass('expand btn');
 			$('.show-lg-md').css({'display':'block'});
+			$('.spec-txt').html('VIEW LESS SPECS');
 		}
 		else
 		{
@@ -22,14 +23,16 @@ $jQ(document).ready(function($) {
 			$(this).removeClass('expandedBtn');
 			$('.show-lg-md').css('display','none');
 			$('.spec-chart').removeClass('in');
+			$('.spec-txt').html('VIEW MORE SPECS');
 			e.stopPropagation();
 		}
 	});
-	$('.mobile-buttons  .plus-minus').click(function(e){
+	$('.mobile-buttons .plus-minus').click(function(e){
 		if($(this).hasClass('expand-mobile'))
 		{
 			$(this).addClass('expandedBtn');
 			$(this).removeClass('expand-mobile');
+			$('.spec-txt').html('VIEW LESS SPECS');
 		}
 		else
 		{
@@ -37,6 +40,7 @@ $jQ(document).ready(function($) {
 			$(this).removeClass('expandedBtn');
 			$('.camera-4k-spec').removeClass('in');
 			$('.camera-hd-spec').removeClass('in');
+			$('.spec-txt').html('VIEW MORE SPECS');
 			e.stopPropagation();
 		}
 	});

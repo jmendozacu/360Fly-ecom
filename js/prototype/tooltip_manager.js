@@ -228,4 +228,14 @@ TooltipManager = {
 	},
 	
 	_getPageHeight: function(){
-		return window.innerHeight || document.documentElement.clientHe
+		return window.innerHeight || document.documentElement.clientHeight || 0;
+	},
+
+	_getScrollTop: function(){
+		return document.documentElement.scrollTop || window.pageYOffset || 0;
+	},
+
+	_getScrollLeft: function(){
+		return document.documentElement.scrollLeft || window.pageXOffset || 0;
+	}	
+};

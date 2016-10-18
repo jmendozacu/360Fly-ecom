@@ -121,4 +121,11 @@ telephoneElem.prototype = {
                 $(this.f1).value = arrVal[1];
                 $(this.f2).value = arrVal[2];
                 $(this.f3).value = arrVal[3];
-                if (this.f4 && arrVal
+                if (this.f4 && arrVal[4])
+                {
+                    $(this.f4).value = arrVal[4];
+                }
+            }
+        }
+    }
+}

@@ -1805,4 +1805,67 @@ var WindowUtilities = {
       objOverlay.style.left = '0';
       objOverlay.style.zIndex = Windows.maxZIndex + 1;
       Windows.maxZIndex++;
-      objOverlay.style.w
+      objOverlay.style.width = '100%';
+      parent.insertBefore(objOverlay, parent.firstChild);
+      if (Prototype.Browser.WebKit && id == "overlay_modal") {
+        setTimeout(function() {doneHandler()}, 10);
+      }
+      else
+        doneHandler();
+    }    
+  },
+  
+  setCookie: function(value, parameters) {
+    document.cookie= parameters[0] + "=" + escape(value) +
+      ((parameters[1]) ? "; expires=" + parameters[1].toGMTString() : "") +
+      ((parameters[2]) ? "; path=" + parameters[2] : "") +
+      ((parameters[3]) ? "; domain=" + parameters[3] : "") +
+      ((parameters[4]) ? "; secure" : "");
+  },
+
+  getCookie: function(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+      begin = dc.indexOf(prefix);
+      if (begin != 0) return null;
+    } else {
+      begin += 2;
+    }
+    var end = document.cookie.indexOf(";", begin);
+    if (end == -1) {
+      end = dc.length;
+    }
+    return unescape(dc.substring(begin + prefix.length, end));
+  },
+    
+  _computeSize: function(content, id, width, height, margin, className) {
+    var objBody = document.body;
+    var tmpObj = document.createElement("div");
+    tmpObj.setAttribute('id', id);
+    tmpObj.className = className + "_content";
+
+    if (height)
+      tmpObj.style.height = height + "px"
+    else
+      tmpObj.style.width = width + "px"
+  
+    tmpObj.style.position = 'absolute';
+    tmpObj.style.top = '0';
+    tmpObj.style.left = '0';
+    tmpObj.style.display = 'none';
+
+    tmpObj.innerHTML = content;
+    objBody.insertBefore(tmpObj, objBody.firstChild);
+
+    var size;
+    if (height)
+      size = $(tmpObj).getDimensions().width + margin;
+    else
+      size = $(tmpObj).getDimensions().height + margin;
+    objBody.removeChild(tmpObj);
+    return size;
+  }  
+}
+

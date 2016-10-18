@@ -262,4 +262,10 @@ GiftMessageSet.prototype = {
             }
         }, this);
         if ($(this.sourcePrefix + this.id + '_form')) {
-       
+            $(this.sourcePrefix + this.id + '_form').request();
+        } else if (typeof(order) != 'undefined') {
+            var data = order.serializeData('gift_options_data_' + this.id);
+            order.loadArea(['items'], true, data.toObject());
+        }
+    }
+}

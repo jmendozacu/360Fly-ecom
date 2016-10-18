@@ -31,4 +31,6 @@ function taxToggle(details, switcher, expandedClassName)
         $(switcher).addClassName(expandedClassName);
     } else {
         $(details).hide();
-        $(switcher).removeClass
+        $(switcher).removeClassName(expandedClassName);
+    }
+}

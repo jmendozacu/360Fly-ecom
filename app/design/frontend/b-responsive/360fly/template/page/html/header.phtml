@@ -11,7 +11,7 @@
 	$currentUrl = Mage::helper('core/url')->getCurrentUrl();
 	$cleanBaseUrl = Mage::getStoreConfig(Mage_Core_Model_Url::XML_PATH_SECURE_URL);
 	$shopUrl = $cleanBaseUrl.'shop';
-	$communityArr = array('chad-reed', 'terry-adams', 'jorge-lorenzo', 'matt-cordova', 'sunny-garcia', 'cannondale', 'pro-circuit', 'community');
+	$communityArr = array('chad-reed', 'terry-adams', 'jorge-lorenzo', 'matt-cordova', 'sunny-garcia', 'cannondale', 'pro-circuit', 'community', 'jamie-whincup');
 	$cartCount = $this->helper('checkout/cart')->getSummaryCount();
 	$appsClass = 'x';
 	$communityClass = 'x';
@@ -90,7 +90,7 @@
         <div class="abs header-account-links">
 			<div class="po-rel h36px">
 				<div class="inline-block">
-				<?php echo $this->getChildHtml('accountLinks');?>
+				<?php echo $this->getChildHtml('accountLinks', false);?>
 				</div>
 				<div class="inline-block">
 					<?php echo $this->getChildHtml('topSearch'); ?>
@@ -139,7 +139,7 @@
 					<hr/>
 					<?php echo $this->getChildHtml('category.links');?>
 					<hr/>
-                    <li  class="header-xs-account-links"><?php echo $this->getChildHtml('accountLinks');?></li>
+                    <li  class="header-xs-account-links"><?php echo $this->getChildHtml('accountLinks', false);?></li>
 					<li><a href="<?php echo $baseUrl;?>faq/">FAQ</a></li>
 				</ul>
 

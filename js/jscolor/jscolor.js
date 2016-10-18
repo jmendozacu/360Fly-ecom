@@ -802,4 +802,39 @@ var jscolor = {
 			} else {
 				abortBlur = false;
 			}
+		});
+
+		// valueElement
+		if(valueElement) {
+			var updateField = function() {
+				THIS.fromString(valueElement.value, leaveValue);
+			};
+			jscolor.addEvent(valueElement, 'keyup', updateField);
+			jscolor.addEvent(valueElement, 'input', updateField);
+			jscolor.addEvent(valueElement, 'blur', blurValue);
+			valueElement.setAttribute('autocomplete', 'off');
 		}
+
+		// styleElement
+		if(styleElement) {
+			styleElement.jscStyle = {
+				backgroundColor : styleElement.style.backgroundColor,
+				color : styleElement.style.color
+			};
+		}
+
+		// require images
+		switch(modeID) {
+			case 0: jscolor.requireImage('hs.png'); break;
+			case 1: jscolor.requireImage('hv.png'); break;
+		}
+		jscolor.requireImage('cross.gif');
+		jscolor.requireImage('arrow.gif');
+
+		this.importColor();
+	}
+
+};
+
+
+jscolor.install();

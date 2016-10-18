@@ -131,4 +131,9 @@ varienAccordion.prototype = {
     hideAllItems : function(){
         for(var i in this.items){
             if(this.items[i].id){
-                Element.remove
+                Element.removeClassName(this.items[i], 'open');
+                Element.removeClassName(this.items[i].dd, 'open');
+            }
+        }
+    }
+}

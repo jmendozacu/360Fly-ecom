@@ -19,4 +19,7 @@ div.inspector div.child {
 #debug {         /*  DIV container for debug contents*/
  padding:3px;
  color:#0f0;
- font-family:monaco, Tahoma, Verdana, Arial, Helvetica, sans-serif;
+ font-family:monaco, Tahoma, Verdana, Arial, Helvetica, sans-serif;
+ font-size:10px;
+}
+ 

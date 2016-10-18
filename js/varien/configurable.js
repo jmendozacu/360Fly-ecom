@@ -304,4 +304,17 @@ Product.Config.prototype = {
             for(var i=this.settings.length-1;i>=0;i--){
                 var selected = this.settings[i].options[this.settings[i].selectedIndex];
                 if(selected.config){
-                    price+= parseFloat(selected.co
+                    price+= parseFloat(selected.config.price);
+                }
+            }
+            if (price < 0)
+                price = 0;
+            price = this.formatPrice(price);
+
+            if($('old-price-'+this.config.productId)){
+                $('old-price-'+this.config.productId).innerHTML = price;
+            }
+
+        }
+    }
+}

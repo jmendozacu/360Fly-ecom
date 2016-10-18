@@ -2432,4 +2432,87 @@ var firebug = {
       return this.environment.addData.apply(this.environment,arguments);
     },
     "abort":function(){
-    
+      this.environment.getApi().abort();
+      return this;
+    },
+    "send":function(){
+      var url = this.environment.getUrl(), data = this.environment.getData(),dataUrl = ""; 
+
+      if(!this.environment.getCache())
+        data["forceCache"] = Number(new Date);
+
+      for (var key in data)
+        dataUrl += pi.util.String.format("{0}={1}&",key, data[key]);
+
+      if (this.environment.getType()=="GET")
+        url += (url.search("\\?")==-1?"?":"&")+pi.util.String.format("{0}",dataUrl);
+
+      this.api.open(this.environment.getType(),url,this.environment.getAsync());
+      if(this.environment.getType()=="POST"){
+        this.api.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+      };
+      this.api.send(this.environment.getType()=="GET"?"":dataUrl);
+      return this;
+    }
+  };
+  pi.xhr.body.environment = {
+    "_async":true, "_api":null, "_cache":true, "_callback":null, "_data":{}, "_type":"GET", "_url":"",
+    "setApi":function(_value){
+      this._parent_.api = _value;
+      this._setApi(_value);
+    },
+    "addCallback": function(_readyState,_fn){
+      this.getCallback().push({ "fn":_fn, "readyState":_readyState  });
+      return this._parent_;
+    },
+    "addData": function(_key,_value){
+      this.getData()[_key] = _value;
+      return this._parent_;
+    },
+    "setType": function(_value){
+      this._setType(_value);
+      return this._parent_;
+    }
+  };
+  pi.xhr.body.event = {
+    "readystatechange":function(){
+      var readyState = this.environment.getApi().readyState, callback=this.environment.getCallback();
+      for (var i = 0, len=callback.length; i < len; i++) {
+        if(pi.util.Array.indexOf(callback[i].readyState,readyState)>-1){
+          callback[i].fn.apply(this);
+        }
+      }
+    }
+  };
+  pi.xhr = pi.xhr.build();
+
+  /*
+   * xml.xhr.get
+   */
+
+  pi.xhr.get = function(_url,_returnPiObject){
+    var request = new pi.xhr();
+    request.environment.setAsync(false);
+    request.environment.setUrl(_url);
+    request.send();
+    return _returnPiObject?request:request.environment.getApi();
+  };
+
+  /*
+   * registering onload event for init functions
+   */
+  pi.util.AddEvent(
+    pi.env.ie?window:document,
+    pi.env.ie?"load":"DOMContentLoaded",
+    function(){
+      for(var i=0,len=pi.util.Init.length; i<len; i++){
+        pi.util.Init[ i ]();
+      }
+    }
+  );
+})(firebug);
+
+with(firebug){
+  initConsole();
+  lib.util.Init.push(firebug.init);
+}

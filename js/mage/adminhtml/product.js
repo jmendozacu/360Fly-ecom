@@ -1010,4 +1010,43 @@ function disableFieldEditMode(fieldContainer) {
 function enableFieldEditMode(fieldContainer) {
     $(fieldContainer).disabled = false;
     if ($(fieldContainer + '_hidden')) {
-        $(fieldContainer + '_hidden').disabled = fa
+        $(fieldContainer + '_hidden').disabled = false;
+    }
+}
+
+function initDisableFields(fieldContainer) {
+    onInitDisableFieldsList.push(fieldContainer);
+}
+
+function onCompleteDisableInited() {
+    onInitDisableFieldsList.each( function(item) {
+        disableFieldEditMode(item);
+    });
+}
+
+function onUrlkeyChanged(urlKey) {
+    urlKey = $(urlKey);
+    var hidden = urlKey.next('input[type=hidden]');
+    var chbx = urlKey.next('input[type=checkbox]');
+    var oldValue = chbx.value;
+    chbx.disabled = (oldValue == urlKey.value);
+    hidden.disabled = chbx.disabled;
+}
+
+function onCustomUseParentChanged(element) {
+    var useParent = (element.value == 1) ? true : false;
+    element.up(2).select('input', 'select', 'textarea').each(function(el){
+        if (element.id != el.id) {
+            el.disabled = useParent;
+        }
+    });
+    element.up(2).select('img').each(function(el){
+        if (useParent) {
+            el.hide();
+        } else {
+            el.show();
+        }
+    });
+}
+
+Event.observe(window, 'load', onCompleteDisableInited);

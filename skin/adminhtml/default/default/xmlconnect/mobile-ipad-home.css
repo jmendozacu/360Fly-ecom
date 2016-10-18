@@ -166,4 +166,7 @@
                     }
                     .ipad .products-list .product-image {
                         margin:0 0 4px;
-     
+                        }
+                        .ipad .products-list .product-image img {
+                            vertical-align:bottom;
+                            }

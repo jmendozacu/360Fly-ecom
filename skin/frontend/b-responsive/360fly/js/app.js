@@ -53,4 +53,7 @@
 	$(window).resize(function(){
         calcBoxHeight();
         if( $(window).width() > 991 ){
-            equalheight('
+            equalheight('.is-blog #post-list .item');
+        }
+	});
+})(jQuery);

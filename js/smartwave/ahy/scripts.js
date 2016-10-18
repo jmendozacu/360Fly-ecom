@@ -16,3 +16,6 @@ $j(document).ready(function() {
         $j('.background-image-holder').each(function() {
             $j(this).addClass('fadeIn');
         });
+    }, 200);
+});
+

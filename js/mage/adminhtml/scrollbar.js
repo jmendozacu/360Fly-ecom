@@ -378,4 +378,20 @@ function createDragger(count, handler, root, thumb, minX, maxX, minY, maxY){
 // ala Simon Willison http://simon.incutio.com/archive/2004/05/26/addLoadEvent
 function addLoadEvent(fn) {
       var old = window.onload;
-      if (typeof window.onload != 'function
+      if (typeof window.onload != 'function') {
+         window.onload = fn;
+      }
+      else {
+         window.onload = function() {
+         old();
+         fn();
+         }
+      }
+   }
+addLoadEvent(function(){
+    if(theScroll.length>0) {
+    for(var i=0;i<theScroll.length;i++){
+      createDragger(i, "handle"+i, "root"+i, "thumb"+i, theScroll[i].clipW, theScroll[i].clipW, 15, theScroll[i].clipH-30);
+    }
+  }
+})

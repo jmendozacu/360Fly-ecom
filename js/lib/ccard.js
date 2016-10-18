@@ -23,4 +23,6 @@ function validateCreditCard(s) {
         c += a > 9 ? Math.floor(a/10 + a%10) : a;
     }
     for (i=0; i<k+m; i++) c += w.charAt(i*2+1-m) * 1;
-  
+    return (c%10 == 0);
+}
+

@@ -131,4 +131,11 @@
 	include('EditorCommands.js');
 	include('UndoManager.js');
 	include('ForceBlocks.js');
-	include('ControlManage
+	include('ControlManager.js');
+	include('WindowManager.js');
+	include('Formatter.js');
+	include('LegacyInput.js');
+	include('EnterKey.js');
+
+	load();
+}());

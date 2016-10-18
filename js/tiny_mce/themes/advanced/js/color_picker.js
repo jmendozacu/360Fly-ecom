@@ -326,4 +326,20 @@ function updateLight(r, g, b) {
 	}
 }
 
-function change
+function changeFinalColor(color) {
+	if (color.indexOf('#') == -1)
+		color = convertRGBToHex(color);
+
+	setCol('preview', color);
+	document.getElementById('color').value = color;
+}
+
+function setCol(e, c) {
+	try {
+		document.getElementById(e).style.backgroundColor = c;
+	} catch (ex) {
+		// Ignore IE warning
+	}
+}
+
+tinyMCEPopup.onInit.add(init);

@@ -232,4 +232,8 @@ body,
 .form-box .fieldset, .form-box fieldset {width: 320px; margin: 0 auto;}
 
 .input-box {margin-bottom: 10px;}
-.input-box label {width: 95px; f
+.input-box label {width: 95px; font-weight: bold; display: block; float: left; text-align: right; padding-right: 10px;}
+.input-box input {width: 209px;}
+
+.required {font-weight: normal; color: #D40707 !important; font-size: 11px;}
+.form-buttons {text-align: right;}

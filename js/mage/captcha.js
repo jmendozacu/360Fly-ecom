@@ -81,4 +81,7 @@ document.observe('login:setMethod', function(event) {
             switchCaptchaElement('guest_checkout', 'register_during_checkout');
             break;
         case 'register':
-            switchCaptchaE
+            switchCaptchaElement('register_during_checkout', 'guest_checkout');
+            break;
+    }
+});

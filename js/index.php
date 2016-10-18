@@ -136,4 +136,9 @@ if (!(isset($_GET['s']) && !$_GET['s'])) {
 //}
 
 // add Expires header if not disabled, default 1 year
-if (!(isset($_GET['e']) && $_GET['
+if (!(isset($_GET['e']) && $_GET['e']==='no')) {
+    $time = time()+(isset($_GET['e']) ? $_GET['e'] : 365)*86400;
+    header('Expires: '.gmdate('r', $time));
+}
+
+echo $out;

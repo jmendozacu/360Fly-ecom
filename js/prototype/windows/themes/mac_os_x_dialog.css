@@ -153,4 +153,8 @@
 }
 
 * html .mac_os_x_dialog_sizer {
-	background-color: transpar
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/mac_os_x_dialog/BR.png", sizingMethod="crop");
+}
+

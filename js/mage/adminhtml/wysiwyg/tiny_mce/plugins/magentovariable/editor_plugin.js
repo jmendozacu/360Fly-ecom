@@ -63,4 +63,5 @@ tinyMCE.addI18n({en:{
     });
 
     // Register plugin
-    tinymce.PluginManager.add(
+    tinymce.PluginManager.add('magentovariable', tinymce.plugins.MagentovariablePlugin);
+})();

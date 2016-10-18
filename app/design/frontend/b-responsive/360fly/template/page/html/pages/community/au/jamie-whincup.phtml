@@ -1,0 +1,130 @@
+<?php
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+$communityIndex = 'jamie-whincup';
+$athleteName = 'Jamie Whincup';
+
+?>
+
+
+<div class="wrapper-width po-rel">
+	<?php echo $this->getLayout()->createBlock('core/template')
+				->setData('ci', $communityIndex)
+				->setData('athlete_name', $athleteName)
+				->setTemplate('page/html/pages/community/au/community-au-dropdown.phtml')
+				->toHtml();
+	?>
+</div>
+<div class="community-inner jamie-whincup" id="athlete-marketing">
+	<div class="jamie-container" id="">
+		<div class="container wrapper-width">
+			<div class="covertext text-contain ">
+				<h1 class="extreme-headline">
+					<b>Jamie Whincup</b>
+				</h1>
+                <h2 class="extreme-headline">V8 Supercars</h2>
+			</div>
+		</div>
+	</div>
+	<div class="bio-container">
+		<div class="bio-left greybg ">
+			<div class="bio-left-child-1 bio-left-child-x">
+				<div class="bio-left-child-container">
+				  <h3>Jamie's Bio</h3>
+					<div class="stats-box">
+						<span class="stats pull-left">Age:</span><span class="pull-left ">32</span>
+						<span class="clear"></span>
+						<span class="stats pull-left">Location:</span><span class="pull-left ">QLD, Aus</span>
+						<span class="clear"></span>
+						<span class="stats pull-left">Sport:</span><span class="pull-left ">V8 Supercars</span>
+						<span class="clear"></span>
+					</div>
+					<p>When Jamie Whincup's dad bought him a go-kart in 1991 he never could have predicted the success that would ensue for his then seven-year-old son. Going on to be the man named most likely to break every standing V8 Supercars record, Whincup has not slipped out of the top two ranked V8 Supercar drivers for the last eight years.
+					</p>
+                    <p>His career launched from his year of high school graduation coinciding with his first Australian Formula Ford Championship trophy, making his V8 Supercar debut and signing with Gary Rogers Motorsport in 2002.</p>
+                    <p>The recognition was short lived however, with Whincup being dumped at the end of 2003. Undeterred, he returned to form in 2005 with Tasman Motors, attaining two podium finishes for the year in a partnership with Jason Richards.</p>
+                    <p>2006 was the year that saw Whincup burst back into the limelight, signed with Triple Eight as Craig Lowndes' understudy, and his first Bathurst 1000 title at the legendary Mt Panorama track.</p>
+                    <p>Going on to win four championships back to back from 2011 to 2014, Whincup became just the second man to ever have won a championship in both a Ford and Holden.</p>
+                    <p>Not only this, but Whincup holds the prestige of the having the most career pole positions in V8 Supercars history, a fete that came about through relentless persistence for success.</p>
+                    <p>Now, at 31, the Queenslander maintains the titles of the man to beat. A career marked by steely determination and an undying desire to win, Jamie Whincup will undoubtedly go down as one of the greats of Australian motorsport.</p>
+				</div>
+			</div>
+			<div class="bio-left-child-2 bio-left-child-x">
+			</div>
+		</div>
+		<div class="bio-right greenbg">
+			<div class="">
+				<div class="athlete_highlight_text">
+					<h4>Career Highlights</h4>
+                    <div class="bio-right-content">
+						<p class="date-highlight">2014</p>
+						<p class="indent">First Place – V8 Supercars Championship Series</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2013</p>
+						<p class="indent">First Place – V8 Supercars Championship Series</p>
+						<p class="indent">Second Place – Bathurst 1000</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2012</p>
+						<p class="indent">First Place – V8 Supercars Championship Series</p>
+						<p class="indent">First Place - Bathurst 1000</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2011</p>
+						<p class="indent">First Place – V8 Supercars Championship Series</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2010</p>
+						<p class="indent">Second Place - V8 Supercars Championship Series</p>
+						<p class="indent">Second Place – Bathurst 1000</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2009</p>
+						<p class="indent">First Place – V8 Supercars Championship Series</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2008</p>
+						<p class="indent">First Place – V8 Supercars Championship Series</p>
+						<p class="indent">First Place - Bathurst 1000</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2007</p>
+						<p class="indent">Second Place - V8 Supercars Championship Series</p>
+						<p class="indent">First Place - Bathurst 1000</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2006</p>
+						<p class="indent">First Place - Bathurst 1000</p>
+					</div>
+					<div class="bio-right-content">
+						<p class="date-highlight">2005</p>
+						<p class="indent">Second Place – Bathurst 1000</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="athlete-social">
+	<div class="athlete-wrapper wrapper-width">
+		<div class="col-sm-12 col-md-12 col-lg-12 icons-wrapper">
+	        <div class="athlete-social-name">
+	        	<p class="pull-left follow">Follow Jamie</p>
+	        </div>
+	      	<div class="pull-left icons">
+		        <a href="https://twitter.com/jamiewhincup" target="_blank"><span class="icon-twitter-jul15 social-links"></span></a>
+		        <a href="https://www.facebook.com/JDWhincup" target="_blank"><span class="icon-facebook-jul15 social-links"></span></a>
+		        <a href="https://www.instagram.com/jamiewhincup/" target="_blank"><span class="icon-instagram-jul15 social-links"></span></a>
+	        </div>
+  		</div>
+	</div>
+</div>

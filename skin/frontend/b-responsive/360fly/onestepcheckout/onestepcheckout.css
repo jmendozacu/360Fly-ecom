@@ -253,17 +253,18 @@ div.onestepcheckout-extraproducts li, .checkout-agreements li {
 
 .onestepcheckout-error {
     background-position: 4px 4px !important;
-    padding: 2px 8px 2px 24px !important;
+    padding: 2px 8px 2px 40px !important;
     border-radius: 5px;
-    margin: 10px 6px 10px 0px !important;
-    background-image: url(images/i_msg-error.gif);
+    margin: 10px 6px 10px 6px !important;
+    /*background-image: url(images/i_msg-error.gif);*/
     background-repeat: no-repeat;
     background-color: #f8edea;
     border: 1px solid #ea9580;
+    position: relative;
 }
 
 .error-msg {
-    background-image: url(images/i_msg-error.gif);
+    /*background-image: url(images/i_msg-error.gif);*/
     background-repeat: no-repeat;
 }
 .success-msg {
@@ -289,17 +290,20 @@ p.onestepcheckout-description{
     .onestepcheckout-threecolumns li.shipping-address-title {
     display: block;
     margin: 0px 0px 6px 0px;
-    padding: 2px 0px 10px 32px;
-    font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
+    padding: 10px 20px;
+    font-family: "FlySans-",Arial,sans-serif;
     font-size: 18px;
     font-weight: 400;
     font-style: normal;
     line-height: 1.2;
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
+    background-color: #78BE20;
+    color: #fff;
 }
 li.shipping-address-title {
-    padding: 10px 0px 10px 0px !important;
+    /*padding: 10px 0px 10px 0px !important;*/
+
 }
 p.onestepcheckout-numbers {
     position: relative;
@@ -648,7 +652,28 @@ div.onestepcheckout-coupons .error-msg, .success-msg, .note-msg,
     }
     .onestepcheckout-column-padleft, .onestepcheckout-column-padright {
         padding: 10px 0px 10px 0px;
- loat: none;
+    }
+    .onestepcheckout-column-middle, .onestepcheckout-column-left,
+        .onestepcheckout-column-right {
+        float: none;
+        background: none;
+        width: 100%;
+    }
+    div.onestepcheckout-place-order-wrapper {
+        margin: 20px 0px 13px 0px;
+        text-align: center;
+    }
+    div#onestepcheckout-login-popup.login-modal {
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .input-slotpicker {
+        width: 33%;
+    }
+    #addressreview_shippinga, #addressreview_payment,
+        #addressreview_billinga, #addressreview_shipping {
+        width: 100%;
+        float: none;
         margin-bottom: 20px;
     }
 }

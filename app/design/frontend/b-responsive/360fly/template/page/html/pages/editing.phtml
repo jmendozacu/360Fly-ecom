@@ -1,0 +1,228 @@
+<?php
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+
+?>
+<div class="editing-bkg full-width">
+    <div class="container wrapper-width">
+        <div class="col-lg-6 col-lg-offset-6 col-md-6 col-md-offset-6 col-sm-12 col-xs-12 visible-lg visible-md">
+            <h2>Fly Edits</h2>
+            <p>Welcome to the edit tools. Here you can make your most epic footage even epic-er in full 360°, standard format or even stills.</p>
+        </div>
+        <div class="col-sm-12 col-xs-12 visible-sm visible-xs">
+            <h2>Fly Edits</h2>
+            <p>Welcome to the edit tools. Here you can make your most epic footage even epic-er in full 360°, standard format or even stills.</p>
+        </div>
+        <div class="col-sm-12 col-xs-12 visible-sm visible-xs">
+            <img class="mobile-hands" src="<?php echo $skinUrl;?>images/editing/editing-headline.png" alt="360fly editing">
+        </div>
+    </div>
+</div>
+<div class="editing-main">
+    <div class="full-width">
+        <div class="container wrapper-width">
+            <div class="clear"></div>
+            <div class="full-width no-dull">
+                <h2>Edit <span>- No dull moments here</span></h2>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Section Start -->
+    <div class="container wrapper-width">
+        <nav class="editing-nav">
+            <ul class="small-block-grid-3">
+                <li class="slide-0">
+                    <a href="javascript:void(0)" class="active-nav"><h3>Clip Capture</h3></a>
+                </li>
+                <li class="slide-1">
+                    <a href="javascript:void(0)" class=""><h3>Watch Me</h3></a>
+                </li>
+                <li class="slide-2">
+                    <a href="javascript:void(0)" class=""><h3>Still Capture</h3></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="editing-slider">
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Clip Capture</h3>
+                	<p>The place for editing and sharing your clips in full 360° glory. Cut footage, apply effects, even add a soundtrack—then instantly share your edits across 360°-compatible social media and on 360fly.com.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_ClipCapture.png" >
+                </div>
+            </div>
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Watch Me</h3>
+                	<p>Use this tool to cut standard format, non-360° videos. You can record whatever you see in the Watch Me window, so you control what the viewer sees.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                	<img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_WatchMe.png" >
+                </div>
+            </div>
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Still Capture</h3>
+                	<p>Lets you capture still images from your footage—from every angle, every POV—then share them across social media.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_StillCapture.png" >
+                </div>
+            </div>
+        </div>
+        <ul class="edit-custom-dots custom-dots" style="display: table; margin-bottom:50px;">
+            <li class="custom-active button-0" aria-hidden="false">
+                <button type="button" data-role="none">1</button>
+            </li>
+            <li aria-hidden="true" class="button-1">
+                <button type="button" data-role="none">2</button>
+            </li>
+            <li aria-hidden="true" class="button-2">
+                <button type="button" data-role="none">3</button>
+            </li>
+        </ul>
+    </div>
+    <!-- Edit Section Start -->
+    <!-- Effects Section Start -->
+    <div class="full-width">
+        <div class="container wrapper-width">
+            <div class="clear"></div>
+            <div class="full-width no-dull">
+                <h2>Effects <span>- Light, Speed, And Musical Action</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container wrapper-width">
+        <nav class="effects-nav">
+            <ul class="small-block-grid-3">
+                <li class="slide-0">
+                    <a href="javascript:void(0)" class="active-nav"><h3>Filters</h3></a>
+                </li>
+                <li class="slide-1">
+                    <a href="javascript:void(0)" class=""><h3>Motion</h3></a>
+                </li>
+                <li class="slide-2">
+                    <a href="javascript:void(0)" class=""><h3>Soundtracks</h3></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="effects-slider">
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_Filter.png" >
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Filters</h3>
+                	<p>Add some new light to your greatest highlights. You can preview each filter by tapping it. Once you have the one you want, just hit “Apply.”</p>
+                </div>
+            </div>
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_AdjustSpeed.png" >
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Motion</h3>
+                	<p>Speed up or slow down a section of your clip here. Easily select a portion of your edit—or the full clip—using the sliders on the playback bar, then adjust the speed faster or slower.</p>
+                </div>
+            </div>
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_Soundtrack.png" >
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Soundtracks</h3>
+                	<p>Epic edits need music. Add a track to your clip by selecting from the ones below. You can choose between a 50/50 mix of music and your video’s ambient sound or 100% music.</p>
+                </div>
+            </div>
+        </div>
+        <ul class="effects-custom-dots custom-dots" style="display: table; margin-bottom:50px;">
+            <li class="custom-active button-0" aria-hidden="false">
+                <button type="button" data-role="none">1</button>
+            </li>
+            <li aria-hidden="true" class="button-1">
+                <button type="button" data-role="none">2</button>
+            </li>
+            <li aria-hidden="true" class="button-2">
+                <button type="button" data-role="none">3</button>
+            </li>
+        </ul>
+    </div>
+    <!-- Effects Section Start -->
+    <!-- Sahre Section Start -->
+    <div class="full-width">
+        <div class="container wrapper-width">
+            <div class="clear"></div>
+            <div class="full-width no-dull">
+                <h2>Share <span>- Share it all around</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container wrapper-width">
+        <nav class="share-nav">
+            <ul class="small-block-grid-3">
+                <li class="slide-0">
+                    <a href="javascript:void(0)" class="active-nav"><h3>Thumbnail</h3></a>
+                </li>
+                <li class="slide-1">
+                    <a href="javascript:void(0)" class=""><h3>Title</h3></a>
+                </li>
+                <li class="slide-2">
+                    <a href="javascript:void(0)" class=""><h3>Share</h3></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="share-slider">
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Thumbnail</h3>
+                	<p>You know those shooters who seem to capture shots at the most magic moments and angles. Well you’re about to become one. To get started, click on Clip Capture in the app’s tool toggle.</p>
+                    <p>Next you’ll be prompted to select the ratio size that best fits where you’re sharing your image. Once that’s selected, you’ll move into a loop of the entire clip you’re using to capture your image from. Scrub across the clip with the play head then pinch, swipe and push to crop your image.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_Thumbnail.png" >
+                </div>
+            </div>
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Title</h3>
+                    <p>For all those still stuck in standard format, Watch Me allows you to share to non-360&deg;-compatible sites and devices while controlling the viewer’s experience in ways that once took an entire production and camera crew days to create.</p>
+                    <p>You can move them around your entire 360&deg; universe, swiping, pinching and pulling to scan, zoom and move through the action. To start, select a clip then click on the app’s Watch Me eye icon.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_Title_small.png" >
+                </div>
+            </div>
+            <div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h3>Share</h3>
+                	<p>In the Share With the World screen, add descriptions of your edit, including hashtags and @s. Now select the highlighted social media channels and spread the 360&deg; (or standard video) love. If you’d rather not share, hit the No Thanks button and save the edit for yourself.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img class="editing-slide-img" src="<?php echo $skinUrl;?>images/editing/360fly_Share_small.png" >
+                </div>
+            </div>
+        </div>
+        <ul class="share-custom-dots custom-dots" style="display: table; margin-bottom:50px;">
+            <li class="custom-active button-0" aria-hidden="false">
+                <button type="button" data-role="none">1</button>
+            </li>
+            <li aria-hidden="true" class="button-1">
+                <button type="button" data-role="none">2</button>
+            </li>
+            <li aria-hidden="true" class="button-2">
+                <button type="button" data-role="none">3</button>
+            </li>
+        </ul>
+    </div>
+    <!-- Sahre Section End -->
+
+</div>

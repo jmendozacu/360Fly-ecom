@@ -789,4 +789,22 @@ Product.OptionsPrice.prototype = {
                         var tierPriceInclTaxEl = tierPriceElArray[1];
                         updateTierPriceInfo(containerInclTax, tierPriceInclTaxDiff, tierPriceInclTaxEl, el);
                     } else if (this.showIncludeTax) {
-                        var containe
+                        var container = $(this.containers[0]);
+                        var tierPriceInclTaxDiff = this.tierPricesInclTax[i];
+                        var tierPriceInclTaxEl = tierPriceElArray[0];
+                        updateTierPriceInfo(container, tierPriceInclTaxDiff, tierPriceInclTaxEl, el);
+                    } else {
+                        var container = $(this.containers[0]);
+                        var tierPriceExclTaxDiff = this.tierPrices[i];
+                        var tierPriceExclTaxEl = tierPriceElArray[0];
+                        updateTierPriceInfo(container, tierPriceExclTaxDiff, tierPriceExclTaxEl, el);
+                    }
+                }, this);
+            }
+        }
+
+    },
+    formatPrice: function(price) {
+        return formatCurrency(price, this.priceFormat);
+    }
+}

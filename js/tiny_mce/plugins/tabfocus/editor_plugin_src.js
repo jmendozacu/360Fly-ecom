@@ -112,4 +112,11 @@
 				author : 'Moxiecode Systems AB',
 				authorurl : 'http://tinymce.moxiecode.com',
 				infourl : 'http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/tabfocus',
-				version : tinymce.majorVersion + "." + tinymce.minorVersion
+				version : tinymce.majorVersion + "." + tinymce.minorVersion
+			};
+		}
+	});
+
+	// Register plugin
+	tinymce.PluginManager.add('tabfocus', tinymce.plugins.TabFocusPlugin);
+})();
