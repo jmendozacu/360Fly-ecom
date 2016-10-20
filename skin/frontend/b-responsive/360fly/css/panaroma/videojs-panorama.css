@@ -14,7 +14,7 @@
   z-index: 1000000; }
 
 .video-js .vjs-control-bar {
-  z-index: 5; }
+  z-index: 2; }
 
 .video-js.vjs-using-native-controls .vjs-poster, .video-js.vjs-using-native-controls .vjs-big-play-button {
   display: block; }
@@ -78,7 +78,7 @@
     .video-js.vjs-panorama #webgl-error-message.vjs-video-notice-fadeOut {
       opacity: 0; }
   .video-js.vjs-panorama .vjs-loading-spinner {
-    z-index: 10; }
+    z-index: 2; }
   .video-js.vjs-panorama.vjs-panorama-mobile-inline-video.vjs-seeking .vjs-loading-spinner {
     display: none; }
   .video-js.vjs-panorama.vjs-panorama-mobile-inline-video.vjs-waiting .vjs-loading-spinner {

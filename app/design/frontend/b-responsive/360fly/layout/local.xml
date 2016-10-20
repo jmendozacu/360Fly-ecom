@@ -33,7 +33,7 @@
             <action method="addCss"><stylesheet>css/product_slider.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/harpreet.css</stylesheet></action>
             <!-- <action method="addCss"><stylesheet>css/slick.css</stylesheet></action> -->
-            <action method="addCss"><stylesheet>css/slick-theme.css</stylesheet></action>
+            <!-- <action method="addCss"><stylesheet>css/slick-theme.css</stylesheet></action> -->
             <action method="addCss"><stylesheet>css/media-queries.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/animate.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/panaroma/videojs-panorama.css</stylesheet></action>

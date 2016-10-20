@@ -387,6 +387,8 @@ input.qty{width:100px !important;}
 .cms-about-360fly .sub-nav{margin: 0;padding: 0;display: block;height:100%;}
 .cms-about-360fly .sub-nav li {display: inline-block;height:100%;text-align: center;}
 .cms-about-360fly .sub-nav li a {font-size: 14px;height:100%;line-height:36px;width: 80px; display: inline-block;text-align: center;;font-family: "FlySans-", Arial, sans-serif;cursor: pointer;}
+.wrapper-width.po-rel.quick-links-about {margin-top: -36px;z-index: 5;}
+.quick-links-about{position: absolute;top: -36px;max-width: 1060px;float: none;clear: both;z-index: 1;}
 /* About us Sub menu Navbar End */
 
 
@@ -544,3 +546,9 @@ a.btn.btn-led:hover{background-color:#60981a;}
 .editing-main p {font-size: 15px;line-height: 22px;letter-spacing: 1px;margin-bottom: 12px;}
 .slick-active h3{font-weight: bold;}
 /* Editing Page End */
+/* Privacy-policy-mobile start */
+.cms-privacy-policy-mobile{letter-spacing: 1px;word-wrap:break-word;}
+/* Privacy-policy-mobile End */
+/* Terms use mobile page start */
+.cms-terms-use-mobile{letter-spacing: 1px;word-wrap:break-word;}
+/* Terms use mobile page End */

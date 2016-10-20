@@ -216,4 +216,17 @@ div.calendar { position: relative; }
 
 .calendar td.time .colon {
   padding: 0px 2px 0px 3px;
- 
+  font-weight: bold;
+}
+
+.calendar td.time span.hilite {
+  border-color: #000;
+  background-color: #667;
+  color: #fff;
+}
+
+.calendar td.time span.active {
+  border-color: #f00;
+  background-color: #000;
+  color: #0f0;
+}

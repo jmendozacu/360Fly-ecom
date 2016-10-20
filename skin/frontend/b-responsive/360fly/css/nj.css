@@ -459,3 +459,46 @@ a.cart-count{color: #78BE20!important;}
 .header #navbar3 .submenu li:last-child a {border-right:none;}
 .footer-360 .email:focus{outline:none;}
 .footer-360 .btn.btn-custom{-webkit-user-select: initial;moz-user-select: none;ms-user-select: none;-select: none;}
+/* Dew Tour 2015 Start */
+.cms-dewtour2015{background-image:url('../images/facets-mobile.jpg')}
+.my-videos-container {padding: 48px 32px;height: auto;}
+.my-videos-container .profile-container {padding-left: 0px;width: 23%;}
+.dew-tour-img{display:block; padding-top:50px; margin:auto;max-width:100%;height: auto;}
+.my-videos-container .recent-video h2 {font-size: 28px;font-family: 'FlySans-Medium';line-height: 0;margin-bottom: 30px;text-transform: uppercase;color: #fff;}
+.my-videos-container .recent-video .videocontent {height: 405px;margin-bottom: 50px;}
+.recent-video .video-container .video-overlay-content{margin-top:6%;}
+.recent-video .video-container .video-overlay-content .swipe-icon{margin-top: 0%;height:68px;background-size: contain;}
+.devtour-video{width: 100%;height: 100%;position: absolute;}
+.my-videos-container .recent-video .video-overlay-content .video-overlay-text{position: relative;top: 88px;}
+.my-videos-container .recent-video .video-overlay-content .video-overlay-text p{font-size: 28px;}
+.my-videos-container .recent-video .videocontent .vjs-default-skin .vjs-control-bar{bottom: 0px;}
+.my-video-info {background-color: rgba(0, 0, 0, 0.5);clear: both;float: none;margin-top: 20px;padding-top: 20px;display: inline-block;}
+.video-title{color: #78be20;margin-bottom: 0px;line-height: 1.05;font-size: 34px;font-family: 'FlySans-Medium';}
+.my-video-info .video-date {font-size: 24px;margin-top: 5px;margin-bottom: 25px;line-height: 1.05;}
+.my-video-info h4{color:#fff;}
+.video-description{font-size: 16px;line-height: 1.4;color:#fff;margin-bottom: 20px;}
+.my-video-info .embed-div{width:56%;margin:0 auto;}
+.my-video-info .video-distribute{height: 80px;}
+.my-video-info .video-distribute p {color: #999999;font-family: "FlySans-", Arial, sans-serif;font-size: 16px;line-height: 24px;margin-bottom: 0px;text-transform: uppercase;margin-bottom: 20px;}
+.my-video-info .video-distribute li {display: inline-block;margin-right: 8px;width: 40px;height: 40px;font-size: 40px;line-height: 40px;}
+.my-video-info .video-distribute li a:not(.btn):hover{color: #fff;}
+.btn.btn-grey{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #808284;border: 2px solid #808285;border-radius: 1000px;transition: all .3s ease-out;font-weight:600;font-family:FlySans-Light,Helvetica,Arial,sans-serif;padding: 12px 32px 8px;text-transform: capitalize;margin-top: -18px;font-size: 16px;}
+.my-video-info .video-distribute .btn.btn-grey:hover {background-color: #808285;border: 2px solid #808285;color: white !important;font-family: "FlySans-Light", Arial, sans-serif;}
+.half{padding:8px 0;}
+#embed-collapse {background-color: #212121 !important;border: 1px solid #323232 !important;color: #999999 !important;width: 320px;margin-top: 30px;padding-left: 25px;padding-right: 25px;resize: none;line-height: 20px;white-space: pre-line;clear: both;float: none;height:0px;min-height:0px;}
+.show-collapse{transition-property:all;transition-duration:0.5s; 0.5s;transition-timing-function:linear; linear;opacity:0;margin-bottom: 20px;}
+.padd{padding: 30px 25px;}
+.display-block{display: block;}
+.my-video-list h2 {font-size: 28px;font-family: 'FlySans-Medium';line-height: 0;margin-top: 25px;margin-bottom: 20px;text-transform: uppercase;color: #fff;}
+.myvideos{display: block;padding:0;margin:0;}
+.myvideos li{padding: 5px;list-style: none;overflow: hidden;float: left;height: auto;float: left;}
+.my-video-list ul li a .video-halfWidth {border: #808284 1px solid;min-height: 169px;width: 100%;padding: 0;}
+.my-video-list .play {width: 70px;height: 70px;color: white;opacity: 0.70;font-size: 4.3em;position: absolute;z-index: 0;left: 50%;top: 50%;
+    -webkit-transform: translate(-50%, -50%);moz-transform: translate(-50%, -50%);ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
+.my-video-list .info-overlay {position: absolute;z-index: 9997;width: 100%;height: 100%;background: -moz-linear-gradient(top, transparent 0%, transparent 57%, rgba(0, 0, 0, 0.95) 100%);background: -o-linear-gradient(top, transparent 0%, transparent 57%, rgba(0, 0, 0, 0.95) 100%);background: -ms-linear-gradient(top, transparent 0%, transparent 57%, rgba(0, 0, 0, 0.95) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#f2000000',GradientType=0 );}
+.my-video-list .info-overlay .video-data {position: relative;top: 95%;webkit-transform: translateY(-90%);ms-transform: translateY(-90%);transform: translateY(-90%);margin-left: 20px;}
+.my-video-list .info-overlay .video-data .video-title {width: 80%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-weight: bold;
+    margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 18px;color: white;text-shadow: 0px 2px 0px rgba(33, 33, 33, 0.5);text-transform: uppercase;font-family: 'Flysans-Medium';}
+.my-video-list .info-overlay .video-data .video-info {width: 80%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 12px;line-height: 16px;
+    color: white;text-shadow: 0px 1px 0px rgba(33, 33, 33, 0.5);}
+/* Dew Tour 2015 End */
