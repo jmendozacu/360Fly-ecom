@@ -188,4 +188,13 @@ var oscAutocomplete = Class
 
                 }
             }
-        } else
+        } else {
+
+        }
+
+        if(this.config.enableajaxsavebilling){
+            get_save_billing_function(this.config.sburl, this.config.smuorl, this.updatepayment , true)();
+        }
+    }
+
+});

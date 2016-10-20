@@ -100,6 +100,11 @@
 	.pre-footer .line-break{display:block;}
 	.cms-index-index #player{background-image: none;background-repeat: no-repeat;padding:0px;background-color: white;}
 	.pre-footer .app-img{line-height: initial;}
+	.video-overlay-content .video-overlay-text p{font-size: 16px;}
+	.video-overlay-content .video-overlay-text p b{font-size: 18px;}
+	.video-player .video-container .videocontent .swipe-icon{height: 70px;background-size: contain;margin-top: 10px;}
+	.video-overlay-content{margin-top: 5%;}
+	.video-player .video-container .vjs-default-skin .vjs-big-play-button{font-size: 1em;}
 	/* Login Page */
 	.customer-account-login .account-login{padding-top:10px;}
 	.customer-account-create .register-container{padding-top:10px;}
@@ -177,6 +182,21 @@
 	/* editing page start */
 	.editing-main .no-dull h2,.editing-main .no-dull h2 span{font-size: 20px;}
 	/* editing page end */
+	/* about-us page */
+	.wrapper-width.po-rel.quick-links-about{margin-top:0;}
+	/* Dew-Tour 2015 start */
+	.my-videos-container .recent-video .videocontent{height:auto;}
+	.my-videos-container{padding:0;}
+	.my-videos-container .recent-video .video-overlay-content{margin-top: 4%;}
+	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p{font-size: 14px;}
+	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p b{font-size: 20px;}
+	.my-videos-container .recent-video .swipe-icon{height:70px;margin-top: 40px;background-size: contain;}
+	.recent-video h2{margin-left: 25px;}
+	.my-video-info .embed-div{width: 100%;}
+	.no-padd-margin-on-mobile{margin:0;padding:0;}
+	.my-videos-container .recent-video .videocontent .vjs-default-skin .vjs-control-bar{z-index:2;}
+	.video-js.vjs-panorama .vjs-loading-spinner {z-index: 2;}
+	/* Dew-Tour 2015 End */
 }
 
 /********************************************************************************************************************/
@@ -210,6 +230,11 @@
 	.led-camera .triangle{position: absolute;z-index: 9999;height: 26px;top: 239px;left: 45px;width:20px;}
 	.btn.btn-led{float: left;}
 	/* LED Page End */
+	/* dew tour page start */
+	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p{font-size: 22px;}
+	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p b{font-size: 24px;}
+	.my-videos-container .recent-video .swipe-icon{margin-top: 50px;}*/
+	/* dew tour page end */
 }
 
 /********************************************************************************************************************/
@@ -380,7 +405,17 @@
 	.editing-nav .small-block-grid-3 li,.effects-nav .small-block-grid-3 li,.share-nav .small-block-grid-3 li {text-align: center;padding: 0px 0px 0px 0px;}
 	.editing-nav .small-block-grid-3 li a h3,.effects-nav .small-block-grid-3 li a h3,.share-nav .small-block-grid-3 li a h3 {font-size: 15px;color: black;text-transform: uppercase;}
 	/*  Editing Page End*/
-
+	/* Dew Tour Page Start */
+	.my-videos-container .profile-container {width: 100% !important;clear: both;float: none !important;padding: 0 24px;}
+	.my-videos-container .recent-video .vjs-default-skin .vjs-big-play-button:before{font-size: 2em;}
+	.my-videos-container .recent-video .vjs-default-skin .vjs-big-play-button{width:2em;height:2em;left:55%;}
+	/*.my-videos-container .recent-video .video-overlay-content{margin-top: 4%;}
+	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p{font-size: 16px;}
+	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p b{font-size: 20px;}
+	.my-videos-container .recent-video .swipe-icon{height:70px;margin-top: 5px;}*/
+	#embed-collapse{width: 100%;}
+	.my-video-info .embed-div{width: 100%;margin-bottom: 20px;}
+	/* Dew Tour Page End*/
 }
 
 /********************************************************************************************************************/
@@ -392,6 +427,8 @@
 	.mounts-img {margin-top: 21px;}
 	/* Accessories Product Page */
 	.accessory-bar{background-position: center;}
+	/* about us sub navbar */
+	.quick-links-about {left:2%;}
 }
 /********************************************************************************************************************/
 /*
@@ -420,5 +457,8 @@
 /********************************************************************************************************************/
 @media screen and (min-width: 992px){
 	.sales-order-view .reorder-print{margin:6px 0 10px;float:right;}
+	/* de tour 2015 page start */
+	#embed-collapse{position: relative;right: 40%;}
+	/* de tour 2015 page end */
 }
 /********************************************************************************************************************/

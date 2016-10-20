@@ -90,4 +90,24 @@ jQuery(document).ready(function(a) {
          a('.search-link-form .form-control').css('border','none');
          a('.search-link-form .form-control').css('cursor','pointer');
      });
+	 /* dewtour2015 page - embed button start */
+     var isOpen = false;
+     a('#embed-button').click(function(){
+         if(isOpen == false)
+         {
+            a('.padd').css({"padding":"30px 25px", "margin":"30px 0px"});
+            setTimeout(function(){
+                a('#embed-collapse').css({"opacity":"1","height":"240px"});
+            },400);
+            isOpen = true;
+         }
+         else{
+             a('#embed-collapse').css({"opacity":"0","height":"0px"});
+             setTimeout(function(){
+                a('.padd').css({"padding":"0", "margin":"0"});
+            },400);
+            isOpen = false;
+         }
+     });
+     /* dewtour2015 page - embed button end */
 });

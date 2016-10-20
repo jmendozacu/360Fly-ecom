@@ -1,0 +1,267 @@
+<?php
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+
+?>
+<div class="container wrapper-width my-videos-container">
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 profile-container">
+        <img src="<?php echo $skinUrl ?>images/dewtour2015/2015-dew-tour_white.png" class="dew-tour-img">
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 recent-video no-gutter"  style="height: auto;">
+        <h2>Latest Video</h2>
+        <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-dewtour.phtml')->toHtml(); ?>
+    </div>
+    <div id="data" data-flyapiurl="https://api.360fly.com" data-token="" data-uuid="miLMYBSterEr5DYw27omfi"></div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-video-info">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-2 col-sm-12 col-xs-12">
+            <a href="https://360fly.com/videos/miLMYBSterEr5DYw27omfi/"><h3 class="video-title">Tour of Breckenridge</h3></a>
+            <h4 class="video-date"> December 13, 2015, 11:45 PM</h4>
+            <p class="video-description">Take a virtual tour down Main St. in Breckenridge.  See why it is one of the best ski towns in the United States.  Oscar's on Main St. has the best chicken wings, and, although it is not on the menu, have Sergio whip you up some chorizo tacos.</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="embed-div">
+                <ul class="video-distribute">
+                    <p>Share</p>
+                    <li>
+                        <a href="https://twitter.com/share?text=Check%20out%20this%20%23360fly%20video" data-count="none" class="icon-twitter-jul15 social-share twitter-popup"></a>
+                    </li>
+                    <li>
+                        <a class="icon-facebook-jul15 social-share facebook-share" data-facebook-app-id="1495149247407004" data-uuid="miLMYBSterEr5DYw27omfi"></a>
+                    </li>
+                    <li>
+                        <a class="btn btn-grey half" id="embed-button">Embed</a>
+                    </li>
+                </ul>
+                <textarea  readonly="readonly" id="embed-collapse" class="show-collapse padd no-padd-margin-on-mobile"> <div style="position: relative; padding-bottom: 65.25%; height: 0; overflow: hidden;"><iframe id="embed-360player" height="400" width="622" style="position:absolute; top:0; left:0; max-width:100%;" allowfullscreen="" cellspacing="0" frameborder="0" border="0" src="https://d1x2c27pku8ww9.cloudfront.net/embed/v2/embed_iframe.html?id=asrJj4T9782XNEJySMeAbD&url=https://d1x2c27pku8ww9.cloudfront.net/UGnR8qGaoU5CqQrrtM3doC/miLMYBSterEr5DYw27omfi_0/asrJj4T9782XNEJySMeAbD.mp4&thumbnail=https://d1ncy3j1ft9oyb.cloudfront.net/UGnR8qGaoU5CqQrrtM3doC/miLMYBSterEr5DYw27omfi_0/etn5e7sfi67RECvJH8ufRe.jpg"></iframe></div>
+                </textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container wrapper-width my-video-list">
+    <h2>MY VIDEOS</h2>
+    <ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12 myvideos">
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <a href="https://360fly.com/videos/mnrfsMP6vm6YWddXgirBbj/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/airing-out.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Airing out the pipe with Anna</h2>
+                            <span class="video-info">December 12, 2015, 6:56 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/Frum8Zcy6eifsGgtAWTnsA/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/sgt-bernie.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Sgt Bernie from the 5th Brigade Recruting Battalion</h2>
+                            <span class="video-info">December 12, 2015, 6:26 PM</span><br>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/kpoACFZcH9Qk5zB4KRQ3YS/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/slopestyle-narration.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Slopestyle narration run by Gjermund Braaten</h2>
+                            <span class="video-info">December 12, 2015, 12:36 AM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/JMwEqivcyDg2S5HRM8dtZX/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/alex-ferreira.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Alex Ferreira going savage in the Superpipe</h2>
+                            <span class="video-info">December 11, 2015, 6:38 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/VPhLcoMLSheaJHHJzhupZA/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/but-first.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">But first.....let me take a sweet run with Ryan Stassel</h2>
+                            <span class="video-info">December 11, 2015, 4:52 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/7CzUHuzZJun8uXYY6iCx4Y/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/little-behind.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">A little Behind the Scenes</h2>
+                            <span class="video-info">December 11, 2015, 4:33 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/ghjYevBdAfcuLzURXKmruM/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/riley-culver.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Riley Culver Slopestyle</h2>
+                            <span class="video-info">December 10, 2015, 10:16 PM</span><br />
+
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/weN92DTTycCkRu6vHBHSiV/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/blown-minds.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Blowin Minds in Breckenridge</h2>
+                            <span class="video-info">December 10, 2015, 10:06 PM</span><br />
+
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/HNfjrQTMKMoSuDYtqrw2RR/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/taylor-wilson.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Taylor Wilson crushes Superpipe practice</h2>
+                            <span class="video-info">December 10, 2015, 7:22 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/ySaLzdgdNXKsyAZPxR76NG/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/taylor-seaton.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Taylor Seaton showing us how it&#39;s done</h2>
+                            <span class="video-info">December 9, 2015, 11:45 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/SvKxsCLYDXi8VmWPZoakc7/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/hangin-in.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Hangin in the starthouse</h2>
+                            <span class="video-info">December 9, 2015, 10:05 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/thuovsunY4gkHDz8RvqcJg/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/maddie.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Maddie Mastro taking the 360fly for a spin</h2>
+                            <span class="video-info">December 9, 2015, 8:40 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/G3hQHc3eRiMnjaKEbMSSZD/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/how-do-you-get.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">How do you get to the Dew Tour? You fly.</h2>
+                            <span class="video-info">December 9, 2015, 7:39 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/y5FfVamRPMax4skB3ggMZd/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/Slopestyle.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Slopestyle course with Alex Beaulieu-Marchand</h2>
+                            <span class="video-info">December 9, 2015, 7:06 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/rnYCRo4tCHV99Ni2ftsCiC/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/dropin-in.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Dropping in with Brett Esser at the Dew Tour</h2>
+                            <span class="video-info">December 9, 2015, 6:49 PM</span><br />
+
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <a href="https://360fly.com/videos/6qTyKms5DJCQxPkNv83cXG/">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video-halfWidth" style="background: url(<?php echo $skinUrl ?>images/dewtour2015/brett.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="play icon-play-button4"></div>
+                    <div class="info-overlay">
+                        <div class="video-data">
+                            <h2 class="video-title">Brett Esser in between sessions</h2>
+                            <span class="video-info">December 9, 2015, 6:20 PM</span><br />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </div>
+</div>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/dewtour-videojs.phtml')->toHtml(); ?>

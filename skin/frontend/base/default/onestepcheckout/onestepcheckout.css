@@ -641,4 +641,27 @@ div.onestepcheckout-coupons .error-msg, .success-msg, .note-msg,
     .onestepcheckout-column-padleft, .onestepcheckout-column-padright {
         padding: 10px 0px 10px 0px;
     }
-  
+    .onestepcheckout-column-middle, .onestepcheckout-column-left,
+        .onestepcheckout-column-right {
+        float: none;
+        background: none;
+        width: 100%;
+    }
+    div.onestepcheckout-place-order-wrapper {
+        margin: 20px 0px 13px 0px;
+        text-align: center;
+    }
+    div#onestepcheckout-login-popup.login-modal {
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .input-slotpicker {
+        width: 33%;
+    }
+    #addressreview_shippinga, #addressreview_payment,
+        #addressreview_billinga, #addressreview_shipping {
+        width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+}
