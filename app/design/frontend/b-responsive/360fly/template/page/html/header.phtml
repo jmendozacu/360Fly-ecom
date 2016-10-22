@@ -47,6 +47,10 @@
 	if(strpos($currentUrl, "support")){
 		$supportClass = 'is-support-page';
 	}
+	$faqClass = 'x';
+	if(stripos($currentUrl, "faq")){
+		$faqClass = 'is-faq-page';
+	}
 ?>
 <!-- New Header Starts -->
 <div class="container-fluid header-bg-black h95px"></div>
@@ -64,8 +68,7 @@
 				  <li class="menu1 <?php echo $menuClass?>-container" ><a class="<?php echo $menuClass?>-anchor" href="<?php echo $baseUrl;?>shop">SHOP</a>
 					<ul class="submenu1 submenu <?php echo $menuClass;?>">
                         <?php echo $this->getChildHtml('category.links');?>
-                        <li><a href="<?php echo $baseUrl;?>faq/">FAQ</a></li>
-
+                        <li><a href="<?php echo $baseUrl;?>faq/" class="<?php echo $faqClass; ?>">FAQ</a></li>
 					</ul>
 				  </li>
 				  <li class="divider-vertical menu2 <?php echo $appsClass?>-container"><a class="<?php echo $appsClass?>-anchor" href="<?php echo $baseUrl ;?>apps">APPS</a>

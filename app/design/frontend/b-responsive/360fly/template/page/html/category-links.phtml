@@ -3,6 +3,8 @@
 	$baseUrl = $this->getBaseUrl();
 	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 	$skinUrl = $this->getSkinUrl();
+    $currentUrl = Mage::helper('core/url')->getCurrentUrl();
+    $categoryUrl = 'x';
 
 ?>
 <?php $_helper = Mage::getModel('catalog/category') ?>
@@ -10,9 +12,18 @@
 <?php if (count($_categories) > 0): ?>
             <?php foreach ($_categories as $_category):?>
                 <li>
-                    <a href="<?php echo $_category->getUrl(); ?>" title="<?php echo $_category->getName() ?>">
+                <!-- Check category page -->
+                    <?php 
+						if(stripos($currentUrl, $_category->getName()) !== false){
+							$categoryUrl = 'is-category-page';
+						} else{
+							$categoryUrl = 'x';
+						}
+                    ?>
+                    <a class="<?php echo $categoryUrl; ?>" href="<?php echo $_category->getUrl(); ?>" title="<?php echo $_category->getName() ?>">
                         <?php echo $_category->getName() ?>
                     </a>
+                <!--Ends-->
                 </li>
             <?php endforeach;?>
 <?php endif; ?>

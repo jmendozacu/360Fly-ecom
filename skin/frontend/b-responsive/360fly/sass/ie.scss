@@ -51,4 +51,7 @@
 	}
 }
 @media screen and (min-width: 1200px){
-	#plans .plans, 
+	#plans .plans, .category-plans #plans2 .plans {
+		width: 850px;
+	}
+}

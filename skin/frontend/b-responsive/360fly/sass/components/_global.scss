@@ -301,7 +301,9 @@ a {
 	padding:0 15px !important;
 }
 .messages ul{
-	padding: 0 0 0 15px !important;
+	// padding: 0 0 0 15px !important;
+	position: relative;
+	left: 3%;
 }
 .success-msg{
 	background-image: none;
@@ -311,7 +313,8 @@ a {
 	border-width: 2px !important;
 	border-radius: 4px;
 	text-align: left !important;
-	padding: 15px 15px 15px 40px !important;
+	padding: 15px 40px 15px 40px !important;
+	word-wrap: break-word;
 }
 
 li.success-msg:before {
@@ -323,7 +326,7 @@ li.success-msg:before {
 }
 .error-msg{
 	background-image: none;
-	padding: 15px 15px 15px 40px !important;
+	padding: 15px 40px 15px 40px !important;
 	border-width: 2px !important;
 	border-radius: 4px;
 }
