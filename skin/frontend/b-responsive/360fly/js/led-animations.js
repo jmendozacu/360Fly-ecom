@@ -22,7 +22,7 @@ jQuery( document ).ready(function() {
 
   jQuery("a").click(function(e) {
       initializeSVG(e);
-      console.log("This is triID at start "+triID);
+      //console.log("This is triID at start "+triID);
       clicked = 1;
       clicked = 0;
   });
