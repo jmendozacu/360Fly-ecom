@@ -158,10 +158,4 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	jQuery(document).ready(function($){
-		$('.nav li.menu1 ul.submenu1').remove();
-		$('.nav li.menu1 a').attr('href','https://www.shop360fly.com.au');
-		$('.nav li.menu1 a').attr('target','_blank');
-	});
-</script>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/au-js.phtml')->toHtml(); ?>
