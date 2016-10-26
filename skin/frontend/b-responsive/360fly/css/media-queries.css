@@ -331,6 +331,8 @@
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:right; width:75%;padding-left:24px;padding-right:24px;}
 	/* community inner pages end */
 	.body-wrapper{min-height:77vh;}
+	/* community main page */
+	#community-canondale{padding-bottom:56.25%;}
 }
 
 
@@ -365,6 +367,8 @@
 .cannondale .bio-left .bio-left-child-1{width:100%;}
 .community-inner .bio-left .bio-left-child-1 p,.bio-left .bio-left-child-2 .question,.bio-left .bio-left-child-2 p,.community-inner .bio-right p{font-size:20px;}
 .community-inner .greenbg{padding-bottom:40px;}
+/* community main page */
+#community-canondale{background-position: center center;}
 }
 
 /********************************************************************************************************************/
