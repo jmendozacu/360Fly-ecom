@@ -116,6 +116,9 @@
 	.category-cameras .landing-img{width:100%;right:0;}
 	.category-cameras .short-description.std{padding-top:0;}
 	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
+	.category-cameras .camera-hd .camera-info{margin-top:0;}
+	.category-cameras .camera-hd .short-description.std{padding-top: 0;}
+	.category-cameras .camera-hd .landing-img{top:30px;}
 	/* Product Desc Page Same as landing Page End */
 	/*app page */
 	.cms-australia a#macosx,.cms-australia a#windows{min-width:100%;}
@@ -214,6 +217,7 @@
 	.about-contain{margin-left:15px;}
 	/* Product Desc Page Same as landing Page Start */
 	.category-cameras .landing-img{top:120px;}
+	.category-cameras .camera-hd .landing-img{top:125px !important;}
 	/* Product Desc Page Same as landing Page End */
 	/* Checkout index start */
 	.checkout-cart-index input.qty{width:65px !important;margin-top: 15px;}
