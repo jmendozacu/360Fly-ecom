@@ -257,6 +257,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .padding-lr{padding-right: 24px;padding-left:24px;}
 
 /* Community */
+.community-banner.small.bkg-cover{background-size: cover;}
 .community-banner{background-image:url("../images/community/reed.jpg");margin-bottom:0px;background-size:cover;position:relative;background-position:center center;background-repeat:no-repeat;height:670px;}
 .community-banner.small{position:relative;background-position:center center;background-size:auto 100%;background-repeat:no-repeat;}
 .community-banner h2{font-family:"FlySans-Bold", Arial, sans-serif;font-size:88px;line-height:48px;text-transform:uppercase;color:white;margin-bottom:5px;font-style:normal;font-weight:normal;margin-top:3px;text-rendering:optimizeLegibility;}
@@ -275,7 +276,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 #community-cordova{background-image:url("../images/community/cordova.jpeg");}
 #community-adams{background-image:url("../images/community/terryadams.jpg");}
 #community-kx{background-image:url("../images/community/pro-circuit-kaw.jpeg");}
-#community-canondale{background-image:url("../images/community/canondale.jpg");}
+#community-canondale{background-image:url("../images/community/canondale.jpg");background-position: 0 16%;}
 .video-wrapper{padding-top: 10px;padding-bottom: 8px;}
 .last-community-banner{margin-bottom:10px;}
 

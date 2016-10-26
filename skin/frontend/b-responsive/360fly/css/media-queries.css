@@ -116,6 +116,9 @@
 	.category-cameras .landing-img{width:100%;right:0;}
 	.category-cameras .short-description.std{padding-top:0;}
 	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
+	.category-cameras .camera-hd .camera-info{margin-top:0;}
+	.category-cameras .camera-hd .short-description.std{padding-top: 0;}
+	.category-cameras .camera-hd .landing-img{top:30px;}
 	/* Product Desc Page Same as landing Page End */
 	/*app page */
 	.cms-australia a#macosx,.cms-australia a#windows{min-width:100%;}
@@ -214,6 +217,7 @@
 	.about-contain{margin-left:15px;}
 	/* Product Desc Page Same as landing Page Start */
 	.category-cameras .landing-img{top:120px;}
+	.category-cameras .camera-hd .landing-img{top:125px !important;}
 	/* Product Desc Page Same as landing Page End */
 	/* Checkout index start */
 	.checkout-cart-index input.qty{width:65px !important;margin-top: 15px;}
@@ -331,6 +335,8 @@
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:right; width:75%;padding-left:24px;padding-right:24px;}
 	/* community inner pages end */
 	.body-wrapper{min-height:77vh;}
+	/* community main page */
+	#community-canondale{padding-bottom:56.25%;}
 }
 
 
@@ -365,6 +371,8 @@
 .cannondale .bio-left .bio-left-child-1{width:100%;}
 .community-inner .bio-left .bio-left-child-1 p,.bio-left .bio-left-child-2 .question,.bio-left .bio-left-child-2 p,.community-inner .bio-right p{font-size:20px;}
 .community-inner .greenbg{padding-bottom:40px;}
+/* community main page */
+#community-canondale{background-position: center center;}
 }
 
 /********************************************************************************************************************/
