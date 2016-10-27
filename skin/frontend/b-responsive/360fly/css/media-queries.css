@@ -217,7 +217,7 @@
 	.about-contain{margin-left:15px;}
 	/* Product Desc Page Same as landing Page Start */
 	.category-cameras .landing-img{top:120px;}
-	.category-cameras .camera-hd .landing-img{top:125px !important;}
+	.category-cameras .camera-hd .landing-img{top:175px !important;transform:scale(1.1);}
 	/* Product Desc Page Same as landing Page End */
 	/* Checkout index start */
 	.checkout-cart-index input.qty{width:65px !important;margin-top: 15px;}
