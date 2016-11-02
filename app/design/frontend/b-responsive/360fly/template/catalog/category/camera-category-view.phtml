@@ -52,6 +52,9 @@
         $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
         $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     }
+    $store = Mage::app()->getStore();
+    $store1 = Mage::app()->getStore()->getName();
+    $store2 = Mage::app()->getStore()->getCode();
 ?>
 <div class="compare-cameras  hidden-sm hidden-xs">
     <div class="container wrapper-width-camera">
@@ -350,8 +353,8 @@
         $('.quality-head li').click(function(){
             var video_block = $(this).attr('data-id');
             if(video_block == 'hd'){
-                jQuery('video').attr('src','https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4');
-                var hdposter = 'http://www.flooringvillage.co.uk/ekmps/shops/flooringvillage/images/request-a-sample--547-p.jpg';
+                jQuery('video').attr('src','https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_video_hd.mp4');
+                var hdposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail_hd.jpg';
                 jQuery('.vjs-poster').css('background-image','url('+ hdposter +')');
             }
             else if (video_block == '4k'){
