@@ -118,8 +118,7 @@
 	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
 	.category-cameras .camera-hd .camera-info{margin-top:0;}
 	.category-cameras .camera-hd .short-description.std{padding-top: 0;}
-	.category-cameras .camera-hd .landing-img{top:40px; right:-20px; transform: scale(1.0);
-}}
+	.category-cameras .camera-hd .landing-img{top:40px; right:-20px; transform: scale(1.0);}
 	/* Product Desc Page Same as landing Page End */
 	/*app page */
 	.cms-australia a#macosx,.cms-australia a#windows{min-width:100%;}

@@ -350,6 +350,25 @@
         $('.quality-head li').click(function(){
             var video_block = $(this).attr('data-id');
             if(video_block == 'hd'){
+                jQuery('video').attr('src','https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4');
+                var hdposter = 'http://www.flooringvillage.co.uk/ekmps/shops/flooringvillage/images/request-a-sample--547-p.jpg';
+                jQuery('.vjs-poster').css('background-image','url('+ hdposter +')');
+            }
+            else if (video_block == '4k'){
+                jQuery('video').attr('src','https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4');
+                var fourkposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg';
+                jQuery('.vjs-poster').css('background-image','url('+ fourkposter +')');
+            }
+            $('.quality-head').find('li').removeClass('active');
+            $('.quality-head li.toggle-'+video_block).addClass('active');
+        });
+    });
+</script>
+<!-- <script>
+    jQuery(document).ready(function($){
+        $('.quality-head li').click(function(){
+            var video_block = $(this).attr('data-id');
+            if(video_block == 'hd'){
                 player.loadVideoById('<?php echo $hdVideo;?>');
             } else if (video_block == '4k'){
                 player.loadVideoById('<?php echo $fourkVideo;?>');
@@ -359,7 +378,7 @@
             $('.quality-head li.toggle-'+video_block).addClass('active');
         });
     });
-</script>
+</script> -->
 
 <?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('catalog/category/camera-category-js.phtml')->toHtml(); ?>
