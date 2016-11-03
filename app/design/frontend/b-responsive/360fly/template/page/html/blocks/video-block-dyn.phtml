@@ -17,10 +17,14 @@ if(count($this->videoid)> 0){
                             <p>CLICK AND DRAG BELOW TO</p>
                             <p><b>EXPERIENCE 360&deg;</b></p>
                         </div>
-                        <div class="swipe-icon-yt">
-                        </div>
+                        <!-- <div class="swipe-icon-yt">
+                        </div> -->
                     </div>
-                    <div class="youtube-player" id="player-yt" data-id="<?php echo $videoId;?>"></div>
+                    <video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
+					poster="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg" data-setup="{}" crossorigin="anonymous">
+						<source src="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4" type='video/mp4'>
+					</video>
+                    <!-- <div class="youtube-player" id="player-yt" data-id="<?php //echo $videoId;?>"></div> -->
                 </div>
             </section>
         </div>
@@ -51,3 +55,4 @@ if(count($this->videoid)> 0){
       }
 
 </script>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
