@@ -52,9 +52,6 @@
         $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
         $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     }
-    $store = Mage::app()->getStore();
-    $store1 = Mage::app()->getStore()->getName();
-    $store2 = Mage::app()->getStore()->getCode();
 ?>
 <div class="compare-cameras  hidden-sm hidden-xs">
     <div class="container wrapper-width-camera">
@@ -372,9 +369,9 @@
         $('.quality-head li').click(function(){
             var video_block = $(this).attr('data-id');
             if(video_block == 'hd'){
-                player.loadVideoById('<?php echo $hdVideo;?>');
+                player.loadVideoById('<?php //echo $hdVideo;?>');
             } else if (video_block == '4k'){
-                player.loadVideoById('<?php echo $fourkVideo;?>');
+                player.loadVideoById('<?php //echo $fourkVideo;?>');
             }
             player.stopVideo();
             $('.quality-head').find('li').removeClass('active');
