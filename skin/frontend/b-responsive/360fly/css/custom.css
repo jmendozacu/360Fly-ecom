@@ -225,7 +225,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /* compare camera start */
 .wrapper-width-camera{max-width:1000px;width:100%;margin:0 auto;padding:0 15px;}
 .compare-cameras, .compare-cameras-mobile {padding-top: 20px;background-image: url('../images/shop-camera/light-facets-bg.jpg');background-repeat: repeat-x;padding-bottom: 140px;background-size: 100%;}
-.compare-cameras h1, .compare-cameras-mobile h1 {color: #78be20;margin-bottom: 90px;font-size: 45px;line-height: .85;margin-top:3px;}
+.compare-cameras h1, .compare-cameras-mobile h1 {color: #78be20;margin-bottom: 90px;font-size: 45px;line-height: .85;margin-top:10px;}
 .compare-cameras h1 span, .compare-cameras-mobile h1 span {font-size: 68px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
 .btn-shop {width: 175px;line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;
     border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;padding: 3px 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
@@ -464,6 +464,7 @@ input.qty{width:100px !important;}
 .cms-index-noroute{background: #000;}
 /* 404 Erro Page End */
 /* CMS store Locator Start */
+.cms-store-locator{background: #191919;}
 .cms-store-locator input#search_button:focus{outline: -webkit-focus-ring-color auto 0px;}
 /* CMS store Locator End */
 /* Account Forgot Start */
