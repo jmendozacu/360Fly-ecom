@@ -55,3 +55,11 @@
     <?php //endif; ?>
 </p> -->
 <?php endif; ?>
+
+<!-- FB search event tracking -->
+
+<script>
+fbq('track', 'Search', {
+search_string: '<?php echo $this->helper('catalogsearch')->getEscapedQueryText();?>'
+});
+</script>

@@ -134,3 +134,10 @@
 <div class="form-group a-right">
     <button type="button" class="btn btn-custom" title="<?php echo $this->__('Continue Shopping') ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
 </div>
+
+<script>
+fbq('track', 'Purchase', {
+value: <?php echo $_order->getGrandTotal();?>,
+currency: '<?php echo Mage::app()->getStore()->getCurrentCurrencyCode();?>'
+});
+</script>

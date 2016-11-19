@@ -18,6 +18,11 @@ $helper = Mage::helper('onestepcheckout/checkout');
     <?php endif; ?>
 <?php else: ?>
 
+<script>
+	fbq('track', 'InitiateCheckout');
+</script>
+
+
 <form id="onestepcheckout-form" method="post" action="<?php echo $this->getUrl('onestepcheckout', array('_secure'=>true)); ?>">
 <fieldset class="group-select" style="margin: 0;">
 
@@ -1117,6 +1122,7 @@ Event.observe(window, 'load', function() {
             var payment_method = $RF(form, 'payment[method]');
             $('container_payment_method_' + payment_method).show();
             $('payment_form_' + payment_method).show();
+			fbq('track', 'AddPaymentInfo');
         } catch(err)    {
 
         }

@@ -1,0 +1,10 @@
+<?php $_product = Mage::getModel('core/session')->getProductToShoppingCart() ?>
+<?php if ($_product && $_product->getId()): ?>
+    <script>
+		fbq('track', 'AddToCart', {
+		value: <?php echo $_product->getFprice();?>,
+		currency: '<?php echo $_product->getCurrency();?>'
+		});
+	</script>
+    <?php Mage::getModel('core/session')->unsProductToShoppingCart(); ?>
+<?php endif; ?>

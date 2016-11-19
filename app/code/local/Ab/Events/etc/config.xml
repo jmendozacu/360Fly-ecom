@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <Ab_Events>
+            <version>1.0.0.0</version>
+        </Ab_Events>
+    </modules>
+    <global>
+        <models>
+            <ab_events>
+                <class>Ab_Events_Model</class>
+            </ab_events>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <ab_events>
+                    <file>ab_events.xml</file>
+                </ab_events>
+            </updates>
+        </layout>
+        <events>
+            <controller_action_predispatch_checkout_cart_add>
+                <observers>
+                    <ab_events_log_cart_add>
+                        <class>ab_events/observer</class>
+                        <method>logCartAdd</method>
+                    </ab_events_log_cart_add>
+                </observers>
+            </controller_action_predispatch_checkout_cart_add>
+			<customer_register_success>
+                <observers>
+                    <ab_events_log_customer_save>
+                        <class>ab_events/observer</class>
+                        <method>logCustomerSave</method>
+                    </ab_events_log_customer_save>
+                </observers>
+            </customer_register_success>
+        </events>
+    </frontend>
+</config>

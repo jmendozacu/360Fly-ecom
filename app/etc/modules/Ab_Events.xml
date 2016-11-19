@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Ab_Events>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ab_Events>
+    </modules>
+</config>
