@@ -245,6 +245,7 @@ html[xmlns] .flexslider .slides {
   height: auto;
   display: block;
   opacity: 1;
+  border: 2px solid transparent;
   cursor: pointer;
   -moz-user-select: none;
   /*-webkit-transition: all 1s ease;

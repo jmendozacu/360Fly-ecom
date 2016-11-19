@@ -51,6 +51,8 @@
 			<action method="addItem"><type>skin_js</type><name>js/panaroma/three.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs-panorama.v5.min.js</name></action>
+			<!-- FB PIXEL CODE  -->
+			<block type="core/template" name="fb_pixel" as="fb_pixel" template="page/html/fbbasepixel.phtml"/>
         </reference>
 
         <remove name="right_panel"/>
@@ -109,7 +111,7 @@
 
     <checkout_cart_index>
         <reference name="content">
-            <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>
+            <!-- <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/> -->
         </reference>
     </checkout_cart_index>
 

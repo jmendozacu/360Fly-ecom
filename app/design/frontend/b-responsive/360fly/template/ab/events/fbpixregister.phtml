@@ -1,0 +1,10 @@
+<?php $hasRegistered = Mage::getModel('core/session')->getCustomerRegistrationFlag() ?>
+<?php if ($hasRegistered): ?>
+	<script>
+	fbq('track', 'CompleteRegistration', {
+	value: 0,
+	currency: '<?php echo Mage::app()->getStore()->getCurrentCurrencyCode();?>'
+	});
+	</script>
+    <?php Mage::getModel('core/session')->unsCustomerRegistrationFlag(); ?>
+<?php endif; ?>
