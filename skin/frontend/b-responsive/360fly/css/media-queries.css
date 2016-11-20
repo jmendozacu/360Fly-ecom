@@ -455,6 +455,7 @@
 @media screen and (min-width: 1899px){
 	/* 360 home page hand */
 	#pov-wrap{left:550px;}
+	#player{background-size: contain;}
 }
 
 
