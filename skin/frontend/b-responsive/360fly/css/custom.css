@@ -498,6 +498,7 @@ input.qty{width:100px !important;}
 .location-bkg .country{color: #f1f1f2;text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4);font-family: "FlySans-Light", Arial, sans-serif;font-size: 35px;text-align: center;}
 .location-bkg .zone{padding: 10px;color: #008C95;margin: 3px 0 8px;line-height: 1.4;}
 .address-block{padding-bottom: 10px;min-height: 160px;float: left;}
+.address-block a{text-transform: uppercase;}
 /* stores End */
 /* Led Page Start */
 .cms-led{background: #000;}
