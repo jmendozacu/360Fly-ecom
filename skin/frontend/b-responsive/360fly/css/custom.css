@@ -338,7 +338,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .catalog-category-view .cam-name a:not(.btn){color:#000;}
 .catalog-category-view .products-list .price-box{float:right;margin:0 0 10px;}
 .catalog-category-view .regular-price .price {font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #7abc31;font-weight: normal;}
-
+span.older-price {font-weight: bold;color: #666 ;text-decoration: line-through;}
 /* Category Page End - catalog/list.phtml */
 
 /* Product Description Page Start */
@@ -350,7 +350,9 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .regular-price .price{font-weight: 700;margin-bottom: 0;color: #78be20 ;font-size: 32px;}
 .catalog-product-view .add-to-cart label{line-height:45px;margin-bottom: 0;margin-right: 10px;color:#333;}
 input.qty{width:100px !important;}
-
+.special-price .price, .special-price .price-label{font-size: 24px; color:#60981a}
+.special-price .price-label:after{content:': ';}
+.old-price .price{color:inherit;}
 /* Product Description Page End */
 
 /* Product Desc Page Same as landing Page Start */
