@@ -18,6 +18,7 @@ $skinUrl = $this->getSkinUrl();
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 recent-video no-gutter"  style="height: auto;">
         <h2>Latest Video</h2>
         <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-dewtour.phtml')->toHtml(); ?>
+		<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-edge-error-dewtour.phtml')->toHtml(); ?>
     </div>
     <div id="data" data-flyapiurl="https://api.360fly.com" data-token="" data-uuid="miLMYBSterEr5DYw27omfi"></div>
 </div>

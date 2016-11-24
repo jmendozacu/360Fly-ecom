@@ -503,3 +503,23 @@ a.cart-count{color: #78BE20!important;}
 .my-video-list .info-overlay .video-data .video-info {width: 80%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 12px;line-height: 16px;
     color: white;text-shadow: 0px 1px 0px rgba(33, 33, 33, 0.5);}
 /* Dew Tour 2015 End */
+.blackbg{background:#000;}
+.edge-dewtour .degradation-message{padding:0;width: 100%;}
+.edge-dewtour img.player-controls{margin: 30px 0 0;}
+.edge-dewtour  .off-road{padding:25px 0;}
+.edge-dewtour  .off-road h2{margin-top: 30px;}
+.edge-error{background-image:url('/images/facets-mobile.jpg')}
+.degradation-message{padding:200px 0;margin: 0 auto;width:85%;color: #fff;text-align: center;}
+.degradation-message h1{color: #fff;margin-bottom: 20px;line-height: 44px;text-shadow: 0px 0px 5px black;}
+.degradation-message  p{font-size: 20px;color: #fff;line-height: 30px;font-weight: bold;font-family: Flysans-Light;}
+img.player-controls {display: inline-block;vertical-align: middle;width: 100%;height: auto;}
+.off-road{padding: 50px 0 40px 0px;}
+.off-road span{color: #999;font-size: 14px;position: relative;float: left;}
+.off-road h2{margin: 0;color: #fff;position: relative;float: left;}
+.video-author .show-for-medium-up{font-family: "FlySans-Light", Arial, sans-serif;font-size: 20px;line-height: 30px;float: right;}
+.edge{background-color: #191919;margin-top: 0;}
+.video-info{font-face: 'Flysans-';font-size: 16px;line-height: 24px;color: #999;}
+.show-on-uncompatible-browser{display: none;}
+.edge .embed-div{float: right;}
+.edge .video-info{margin:8% 0;}
+.show-on-uncompatible-browser .my-video-info{display: block;}

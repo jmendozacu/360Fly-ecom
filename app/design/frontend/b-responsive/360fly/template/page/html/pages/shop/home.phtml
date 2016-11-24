@@ -31,7 +31,7 @@ $fourkUrl = $productfourk->getProductUrl();
               <h1>WELCOME TO THE 360fly STORE.</h1>
               <p><b>Now <sup>1</sup>/<sub>4</sub>-20 mount system compatible!</b></p>
               <p class="pr-40">You’ll find everything you need to capture your entire life in immersive, interactive 360° HD and 4K video right here, anytime, under one digital roof. 360fly proudly offers free shipping on any camera purchase <i>(U.S. residents only)</i>. We're even prouder of our customer service and making sure you love your 360fly camera as much as we love ours. Come in and take a look around&#x2014;all around.</p>
-              <a href="<?php echo $baseUrl ?>cameras" class="btn btn-custom">Shop Cameras</a>
+              <a href="<?php echo $baseUrl ?>shop/cameras" class="btn btn-custom">Shop Cameras</a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 camera-layers hidden-xs hidden-sm ">
                 <a href="<?php echo $fourkUrl;?>" class="camera-4k-link"></a>
@@ -41,6 +41,7 @@ $fourkUrl = $productfourk->getProductUrl();
       </div>
 </div>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-a.phtml')->toHtml(); ?>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-edge-error.phtml')->toHtml(); ?>
 <div class="row product-block">
     <div class="container wrapper-width">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

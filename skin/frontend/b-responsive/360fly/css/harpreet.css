@@ -2,6 +2,7 @@
 	Harpreet Singh
 */
 /*MISC CLASSES STARTS*/
+a:active, a:focus, a:hover{text-decoration: none;}
 .btn.btn-custom, .btn.btn-shop , .btn.btn-custom-inverse{width: auto;padding: 6px 35px;margin:10px;}
 .btn.btn-custom{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: #78be20;color: #fff;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
 .btn.btn-shop{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
@@ -11,7 +12,7 @@
 .m0p0{margin:0;padding:0;}
 iframe{border:none;}
 .plr15{padding:0 15px;}
-.btn.retailer, .btn.mailSignUp {background-color: transparent;padding: 6px 0;font-size: 14px;color: #fff;}
+.btn.retailer, .btn.mailSignUp {background-color: transparent;padding: 6px 12px;font-size: 14px;color: #fff;}
 .btn.retailer{color:#999;}
 .btn.btn-custom:active:focus,.btn:active:focus {
     outline: 0px auto -webkit-focus-ring-color;
@@ -59,6 +60,7 @@ iframe{border:none;}
 .top-bar-section a.is-shop-page-anchor,.top-bar-section a.is-apps-page-anchor,.top-bar-section a.is-community-page-anchor,.top-bar-section a.is-video-page-anchor{color: #7abc31 !important;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
 
 /*HOMEPAGE STARTS*/
+video#video_4k_html5_api.vjs-tech{display: block !important;}
 .slider-wrapper #layerslider h2{font-family: "FlySans-Bold", Arial, sans-serif;}
 .slider-wrapper #layerslider h2.flyslim{font-family: "FlySans-", Arial, sans-serif;}
 .video-player #video section#one-up{cursor: pointer;}
@@ -77,7 +79,7 @@ iframe{border:none;}
 /* .cms-australia .product-block p{max-width:300px;} */
 /* .cms-australia .product-block .product-img{max-height:350px;max-width: none;width: auto;} */
 .cms-australia .product-block .product-img{max-height:350px;max-width: 100%;width: auto;}
-.cms-australia .social-connect{background-color: #000;height: 153px;font-size: 26px;}
+.cms-australia .social-connect{background-color: #000;font-size: 26px;padding-bottom: 35px;}
 .cms-australia .social-connect p{color: #fff;margin:0;font-size: 26px;font-family: "FlySans-", Arial, sans-serif;display:inline-block;float:left;line-height: 30px;padding-top: 5px;}
 /* Author - GT start */
 .cms-australia .social-connect p.left.getUpdates{margin-left:13px;}
@@ -108,7 +110,8 @@ iframe{border:none;}
 .cms-australia .app-content h3{font-family: "FlySans-Medium",Helvetica,Arial,sans-serif;font-size: 45px;line-height: 1;color: #000000;margin: 3px 0 8px;}
 .cms-australia .au-r6-container .app-section p,.cms-australia .au-r6-container .app-section p{color:#333;font-size: 18px;line-height: 1;font-family: "FlySans-Light", Arial, sans-serif;margin-bottom:20px;}
 .cms-australia .app-content{width:75%;margin:0 auto;padding:60px 60px 60px 0px;}
-.apps-button{max-width:150px;}
+.cms-au .apps-button{max-width:150px;}
+.apps-button{width: 100%;}
 .cms-australia .plr15 .btn-custom{padding: 16px 32px 17px;font-family: "FlySans-", Arial, sans-serif;font-weight: 600;font-size: 16px;border: 0;margin: 0 0 10px;
     border-width: 0;text-decoration: none;display: inline-block;float: left;clear:both;}
 /* Author - GT End */
@@ -183,7 +186,7 @@ ul.product-grid li .product-title-container{min-height:50px;}
 .product-media-desc-row .product_description p{color: #333;font-size:20px;}
 .product-media-desc-row .product_description h3{color: #78be20;font-size: 36px;margin-top: 30px;margin-bottom: 10px;}
 .block-related .abs.related-icon{top: -40px;left: 50px;}
-.block-related.product-promotion h2{font-family: FlySans-SemiBold,Arial,sans-serif;}
+.block-related.product-promotion h2{font-family: FlySans-SemiBold,Arial,sans-serif;margin-left: 0;padding: 3% 0 2.5% 0;margin-top: 0;margin-bottom: 0;}
 
 /*--------------------CART&CHECKOUT--------------------*/
 .checkout-cart-index input.qty, .checkout-cart-index .cart-table .btn-update{float:left;}
