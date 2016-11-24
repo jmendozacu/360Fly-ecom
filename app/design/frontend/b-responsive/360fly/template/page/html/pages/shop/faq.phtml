@@ -10,10 +10,6 @@
 <?php 
 	$isProd = count(Mage::getModel('core/variable')->loadByCode('is_production')->getValue('plain')) > 0 ? (int) Mage::getModel('core/variable')->loadByCode('is_production')->getValue('plain') : 0;
 	//var_dump($isProd);exit;
-	
-	if($isProd){
-		echo '<h1>This is Production</h1>';
-	}
 ?>
 <div class="main-container faq faq-container">
     <h1 class="container"> Frequently Asked Questions </h1>
