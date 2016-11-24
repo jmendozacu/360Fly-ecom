@@ -1,13 +1,23 @@
 <?php
 /*Write conditions here to switch video source based on request URL*/
-$videoId = 'uF6tYRPqoo0';
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$videoId = $mediaUrl."videos/promotional_4k.mp4";
+$videoPoster = "https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg";
 if(count($this->videoid)> 0){
     $videoId = $this->videoid;
 }
+
+if(count($this->videoposter) >0){
+	$videoPoster =   $this->videoposter;
+}
+$_product = $this->getProduct();
+ //echo $_product;
+//$productResolution = strtolower($_product->getAttributeText('camera_resolution'));
+//echo $productResolution;
 ?>
 
 
-<div class="video-player" id="player">
+<div class="video-player hide-on-uncompatible-browser" id="player">
     <div class="video-container">
         <div id="video">
             <section id="one-up">
@@ -20,9 +30,9 @@ if(count($this->videoid)> 0){
                         <!-- <div class="swipe-icon-yt">
                         </div> -->
                     </div>
-                    <video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
-					poster="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg" data-setup="{}" crossorigin="anonymous">
-						<source src="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_4k.mp4" type='video/mp4'>
+					<video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
+					poster="<?php echo $videoPoster; ?>" data-setup="{}" >
+						<source src="<?php echo $videoId;?>" type='video/mp4'>
 					</video>
                     <!-- <div class="youtube-player" id="player-yt" data-id="<?php //echo $videoId;?>"></div> -->
                 </div>

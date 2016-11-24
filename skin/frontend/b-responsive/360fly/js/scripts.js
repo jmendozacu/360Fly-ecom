@@ -21,7 +21,11 @@ jQuery(window).resize(function() {
     adjustBioLeftWidth();
 });
 jQuery(document).ready(function(a) {
-
+    if(navigator.userAgent.toLowerCase().indexOf('android') > -1){
+		jQuery(".hide-on-uncompatible-browser").css("display", "none");
+		jQuery(".show-on-uncompatible-browser").css("display", "block");
+		jQuery(".hide-android").css("display", "none");
+	}
     adjustBioLeftWidth();
 
     /*Community Pages DropDown toggle*/

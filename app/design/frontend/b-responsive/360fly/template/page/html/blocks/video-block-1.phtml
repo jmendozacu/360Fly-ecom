@@ -1,9 +1,10 @@
 <?php
 /*Write conditions here to switch video source based on request URL*/
-$videoId = '6Hi1VkNPJHA';
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$videoId = $mediaUrl."videos/promotional_4k.mp4";
 ?>
 
-<div class="video-player" id="player">
+<div class="video-player hide-on-uncompatible-browser" id="player">
     <div class="video-container">
         <div id="video">
             <section id="one-up">

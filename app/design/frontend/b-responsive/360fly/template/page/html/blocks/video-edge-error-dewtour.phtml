@@ -1,0 +1,52 @@
+<?php
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+
+$baseUrl = $this->getBaseUrl();
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$skinUrl = $this->getSkinUrl();
+
+?>
+<div class="blackbg show-on-uncompatible-browser edge-dewtour">
+	<div class="container-fluid my-videos-container">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 recent-video no-gutter"  style="height: auto;">
+			<?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-dewtour.phtml')->toHtml(); ?>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 desktop-degradation text-center">
+				<div class="player-degradation" id="video">
+					<div class="player-degradation-container">
+						<div class="degradation-message">
+							<h1>To experience our interactive 360 video, please download <a href="https://www.google.com/chrome/browser/desktop/" target="_blank">Google Chrome</a> for desktop.</h1>
+							<p>Or download our mobile apps.</p>
+							<a href="https://itunes.apple.com/us/app/360fly/id1030962364?mt=8" class="hide-android"><img style="width:200px;" src="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/app_store.6be9f2090f2e.svg"></a>
+							<span>&nbsp;</span>
+							<a href="https://play.google.com/store/apps/details?id=com.fly360.fly360" class="hide-iphone"><img style="width:200px;" src="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/google_play.4a99811c9b5b.svg"></a>
+						</div>
+					</div>
+					<img class="player-controls" src="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/player-controls.276add8af0ff.png">
+				</div>
+			</div>
+		</div>
+		<!-- <div id="data" data-flyapiurl="https://api.360fly.com" data-token="" data-uuid="miLMYBSterEr5DYw27omfi"></div> -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 off-road">
+			<h4 style="color: #999;font-size:14px;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">*For the best playback experience, we recommend that you close other running applications and downloads.</h4>
+
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+			  <h2>Off-Road in 360°</h2>
+			</div>
+			<div class="col-sm-3 col-md-3 col-lg-3">
+				  <div class="video-author">
+					<p style="color: #fff;" class="show-for-medium-up">
+					 360fly
+					  <img src="https://d3a58tk6tptbgs.cloudfront.net/static/public/img/fly.png" class="circle" alt="Avatar image for 360 video camera user">
+				  </p>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/dewtour-videojs.phtml')->toHtml(); ?>

@@ -53,28 +53,30 @@ $skinUrl = $this->getSkinUrl();
 		</div>
 		<div class="ls-slide app-slide" data-ls="transition2d: 5; timeshift: -1000;">
 			<div class="i">
-			<div class="ls-l" data-ls="offsetxin: 0; offsetyin: 0;" style="left: 50%; top: 50%; height: 100%; width: 100%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-03/bg.jpg) no-repeat center; background-size: cover;">
+				<div class="ls-l" data-ls="offsetxin: 0; offsetyin: 0;" style="left: 50%; top: 50%; height: 100%; width: 100%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-03/bg.jpg) no-repeat center; background-size: cover;">
 
+				</div>
+				<!-- parallax layers -->
+				<img src="<?php echo $skinUrl;?>images/layerslider/slide-03/devices.png" data-ls="offsetxin: right; fadein: true; scalexin: 800; scaleyin: 800;" style="left: 430px" class="ls-l" alt="iOs Android Windows Devices" title="iOs Android Windows Devices" />
+				<!-- text layers -->
+				<h2 class="ls-l" data-ls="offsetyin: bottom; offsetyout: bottom;" style="top: 28%; left: 0px; width: 400px; white-space: nowrap;font-size: 73px;line-height: 71px;color:#78BE20;padding: 0px 10px;">LIVE VIDEO<br> THAT'S<br> TRULY ALIVE.</h2>
+				<p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 57%; left: 0px; width: 400px;font-size:30px;line-height: 33px;color:#666666;padding: 0px 10px;">With your 360fly camera, the free Livit mobile app and a smartphone, you have the power to live stream interactive 360&#176; video to family and friends around the globe.</p>
+				<div class="ls-l hidden-xs mobile_img app-links" data-ls="offsetyin: bottom; delayin: 400; offsetyout: bottom;" style="top: 83%;">
+					<a href="https://itunes.apple.com/us/app/livit-live-video-and-vr/id896514048?mt=8" class="apple-btn-link" target="_blank">
+						<img src="<?php echo $skinUrl;?>images/layerslider/slide-03/ios-app-btn.png" class="img-responsive" style="width: 133px;" alt="App Store" title="App Store!" />
+					</a>
+					<a href="https://play.google.com/store/apps/details?id=com.livitnow.livit&hl=en" class="google-btn-link" target="_blank">
+						<img src="<?php echo $skinUrl;?>images/layerslider/slide-03/android-app-btn.png" class="img-responsive" alt="Google play" title="Google Play!" />
+					</a>
+				</div>
+				<img class="ls-l hidden-lg hidden-md hidden-sm" data-ls="offsetyin: bottom; delayin: 400; offsetyout: bottom;" style="top: 83%; left: 10px;" src="<?php echo $skinUrl;?>images/layerslider/slide-03/ios-app-btn.png" class="img-responsive" alt="App Store"  title="App Store"/>
+				<img class="ls-l hidden-lg hidden-md hidden-sm" data-ls="offsetyin: bottom; delayin: 400; offsetyout: bottom;;" style="top: 83%; left: 153px;" src="<?php echo $skinUrl;?>images/layerslider/slide-03/android-app-btn.png" class="img-responsive" alt="Google Play" titler="Google Play" />
 			</div>
-			<!-- parallax layers -->
-			<img src="<?php echo $skinUrl;?>images/layerslider/slide-03/devices.png" data-ls="offsetxin: right; fadein: true; scalexin: 800; scaleyin: 800;" style="left: 430px" class="ls-l" alt="iOs Android Windows Devices" title="iOs Android Windows Devices" />
-			<!-- text layers -->
-			<h2 class="ls-l" data-ls="offsetyin: bottom; offsetyout: bottom;" style="top: 28%; left: 0px; width: 400px; white-space: nowrap;font-size: 73px;line-height: 71px;color:#78BE20;padding: 0px 10px;">LIVE VIDEO<br> THAT'S<br> TRULY ALIVE.</h2>
-			<p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 57%; left: 0px; width: 400px;font-size:30px;line-height: 33px;color:#666666;padding: 0px 10px;">With your 360fly camera, the free Livit mobile app and a smartphone, you have the power to live stream interactive 360&#176; video to family and friends around the globe.</p>
-			<div class="ls-l hidden-xs mobile_img app-links" data-ls="offsetyin: bottom; delayin: 400; offsetyout: bottom;" style="top: 83%;">
-				<a href="https://itunes.apple.com/us/app/livit-live-video-and-vr/id896514048?mt=8" class="apple-btn-link" target="_blank">
-					<img src="<?php echo $skinUrl;?>images/layerslider/slide-03/ios-app-btn.png" class="img-responsive" style="width: 133px;" alt="App Store" title="App Store!" />
-				</a>
-				<a href="https://play.google.com/store/apps/details?id=com.livitnow.livit&hl=en" class="google-btn-link" target="_blank">
-					<img src="<?php echo $skinUrl;?>images/layerslider/slide-03/android-app-btn.png" class="img-responsive" alt="Google play" title="Google Play!" />
-				</a>
-			</div>
-			<img class="ls-l hidden-lg hidden-md hidden-sm" data-ls="offsetyin: bottom; delayin: 400; offsetyout: bottom;" style="top: 83%; left: 10px;" src="<?php echo $skinUrl;?>images/layerslider/slide-03/ios-app-btn.png" class="img-responsive" alt="App Store"  title="App Store"/>
-			<img class="ls-l hidden-lg hidden-md hidden-sm" data-ls="offsetyin: bottom; delayin: 400; offsetyout: bottom;;" style="top: 83%; left: 153px;" src="<?php echo $skinUrl;?>images/layerslider/slide-03/android-app-btn.png" class="img-responsive" alt="Google Play" titler="Google Play" />
 		</div>
 	</div>
 </div>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-a.phtml')->toHtml(); ?>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-edge-error.phtml')->toHtml(); ?>
 <div class="video_background globe">
   <div class="container wrapper-width no-gutter">
 		<div class="col-sm-12 col-md-7 col-lg-7 text-center" id="globe-wrap">
