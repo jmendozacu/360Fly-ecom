@@ -107,14 +107,14 @@ if($_productspecialprice){
     <!-- <h4 class="z-tagline">The World’s Smartest<br class="z-deskBreak"> 360º <?php //echo $cameraQuality;?> Camera.</h4> -->
 	<h4 class="z-tagline"><?php echo $_producttagline; ?></h4>
 
-    <h1 class="z-pricingTop"><small>$</small><span class="strikeSpan"><?php echo $_productprice; ?></span>&nbsp;&nbsp;<span class="z-salePriceTop"><small>$</small><?php echo $_productspecialprice; ?></span></h1>
-    <div class="z-saleTop">
-    <h5>SALE</h5>
-    </div>
+    <h1 class="z-pricingTop"><small>$</small><!--<span class="strikeSpan">--><?php echo $_productprice; ?><!--</span>&nbsp;&nbsp;<span class="z-salePriceTop"><small>$</small><?php //echo $_productspecialprice; ?></span>--></h1>
+    <!--<div class="z-saleTop">
+     <h5>SALE</h5>
+ </div>-->
     <?php if (!$this->hasOptions()):?>
         <div class="add-to-box">
             <?php if($_product->isSaleable()): ?>
-                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" id="btn-cart" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom m0" id="btn-cart" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
             <?php endif; ?>
         </div>
     <?php else:?>
@@ -126,8 +126,8 @@ if($_productspecialprice){
             <?php echo $this->getChildHtml('addto') ?>
         <?php endif;?>
     <?php endif; ?>
-    <h5 class="z-promo50">Promotion valid only for residents of the fifty </br>
-    (50) United States and the District of Columbia.</h5>
+    <!-- <h5 class="z-promo50">Promotion valid only for residents of the fifty </br>
+    (50) United States and the District of Columbia.</h5> -->
 
     <a class="z-access" href="#">View compatible accessories</a>
 
@@ -490,7 +490,7 @@ if($_productspecialprice){
 
                 <div class="zm-slide">
                     <h3>SIZE AND WEIGHT</h3>
-                    <span>Dimensions</span></br>360fly 4K camera (61mm sphere)PowerCradle (46mm x 12mm)</br></br>
+                    <span>Dimensions</span></br>360fly 4K camera (61mm sphere)</br>PowerCradle (46mm x 12mm)</br></br>
                     <span>Weight</span></br>~172g
                 </div>
 
@@ -566,8 +566,8 @@ if($_productspecialprice){
 
                 <div class="zm-slide">
                     <h3>ENVIRONMENTAL</h3>
-                    <span>Water-Resistant</span></br>1M (3Ft)</br></br>
-                    <span>Dust-Resistant</span></br>IP6X (without Mic Plug)</br></br>
+                    <span>Water-Resistant</span></br>1m (3')</br></br>
+                    <span>Dust-Resistant</span></br>IP6X</br></br>
                     <span>Shock-Resistant</span></br>Up to 1.5 M</br></br>
                     <span>Operating Temperature</span></br>-20° to 40° C / -4° to 104° F</br></br>
                     <span>Storage Temperature</span></br>-20° to 60° C / -4° to 140° F</br></br>
@@ -729,13 +729,13 @@ if($_productspecialprice){
 						<h1>360fly <span class="cam-quality"><?php echo $cameraQuality; ?></span></br>VIDEO CAMERA</h1>
                         <h4 class="<?php echo $_hide4ktechspecs; ?>">The World's Smartest <br class="z-deskBreak">360° <?php echo $cameraQuality; ?> Camera.</h4>
                         <h4 class="<?php echo $_hidehdtechspecs; ?>">Immersive 360º<br class="z-deskBreak">Video For All.</h4>
-                        <h1 class="pricing"><small>$</small><span class="strikeSpan"><?php echo $_productprice; ?></span>&nbsp;&nbsp;<span class="salePrice"><small>$</small><?php echo $_productspecialprice;?></span></h1>
-                        <h6 class="z-saleTop">SALE</h6>
+                        <h1 class="pricing"><small>$</small><!--<span class="strikeSpan">--><?php echo $_productprice; ?><!--</span>&nbsp;&nbsp;<span class="salePrice"><small>$</small><?php //echo $_productspecialprice;?></span>--></h1>
+                        <!-- <h6 class="z-saleTop">SALE</h6> -->
                         <?php if($_product->isSaleable()): ?>
-                            <button type="button" id="btn-cart" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom-inverse" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <button type="button" id="btn-cart" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom-inverse m0" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                         <?php endif; ?>
-                        <h5>Promotion valid only for residents of the fifty </br>
-                        (50) United States and the District of Columbia.</h5>
+                        <!-- <h5>Promotion valid only for residents of the fifty </br>
+                        (50) United States and the District of Columbia.</h5> -->
                 </div>
 
                 <div class="col-sm-1 box-gutter"></div>
