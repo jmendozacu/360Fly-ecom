@@ -7,7 +7,9 @@
 .clearfix:after, .cf:after { clear:both; }
 .clearfix, .cf { zoom:1; }
 .hide-hd-specs, .hide-4k-specs{display:none;}
-
+/* bewlo css applied for non-sale duration - kindly remove mt0 class from button from view-camera-product.phml.*/
+.btn.btn-custom.m0{margin: 0;}
+.btn.btn-custom-inverse.m0{margin:0;}
 h2.z-std{
     font-family:"FlySans-SemiBold", Arial, sans-serif;
     margin: 0 auto;
@@ -745,20 +747,29 @@ h1.pricing {
     font-family: 'FlySans-', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+    /* bewlo css for non sale duration */
+    font-weight: bold;
 }
 
 .pricing small {
     vertical-align: top;
     color: white;
+    /* bewlo css for non sale duration */
+    font-weight: bold;
 }
 
 h1.z-pricingTop {
     color: #333333;
+    /* below css applied for non-sale duration */
+    font-weight: bold;
+    font-family: 'FlySans-Medium';
 }
 
 .z-pricingTop small {
     vertical-align: top;
     color: #333333;
+    /* below css applied for non-sale duration */
+    font-weight: bold;
 }
 .z-pricing-custom{font-size: 30px;font-weight: bold;font-family: 'FlySans-Medium';}
 .btn.btn-custom.mt0{margin-top: 0;}
@@ -790,7 +801,7 @@ h1.z-pricingTop {
 
 #btn-cart {
     border: none;
-    margin-right: -10px;
+    /*margin-right: -10px;*/ /* this is comment for non-sale duration. */
 }
 
 @media screen and (max-width:767px){

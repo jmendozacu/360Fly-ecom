@@ -14,6 +14,13 @@
 				console.log(player.el().offsetWidth);
             });
         });
+        player.on('error', function(){
+			jQuery(".hide-on-uncompatible-browser").css("display", "none");
+			jQuery(".show-on-uncompatible-browser").css("display", "block");
+			if(/iPhone/i.test(navigator.userAgent) ) {
+				jQuery(".hide-iphone").css("display", "none");
+			}
+		});
         var videoElement = document.getElementById("video_4k");
         var width = videoElement.offsetWidth;
         var height = videoElement.offsetHeight;
