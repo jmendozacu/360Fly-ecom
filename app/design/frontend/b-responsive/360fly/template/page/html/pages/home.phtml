@@ -16,62 +16,6 @@ $isCyberMonday = count(Mage::getModel('core/variable')->loadByCode('is_productio
 
 <div class="slider-wrapper">
 	<div id="layerslider" style="width: 100%; height: 720px;">
-		<?php if($isCyberMonday): ?>
-		<div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
-			<div class="ls-l" data-ls="offsetxin: 0; offsetyin: 0;" style="left: 50%; top: 50%; height: 100%; width: 100%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-08/background.png) no-repeat; background-size: cover;"></div>
-			<!-- parallax layers -->
-			<div data-ls="offsetyin: top;" style="left: 50%; top: 50%; height: 100%; width: 100%; min-width: 1966px; background: url(<?php echo $skinUrl;?>images/layerslider/slide-08/bows-left.png) no-repeat; background-position: left top" class="ls-l" alt="" ></div>
-			<div data-ls="offsetyin: top;" style="left: 50%; top: 50%; height: 100%; width: 100%; min-width: 1966px; background: url(<?php echo $skinUrl;?>images/layerslider/slide-08/bows-right.png) no-repeat; background-position: right top" class="ls-l" alt="" ></div>
-			<!-- this should be shown only on smaller devices under 1020ish px's. I know the new site is using bootstrap so just using the hide and show classes should work-->
-			<div data-ls="offsetyin: top;" style="left: 50%; top: 50%; height: 100%; width: 100%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-08/bows.png) no-repeat; background-size: contain" class="ls-l hide-slider" alt="" ></div>
-
-			<img src="<?php echo $skinUrl;?>images/layerslider/slide-08/big-text.png" data-ls="offsetxin: right; fadein: true; scalexin: 200; scaleyin: 200;" style="top:44%; left: 10px; width: 819px" class="ls-l cybermonday-banner-img" alt="" />
-			<!--text layers -->
-			<h2 class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 19%; left: 146px; width: 980px; font-size:41px; line-height: 45px; color: #333333 !important;"><strong>MISS NOTHING</strong> FOR LESS THIS HOLIDAY.</h2>
-			<p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 70%; left: 50%; width: 980px; text-align: center; font-size:27px; line-height: 35px; color: #333333;">NOVEMBER 21<sup>st</sup> - NOVEMBER 28<sup>th</sup></NOFRAMES></p>
-			<!-- overlay layers -->
-			<img src="<?php echo $skinUrl;?>images/layerslider/slide-08/camera.png" data-ls="offsetxin: right; fadein: true; scalexin: 200; scaleyin: 200;" style="top:65%; left: 607px; width: 645px" class="ls-l" alt="" />
-			<!-- footer -->
-		    <a href="<?php $baseUrl; ?>shop/cameras" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 50%; top: 82%; color: #ffffff; line-height: 51px; font-size: 27px;padding: 0 56px; text-align: center; white-space: nowrap; width: 127px" class="cybermon-shopnow ls-l button round btn-custom">SHOP NOW</a>
-		    <p class="cybermon-disclaimer ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 90%; left: 50%; width: 980px; color: #868686; text-align: center; font-size:15px; line-height: 18px;">*Promotion valid only for residents of the fifty (50)<br> United States and the District of Columbia.</p>
-		</div>
-		<?php endif; ?>
-		<!-- Promo Slider start -->
-		<?php if($isBlackFriday): ?>
-		<div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
-			<div class="ls-l" data-ls="offsetxin: 0; offsetyin: 0;" style="left: 50%; top: 50%; height: 100%; width: 100%; background-color: #000000; background-size: cover;"></div>
-			<!-- parallax layers -->
-			<img src="<?php echo $skinUrl;?>images/layerslider/flyday-slider/text-big-asterik.png" data-ls="offsetxin: right; fadein: true; scalexin: 200; scaleyin: 200;" style="top:39%; left: 50%; width: 880px" class="ls-l" alt="" />
-			<img src="<?php echo $skinUrl;?>images/layerslider/flyday-slider/snow.png" data-ls="offsetyin: top;" style="left: 50%; top: 50%; height: 100%; width: 100%; background-size: cover;" class="ls-l" alt="" />
-			<!-- text layers -->
-			<h2 class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 16%; left: 50%; width: 980px; text-align: center; font-size:36px; line-height: 45px; color: #ffffff !important;font-weight: normal;text-transform: uppercase;font-family: 'FlySans-Light'">Black <strong style="font-style: italic;">&lsquo;FLYDAY&rsquo;</strong>&nbsp;&nbsp;has come early this year</h2>
-			<p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 64%; left: 50%; width: 980px; text-align: center; font-size:27px; line-height: 35px; color: #cccccc;">NOVEMBER 21<sup>st</sup> - NOVEMBER 28<sup>th</sup></NOFRAMES></p>
-			<!-- overlay layers -->
-			<img src="<?php echo $skinUrl;?>images/layerslider/flyday-slider/camera-new.png" data-ls="offsetxin: right; fadein: true; scalexin: 200; scaleyin: 200;" style="top:33%; left: 285px; width: 675px" class="ls-l" alt="" />
-			<!-- footer -->
-		    <a href="<?php echo $baseUrl; ?>shop/cameras" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 50%; top: 75%; color: #000000; line-height: 51px; font-size: 27px;padding: 0 56px; text-align: center; white-space: nowrap; width: 127px" class="ls-l button round  btn-custom">SHOP NOW</a>
-		    <p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 84%; left: 50%; width: 980px; color: #cccccc; text-align: center; font-size:15px; line-height: 18px;">*Promotion valid only for residents of the fifty (50)<br> United States and the District of Columbia.</p>
-		</div>
-		<?php endif; ?>
-		<!--div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
-            <div class="ls-l" data-ls="offsetxin: 0; offsetyin: 0;" style="left: 50%; top: 50%; height: 100%; width: 100%; background: url(<?php //echo $skinUrl;?>images/layerslider/slide-07/background.jpg) no-repeat center; background-size: cover;"></div>
-
-            <img src="<?php //echo $skinUrl;?>images/layerslider/slide-07/All_text.png" data-ls="offsetxin: right; fadein: true; scalexin: 100; scaleyin: 100;" style="top:50%; left: 144px; width: 612px" class="ls-l" alt="" />
-            <img src="<?php //echo $skinUrl;?>images/layerslider/slide-07/camera_w-shadow.png" data-ls="offsetxin: right; fadein: true; scalexin: 200; scaleyin: 200;" style="top:214px; left: 229px; width: 206px" class="ls-l" alt="" />
-
-            <p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 40%; left: 0px; width: 980px; text-align: right; font-size:1.75em; line-height: 26pt;">In celebration of <br>reaching <strong style="font-style:italic;">20 million</strong> <br>360fly video views, <br>we’re giving away <br>one 360fly 4K camera <br>a day for <strong>20 days</strong> from <br>the 12th of October.<br><span style="font-size:1.60em; color: #78be20 !important; font-family: 'FlySans-Bold', Arial, sans-serif;top:9pt;position:relative;">#fly20420</span></p>
-          	<a href="<?php //echo $baseUrl;?>fly20420/" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 665px; top: 74%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 60px; text-align: center; white-space: nowrap; width: 195px" class="ls-l button roundbtn btn-custom">ENTER NOW!</a>
-      </div-->
-		<!-- <div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
-			<div class="ls-l" data-ls="offsetxin: 0; offsetyin: 0;" style="left: 50%; top: 50%; height: 100%; width: 100%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-05/bg.jpg) no-repeat center; background-size: cover;">
-			</div>
-			<img src="<?php echo $skinUrl;?>images/layerslider/slide-05/camera.png" data-ls="offsetxin: right; fadein: true; scalexin: 800; scaleyin: 800;" style="left: 365px; top: 57%;" class="ls-l" alt="360 Camera" title="360 Camera" />
-			<h2 class="ls-l" data-ls="offsetyin: bottom; offsetyout: bottom;" style="top: 43%; left: 0px; width: 550px; white-space: nowrap; text-align: right; font-size: 126px; line-height: 160px; color: #76bd1d !important; vertical-align: top; font-family: 'FlySans-Bold', Arial, sans-serif;">IT'S BACK!</h2>
-			<h3 class="ls-l" data-ls="offsetyin: bottom; offsetyout: bottom;" style="top: 54%; left: 0px; width: 550px; white-space: nowrap; text-align: right; font-size: 39px; line-height: 60px; color: #000000  ; ">THE 360fly HD $<strong>299</strong> DEAL IS BACK</h3>
-			<p class="ls-l" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="top: 60%; left: 0px; width: 550px; text-align: right; font-size: 22px; line-height: 26px; color: #000000">For a limited time only.</p>
-			<a href="<?php echo $baseUrl;?>cameras" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 50%; top: 84%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 70px;border-radius: 50px;background: #76bd1d; white-space: nowrap; width:150px;" class="ls-l button round hidden-xs slider-buy-now btn">BUY NOW</a>
-			<a href="<?php echo $baseUrl;?>shop" data-ls="offsetyin: bottom; delayin: 200; offsetyout: bottom;" style="left: 42%; top: 70%; color: #000000; line-height: 71px; font-size: 38px;padding: 0 70px; white-space: nowrap; width:150px;" class="ls-l button round hidden-lg hidden-md hidden-sm btn-custom slider-buy-now btn">BUY NOW</a>
-		</div> -->
 		<div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
 			<div class="ls-l ls-background" style="left: 50%; top: 50%; height: 100%; width: 120%; background: url(<?php echo $skinUrl;?>images/layerslider/slide-01/bg.jpg) no-repeat center; background-size: cover;" data-ls="parallaxlevel: 10;">
 			</div>
