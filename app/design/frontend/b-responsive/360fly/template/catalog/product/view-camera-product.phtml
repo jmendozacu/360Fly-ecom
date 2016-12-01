@@ -892,3 +892,18 @@ if($_productspecialprice){
 			$('.product-slider').slick('unslick');
         });
     </script>
+<?php 
+	$productFormattedPrice = Mage::getModel('directory/currency')->format(
+		$_product->getFinalPrice(), 
+		array('display'=>Zend_Currency::NO_SYMBOL), 
+		false
+	);
+	$currencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+?>
+<script>
+fbq('track', 'ViewContent', {
+value: <?php echo $productFormattedPrice;?>,
+currency: '<?php echo $currencyCode;?>'
+});
+</script>
