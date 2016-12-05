@@ -943,9 +943,11 @@ h1.z-pricingTop {
     }
 
     .z-tagline {
-        font-size: 22px;
+        /*Commented by prashant 0n 02/12/2016 as per defects.pptx sheet*/
+        /*font-size: 22px;
         margin-left: -24px;
-        white-space: nowrap;
+        white-space: nowrap;*/
+        font-size: 17px;
     }
 }
 
@@ -967,14 +969,22 @@ h1.z-pricingTop {
     cursor: pointer;
 }
 .custom-sale{font-size: 20px;color: #ff872f !important;font-weight: bold;text-transform: uppercase;}
+
 @media only screen and (max-width: 400px){
     .z-mobileWrap{width: auto;}
-    .z-tagline .z-deskBreak{display: block;}
+    /*.z-tagline .z-deskBreak{display: block;}*/ /*Commented by prashant 0n 02/12/2016 as per defects.pptx sheet*/
     .custom-sale{font-size: 20px;}
+    /*Done by prashant 0n 02/12/2016 as per defects.pptx sheet*/
+    h2.z-std{font-size:1.6em;}
+    .z-last p {font-size: 1.3em;}
+    li.boxList p{margin:0 0 5px;}
+    .product-slider{margin-bottom:0px;}
 }
+
 .mobile.slides h3{color:#78be20;font-family: 'FlySans-';}
 #tab-tech-specs .z-m-slider .keyPoints .zm-slide h3{color: #78be20;font-family: 'FlySans-';}
 h1.z-pricingTop{font-size: 35px;}
+
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .z-product-camera .flex-control-thumbs{width: 100%;float: none;margin-top: -36px;;position: relative;}
     .z-product-camera .flex-control-thumbs li{width: 22%;margin:1%;}
