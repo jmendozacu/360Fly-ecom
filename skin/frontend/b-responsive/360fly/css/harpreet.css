@@ -30,7 +30,7 @@ iframe{border:none;}
 .header-bg-black, .header-bg-green{width:100%;position:absolute;z-index:-1;}
 .customer-account-create .header-bg-black, .customer-account-create .header-bg-green{z-index:0;}
 .header-bg-black{top:0;background:#000000;}
-.header-bg-green{top:95px;background:#7ABC31;}
+.header-bg-green{top:95px;background:#78BE20;}
 .cms-index-index .header, .cms-page-view .header, .catalog-category-view .header,.customer-account-login .header,.customer-account-create .header,.catalog-product-view .header,.customer-account-index .header, body div.wrapper .header{height: calc(95px + 36px);z-index:1;border: none;background-color: transparent;position: relative;top: 0;padding:0;}
 .header-mobile{height: calc(95px + 5px);z-index:1;}
 .header .logo{width:auto;margin:0;padding:0;z-index:3;}
