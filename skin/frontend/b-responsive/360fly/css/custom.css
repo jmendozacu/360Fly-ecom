@@ -293,7 +293,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /*----------------------------------------------------------------------------------------------------------------*/
 
 .product-intro{background-image: url('../images/accessory_header.jpg');background-repeat: no-repeat;background-size: cover;padding: 90px 0;}
-.product-intro h3{font-family: FlySans-SemiBold,helvetica,arial,sans-serif;font-size: 38px;color: #7abc31;line-height: 1;margin:3px 0 8px;}
+.product-intro h3{font-family: FlySans-SemiBold,helvetica,arial,sans-serif;font-size: 38px;color: #78be20;line-height: 1;margin:3px 0 8px;}
 .product-intro .medium-font {font-family: FlySans-Medium,helvetica,arial,sans-serif;color: #fff;line-height:1.2;font-size: 20px;margin:0 0 20px;}
 .product-intro p {line-height: 1.2;color: #ccc;font-size: 20px;margin:0 0 20px;}
 .accessories{max-width: none;width: 100%;background-image: url('../images/facets-fade.png');background-repeat: repeat-x;background-size: inherit;}
@@ -338,7 +338,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .catalog-category-view .cam-name{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;white-space: inherit;margin-top: 0;text-overflow: initial;text-align: left;margin:3px 0 8px;line-height:1.1;font-style: normal;}
 .catalog-category-view .cam-name a:not(.btn){color:#000;}
 .catalog-category-view .products-list .price-box{float:right;margin:0 0 10px;}
-.catalog-category-view .regular-price .price {font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #7abc31;font-weight: normal;}
+.catalog-category-view .regular-price .price {font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #78be20;font-weight: normal;}
 span.older-price {font-weight: bold;color: #666 ;text-decoration: line-through;}
 /* Category Page End - catalog/list.phtml */
 
