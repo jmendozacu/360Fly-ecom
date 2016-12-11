@@ -56,7 +56,7 @@ iframe{border:none;}
 .hamburger-menu .navbar-toggle:hover{background-color: transparent;}
 .abs.header-account-links{right:30px;top:95px;color:#fff;text-transform:uppercase;}
 .submenu.is-shop-page{display:inline-flex;}
-.header #navbar3 ul li.is-shop-page-container a.is-shop-page-anchor, .header #navbar3 ul li.is-community-page-container a.is-community-page-anchor, .header #navbar3 ul li.is-apps-page-container a.is-apps-page-anchor,.is-video-page-anchor{color: #7abc31;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
+.header #navbar3 ul li.is-shop-page-container a.is-shop-page-anchor, .header #navbar3 ul li.is-community-page-container a.is-community-page-anchor, .header #navbar3 ul li.is-apps-page-container a.is-apps-page-anchor,.is-video-page-anchor{color: #78be20;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
 .top-bar-section a.is-shop-page-anchor,.top-bar-section a.is-apps-page-anchor,.top-bar-section a.is-community-page-anchor,.top-bar-section a.is-video-page-anchor{color: #7abc31 !important;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
 
 /*HOMEPAGE STARTS*/
