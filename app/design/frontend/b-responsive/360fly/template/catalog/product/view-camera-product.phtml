@@ -39,8 +39,8 @@
 <?php
  $_productprice = $_product->getPrice();
  $_productprice = str_replace('00', '', $_productprice);
- $_productspecialprice = $_product->getSpecialPrice();
- $_productspecialprice = str_replace('00', '', $_productspecialprice);
+ //$_productspecialprice = $_product->getSpecialPrice();
+ $_productspecialprice = $_productprice - 100;
  $_productInfo;
  $_hidehdtechspecs;
  $_hide4ktechspecs;
@@ -107,10 +107,10 @@ if($_productspecialprice){
     <!-- <h4 class="z-tagline">The World’s Smartest<br class="z-deskBreak"> 360º <?php //echo $cameraQuality;?> Camera.</h4> -->
 	<h4 class="z-tagline"><?php echo $_producttagline; ?></h4>
 
-    <h1 class="z-pricingTop"><small>$</small><!--<span class="strikeSpan">--><?php echo $_productprice; ?><!--</span>&nbsp;&nbsp;<span class="z-salePriceTop"><small>$</small><?php //echo $_productspecialprice; ?></span>--></h1>
-    <!--<div class="z-saleTop">
+    <h1 class="z-pricingTop"><small>$</small><span class="strikeSpan"><?php echo $_productprice; ?></span>&nbsp;&nbsp;<span class="z-salePriceTop"><small>$</small><?php echo $_productspecialprice; ?></span></h1>
+    <div class="z-saleTop">
      <h5>SALE</h5>
- </div>-->
+ </div>
     <?php if (!$this->hasOptions()):?>
         <div class="add-to-box">
             <?php if($_product->isSaleable()): ?>
@@ -126,8 +126,8 @@ if($_productspecialprice){
             <?php echo $this->getChildHtml('addto') ?>
         <?php endif;?>
     <?php endif; ?>
-    <!-- <h5 class="z-promo50">Promotion valid only for residents of the fifty </br>
-    (50) United States and the District of Columbia.</h5> -->
+     <h5 class="z-promo50">Promotion valid only for residents of the fifty </br>
+    (50) United States and the District of Columbia.</h5>
 
     <a class="z-access" href="#">View compatible accessories</a>
 
@@ -729,13 +729,13 @@ if($_productspecialprice){
 						<h1>360fly <span class="cam-quality"><?php echo $cameraQuality; ?></span></br>VIDEO CAMERA</h1>
                         <h4 class="<?php echo $_hide4ktechspecs; ?>">The World's Smartest <br class="z-deskBreak">360° <?php echo $cameraQuality; ?> Camera.</h4>
                         <h4 class="<?php echo $_hidehdtechspecs; ?>">Immersive 360º<br class="z-deskBreak">Video For All.</h4>
-                        <h1 class="pricing"><small>$</small><!--<span class="strikeSpan">--><?php echo $_productprice; ?><!--</span>&nbsp;&nbsp;<span class="salePrice"><small>$</small><?php //echo $_productspecialprice;?></span>--></h1>
-                        <!-- <h6 class="z-saleTop">SALE</h6> -->
+                        <h1 class="pricing"><small>$</small><span class="strikeSpan"><?php echo $_productprice; ?></span>&nbsp;&nbsp;<span class="salePrice"><small>$</small><?php echo $_productspecialprice;?></span></h1>
+                         <h6 class="z-saleTop">SALE</h6>
                         <?php if($_product->isSaleable()): ?>
                             <button type="button" id="btn-cart" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom-inverse m0" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                         <?php endif; ?>
-                        <!-- <h5>Promotion valid only for residents of the fifty </br>
-                        (50) United States and the District of Columbia.</h5> -->
+                         <h5>Promotion valid only for residents of the fifty </br>
+                        (50) United States and the District of Columbia.</h5>
                 </div>
 
                 <div class="col-sm-1 box-gutter"></div>
@@ -892,10 +892,10 @@ if($_productspecialprice){
 			$('.product-slider').slick('unslick');
         });
     </script>
-<?php 
+<?php
 	$productFormattedPrice = Mage::getModel('directory/currency')->format(
-		$_product->getFinalPrice(), 
-		array('display'=>Zend_Currency::NO_SYMBOL), 
+		$_product->getFinalPrice(),
+		array('display'=>Zend_Currency::NO_SYMBOL),
 		false
 	);
 	$currencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
