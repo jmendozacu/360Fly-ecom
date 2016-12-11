@@ -787,7 +787,7 @@ h1.z-pricingTop {
 
 .z-promo50 {
     color: #333333;
-    margin-top: -20px;
+    /*margin-top: -20px;*/
 }
 
 .salePrice, .salePrice small, .productInfo h6{
@@ -796,7 +796,7 @@ h1.z-pricingTop {
 }
 
 .productInfo h6, .productInfo h5 {
-    margin-top: -10px;
+    /*margin-top: -10px;*/
 }
 
 #btn-cart {
@@ -854,6 +854,10 @@ h1.z-pricingTop {
         text-align: right;
         font-size: 20px;
 		padding-right: 6px;
+    }
+
+    .z-saleTop h5{
+       padding-right: 12px;
     }
 
     #btn-cart {
