@@ -436,7 +436,7 @@ img.camera-logo {margin-bottom: 30px;}
 .video-overlay-content .video-overlay-text p b{font-size:42px;}
 .home-video{width: 100%!important;height: 85%!important;position: absolute;}
 .videocontent{position: relative;}
-.vjs-poster{z-index:2;background-size:cover;}
+.vjs-poster{z-index:1;background-size:cover;}
 .video-js .vjs-control-bar .vjs-VR-control{display: none !important;}
 /* Header */
 .header #navbar3 ul li a.cart-color{color:#78be20;}
@@ -520,6 +520,7 @@ img.player-controls {display: inline-block;vertical-align: middle;width: 100%;he
 .edge{background-color: #191919;margin-top: 0;}
 .video-info{font-face: 'Flysans-';font-size: 16px;line-height: 24px;color: #999;}
 .show-on-uncompatible-browser{display: none;}
+.show-on-mobile{display:none;}
 .edge .embed-div{float: right;}
 .edge .video-info{margin:8% 0;}
 .show-on-uncompatible-browser .my-video-info{display: block;}

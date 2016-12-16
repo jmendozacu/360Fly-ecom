@@ -22,9 +22,12 @@ jQuery(window).resize(function() {
 });
 jQuery(document).ready(function(a) {
     if(navigator.userAgent.toLowerCase().indexOf('android') > -1){
-		jQuery(".hide-on-uncompatible-browser").css("display", "none");
+        jQuery(".hide-on-uncompatible-browser").css("display", "none");
 		jQuery(".show-on-uncompatible-browser").css("display", "block");
+		jQuery(".show-on-uncompatible-browser .hide-on-mobile").css("display", "none");
+		jQuery(".show-on-uncompatible-browser .show-on-mobile").css("display", "block");
 		jQuery(".hide-android").css("display", "none");
+		jQuery('.quality-head').css('display','none');
 	}
     adjustBioLeftWidth();
 

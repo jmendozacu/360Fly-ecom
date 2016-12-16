@@ -388,23 +388,47 @@
 
 ?>
 <script>
-    jQuery(document).ready(function($){
-        $('.quality-head li').click(function(){
-            var video_block = $(this).attr('data-id');
-            if(video_block == 'hd'){
-                jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_hd.mp4');
-                var hdposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail_hd.jpg';
-                jQuery('.vjs-poster').css('background-image','url('+ hdposter +')');
+function isIphone(){
+    var check = false;
+    if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+        check = true;
+    };
+    return check;
+}
+jQuery(document).ready(function($){
+    $('.quality-head li').click(function(){
+        var video_block = $(this).attr('data-id');
+        if(video_block == 'hd'){
+            var hdposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail_hd.jpg';
+            if(isIphone()){
+                jQuery('video').attr('poster',hdposter);
+                jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_hd_iphone.mp4');
+                jQuery('.vjs-default-skin .vjs-control-bar').css('bottom','-100px');
             }
-            else if (video_block == '4k'){
+            else{
+                jQuery('.vjs-poster').css('background-image','url('+ hdposter +')');
+                jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_hd.mp4');
+            }
+
+        }
+        else if (video_block == '4k'){
+            var fourkposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg';
+            if(isIphone()){
+                jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_4k_iphone.mp4');
+                jQuery('video').attr('poster',fourkposter);
+                jQuery('.vjs-default-skin .vjs-control-bar').css('bottom','-100px');
+            }
+            else{
                 jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_4k.mp4');
-                var fourkposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg';
                 jQuery('.vjs-poster').css('background-image','url('+ fourkposter +')');
             }
-            $('.quality-head').find('li').removeClass('active');
-            $('.quality-head li.toggle-'+video_block).addClass('active');
-        });
+
+
+        }
+        $('.quality-head').find('li').removeClass('active');
+        $('.quality-head li.toggle-'+video_block).addClass('active');
     });
+});
 </script>
 <!-- <script>
     jQuery(document).ready(function($){
