@@ -79,7 +79,7 @@ The default control bar that is a container for most of the controls.
   /* Height includes any margin you want above or below control items */
   height: 3.4em;
   /* background-color-with-alpha */
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 1);
 }
 /* Show the control bar only once the video has started playing */
 .vjs-default-skin.vjs-has-started .vjs-control-bar {
@@ -88,7 +88,7 @@ The default control bar that is a container for most of the controls.
 
   visibility: visible;
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 1);
   /* transition */
   -webkit-transition: visibility 0.1s, opacity 0.1s;
   -moz-transition: visibility 0.1s, opacity 0.1s;

@@ -47,6 +47,7 @@
  $_producttagline = $_product->getTagline();
  $poster = $skinUrl.'images/camera-products/z-video-thumb-hd.jpg';
  $videoUrl = $mediaUrl.'videos/promotional_4k.mp4';
+ $video_res = "4k";
 if($_productspecialprice){
   $_productspecialpriceformatted =  Mage::helper('core')->currency($_product->getSpecialPrice(),true,false);
 }
@@ -70,6 +71,7 @@ if($_productspecialprice){
         $_hidehdtechspecs = "hide-hd-specs";
         $poster = $skinUrl.'images/camera-products/z-video-thumb.jpg';
         $videoUrl = $mediaUrl.'videos/promotional_4k.mp4';
+        $video_res = "4k";
     ?>
     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('promo-banner-4k')->toHtml() ?>
     <?php elseif($productResolution == 'hd') :?>
@@ -82,6 +84,7 @@ if($_productspecialprice){
             $_hide4ktechspecs = "hide-4k-specs";
             $poster = $skinUrl.'images/camera-products/z-video-thumb-hd.jpg';
             $videoUrl = $mediaUrl.'videos/promotional_hd.mp4';
+            $video_res = "hd";
         ?>
     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('promo-banner-hd')->toHtml() ?>
     <?php endif; ?>
@@ -163,7 +166,7 @@ if($_productspecialprice){
                                         </div> -->
                                     </div>
                                     <video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
-                					poster="<?php echo $poster;?>" data-setup="{}">
+                					poster="<?php echo $poster;?>" data-setup="{}" video-res="<?php echo $video_res;?>">
                 						<source src="<?php echo $videoUrl;?>" type='video/mp4'>
                 					</video>
                                     <!-- <div class="youtube-player" id="player-yt" data-id=""></div> -->
