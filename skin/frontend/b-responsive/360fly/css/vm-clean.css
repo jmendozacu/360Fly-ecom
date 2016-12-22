@@ -121,7 +121,7 @@ h2.z-std {
 /* Tabs - Desktop */
 
 .z-tabs{
-    border-bottom: 8px solid #78ba2f;
+    border-bottom: 8px solid #78be20;
     height: 84px;
     background: #f3f3f3 url('../images/camera-products/bg-tabs.png') no-repeat top center;
 }
@@ -148,7 +148,7 @@ h2.z-std {
 
 .z-tab-links a.active,
 .z-tab-links a:hover{
-    background-color: #78ba2f;
+    background-color: #78be20;
     color: #fff;
     text-decoration: none;
 }
@@ -178,7 +178,7 @@ h2.z-std {
     }
 
     a.z-mtab.active{
-        background-color: #76bc1e;
+        background-color: #78be20;
         color: #fff;
         border-bottom: 8px solid #333;
     }

@@ -45,7 +45,7 @@ a:hover, a:focus {color: #67a31c;}
 /* home page end */
 
 /* header-subnavbar start */
-.subnav-360 {background-color: #7abc31;}
+.subnav-360 {background-color: #78be20;}
 .subnav-360 .row {max-width: 980px;margin:0 auto;}
 .subnav-360 .row ul {margin: 0px;}
 /*.right {float: right;}*/
@@ -281,8 +281,8 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .quality-head{z-index: 1;margin:0;padding:0;list-style-type:none;top: 30px;right: 70px;}
 .quality-head li{display:inline-block;width:40px;height:40px;border:2px solid #b1b1b1;border-radius:50%;position:relative;}
 .quality-head button{    background-color: transparent;border: none;color: #b1b1b1;font-size: 18px;line-height: 1;font-weight: normal;font-family:'Flysans-Medium';height: 100%;width: 100%;}
-.quality-head button:hover,.quality-head li:hover,.quality-head li.active{color:#7ABC31;border-color:#7ABC31;}
-.quality-head li.active button{color:#7ABC31;}
+.quality-head button:hover,.quality-head li:hover,.quality-head li.active{color:#78be20;border-color:#78be20;}
+.quality-head li.active button{color:#78be20;}
 /*.quality-head li a{position:absolute;line-height:35px;left: 20%;font-size: 18px;font-family: 'Flysans-Medium';font-weight: bold;color: #b1b1b1;}
 .quality-head li a:hover{text-decoration: none;}*/
 /* video End */
@@ -308,7 +308,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .products h3{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;
     white-space: inherit;margin-top: 0;text-overflow: initial;text-align: left;}
 .products h3 a{color:#333;}
-.products .price_color{font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #7abc31;font-weight: normal;}
+.products .price_color{font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #78be20;font-weight: normal;}
 /*----------------------------------------------------------------------------------------------------------------*/
 /* Shop-360 Accessories End */
 

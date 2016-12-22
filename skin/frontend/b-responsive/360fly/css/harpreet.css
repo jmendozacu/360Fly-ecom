@@ -42,7 +42,7 @@ iframe{border:none;}
 .header #navbar3 ul li a{color:#999999;text-decoration:none;padding: 0 15px;margin: 15px 0;
     border-right:1px solid #999;font-family: 'Flysans-Medium';}
 .header #navbar3 ul li.shopping-cart a{border-right:none;}
-.header #navbar3 ul li a:hover{color:#7ABC31;font-family: 'Flysans-Medium';}
+.header #navbar3 ul li a:hover{color:#78be20;font-family: 'Flysans-Medium';}
 .header li{list-style:none;}
 .header #navbar3 .submenu{left:5px;}
 .header #navbar3 .submenu li a.is-faq-page{color: #ffffff;font-family: 'Flysans-SemiBold';}
@@ -57,7 +57,7 @@ iframe{border:none;}
 .abs.header-account-links{right:30px;top:95px;color:#fff;text-transform:uppercase;}
 .submenu.is-shop-page{display:inline-flex;}
 .header #navbar3 ul li.is-shop-page-container a.is-shop-page-anchor, .header #navbar3 ul li.is-community-page-container a.is-community-page-anchor, .header #navbar3 ul li.is-apps-page-container a.is-apps-page-anchor,.is-video-page-anchor{color: #78be20;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
-.top-bar-section a.is-shop-page-anchor,.top-bar-section a.is-apps-page-anchor,.top-bar-section a.is-community-page-anchor,.top-bar-section a.is-video-page-anchor{color: #7abc31 !important;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
+.top-bar-section a.is-shop-page-anchor,.top-bar-section a.is-apps-page-anchor,.top-bar-section a.is-community-page-anchor,.top-bar-section a.is-video-page-anchor{color: #78be20 !important;font-family: "FlySans-Medium",helvetica,arial,sans-serif;}
 
 /*HOMEPAGE STARTS*/
 video#video_4k_html5_api.vjs-tech{display: block !important;}
