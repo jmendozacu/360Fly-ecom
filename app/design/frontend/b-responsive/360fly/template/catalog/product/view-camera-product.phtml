@@ -109,11 +109,11 @@ if($_productspecialprice){
 
     <!-- <h4 class="z-tagline">The World’s Smartest<br class="z-deskBreak"> 360º <?php //echo $cameraQuality;?> Camera.</h4> -->
 	<h4 class="z-tagline"><?php echo $_producttagline; ?></h4>
-
-    <h1 class="z-pricingTop"><small>$</small><span class="strikeSpan"><?php echo $_productprice; ?></span>&nbsp;&nbsp;<span class="z-salePriceTop"><small>$</small><?php echo $_productspecialprice; ?></span></h1>
+    <h1 class="z-pricingTop"><small>$</small><?php echo $_productprice; ?></h1>
+    <!-- <h1 class="z-pricingTop"><small>$</small><span class="strikeSpan"><?php //echo $_productprice; ?></span>&nbsp;&nbsp;<span class="z-salePriceTop"><small>$</small><?php //echo $_productspecialprice; ?></span></h1>
     <div class="z-saleTop">
      <h5>SALE</h5>
- </div>
+    </div> -->
     <?php if (!$this->hasOptions()):?>
         <div class="add-to-box">
             <?php if($_product->isSaleable()): ?>
@@ -732,8 +732,9 @@ if($_productspecialprice){
 						<h1>360fly <span class="cam-quality"><?php echo $cameraQuality; ?></span></br>VIDEO CAMERA</h1>
                         <h4 class="<?php echo $_hide4ktechspecs; ?>">The World's Smartest <br class="z-deskBreak">360° <?php echo $cameraQuality; ?> Camera.</h4>
                         <h4 class="<?php echo $_hidehdtechspecs; ?>">Immersive 360º<br class="z-deskBreak">Video For All.</h4>
-                        <h1 class="pricing"><small>$</small><span class="strikeSpan"><?php echo $_productprice; ?></span>&nbsp;&nbsp;<span class="salePrice"><small>$</small><?php echo $_productspecialprice;?></span></h1>
-                         <h6 class="z-saleTop">SALE</h6>
+                        <h1 class="pricing"><small>$</small><span><?php echo $_productprice; ?></span></h1>
+                        <!-- <h1 class="pricing"><small>$</small><span class="strikeSpan"><?php //echo $_productprice; ?></span>&nbsp;&nbsp;<span class="salePrice"><small>$</small><?php //echo $_productspecialprice;?></span></h1>
+                         <h6 class="z-saleTop">SALE</h6> -->
                         <?php if($_product->isSaleable()): ?>
                             <button type="button" id="btn-cart" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom-inverse m0" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                         <?php endif; ?>
