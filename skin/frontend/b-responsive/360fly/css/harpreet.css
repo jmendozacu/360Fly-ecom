@@ -161,7 +161,7 @@ ul.community-dropdown{position: relative;top: 0px;left:0px;}
 /*-------------Accessory Product List----------------*/
 .accessory_top_bar .camera_4k_badge{background-position: 100%;}
 .accessory_top_bar .camera_hd_badge{background-position: 0%;}
-ul.product-grid li .product-title-container{min-height:50px;}
+ul.product-grid li .product-title-container{min-height:65px;}
 /*-------------Camera Custom Product View----------------*/
 .camera-view-template .add-to-cart label, .camera-view-template .add-to-cart .qty{display:none;}
 .camera-info .add-to-box{float:right;margin:0;}

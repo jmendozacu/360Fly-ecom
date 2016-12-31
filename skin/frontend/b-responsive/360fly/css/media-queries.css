@@ -75,9 +75,10 @@
 	/* accessories page */
 	.accessory-bar{background-image: url('../images/product_bg.jpg');padding-top: 150px;background-size: contain;background-repeat: repeat;}
 	.page-inner{padding:30px 0;}
-	.accessories label[for=camera_type]{font-size: 16px!important;}
-	.camera_4k_badge, .camera_hd_badge{width:30px;height: 30px;top:-6%;}
-	#camera_type{margin-left:42px;font-size: 15px;}
+	.accessories label[for=camera_type]{font-size: 16px!important;margin-bottom: 15px;}
+	.camera_4k_badge, .camera_hd_badge{width:60px;height: 60px;top:-16%;}
+	.camera_universal_badge{width: 120px;height: 60px;top:-16%;}
+	#camera_type{margin-left:130px;font-size: 15px;margin-bottom:15px;margin-top: 10px;}
 	.head,.price{width: 100%;}
 	.image-container img{width:100%;}
 	.products{min-height:210px;}
@@ -501,3 +502,16 @@
 	.ls-bottom-slidebuttons a.ls-nav-active::after{width: 10px !important;height: 10px !important;}
 	.ls-v5 .ls-bottom-slidebuttons{top: -22px !important;}
 }*/
+@media screen and (max-width: 480px){
+	.user-guide .table tbody tr th{font-size: 12px;}
+	.user-guide label[for=manual_list]{margin-bottom: 15px;}
+	#manual_list{margin-left:0;width:100%;font-size: 16px;}
+	.camera_4k_badge, .camera_hd_badge{width:45px;height: 45px;top:-2%;}
+	.camera_universal_badge{width: 90px;height: 45px;top:-2%;}
+	#camera_type{margin-left:110px;font-size: 15px;margin-bottom:10px;}
+}
+@media screen and (max-width: 400px){
+	.camera_4k_badge, .camera_hd_badge{width:45px;height: 45px;top:-12%;margin-left: 2%;}
+	.camera_universal_badge{width: 90px;height: 45px;top:-12%;margin-left: 2%;}
+	#camera_type{font-size: 15px;text-align: center;margin: 10px auto;display: block;}
+}
