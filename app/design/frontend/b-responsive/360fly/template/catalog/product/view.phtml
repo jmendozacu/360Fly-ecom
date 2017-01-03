@@ -62,15 +62,15 @@
 								<?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
 							</div>
 						<?php endif;?>
-            <?php if($productCompatibility !== 'both'):?>
+            <?php //if($productCompatibility !== 'both'):?>
 						<div class="camera-compatibility">
-							<span>Camera Compatibility: </span><img src="<?php echo $mediaUrl; ?>wysiwyg/<?php echo $productCompatibility ?>-badge.png">
+							<span>Mount System: </span><img src="<?php echo $mediaUrl; ?>wysiwyg/<?php echo $productCompatibility ?>-icon.png">
 						</div>
-                        <?php else: ?>
-                            <div class="camera-compatibility">
+                        <?php //else: ?>
+                            <!-- <div class="camera-compatibility">
     							<span>Camera Compatibility: </span><img src="<?php echo $mediaUrl; ?>wysiwyg/<?php echo $productCompatibility ?>-badge.png">
-    						</div>
-          <?php endif;?>
+    						</div> -->
+          <?php //endif;?>
 						<?php echo $this->getChildHtml('product_type_data') ?>
 					</div>
                 <?php echo ($_product->getCanShowPrice() === false) ? '' : $this->getChildHtml('tierprices'); ?>
