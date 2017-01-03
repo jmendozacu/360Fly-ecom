@@ -298,11 +298,12 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .product-intro p {line-height: 1.2;color: #ccc;font-size: 20px;margin:0 0 20px;}
 .accessories{max-width: none;width: 100%;background-image: url('../images/facets-fade.png');background-repeat: repeat-x;background-size: inherit;}
 .page-inner{padding: 30px;}
-.camera_4k_badge, .camera_hd_badge {width: 41px;height: 40px;display: inline;position: absolute;background-image: url('../images/compatibility/hd-4k.png');background-size: cover;top: -8%;}
-.accessories label[for=camera_type] {color: #666;font-family: FlySans-Medium,helvetica,arial,sans-serif;font-weight: 400;font-size: 20px;text-transform: uppercase;
-    margin-bottom: 20px;}
+.camera_4k_badge {width: 60px;height: 60px;display: inline;position: absolute;background-image: url('../images/compatibility/4k-icon.png');background-size: cover;top: -25%;}
+.camera_hd_badge{width: 60px;height: 60px;display: inline;position: absolute;background-image: url('../images/compatibility/hd-icon.png');background-size: cover;top: -25%;}
+.camera_universal_badge {width: 90px;height: 45px;display: inline;position: absolute;background-image: url('../images/compatibility/universal-icon.png');background-size: cover;top: -8%;}
+.accessories label[for=camera_type] {color: #666;font-family: FlySans-Medium,helvetica,arial,sans-serif;font-weight: 400;font-size: 20px;text-transform: uppercase;margin-bottom: 30px;}
 .accessory_top_bar {width: 100%;border-bottom: 2px solid #cdcdcd;margin-bottom: 20px;}
-#camera_type {font-size: 20px;box-shadow: none;background-color: transparent;background-image: none;border-radius: 5px;margin-left: 55px;}
+#camera_type {font-size: 20px;box-shadow: none;background-color: transparent;background-image: none;border-radius: 5px;margin-left: 130px;}
 .image-container{max-width: 100%;width: 100%;padding: 4px;margin:0 0 20px;background-color: #fff;display: inline-block;}
 .products{min-height:270px;overflow:hidden;margin:0 0 10px;}
 .products h3{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;
@@ -384,7 +385,7 @@ input.qty{width:100px !important;}
 .landing-page-content .table-heading {font-size: 14px;margin-bottom: 5px;font-weight: 400;font-style: normal;color: #fff;padding-top: 10px;margin-top: 10px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;line-height: 1.6;}
 .landing-page-content .no-padding h4{font-size: 26px;margin: 3px 0 8px;color: #fff;}
 .x-hidden{overflow-x: hidden;}
-.compatible-hd{font-family: 'Flysans-SemiBold'};
+.compatible-hd{font-family: 'Flysans-SemiBold'}
 /* Product Desc Page Same as landing Page End */
 
 /* About us Sub menu Navbar Start */
