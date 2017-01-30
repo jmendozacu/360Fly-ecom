@@ -6,7 +6,7 @@ a:active, a:focus, a:hover{text-decoration: none;}
 .btn.btn-custom, .btn.btn-shop , .btn.btn-custom-inverse{width: auto;padding: 6px 35px;margin:10px;}
 .btn.btn-custom{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: #78be20;color: #fff;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
 .btn.btn-shop{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
-.btn-custom:hover{background: #60981a;border-color: #60981a;}
+.btn-custom:hover{background: #78be20;border-color: #78be20;}
 .btn-shop:hover {background-color: #78be20;color: #fff;}
 .btn.btn-custom-inverse{line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: #fff;color: #78be20;border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;margin-bottom: 30px;text-transform: uppercase;}
 .m0p0{margin:0;padding:0;}
@@ -187,6 +187,7 @@ ul.product-grid li .product-title-container{min-height:65px;}
 .product-media-desc-row .product_description h3{color: #78be20;font-size: 36px;margin-top: 30px;margin-bottom: 10px;}
 .block-related .abs.related-icon{top: -40px;left: 50px;}
 .block-related.product-promotion h2{font-family: FlySans-SemiBold,Arial,sans-serif;margin-left: 0;padding: 3% 0 2.5% 0;margin-top: 0;margin-bottom: 0;}
+.z-featured{padding: 0 0 1%;background: #fff url('../images/camera-products/bg-featured.png') no-repeat center 20px;}
 
 /*--------------------CART&CHECKOUT--------------------*/
 .checkout-cart-index input.qty, .checkout-cart-index .cart-table .btn-update{float:left;}
