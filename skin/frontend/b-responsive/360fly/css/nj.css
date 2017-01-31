@@ -132,7 +132,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .cms-index-index .product-slider .product_pod p{margin-bottom:5px!important;}
 .cms-index-index .ls-background {margin-top: 0px !important;}
 .cms-index-index .google-btn-link,.cms-index-index .apple-btn-link{float:left;margin-left:8px;}
-.slider-buy-now:hover{background:#60981a!important;text-decoration:none;}
+.slider-buy-now:hover{background:#78be20!important;text-decoration:none;}
 .inner-div{max-width:980px;}
 .sub-category a{color:white;padding:6px;}
 .sub-category{padding-right:10px;}
@@ -151,7 +151,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .valign h2{margin:0;line-height:2.5625rem;font-weight:900;font-family:"FlySans-Medium", Arial, sans-serif;color:#78be20;}
 .valign h3{color:#666666;margin-bottom:1.25rem;font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:normal;}
 .valign p{font-size:18px;line-height:26px;margin-bottom:2.1875rem;}
-.learn_more_small:hover,.learn_more_large:hover{background-color:#60981a;}
+.learn_more_small:hover,.learn_more_large:hover{background-color:#78be20;}
 .learn_more_small a:hover,.learn_more_large:hover{color:white;}
 .video_background .valign h3 {line-height: 26px;font-size: 25px;}
 .dir{padding-bottom:48px;overflow:hidden;}
@@ -353,8 +353,8 @@ div.jamie-container{background:url('../images/athletes/Athlete_Jamie.jpg') no-re
 #listings h2{font-size:34px;}
 #listings h3{font-size:20px;}
 .snippet-text{margin-top:8px;margin-bottom:12px;}
-a.read-more{display:inline-block;font-weight:normal;font-size:14px;border-style:solid;border-width:0;cursor:pointer;font-family:"FlySans-", Arial, sans-serif;line-height:normal;margin:0px 0px 20px;position:relative;text-align:center;text-decoration:none;padding:16px 32px 17px 32px;border-color:#60981a;color:#FFFFFF;transition:background-color 300ms ease-out;background-color:#78be20;margin-top:14px;}
-a.read-more:hover{background-color:#60981a;color:white;}
+a.read-more{display:inline-block;font-weight:normal;font-size:14px;border-style:solid;border-width:0;cursor:pointer;font-family:"FlySans-", Arial, sans-serif;line-height:normal;margin:0px 0px 20px;position:relative;text-align:center;text-decoration:none;padding:16px 32px 17px 32px;border-color:#78be20;color:#FFFFFF;transition:background-color 300ms ease-out;background-color:#78be20;margin-top:14px;}
+a.read-more:hover{background-color:#78be20;color:white;}
 p.wrap-para{word-break: break-word;}
 /* Director */
  .director-page .director-banner{background-image: url("../images/apps/desktop-app-header.jpg");background-size: cover;padding-top: 120px;padding-bottom: 100px;border-top: #78be20 5px solid;}
