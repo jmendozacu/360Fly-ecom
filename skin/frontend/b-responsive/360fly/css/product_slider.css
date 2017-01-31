@@ -115,6 +115,7 @@
 
 .product-slider .product_pod .thumbnail {
 	border-radius: 0px;
+	background:transparent;
 }
 
 .product-slider .slick-prev, .product-slider .slick-next {
