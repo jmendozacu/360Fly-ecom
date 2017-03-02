@@ -49,6 +49,7 @@ Disallow: /LICENSE.txt
 Disallow: /LICENSE_AFL.txt
 Disallow: /README.txt
 Disallow: /RELEASE_NOTES.txt
+Disallow: /mage
 
 ## MAGENTO SEO IMPROVEMENTS
 
@@ -77,6 +78,10 @@ Disallow: /customer/account/login/
 #Disallow: /catalog/product/view/
 Disallow: /catalog/product_compare/
 Disallow: /catalogsearch/
+
+## Additional settings
+Allow: /media/
+Disallow: /404/
 
 ## SERVER SETTINGS
 
