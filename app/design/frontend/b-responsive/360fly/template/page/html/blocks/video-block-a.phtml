@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
 * @category Mage
@@ -10,7 +10,26 @@ $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $skinUrl = "http://staging.www.360fly.com/skin/frontend/b-responsive/360fly/";
 
 ?>
+<style>
+.home-video {height: 90%!important;}
+.video-call-out-title {
+    z-index: 9999999;
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+}
+@media screen and (max-width: 768px){
+	.video-call-out-title {    
+		background-color: black;
+    	padding: 25px;
+    	font-size: 22px;
+    	margin: 0;}
+}
+</style>
+
 <div class="video-player hide-on-uncompatible-browser" id="player">
+<h2 class="video-call-out-title">Explore the immersive, interactive 360° world of 360fly.</h2>
+
 	<div class="video-container">
 		<div id="video">
 			<section id="one-up">
@@ -23,9 +42,9 @@ $skinUrl = "http://staging.www.360fly.com/skin/frontend/b-responsive/360fly/";
 						<div class="swipe-icon">
 						</div>
 					</div>
-						<video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
-						poster="https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg" data-setup="{}">
-							<source src="<?php echo $mediaUrl; ?>videos/promotional_4k.mp4" type='video/mp4'>
+						<video id="video_4k_not360_export" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
+						poster="https://d3a8ot8p8m13p6.cloudfront.net/videos/2017_sizzle_thumbnail.jpg" data-setup="{}">
+							<source src="https://d3a8ot8p8m13p6.cloudfront.net/videos/2017_action_sizzle.mp4" type='video/mp4'>
 						</video>
 					</div>
 			</section>
