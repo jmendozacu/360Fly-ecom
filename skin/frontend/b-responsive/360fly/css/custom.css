@@ -563,3 +563,50 @@ a.btn.btn-led:hover{background-color:#78be20;}
 .z-pricing-custom{font-size: 30px;font-weight: bold;font-family: 'FlySans-Medium';}
 .btn.btn-custom.mt0{margin-top: 0;}
 .z-pricingTop small {vertical-align: top;color: #333333;}
+
+
+/* User manual guides  */
+.container.wrapper-width.user-guide {padding: 0 15px 50px 15px;}
+.user-guide-subsection {margin-bottom: 40px; padding-left: 9px;}
+.user-guide-print-link-button {position: absolute;right: 15px;top: 35px;display:block;text-align:center;font-size: 12px;}
+
+.user-guide-subsection h3 {color: #4a4a4a;}
+a.user-guide-title {text-decoration: none!important}
+h3.user-guide-title {padding: 5px 15px; color: #4a4a4a; font-size: 30px; display: -webkit-box;}
+h3.user-guide-title:hover {background-color: #f1f1f1;}
+
+.user-guide a:not(.btn) {text-decoration: underline; color: #4a4a4a;}
+.user-guide a:not(.btn):hover {text-decoration: underline; color: #5c9219;}
+
+a.fa.user-guide-print-link-button {
+    text-decoration: none;
+    color: #4a4a4a;
+}
+a.fa.user-guide-print-link-button:hover {
+    text-decoration: none;
+    color: #5c9219;
+}
+a.user-guide-print-link-button:before {
+    content: "\f02f";
+    font-size: 2em;
+}
+
+a.fa.other-guide-link { text-decoration: none!important;}
+a.fa.other-guide-link.android:before {
+    content: "\f17b";
+    font-size: 2em;
+    text-decoration: none;
+}
+a.fa.other-guide-link.apple:before {
+    content: "\f179";
+    font-size: 2em;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px){
+  .user-guide h1, .user-guide h3 {font-size: 24px}
+  .user-guide h1 {margin-bottom: 40px;}
+  .user-guide-print-link-button, a.fa.other-guide-link {top: 65px;}
+
+}
