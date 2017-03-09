@@ -37,16 +37,21 @@
     position: absolute;
     top: 7px;
     right: 7px;
-    background: url(../../../images/amasty/ampromo/close_icon.png) no-repeat;
+/*    background: url(../../../images/amasty/ampromo/close_icon.png) no-repeat;*/
     width: 16px;
     height: 16px;
     z-index: 1;
     margin: 0;
     padding: 0;
-    font-size: 0;
+    color: #ccc;
+    font-size: 48px;
+    text-decoration: none;
     display: block;
 
     opacity: .8;
+}
+#ampromo-overlay .close:before {
+content: "\e680";
 }
 
 #ampromo-overlay .close:hover
@@ -301,3 +306,24 @@
 .ampromo-img img{
     /*width: 100%;*/
 }
+
+.ampromo-item-buttons button {line-height: normal;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    background-color: #78be20;
+    color: #fff;
+    border: 2px solid #78be20;
+    border-radius: 1000px;
+    transition: all .3s ease-out;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    padding: 6px 35px;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: FlySans-Medium,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+}
+.ampromo-item-buttons button span {font-family: FlySans-Medium,Helvetica,Arial,sans-serif!important;height:auto; font-size: 20px!important;}
