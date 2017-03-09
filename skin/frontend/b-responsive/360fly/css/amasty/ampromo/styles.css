@@ -38,8 +38,8 @@
     top: 7px;
     right: 7px;
 /*    background: url(../../../images/amasty/ampromo/close_icon.png) no-repeat;*/
-    width: 16px;
-    height: 16px;
+/*    width: 16px;
+    height: 16px;*/
     z-index: 1;
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@
     font-size: 48px;
     text-decoration: none;
     display: block;
-
+    font-family: 'Pe-icon-7-stroke' !important;
     opacity: .8;
 }
 #ampromo-overlay .close:before {
