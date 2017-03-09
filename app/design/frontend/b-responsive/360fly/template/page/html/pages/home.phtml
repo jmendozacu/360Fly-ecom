@@ -16,6 +16,37 @@ $skinUrl = $this->getSkinUrl();
 
 <div class="slider-wrapper">
 	<div id="layerslider" style="width: 100%; height: 720px;">
+		<div class="ls-slide">
+            <div data-ls="parallaxlevel: 10;" class="ls-l ls-background" style="left: 50%; top: 50%; height: 100%; width: 120%; background: url(<?php echo $skinUrl;?>images/layerslider/stpats/bkg-shamrocks.png) no-repeat center; z-index:4; opacity:.45;">
+            </div>
+
+            <div data-ls="transition2d: 5; timeshift: -1000;" class="ls-l ls-background" style="left: 50%; top: 50%; height: 100%; width: 120%; background: url(<?php echo $skinUrl;?>images/layerslider/stpats/bkg-stpats-vr.png) no-repeat center; background-size: cover;">
+            </div>
+                        
+            <img src="<?php echo $skinUrl;?>images/layerslider/stpats/stpats-camera-vr.png" alt="360fly 360 4k Camera and VR headset" title="360fly St Patrick's Day promo - camera and VR Headset" style="width:710px; left:-70px; top:50%; z-index:6;" class="ls-l" />
+                        
+            <h2 class="ls-l flyslim" style="top: 20%; left: 560px; white-space: nowrap; color: white; font-size: 52px; font-family: FlySans-; width: auto; height: auto; padding: 0px; border-width: 0px; margin-left: 0px; margin-top: 0px;">ENJOY SOME</h2>
+            <h2 class="ls-l flyslim" style="top: 29%; left: 560px; white-space: nowrap; color: white; font-size: 100px; font-family: FlySans-SemiBold; line-height: 56px;">VIRTUAL</h2>
+            <h2 class="ls-l flyslim" style="top: 38%; left: 560px; white-space: nowrap; color: white; font-size: 52px; font-family: FlySans-; width: auto; height: auto; padding: 0px; border-width: 0px; margin-left: 0px; margin-top: 0px;">LUCK O' THE IRISH.</h2>
+                        
+            <p class="ls-l" style="top: 48%; left: 560px; color:#ffffff;font-size: 22px;text-transform: uppercase;font-family:'FlySans-';letter-spacing: 0.02em; line-height:24px;">
+            	GET A <em>FREE 360fly MOBILE VR HEADSET</em>
+            	<br/> WITH EVERY CAMERA PURCHASED FROM <br>
+            	NOW UNTIL ST. PATRICK'S DAY.
+            </p>
+
+            <p class="ls-l" style="top: 60%; left: 560px; color:#fff;font-size: 16px;font-family:'FlySans-';letter-spacing: 0.02em; margin-top: 5px; line-height:16px;">Just add the VR Headset and camera to your cart at <br>checkout and your discount will be automatically applied.</p>
+
+            <a href="<?php $baseUrl; ?>/shop/cameras/360fly-hd" class="ls-l" style="top: 68%;left: 560px; z-index:999;">
+                <img src="<?php echo $skinUrl;?>images/layerslider/stpats/shop_hd_btn.png" class="img-responsive" alt="Shop for the 360fly HD camera" title="Shop for the 360fly HD camera" style="width:130px;" />
+            </a>
+            <a href="<?php $baseUrl; ?>/shop/cameras/360fly-4k" class="ls-l" style="top: 68%;left: 720px; z-index:999;">
+                <img src="<?php echo $skinUrl;?>images/layerslider/stpats/shop_4k_btn.png" class="img-responsive" alt="Shop for the 360fly 4k camera" title="Shop for the 4k camera" style="width:130px;" />
+            </a>
+
+            <p class="ls-l" style="top: 78%; left: 0px; width: 980px; color: #fff; text-align: center; font-size:12px; line-height: 14px;" id="new-cyber-disclaimer">For a limited time only. Promotion valid only for residents<br> of the fifty (50) United States and the District of Columbia.</p>
+            
+        </div>
 		<!-- Holiday Slider
 		<div class="ls-slide" data-ls="transition2d: 5; timeshift: -1000;">
 			<div class="ls-l" data-ls="offsetxin: 0; offsetyin: 0;" style="left: 50%; top: 50%; height: 100%; width: 100%; background: url(<?php //echo $skinUrl;?>images/layerslider/slide-08/background.png) no-repeat; background-size: cover;"></div>
@@ -289,3 +320,4 @@ $skinUrl = $this->getSkinUrl();
 
 
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/homejs.phtml')->toHtml(); ?>
+
