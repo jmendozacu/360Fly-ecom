@@ -121,7 +121,8 @@
         <?php echo $this->getChildHtml('productTagList') ?>
         <?php echo $this->getChildHtml('product_additional_data') ?>
 </div>
-	<div class="accessory-bar">
+    <!--Remove non-related Accessory hero banner on accessory pages-->
+	<div class="accessory-bar" style="display:none;">
 		<?php echo $this->getLayout()->createBlock('core/template')
 					->setTemplate('catalog/product/product-block.phtml')
 					->toHtml();
