@@ -37,6 +37,7 @@ $skinUrl = $this->getSkinUrl();
     $product = Mage::getModel('catalog/product');
 ?>
 <?php if($this->getItems()->getSize()): ?>
+<div class="green-border-top" style="border-top: #78be20 35px solid;">    
 <div class=" product-promotion block-related wrapper-width po-rel z2-featured">
     <div class="">
         <!-- <div class="abs related-icon hidden-xs hidden-sm">
@@ -65,6 +66,7 @@ $skinUrl = $this->getSkinUrl();
             <?php endforeach;?>
         </div>
     </div>
+</div>
 </div>
     <script type="application/javascript">
         jQuery(document).ready(function($) {
