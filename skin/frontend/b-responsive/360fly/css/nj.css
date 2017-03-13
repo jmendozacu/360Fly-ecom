@@ -200,7 +200,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .header-360 .nav >li >a{margin-top:58px;margin-bottom:15px;font-family:"FlySans-Light";font-size:18px;border-right: 1px solid #999;line-height: 0px;padding-bottom: 10px;padding-bottom: 10px}
 /*.header-360 .nav >li >a:after{content:"|";}*/
 .header-360 .navbar-toggle{padding:10px;margin:25px 15px 25px 0;}
-.header-subnav-bar{background:#7abc31;padding:6px;}
+.header-subnav-bar{background:#78be20;padding:6px;}
 .sub-menu{margin:0px;}
 .header-subnav-bar .inline-list a{color:white;font-size:12px;padding:6px;}
 .header-subnav-bar .pull-right li:before{content:"|";color:white;}
@@ -257,6 +257,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .padding-lr{padding-right: 24px;padding-left:24px;}
 
 /* Community */
+.community-banner.small.bkg-cover{background-size: cover;}
 .community-banner{background-image:url("../images/community/reed.jpg");margin-bottom:0px;background-size:cover;position:relative;background-position:center center;background-repeat:no-repeat;height:670px;}
 .community-banner.small{position:relative;background-position:center center;background-size:auto 100%;background-repeat:no-repeat;}
 .community-banner h2{font-family:"FlySans-Bold", Arial, sans-serif;font-size:88px;line-height:48px;text-transform:uppercase;color:white;margin-bottom:5px;font-style:normal;font-weight:normal;margin-top:3px;text-rendering:optimizeLegibility;}
@@ -275,7 +276,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 #community-cordova{background-image:url("../images/community/cordova.jpeg");}
 #community-adams{background-image:url("../images/community/terryadams.jpg");}
 #community-kx{background-image:url("../images/community/pro-circuit-kaw.jpeg");}
-#community-canondale{background-image:url("../images/community/canondale.jpg");}
+#community-canondale{background-image:url("../images/community/canondale.jpg");background-position: 0 16%;}
 .video-wrapper{padding-top: 10px;padding-bottom: 8px;}
 .last-community-banner{margin-bottom:10px;}
 
@@ -295,7 +296,7 @@ div.jamie-container{background:url('../images/athletes/Athlete_Jamie.jpg') no-re
 #athlete-marketing h2.extreme-headline{font-size:40px;margin-top: 10px;color:#fff;}
 .community-inner .bio-container{color:#ffffff;}
 .community-inner .bio-left{background: rgb(51,51,51);padding-top: 50px;color: #FFFFFF;padding-bottom: 45px;}
-.community-inner .bio-right{background:#74B83F;}
+.community-inner .bio-right{background:#78be20;}
 .athlete-social .icons a:hover,.athlete-social .icons a:focus{text-decoration:none}
 /* .community-inner .bio-left .bio-left-child-1{float:right;} */
 .community-inner .bio-left .bio-left-child-1 p{font-family: "FlySans-Light", Arial, sans-serif;font-size: 16px;line-height: 30px;margin-bottom:20px;}
@@ -430,13 +431,13 @@ img.camera-logo {margin-bottom: 30px;}
 
 /* Panaroma Video */
 .swipe-icon{background-image:url("../images/swipe-icon.png");height:130px;width:100%;margin:0px auto;background-position:center;background-repeat:no-repeat;margin-top:20px;position:absolute;}
-.video-overlay-content{position:absolute;width:100%;margin-top:10%;}
+.video-overlay-content{position:absolute;width:100%;/* margin-top:10%; */}
 .video-overlay-content .video-overlay-text p{color:#f0f0f0;font-size:32px;font-weight:bold;text-align:center;margin:0px;font-family:"FlySans-", Arial, sans-serif !important;position:relative;line-height:1;}
 .video-overlay-content .video-overlay-text p b{font-size:42px;}
-.home-video{width: 100%;height: 85%;position: absolute;}
+.home-video{width: 100%!important;height: 100%!important;position: absolute;}
 .videocontent{position: relative;}
 .vjs-poster{z-index:2;background-size:cover;}
-
+.video-js .vjs-control-bar .vjs-VR-control{display: none !important;}
 /* Header */
 .header #navbar3 ul li a.cart-color{color:#78be20;}
 
@@ -472,7 +473,7 @@ a.cart-count{color: #78BE20!important;}
 .my-videos-container .recent-video .video-overlay-content .video-overlay-text{position: relative;top: 88px;}
 .my-videos-container .recent-video .video-overlay-content .video-overlay-text p{font-size: 28px;}
 .my-videos-container .recent-video .videocontent .vjs-default-skin .vjs-control-bar{bottom: 0px;}
-.my-video-info {background-color: rgba(0, 0, 0, 0.5);clear: both;float: none;margin-top: 20px;padding-top: 20px;display: inline-block;}
+.my-video-info {background-color: rgba(0, 0, 0, 0.9);clear: both;float: none;margin-top: 20px;padding-top: 20px;display: inline-block;}
 .video-title{color: #78be20;margin-bottom: 0px;line-height: 1.05;font-size: 34px;font-family: 'FlySans-Medium';}
 .my-video-info .video-date {font-size: 24px;margin-top: 5px;margin-bottom: 25px;line-height: 1.05;}
 .my-video-info h4{color:#fff;}
@@ -502,3 +503,24 @@ a.cart-count{color: #78BE20!important;}
 .my-video-list .info-overlay .video-data .video-info {width: 80%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 12px;line-height: 16px;
     color: white;text-shadow: 0px 1px 0px rgba(33, 33, 33, 0.5);}
 /* Dew Tour 2015 End */
+.blackbg{background:#000;}
+.edge-dewtour .degradation-message{padding:0;width: 100%;}
+.edge-dewtour img.player-controls{margin: 30px 0 0;}
+.edge-dewtour  .off-road{padding:25px 0;}
+.edge-dewtour  .off-road h2{margin-top: 30px;}
+.edge-error{background-image:url('/images/facets-mobile.jpg')}
+.degradation-message{padding:200px 0;margin: 0 auto;width:85%;color: #fff;text-align: center;}
+.degradation-message h1{color: #fff;margin-bottom: 20px;line-height: 44px;text-shadow: 0px 0px 5px black;}
+.degradation-message  p{font-size: 20px;color: #fff;line-height: 30px;font-weight: bold;font-family: Flysans-Light;}
+img.player-controls {display: inline-block;vertical-align: middle;width: 100%;height: auto;}
+.off-road{padding: 50px 0 40px 0px;}
+.off-road span{color: #999;font-size: 14px;position: relative;float: left;}
+.off-road h2{margin: 0;color: #fff;position: relative;float: left;}
+.video-author .show-for-medium-up{font-family: "FlySans-Light", Arial, sans-serif;font-size: 20px;line-height: 30px;float: right;}
+.edge{background-color: #191919;margin-top: 0;}
+.video-info{font-face: 'Flysans-';font-size: 16px;line-height: 24px;color: #999;}
+.show-on-uncompatible-browser{display: none;}
+.show-on-mobile{display: none;}
+.edge .embed-div{float: right;}
+.edge .video-info{margin:8% 0;}
+.show-on-uncompatible-browser .my-video-info{display: block;}

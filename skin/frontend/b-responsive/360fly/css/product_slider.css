@@ -75,9 +75,10 @@
 
 .product-slider .product_pod .product_price .product-title a {
 	font-size: 20px;
-	color: #B1B1B1;
+	color: #555555;
 	text-transform: uppercase;
 	font-family: "FlySans-",Helvetica,Arial,sans-serif;
+	font-weight: bold;
 }
 
 .product-slider .product_pod p {

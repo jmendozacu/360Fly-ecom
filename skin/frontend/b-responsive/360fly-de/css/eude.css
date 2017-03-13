@@ -1,0 +1,12 @@
+/*German Specific CSS*/
+.btn.retailer, .btn.mailSignUp{padding:6px 0px;}
+.product-promotion h2{margin-left:0px;}
+.cms-apps .app-section h2{font-size: 38px;}
+@media screen and  (max-width:767px){
+	.wrapper-content h2,.compare-cameras-mobile h1 span,.camera-view-apps-block .pre-footer h2,#compatible-section h2,.director-page .director-banner h1,.pageheader h1, .pre-footer h2{word-wrap: break-word;}
+	.athlete-social .athlete-wrapper.cannondale-follow{padding-top: 10px;line-height: 60px;}
+}
+@media screen and (min-width: 992px){
+    .product-promotion h2{font-size: 30px;}
+	ul.product-grid li .product-title-container{min-height: 64px;}
+}

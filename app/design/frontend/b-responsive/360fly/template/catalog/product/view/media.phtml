@@ -42,9 +42,12 @@
 		<section class="slider">
 			<div class="flexslider">
 				<ul class="slides">
+                    <?php $count = 0; ?>
 				 <?php foreach ($this->getGalleryImages() as $_image): ?>
+					 <?php //echo '<pre>'; print_r($_image); ?>
+                     <?php $count+= 1; ?>
 					<?php $imagepath =  $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile());?>
-					<li data-thumb="<?php echo $imagepath; ?>">	
+					<li data-thumb="<?php echo $imagepath; ?>" <?php if($count == 4) echo 'class="z-video-play"';?>>
 						<img src="<?php echo $imagepath; ?>" alt="<?php echo $productTitle;?>" title="<?php echo $productTitle;?>"/>
 					</li>
 				 <?php endforeach; ?>

@@ -54,8 +54,8 @@
       <div class="container wrapper-width">
         <div class="col-md-6 col-sm-12">
               <h3>EVERYWHERE IS WHERE YOUR 360fly GOES.</h3>
-              <p class="medium-font">The 1/4-20 and QuickTwist mounts and gear you need to capture it all.</p>
-              <p>From bikes to boards, backyard barbeques to base jumping, 360fly has the mounts and accessories you need to fit your camera seamlessly into your active lifestyle. Choose from 1/4-20 and QuickTwist systems based on your camera's design.</p>
+              <p class="medium-font">The &frac14;-20 and QuickTwist mounts and gear you need to capture it all.</p>
+              <p>From bikes to boards, backyard barbeques to base jumping, 360fly has the mounts and accessories you need to fit your camera seamlessly into your active lifestyle. Choose from &frac14;-20 and QuickTwist systems based on your camera's design.</p>
           </div>
       </div>
     </div>
@@ -78,11 +78,12 @@
   <div class="container wrapper-width page-inner">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-gutter">
       <div class="accessory_top_bar">
-        <label for="camera_type">Select your camera:</label>
+        <label for="camera_type">Mount System:</label>
           <div class="camera_4k_badge acc-badge"></div>
           <select id="camera_type" name="camera_type">
-          <option value="4k" class="fourK">360fly 4K</option>
-          <option value="hd">360fly HD</option>
+          <option value="4k" class="fourK">&frac14;-20 Adapter</option>
+          <option value="universal" class="fourK">Universal</option>
+          <option value="hd">Quick Twist Adapter</option>
         </select>
       </div>
     </div>
@@ -141,16 +142,28 @@
 <script type="application/javascript">
     jQuery(document).ready(function($){
         $('li.hd-block').hide();
+		$('li.universal-block').hide();
         $('#camera_type').change(function(){
             var option_val = $('#camera_type option:selected').val();
             if(option_val == 'hd'){
+				$('li.universal-block').hide();
                 $('li.4k-block').hide();
                 $('li.hd-block').show();
-                $('.accessory_top_bar .acc-badge').removeClass('camera_4k_badge').addClass('camera_hd_badge');
+				$('.accessory_top_bar .acc-badge').css("display","inline");
+                $('.accessory_top_bar .acc-badge').removeClass('camera_4k_badge camera_universal_badge').addClass('camera_hd_badge');
             } else if(option_val == '4k'){
+				$('li.universal-block').hide();
                 $('li.hd-block').hide();
                 $('li.4k-block').show();
-                $('.accessory_top_bar .acc-badge').removeClass('camera_hd_badge').addClass('camera_4k_badge');
+				$('.accessory_top_bar .acc-badge').css("display","inline");
+                $('.accessory_top_bar .acc-badge').removeClass('camera_hd_badge camera_universal_badge').addClass('camera_4k_badge');
+            }
+			else if(option_val == 'universal'){
+				$('li.universal-block').show();
+                $('li.hd-block').hide();
+                $('li.4k-block').hide();
+                $('.accessory_top_bar .acc-badge').removeClass('camera_hd_badge camera_4k_badge').addClass('camera_universal_badge');
+				
             }
         })
     });

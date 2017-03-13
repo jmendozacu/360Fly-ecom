@@ -1,5 +1,6 @@
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
 /* Misc Custom */
+.hide-slider{display: none;}
 .no-gutter{padding:0;}
 .no-border{border:0px;box-shadow:0px 0px 0px transparent;}
 .clear{clear:both;}
@@ -225,7 +226,7 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /* compare camera start */
 .wrapper-width-camera{max-width:1000px;width:100%;margin:0 auto;padding:0 15px;}
 .compare-cameras, .compare-cameras-mobile {padding-top: 20px;background-image: url('../images/shop-camera/light-facets-bg.jpg');background-repeat: repeat-x;padding-bottom: 140px;background-size: 100%;}
-.compare-cameras h1, .compare-cameras-mobile h1 {color: #78be20;margin-bottom: 90px;font-size: 45px;line-height: .85;margin-top:3px;}
+.compare-cameras h1, .compare-cameras-mobile h1 {color: #78be20;margin-bottom: 90px;font-size: 45px;line-height: .85;margin-top:10px;}
 .compare-cameras h1 span, .compare-cameras-mobile h1 span {font-size: 68px;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;}
 .btn-shop {width: 175px;line-height: normal;position: relative;text-decoration: none;text-align: center;background-color: transparent;color: #78be20;
     border: 2px solid #78be20;border-radius: 1000px;transition: all .3s ease-out;font-weight: 400;font-size: 20px;padding: 3px 20px;margin-bottom: 30px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;text-transform: uppercase;}
@@ -292,16 +293,17 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 /*----------------------------------------------------------------------------------------------------------------*/
 
 .product-intro{background-image: url('../images/accessory_header.jpg');background-repeat: no-repeat;background-size: cover;padding: 90px 0;}
-.product-intro h3{font-family: FlySans-SemiBold,helvetica,arial,sans-serif;font-size: 38px;color: #7abc31;line-height: 1;margin:3px 0 8px;}
+.product-intro h3{font-family: FlySans-SemiBold,helvetica,arial,sans-serif;font-size: 38px;color: #78be20;line-height: 1;margin:3px 0 8px;}
 .product-intro .medium-font {font-family: FlySans-Medium,helvetica,arial,sans-serif;color: #fff;line-height:1.2;font-size: 20px;margin:0 0 20px;}
 .product-intro p {line-height: 1.2;color: #ccc;font-size: 20px;margin:0 0 20px;}
 .accessories{max-width: none;width: 100%;background-image: url('../images/facets-fade.png');background-repeat: repeat-x;background-size: inherit;}
 .page-inner{padding: 30px;}
-.camera_4k_badge, .camera_hd_badge {width: 41px;height: 40px;display: inline;position: absolute;background-image: url('../images/compatibility/hd-4k.png');background-size: cover;top: -8%;}
-.accessories label[for=camera_type] {color: #666;font-family: FlySans-Medium,helvetica,arial,sans-serif;font-weight: 400;font-size: 20px;text-transform: uppercase;
-    margin-bottom: 20px;}
+.camera_4k_badge {width: 60px;height: 60px;display: inline;position: absolute;background-image: url('../images/compatibility/4k-icon.png');background-size: cover;top: -25%;}
+.camera_hd_badge{width: 60px;height: 60px;display: inline;position: absolute;background-image: url('../images/compatibility/hd-icon.png');background-size: cover;top: -25%;}
+.camera_universal_badge {width: 90px;height: 45px;display: inline;position: absolute;background-image: url('../images/compatibility/universal-icon.png');background-size: cover;top: -8%;}
+.accessories label[for=camera_type] {color: #666;font-family: FlySans-Medium,helvetica,arial,sans-serif;font-weight: 400;font-size: 20px;text-transform: uppercase;margin-bottom: 30px;}
 .accessory_top_bar {width: 100%;border-bottom: 2px solid #cdcdcd;margin-bottom: 20px;}
-#camera_type {font-size: 20px;box-shadow: none;background-color: transparent;background-image: none;border-radius: 5px;margin-left: 55px;}
+#camera_type {font-size: 20px;box-shadow: none;background-color: transparent;background-image: none;border-radius: 5px;margin-left: 130px;}
 .image-container{max-width: 100%;width: 100%;padding: 4px;margin:0 0 20px;background-color: #fff;display: inline-block;}
 .products{min-height:270px;overflow:hidden;margin:0 0 10px;}
 .products h3{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;
@@ -337,8 +339,8 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .catalog-category-view .cam-name{font-size: 16px;font-weight: 400;font-family: FlySans-SemiBold,helvetica,arial,sans-serif;padding: 0;white-space: inherit;margin-top: 0;text-overflow: initial;text-align: left;margin:3px 0 8px;line-height:1.1;font-style: normal;}
 .catalog-category-view .cam-name a:not(.btn){color:#000;}
 .catalog-category-view .products-list .price-box{float:right;margin:0 0 10px;}
-.catalog-category-view .regular-price .price {font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #7abc31;font-weight: normal;}
-
+.catalog-category-view .regular-price .price {font-family: FlySans-Medium,helvetica,arial,sans-serif;font-size: 16px;color: #78be20;font-weight: normal;}
+span.older-price {font-weight: bold;color: #666 ;text-decoration: line-through;}
 /* Category Page End - catalog/list.phtml */
 
 /* Product Description Page Start */
@@ -350,14 +352,18 @@ a#macosx,a#windows{text-transform:none;font-family: "FlySans-", Arial, sans-seri
 .regular-price .price{font-weight: 700;margin-bottom: 0;color: #78be20 ;font-size: 32px;}
 .catalog-product-view .add-to-cart label{line-height:45px;margin-bottom: 0;margin-right: 10px;color:#333;}
 input.qty{width:100px !important;}
-
+.special-price .price, .special-price .price-label{font-size: 24px; color:#60981a}
+.special-price .price-label:after{content:': ';}
+.old-price .price{color:inherit;}
 /* Product Description Page End */
 
 /* Product Desc Page Same as landing Page Start */
 
 .category-cameras .landing-img{width: 100%;position: absolute;top: 30px;right: -35px;transform: scale(1.65);}
+.category-cameras .camera-hd .landing-img {position: relative;top: 145px;right: 0;max-width: 100%;display: block;transform: scale(1.2);}
 .category-cameras .camera-4k .landing-img{top: 220px;right: 110px;}
 .category-cameras .short-description.std{padding-top: 250px;text-align: right;}
+.category-cameras .camera-hd .short-description.std {padding-top: 100px;}
 .short-description ul li:before{content: "";background-color: #78be20;position: absolute;margin-left: -20px;width: 7px;height: 7px;font-size: 20px;border-radius: 100px;margin-top: 7px;}
 .category-cameras h3{font-size: 26px;color: #000;line-height: 1;font-family: FlySans-SemiBold,Helvetica,Arial,sans-serif;
     font-weight: 500;margin:3px 0 8px;}
@@ -379,14 +385,14 @@ input.qty{width:100px !important;}
 .landing-page-content .table-heading {font-size: 14px;margin-bottom: 5px;font-weight: 400;font-style: normal;color: #fff;padding-top: 10px;margin-top: 10px;font-family: FlySans-Medium,Helvetica,Arial,sans-serif;line-height: 1.6;}
 .landing-page-content .no-padding h4{font-size: 26px;margin: 3px 0 8px;color: #fff;}
 .x-hidden{overflow-x: hidden;}
-.compatible-hd{font-family: 'Flysans-SemiBold'};
+.compatible-hd{font-family: 'Flysans-SemiBold'}
 /* Product Desc Page Same as landing Page End */
 
 /* About us Sub menu Navbar Start */
 .cms-about-360fly .sub-nav-bar {color: #fff;clear: both;float: none;height: 36px;z-index: 3;top:-36px;left:20px;display: block;position: absolute;}
 .cms-about-360fly .sub-nav{margin: 0;padding: 0;display: block;height:100%;}
 .cms-about-360fly .sub-nav li {display: inline-block;height:100%;text-align: center;}
-.cms-about-360fly .sub-nav li a {font-size: 14px;height:100%;line-height:36px;width: 80px; display: inline-block;text-align: center;;font-family: "FlySans-", Arial, sans-serif;cursor: pointer;}
+.cms-about-360fly .sub-nav li a {font-size: 14px;height:100%;line-height:36px;width: 80px; display: inline-block;text-align: center;font-family: "FlySans-",Arial,sans-serif;cursor: pointer;}
 .wrapper-width.po-rel.quick-links-about {margin-top: -36px;z-index: 5;}
 .quick-links-about{position: absolute;top: -36px;max-width: 1060px;float: none;clear: both;z-index: 1;}
 /* About us Sub menu Navbar End */
@@ -462,6 +468,7 @@ input.qty{width:100px !important;}
 .cms-index-noroute{background: #000;}
 /* 404 Erro Page End */
 /* CMS store Locator Start */
+.cms-store-locator{background: #191919;}
 .cms-store-locator input#search_button:focus{outline: -webkit-focus-ring-color auto 0px;}
 /* CMS store Locator End */
 /* Account Forgot Start */
@@ -482,7 +489,7 @@ input.qty{width:100px !important;}
 .fly-20420-terms{height:480px;overflow-y: scroll;border: 1px solid #dcdcdc;background-color: #f5f5f5;margin-top: 80px;font-size: 16px;}
 /* fly20420 End */
 /* Supported Device Start */
-.cms-supported-devices h1{font-size: 45px;margin:3px 0 8px;}
+.cms-supported-devices h1,.cms-compatible-devices h1{font-size: 45px;margin:3px 0 8px;}
 .support-devices{font-size: 16px;line-height: 1.6;list-style-type: disc;margin-left: 17px;margin-bottom: 20px;}
 .support-device-container p{font-size: 20px;line-height: 30px;}
 /* Supported Device End */
@@ -493,6 +500,7 @@ input.qty{width:100px !important;}
 .location-bkg .country{color: #f1f1f2;text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4);font-family: "FlySans-Light", Arial, sans-serif;font-size: 35px;text-align: center;}
 .location-bkg .zone{padding: 10px;color: #008C95;margin: 3px 0 8px;line-height: 1.4;}
 .address-block{padding-bottom: 10px;min-height: 160px;float: left;}
+.address-block a{text-transform: uppercase;}
 /* stores End */
 /* Led Page Start */
 .cms-led{background: #000;}
@@ -534,7 +542,7 @@ a.btn.btn-led:hover{background-color:#60981a;}
 .small-block-grid-3 > li:nth-of-type(3n+1) {clear: both;}
 .editing-nav .small-block-grid-3 li a:focus,.effects-nav .small-block-grid-3 li a:focus,.share-nav .small-block-grid-3 li a:focus{text-decoration: none;}
 .editing-nav .small-block-grid-3 li a h3,.effects-nav .small-block-grid-3 li a h3,.share-nav .small-block-grid-3 li a h3{color:black;text-transform: uppercase;}
-.editing-nav .small-block-grid-3 .active-nav h3,.effects-nav .small-block-grid-3 .active-nav h3,.share-nav .small-block-grid-3 .active-nav h3{color: #78be20; !important;}
+.editing-nav .small-block-grid-3 .active-nav h3,.effects-nav .small-block-grid-3 .active-nav h3,.share-nav .small-block-grid-3 .active-nav h3{color: #78be20 !important;}
 .editing-main .custom-dots,.effects-custom-dots,.share-custom-dots {position: relative;bottom: -15px;list-style: none;display: table !important;text-align: center;padding: 0;width: auto;padding-right: 0;margin: 0px auto;}
 .editing-main .custom-dots li, .effects-custom-dots li, .share-custom-dots li{float: left;font-size: 25px;position: relative;display: block;height: 5px;width: 5px;margin: 0 5px;padding: 0;cursor: pointer;}
 .editing-main .custom-dots li button, .effects-custom-dots li button, .share-custom-dots li button {opacity: .35;border-radius: 100%;background: transparent;display: block;height: 5px;width: 5px;outline: none;line-height: 0;font-size: 0;background-color: #78be20;padding: 5px;cursor: pointer;border: 0px solid transparent;}
@@ -552,3 +560,115 @@ a.btn.btn-led:hover{background-color:#60981a;}
 /* Terms use mobile page start */
 .cms-terms-use-mobile{letter-spacing: 1px;word-wrap:break-word;}
 /* Terms use mobile page End */
+.z-pricing-custom{font-size: 30px;font-weight: bold;font-family: 'FlySans-Medium';}
+.btn.btn-custom.mt0{margin-top: 0;}
+.z-pricingTop small {vertical-align: top;color: #333333;}
+/* user guide pages */
+.user-guide p{font-size: 20px;clear: both;}
+.border-bottom{border-bottom: 1px solid #78be20;padding-bottom: 10px;}
+.img-full-width{width: 100%;margin:2% 0;}
+.disp-inline-block{display: inline-block;}
+.mt20{margin-top: 20px;}
+.user-guide-img{position: relative;top: -4px; max-width: 23px;}
+.user-guide table{background-image: url('../images/facets.jpg');background-repeat: no-repeat;background-size: cover;}
+.user-guide table tr{border-bottom: 2px solid #ccc;}
+.user-guide .table tbody tr th{font-size: 20px;background-color: transparent;display: inline-block;}
+.user-guide .table tr:nth-child(1) th:nth-child(1){width: 15%;}
+.user-guide .table tr:nth-child(1) th:nth-child(2){width: 70%;}
+.user-guide .table tr:nth-child(1) th:nth-child(3){width: 15%;}
+.user-guide .table tbody tr th:nth-child(1){width: 15%;text-align: center;}
+.user-guide .table tbody tr th:nth-child(2){width: 85%;}
+#manual_list {font-size: 20px;box-shadow: none;background-color: transparent;background-image: none;border-radius: 5px;margin-left: 10px;position: relative;top: -3px;}
+div.dropdown-div{margin: 20px 0;}
+.user-guide label[for=manual_list] {color: #666;font-family: FlySans-Medium,helvetica,arial,sans-serif;font-weight: 400;font-size: 20px !important;text-transform: uppercase;}
+.mb20{margin-bottom: 20px;}
+/* back to top button start */
+#return-to-top{position: fixed;right:20px;bottom: 20px;width:40px;height:40px;background: #191919;border-radius: 50%;display: none;z-index:1;}
+#return-to-top .arrow{color: #78be20;line-height: 40px;display: block;text-align: center;position: relative;top: -2px;}
+/* back to top button end */
+
+/* User manual guides  */
+.container.wrapper-width.user-guide {padding: 0 15px 50px 15px;}
+.user-guide-subsection {margin-bottom: 40px; padding-left: 9px;}
+.user-guide-print-link-button {position: absolute;right: 15px;top: 35px;display:block;text-align:center;font-size: 12px;}
+
+.user-guide-subsection h3 {color: #4a4a4a;}
+a.user-guide-title {text-decoration: none!important}
+h3.user-guide-title {padding: 5px 15px; color: #4a4a4a; font-size: 30px; display: -webkit-box;}
+h3.user-guide-title:hover {background-color: #f1f1f1;}
+
+.user-guide a:not(.btn) {text-decoration: underline; color: #4a4a4a;}
+.user-guide a:not(.btn):hover {text-decoration: underline; color: #5c9219;}
+
+a.fa.user-guide-print-link-button {
+    text-decoration: none;
+    color: #4a4a4a;
+}
+a.fa.user-guide-print-link-button:hover {
+    text-decoration: none;
+    color: #5c9219;
+}
+a.user-guide-print-link-button:before {
+    content: "\f02f";
+    font-size: 2em;
+}
+
+a.fa.other-guide-link { text-decoration: none!important;}
+a.fa.other-guide-link.android:before {
+    content: "\f17b";
+    font-size: 2em;
+    text-decoration: none;
+}
+a.fa.other-guide-link.apple:before {
+    content: "\f179";
+    font-size: 2em;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px){
+  .user-guide h1, .user-guide h3 {font-size: 24px}
+  .user-guide h1 {margin-bottom: 40px;}
+  .user-guide-print-link-button, a.fa.other-guide-link {top: 65px;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -35,12 +35,30 @@
     $baseUrl = $this->getBaseUrl();
     $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
     $skinUrl = $this->getSkinUrl();
-    $hdObj = Mage::getModel('catalog/product')->load(2);
+    $hdObj = Mage::getModel('catalog/product')->load(22);
     $fourkObj = Mage::getModel('catalog/product')->load(1);
+	// Get the Special Price
+    $hdspecialprice = $hdObj->getSpecialPrice();
+    if($hdspecialprice){
+      $hdspecialpriceformatted =  Mage::helper('core')->currency($hdObj->getSpecialPrice(),true,false);
+    }
+
+    $fourkspecialprice = $fourkObj->getSpecialPrice();
+    if($fourkspecialprice){
+      $fourkspecialpriceformatted =  Mage::helper('core')->currency($fourkObj->getSpecialPrice(),true,false);
+    }
+    // Get the Special Price FROM date
+    $hdspecialPriceFromDate = $hdObj->getSpecialFromDate();
+    $fourkspecialPriceFromDate = $fourkObj->getSpecialFromDate();
+    // Get the Special Price TO date
+    $hdspecialPriceToDate = $hdObj->getSpecialToDate();
+    $fourkspecialPriceToDate = $fourkObj->getSpecialToDate();
+    $today =  time();
+    // Get Current date
     $hdUrl =  $hdObj->getProductUrl();
     $fourkUrl =  $fourkObj->getProductUrl();
-    $hdVideo = $hdObj->getYtVideoId();
-    $fourkVideo = $fourkObj->getYtVideoId();
+    //$hdVideo = $hdObj->getYtVideoId();
+    //$fourkVideo = $fourkObj->getYtVideoId();
     $hdPrice =  Mage::helper('core')->currency($hdObj->getPrice(),true,false);
     $fourkPrice =  Mage::helper('core')->currency($fourkObj->getPrice(),true,false);
     $hdAddToCartUrl =  Mage::helper('checkout/cart')->getAddUrl($hdObj);
@@ -157,7 +175,7 @@
 							<p><b>battery</b></p>
 						</div>
 						<div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
-							<p>2+ Hours of Recording</p>
+							<p>2+ Hours of Recording<br>and 14 Hours of Standby</p>
 						</div>
 					</div>
 					<div class="camera-spec col-small-12 col-md-12 col-lg-12 text-center">
@@ -241,7 +259,15 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="col-sm-4 col-md-4 col-lg-4 text-center add-to-cart-btn-block">
-                    <p class="price_color"><?php echo $fourkPrice;?></p>
+					<?php if($fourkspecialprice): ?>
+                    <?php if($today >= strtotime( $fourkspecialPriceFromDate) && $today <= strtotime($fourkspecialPriceToDate) || $today >= strtotime( $fourkspecialPriceFromDate) && is_null($fourkspecialPriceToDate)): ?>
+                      <p class="price_color"><span class="older-price"><?php echo $fourkPrice;?></span>&nbsp;<span><?php echo $fourkspecialpriceformatted;?></span></p>
+                    <?php else:?>
+                      <p class="price_color"><?php echo $fourkPrice;?></p>
+                    <?php endif;?>
+                  <?php else:?>
+                      <p class="price_color"><?php echo $fourkPrice;?></p>
+                  <?php endif;  ?>
                     <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 button-contain">
@@ -252,7 +278,15 @@
                     </button>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 text-center add-to-cart-btn-block">
-                    <p class="price_color"><?php echo $hdPrice;?></p>
+						<?php if($hdspecialprice): ?>
+                          <?php if($today >= strtotime( $hdspecialPriceFromDate) && $today <= strtotime($hdspecialPriceToDate) || $today >= strtotime( $hdspecialPriceFromDate) && is_null($hdspecialPriceToDate)): ?>
+                            <p class="price_color"><span class="older-price"><?php echo $hdPrice;?></span>&nbsp;<span><?php echo $hdspecialpriceformatted;?></span></p>
+                          <?php else:?>
+                            <p class="price_color"><?php echo $hdPrice;?></p>
+                          <?php endif;?>
+                        <?php else:?>
+                          <p class="price_color"><?php echo $hdPrice;?></p>
+                        <?php endif;  ?>
 					<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $hdAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                 </div>
             </div>
@@ -292,7 +326,15 @@
                         <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
                         <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
                     </button>
-                    <p class="price_color"><?php echo $fourkPrice;?></p>
+					<?php if($fourkspecialprice): ?>
+                      <?php if($today >= strtotime( $fourkspecialPriceFromDate) && $today <= strtotime($fourkspecialPriceToDate) || $today >= strtotime( $fourkspecialPriceFromDate) && is_null($fourkspecialPriceToDate)): ?>
+                        <p class="price_color"><span class="older-price"><?php echo $fourkPrice;?></span>&nbsp;<span><?php echo $fourkspecialpriceformatted;?></span></p>
+                      <?php else:?>
+                        <p class="price_color"><?php echo $fourkPrice;?></p>
+                      <?php endif;?>
+                    <?php else:?>
+                        <p class="price_color"><?php echo $fourkPrice;?></p>
+                    <?php endif;  ?>
                     <div class="col-sm-12 col-xs-12">
                         <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $fourKAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                     </div>
@@ -323,7 +365,15 @@
                         <span class="plus"><i class="glyphicon glyphicon-plus"></i></span>
                         <span class="minus"><i class="glyphicon glyphicon-minus"></i></span>
                     </button>
-                    <p class="price_color"><?php echo $hdPrice;?></p>
+					<?php if($hdspecialprice): ?>
+                      <?php if($today >= strtotime( $hdspecialPriceFromDate) && $today <= strtotime($hdspecialPriceToDate) || $today >= strtotime( $hdspecialPriceFromDate) && is_null($hdspecialPriceToDate)): ?>
+                        <p class="price_color"><span class="older-price"><?php echo $hdPrice;?></span>&nbsp;<span><?php echo $hdspecialpriceformatted;?></span></p>
+                      <?php else:?>
+                        <p class="price_color"><?php echo $hdPrice;?></p>
+                      <?php endif;?>
+                    <?php else:?>
+                      <p class="price_color"><?php echo $hdPrice;?></p>
+                    <?php endif;?>
                     <div class="col-sm-12 col-xs-12">
                         <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom" onclick="setLocation('<?php echo $hdAddToCartUrl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                     </div>
@@ -341,27 +391,78 @@
     </div>
     <div class=" cat-video-container">
         <div class="video-cat">
-            <?php echo $this->getLayout()->createBlock('core/template')->setData('videoid',$fourkVideo)->setTemplate('page/html/blocks/video-block-dyn.phtml')->toHtml();?>
+            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-dyn.phtml')->
+			toHtml();?>
+			<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-edge-error.phtml')->toHtml(); ?>
         </div>
     </div>
 </div>
+<?php  
+
+	$hdurl = $mediaUrl."videos/promotional_4k.mp4";
+	
+
+?>
 <script>
+	function isIphone(){
+		var check = false;
+		if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+			check = true;
+		};
+		return check;
+	}
     jQuery(document).ready(function($){
         $('.quality-head li').click(function(){
             var video_block = $(this).attr('data-id');
             if(video_block == 'hd'){
-                player.loadVideoById('<?php echo $hdVideo;?>');
+				var hdposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail_hd.jpg';
+				if(isIphone()){
+					jQuery('video').attr('poster',hdposter);
+					jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_hd_iphone.mp4');
+					jQuery('.vjs-default-skin .vjs-control-bar').css('bottom','-50px');
+				}
+				else{
+					jQuery('.vjs-poster').css('background-image','url('+ hdposter +')');
+					jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_hd.mp4');	
+				}
+                
+            }
+            else if (video_block == '4k'){
+				var fourkposter = 'https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg';
+				if(isIphone()){
+					jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_4k_iphone.mp4');
+					jQuery('video').attr('poster',fourkposter);
+					jQuery('.vjs-default-skin .vjs-control-bar').css('bottom','-50px');
+				}
+				else{
+					jQuery('video').attr('src','<?php echo $mediaUrl;?>'+'videos/promotional_4k.mp4');
+					jQuery('.vjs-poster').css('background-image','url('+ fourkposter +')');
+				}
+                
+                
+            }
+            $('.quality-head').find('li').removeClass('active');
+            $('.quality-head li.toggle-'+video_block).addClass('active');
+        });
+    });
+</script>
+<!-- <script>
+    jQuery(document).ready(function($){
+        $('.quality-head li').click(function(){
+            var video_block = $(this).attr('data-id');
+            if(video_block == 'hd'){
+                player.loadVideoById('<?php //echo $hdVideo;?>');
             } else if (video_block == '4k'){
-                player.loadVideoById('<?php echo $fourkVideo;?>');
+                player.loadVideoById('<?php //echo $fourkVideo;?>');
             }
             player.stopVideo();
             $('.quality-head').find('li').removeClass('active');
             $('.quality-head li.toggle-'+video_block).addClass('active');
         });
     });
-</script>
+</script> -->
 
-<?php //echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
+<?php //echo $this->getLayout()-ateBlock('core/template')->setTemplate('page/html/pages/video-block.phtml')->toHtml(); ?>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('catalog/category/camera-category-js.phtml')->toHtml(); ?>
 <script type="text/javascript">
 //<![CDATA[

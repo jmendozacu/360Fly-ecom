@@ -1,0 +1,155 @@
+<?php
+
+/**
+* @category Mage
+* @package Mage_Page
+* @copyright Copyright (c) 2016 MageNYC-AhyConsulting for 360Fly.com
+*/
+	$baseUrl = $this->getBaseUrl();
+	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+	$skinUrl = $this->getSkinUrl();
+	$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+	$cleanBaseUrl = Mage::getStoreConfig(Mage_Core_Model_Url::XML_PATH_SECURE_URL);
+	$shopUrl = $cleanBaseUrl.'shop';
+	$communityArr = array('chad-reed', 'terry-adams', 'jorge-lorenzo', 'matt-cordova', 'sunny-garcia', 'cannondale', 'pro-circuit', 'community', 'jamie-whincup');
+	$cartCount = $this->helper('checkout/cart')->getSummaryCount();
+	$appsClass = 'x';
+	$communityClass = 'x';
+	$menuClass = 'non-shop-page';
+	if( strpos($currentUrl, "shop") !== false ){
+		$menuClass = 'is-shop-page';
+	}
+	elseif(strpos($currentUrl, "faq")) {
+		$menuClass = 'is-shop-page';
+	}
+	elseif(strpos($currentUrl, "checkout/cart")) {
+		$menuClass = 'is-shop-page';
+	}
+	elseif(strpos($currentUrl, "onestepcheckout")) {
+		$menuClass = 'is-shop-page';
+	}
+	foreach($communityArr as $communityUrlKeys){
+		if( strpos($currentUrl, $communityUrlKeys) !== false ){
+			$communityClass = 'is-community-page';
+		}
+	}
+	if( strpos($currentUrl, "apps") !== false ){
+		$appsClass = "is-apps-page";
+	}
+	elseif(strpos($currentUrl, "Director")) {
+		$appsClass = "is-apps-page";
+	}
+	$videoClass = 'x';
+	if(strpos($currentUrl, "videos")){
+		$videoClass = 'is-video-page';
+	}
+	$supportClass = 'x';
+	if(strpos($currentUrl, "support")){
+		$supportClass = 'is-support-page';
+	}
+	$faqClass = 'x';
+	if(stripos($currentUrl, "faq")){
+		$faqClass = 'is-faq-page';
+	}
+?>
+<!-- New Header Starts -->
+<div class="container-fluid header-bg-black h95px"></div>
+<div class="container-fluid header-bg-green h36px hidden-xs"></div>
+<div class="container-fluid header-bg-green h5px visible-xs"></div>
+<div class="header container wrapper-width hidden-xs">
+	<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+		<div class="h95px logo col-sm-3 col-md-3 col-lg-3"><a href="<?php echo $baseUrl;?>"><img src="<?php echo $skinUrl;?>images/logo.png" alt="360Fly Logo" title="360 Fly"/></a></div>
+		<div class="h95px navbar col-sm-9 col-md-9 col-lg-9">
+			<div id="navbar3" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav  navbar-right ">
+				  <li class="shopping-cart visible-xs">
+					<a href="<?php echo $baseUrl;?>shop"><span class="icon-shopping-cart"></span></a>
+				  </li>
+				  <li class="menu1 <?php echo $menuClass?>-container" ><a class="<?php echo $menuClass?>-anchor" href="<?php echo $baseUrl;?>shop">SHOP</a>
+					<ul class="submenu1 submenu <?php echo $menuClass;?>">
+                        <?php echo $this->getChildHtml('category.links');?>
+                        <li><a href="<?php echo $baseUrl;?>faq/" class="<?php echo $faqClass; ?>">FAQ</a></li>
+					</ul>
+				  </li>
+				  <li class="divider-vertical menu2 <?php echo $appsClass?>-container"><a class="<?php echo $appsClass?>-anchor" href="<?php echo $baseUrl ;?>apps">APPS</a>
+					<ul class="submenu2 submenu">
+					  <li><a href="<?php echo $baseUrl;?>apps/">MOBILE</a></li>
+					  <li><a href="<?php echo $baseUrl;?>Director">DESKTOP</a></li>
+
+					</ul>
+				  </li>
+				  <li class="divider-vertical"><a href="https://360fly.com/videos/" class="<?php echo $videoClass?>-anchor">VIDEO</a></li>
+				  <li class="divider-vertical <?php echo $communityClass?>-container" "><a class="<?php echo $communityClass?>-anchor" href="<?php echo $baseUrl;?>community">COMMUNITY</a></li>
+				  <li class="divider-vertical"><a href="https://support.360fly.com/hc/de" class="<?php echo $supportClass?>-anchor">SUPPORT</a></li>
+				  <li class="shopping-cart hide-mobile">
+					<a class="cart-color" href="<?php echo $this->helper('checkout/cart')->getCartUrl();?>">
+						<?php echo $cartCount > 0 ? $cartCount : ''; ?>
+				  		<span class="icon-shopping-cart"></span>
+					</a>
+				  </li>
+				</ul>
+			  </div>
+		</div>
+        <div class="abs header-account-links">
+			<div class="po-rel h36px">
+				<div class="inline-block">
+				<?php echo $this->getChildHtml('accountLinks', false);?>
+				</div>
+				<div class="inline-block">
+					<?php echo $this->getChildHtml('topSearch'); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- MOBILE MENU -->
+<div class="header container visible-xs header-mobile">
+	<div class="col-xs-12">
+		<div class="h95px logo col-xs-4"><a href="<?php echo $baseUrl;?>"><img src="<?php echo $skinUrl;?>images/logo.png" alt="360Fly Logo" /></a></div>
+		<div class="h95px col-xs-11 abs no-gutter hamburger-menu">
+			<ul>
+				<li class="toggle-topbar menu-icon open" id="nav-icon3">
+					<a href="#">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+				</li>
+			</ul>
+			<section class="top-bar-section" style="display:none;">
+				<!-- Right Nav Section -->
+				<ul class="">
+					<?php $catalogSearchHelper =  $this->helper('catalogsearch');?>
+					<li class="visible-xs">
+					    <form  id="search-mini-form" class="navbar-form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
+					        <div class="form-group">
+					            <input type="text" class="form-control" id="search-mobile" maxlength="128" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" placeholder="Search">
+					        </div>
+					    </form>
+					</li>
+					<li class="shopping-cart show-mobile">
+						<a class="cart-color cart-count" href="<?php echo $baseUrl;?>checkout/cart">
+							<?php echo $cartCount > 0 ? $cartCount : ''; ?>
+							<span class="icon-shopping-cart"></span>
+						</a>
+					</li>
+					<li class="show-mobile"><a href="<?php echo $baseUrl;?>shop" class="<?php echo $menuClass?>-anchor">Shop</a></li>
+					<li class="show-mobile"><a href="<?php echo $baseUrl;?>apps" class="<?php echo $appsClass?>-anchor">APPS</a></li>
+					<li><a href="https://360fly.com/videos/" class="<?php echo $videoClass?>-anchor">VIDEO</a></li>
+					<li><a href="<?php echo $baseUrl;?>community" class="<?php echo $communityClass?>-anchor">COMMUNITY</a></li>
+
+					<li><a href="https://support.360fly.com/hc/de" class="<?php echo $supportClass?>-anchor">SUPPORT</a></li>
+					<hr/>
+					<?php echo $this->getChildHtml('category.links');?>
+					<hr/>
+                    <li  class="header-xs-account-links"><?php echo $this->getChildHtml('accountLinks', false);?></li>
+					<li><a href="<?php echo $baseUrl;?>faq/">FAQ</a></li>
+				</ul>
+
+
+			</section>
+		</div>
+	</div>
+</div>
+
+<!-- New Header Ends -->

@@ -252,6 +252,7 @@ html[xmlns] .flexslider .slides {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;*/
+  border: 2px solid transparent;
 }
 .flex-control-thumbs img:hover {
   opacity: 1;

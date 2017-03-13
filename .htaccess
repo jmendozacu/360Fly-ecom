@@ -116,6 +116,12 @@
     Options +FollowSymLinks
     RewriteEngine on
 
+#RewriteCond %{HTTP_HOST} ^staging.www.360fly.com/developers$ [NC]
+#RewriteRule ^(.*)$ https://staging.www.360fly.com [L,R=301,NC]
+
+#RewriteCond %{HTTP_HOST} ^staging\.www\.360fly\.com$ [NC]
+#RewriteRule ^ambassadors/$ https://support.360fly.com/hc/en-us/categories/115000119388-Ambassador-Program [L,R=301,NC]
+
 ############################################
 ## you can put here your magento root folder
 ## path relative to web root

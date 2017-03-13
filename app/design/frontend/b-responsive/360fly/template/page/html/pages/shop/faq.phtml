@@ -7,7 +7,14 @@
 */
 
 ?>
-
+<?php 
+	$isProd = count(Mage::getModel('core/variable')->loadByCode('is_production')->getValue('plain')) > 0 ? (int) Mage::getModel('core/variable')->loadByCode('is_production')->getValue('plain') : 0;
+	//var_dump($isProd);exit;
+	
+	if($isProd){
+		echo '<h1>This is Production</h1>';
+	}
+?>
 <div class="main-container faq faq-container">
     <h1 class="container"> Frequently Asked Questions </h1>
     <div class="container faq-content">
@@ -25,8 +32,7 @@
 		    </p>
 		</strong>
         <p class="answer">
-            We’d rather see you give your 360fly a test run first, but if you must absolutely cancel your order, use the link in your confirmation email. (If you are a registered user, you can also access the order through the order history tab in your profile.) If your order has not yet been processed, you can cancel it from that page.
-            <br> We have a very limited 4-hour window in which you can cancel your order before it is processed. If you’re unable to cancel within the aforementioned time frame, do not fear, call us at 844-HELP-FLY and we can issue a RMA#, and you can return the device for a full refund.
+            We’d rather see you give your 360fly a test run first, but if you must absolutely cancel your order, use the link in your confirmation email. (If you are a registered user, you can also access the order through the order history tab in your profile.) If your order has not yet been processed, you can cancel it from that page. We have a very limited 4-hour window in which you can cancel your order before it is processed. If you’re unable to cancel within the aforementioned time frame, do not fear, call us at 844-HELP-FLY and we can issue a RMA#, and you can return the device for a full refund.
         </p>
 
         <strong>

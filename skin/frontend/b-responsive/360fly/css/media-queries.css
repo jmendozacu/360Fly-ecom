@@ -75,9 +75,10 @@
 	/* accessories page */
 	.accessory-bar{background-image: url('../images/product_bg.jpg');padding-top: 150px;background-size: contain;background-repeat: repeat;}
 	.page-inner{padding:30px 0;}
-	.accessories label[for=camera_type]{font-size: 16px!important;}
-	.camera_4k_badge, .camera_hd_badge{width:30px;height: 30px;top:-6%;}
-	#camera_type{margin-left:42px;font-size: 15px;}
+	.accessories label[for=camera_type]{font-size: 16px!important;margin-bottom: 15px;}
+	.camera_4k_badge, .camera_hd_badge{width:60px;height: 60px;top:-16%;}
+	.camera_universal_badge{width: 120px;height: 60px;top:-16%;}
+	#camera_type{margin-left:130px;font-size: 15px;margin-bottom:15px;margin-top: 10px;}
 	.head,.price{width: 100%;}
 	.image-container img{width:100%;}
 	.products{min-height:210px;}
@@ -116,6 +117,9 @@
 	.category-cameras .landing-img{width:100%;right:0;}
 	.category-cameras .short-description.std{padding-top:0;}
 	.category-cameras .camera-info,.category-cameras .short-description.std{text-align:left;}
+	.category-cameras .camera-hd .camera-info{margin-top:0;}
+	.category-cameras .camera-hd .short-description.std{padding-top: 0;}
+	.category-cameras .camera-hd .landing-img{top:40px; right:-20px; transform: scale(1.0);}
 	/* Product Desc Page Same as landing Page End */
 	/*app page */
 	.cms-australia a#macosx,.cms-australia a#windows{min-width:100%;}
@@ -197,6 +201,23 @@
 	.my-videos-container .recent-video .videocontent .vjs-default-skin .vjs-control-bar{z-index:2;}
 	.video-js.vjs-panorama .vjs-loading-spinner {z-index: 2;}
 	/* Dew-Tour 2015 End */
+	/* edge dew tour start */
+	.edge-dewtour .video-author{float: left;margin-left: 25px;}
+	.edge-dewtour .degradation-message{padding: 80px 0;width: 70%;}
+	/* edge dew tour end */
+	/* edge video block for uncompatible broswers start */
+	.player-degradation-container .degradation-message{padding: 30px 0;}
+	.player-degradation-container .degradation-message a{display: block;margin: 1% 0;}
+	/* edge video block for uncompatible broswers end */
+	.cms-apps .image-square.right-content .img-right,.cms-au .image-square.right-content .img-right{float:none;padding:0;}
+	.cms-apps .image-square .content,.cms-au .image-square .content{position:relative;}
+	/* apps page for safari start */
+	.left-content .background-image-holder,.right-content .background-image-holder{height:70vw;padding-bottom:75%;}
+	/* apps page for safari end */
+	.cms-apps .app-content{padding: 30px 0 0;}
+	.ls-v5 .ls-bottom-slidebuttons{top: -34px !important;}
+	.cybermon-shopnow{top:73% !important;}
+	.cybermon-disclaimer{top:82% !important;}
 }
 
 /********************************************************************************************************************/
@@ -214,6 +235,7 @@
 	.about-contain{margin-left:15px;}
 	/* Product Desc Page Same as landing Page Start */
 	.category-cameras .landing-img{top:120px;}
+	.category-cameras .camera-hd .landing-img{top:175px !important;transform:scale(1.1);}
 	/* Product Desc Page Same as landing Page End */
 	/* Checkout index start */
 	.checkout-cart-index input.qty{width:65px !important;margin-top: 15px;}
@@ -233,8 +255,9 @@
 	/* dew tour page start */
 	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p{font-size: 22px;}
 	.my-videos-container .recent-video .video-overlay-content .video-overlay-text p b{font-size: 24px;}
-	.my-videos-container .recent-video .swipe-icon{margin-top: 50px;}*/
+	.my-videos-container .recent-video .swipe-icon{margin-top: 50px;}
 	/* dew tour page end */
+	.buy-now-btn{left: 48% !important;}
 }
 
 /********************************************************************************************************************/
@@ -331,6 +354,8 @@
 	.community-inner .bio-left .bio-left-child-1,.community-inner .bio-left .bio-left-child-2{float:right; width:75%;padding-left:24px;padding-right:24px;}
 	/* community inner pages end */
 	.body-wrapper{min-height:77vh;}
+	/* community main page */
+	#community-canondale{padding-bottom:56.25%;}
 }
 
 
@@ -365,6 +390,9 @@
 .cannondale .bio-left .bio-left-child-1{width:100%;}
 .community-inner .bio-left .bio-left-child-1 p,.bio-left .bio-left-child-2 .question,.bio-left .bio-left-child-2 p,.community-inner .bio-right p{font-size:20px;}
 .community-inner .greenbg{padding-bottom:40px;}
+/* community main page */
+#community-canondale{background-position: center center;}
+.hide-slider{display: block;}
 }
 
 /********************************************************************************************************************/
@@ -416,6 +444,12 @@
 	#embed-collapse{width: 100%;}
 	.my-video-info .embed-div{width: 100%;margin-bottom: 20px;}
 	/* Dew Tour Page End*/
+	/* error block start*/
+	.video-author{float: left;}
+	.off-road h2{margin: 0 0 10px;}
+	.edge .video-info{margin:2% 0;}
+	.edge .embed-div{padding-left: 15px;}
+	/* error block end*/
 }
 
 /********************************************************************************************************************/
@@ -447,6 +481,7 @@
 @media screen and (min-width: 1899px){
 	/* 360 home page hand */
 	#pov-wrap{left:550px;}
+	#player{background-size: contain;}
 }
 
 
@@ -462,3 +497,25 @@
 	/* de tour 2015 page end */
 }
 /********************************************************************************************************************/
+/* Home page Slider Bullets
+@media only screen and (max-width: 479px){
+	.ls-bottom-slidebuttons a{width: 14px !important;height:14px !important;}
+	.ls-bottom-slidebuttons a.ls-nav-active::after{width: 10px !important;height: 10px !important;}
+	.ls-v5 .ls-bottom-slidebuttons{top: -22px !important;}
+}*/
+@media screen and (max-width: 480px){
+	.user-guide .table tbody tr th{font-size: 12px;}
+	.user-guide label[for=manual_list]{margin-bottom: 15px;}
+	#manual_list{margin-left:0;width:100%;font-size: 16px;}
+	.camera_4k_badge, .camera_hd_badge{width:45px;height: 45px;top:-2%;}
+	.camera_universal_badge{width: 90px;height: 45px;top:-2%;}
+	#camera_type{margin-left:110px;font-size: 15px;margin-bottom:10px;}
+}
+@media screen and (max-width: 400px){
+	.camera_4k_badge, .camera_hd_badge{width:45px;height: 45px;top:-12%;margin-left: 2%;}
+	.camera_universal_badge{width: 90px;height: 45px;top:-12%;margin-left: 2%;}
+	#camera_type{font-size: 15px;text-align: center;margin: 10px auto;display: block;}
+}
+@media screen and (min-width: 1920px){
+	.buy-now-btn{left: 49.5% !important;}
+}

@@ -1,0 +1,897 @@
+<?php
+/**
+	* Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+
+<?php $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);?>
+<?php $skinUrl = $this->getSkinUrl(); ?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php
+ $_productprice = $_product->getPrice();
+ $_productprice = str_replace('00', '', $_productprice);
+ $_productspecialprice = $_product->getSpecialPrice();
+ $_productspecialprice = str_replace('00', '', $_productspecialprice);
+ $_productInfo;
+ $_hidehdtechspecs;
+ $_hide4ktechspecs;
+ $_producttagline = $_product->getTagline();
+ $poster = $skinUrl.'images/camera-products/z-video-thumb-hd.jpg';
+ $videoUrl = $mediaUrl.'videos/promotional_4k.mp4';
+ $video_res = "4k";
+if($_productspecialprice){
+  $_productspecialpriceformatted =  Mage::helper('core')->currency($_product->getSpecialPrice(),true,false);
+}
+?>
+<?php $productcarturl = Mage::helper('checkout/cart')->getAddUrl($_product); ?>
+<?php $productCompatibility = strtolower($_product->getAttributeText('camera_compatibility'));?>
+<?php $productResolution = strtolower($_product->getAttributeText('camera_resolution'));?>
+<?php $cameraQuality;?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice('<?php echo $this->getJsonConfig() ?>');
+</script>
+
+<div id="messages_product_view" class="container"><?php echo $this->getMessagesBlock()->setEscapeMessageFlag(true)->toHtml() ?></div>
+<div class="body-wrapper">
+    <?php if($productResolution == '4k') :?>
+        <?php $cameraQuality = '4k';?>
+    <?php
+        $_productInfo = '<li>Captures in both 360º </br>and First-person POV modes.</li>
+                         <li>Shoot, Edit and Share videos in 90 seconds or less.</li>
+                         <li>Dustproof, shockproof </br>and water resistant.</li>';
+        $_hidehdtechspecs = "hide-hd-specs";
+        $poster = $skinUrl.'images/camera-products/z-video-thumb.jpg';
+        $videoUrl = $mediaUrl.'videos/promotional_4k.mp4';
+		$video_res = "4k";
+    ?>
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('promo-banner-4k')->toHtml() ?>
+    <?php elseif($productResolution == 'hd') :?>
+        <?php $cameraQuality = 'hd';?>
+        <?php
+            $_productInfo = '<li>World’s widest single-lens camera</li>
+                             <li>Record and store up-to<br />3 hours of 360° HD footage</li>
+                             <li>Edit and share video<br /> in 90 seconds or less.</li>
+                             <li>Dustproof, shockproof<br /> and water resistant.</li>';
+            $_hide4ktechspecs = "hide-4k-specs";
+            $poster = $skinUrl.'images/camera-products/z-video-thumb-hd.jpg';
+            $videoUrl = $mediaUrl.'videos/promotional_hd.mp4';
+			$video_res = "hd";
+        ?>
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('promo-banner-hd')->toHtml() ?>
+    <?php endif; ?>
+
+    <div class="z-product-camera">
+        <div class="container wrapper-width">
+            <form>
+                <div class="product-essential">
+                    <div class="col-xs-12 col-sm-8 col-md-8">
+                        <h1 class="z-product-name mobile">360fly <span class="cam-quality"><?php echo $cameraQuality; ?></span><br />VIDEO CAMERA</h1>
+
+                        <div id="main" role="main">
+	<section class="slider z-slider">
+		<?php echo $this->getChildHtml('media'); ?>
+	</section>
+</div>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4 product-main">
+    <div id="z-productInfo">
+
+    <h1 class="z-product-name z-product-name-desk"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?><br />VIDEO CAMERA</h1>
+
+    <!-- <h4 class="z-tagline">The World’s Smartest<br class="z-deskBreak"> 360º <?php //echo $cameraQuality;?> Camera.</h4> -->
+	<h4 class="z-tagline"><?php echo $_producttagline; ?></h4>
+
+    <h1 class="z-pricingTop"><small>$</small><!--<span class="strikeSpan">--><?php echo $_productprice; ?><!--</span>&nbsp;&nbsp;<span class="z-salePriceTop"><small>$</small><?php //echo $_productspecialprice; ?></span>--></h1>
+    <!--<div class="z-saleTop">
+    <h5>SALE</h5>
+    </div>-->
+    <?php if (!$this->hasOptions()):?>
+        <div class="add-to-box">
+            <?php if($_product->isSaleable()): ?>
+                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom m0" id="btn-cart" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+            <?php endif; ?>
+        </div>
+    <?php else:?>
+        <?php if ($_product->isSaleable() && $this->hasOptions() && $this->getChildChildHtml('container1') ):?>
+            <div class="options-container-small">
+                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+            </div>
+        <?php else: ?>
+            <?php echo $this->getChildHtml('addto') ?>
+        <?php endif;?>
+    <?php endif; ?>
+    <!--h5 class="z-promo50">Promotion valid only for residents of the fifty </br>
+    (50) United States and the District of Columbia.</h5-->
+
+    <a class="z-access" href="#">View compatible accessories</a>
+
+    <h4 class="z-productInfoList">PRODUCT INFO:</h4>
+
+    <ul class="z-product-info">
+        <?php echo $_productInfo; ?>
+    </ul>
+
+</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- Product Camera -->
+
+    <div class="z-videos">
+    <div class="container-fluid no-gutter">
+        <div class="cat-video-container">
+            <div class="video-cat">
+
+                <div class="video-player hide-on-uncompatible-browser" id="player">
+                    <div class="video-container">
+                        <div id="video">
+                            <section id="one-up">
+                                <div class="videocontent embed-responsive embed-responsive-16by9">
+                                    <div class="video-overlay-content">
+                                        <div class="video-overlay-text no-display">
+                                            <p>CLICK AND DRAG BELOW TO</p>
+                                            <p><b>EXPERIENCE 360&deg;</b></p>
+                                        </div>
+                                        <!-- <div class="swipe-icon-yt">
+                                        </div> -->
+                                    </div>
+                                    <video id="video_4k" class="video-js video360 vjs-default-skin vjs-big-play-centered home-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
+                					poster="<?php echo $poster;?>" data-setup="{}" video-res="<?php echo $video_res;?>">
+                						<source src="<?php echo $videoUrl;?>" type='video/mp4'>
+                					</video>
+                                    <!-- <div class="youtube-player" id="player-yt" data-id=""></div> -->
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+				<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-edge-error.phtml')->toHtml(); ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Videos -->
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/videojs.phtml')->toHtml(); ?>
+<div class="z-last">
+    <div class="wrapper-width <?php echo $_hide4ktechspecs; ?>">
+        <h2 class="z-std">THE LAST ACTION CAMERA YOU’LL EVER NEED.</h2>
+        <p>
+            Built to stand up to your active lifestyle, the 360fly 4K gives you the power to record, share <br />
+            and experience life like never before—in fully immersive 360º video, standard First-person POV video,<br />
+            VR-compatible footage and 360º stills.
+        </p>
+        <img src="<?php echo $skinUrl;?>images/camera-products/z-last.png" alt="Infographic" />
+
+    </div>
+
+    <div class="wrapper-width <?php echo $_hidehdtechspecs; ?>">
+        <h2 class="z-std">THE CAMERA THAT STARTED THE REVOLUTION. LITERALLY.</h2>
+        <p>
+            Built to stand up to your active lifestyle, the 360fly gives you the power to record,
+            share <br />and experience life like never before—in fully immersive 360º video, VR-compatible footage and 360º stills.
+        </p>
+
+    </div>
+</div>
+<div class="z-press">
+    <div class="wrapper-width">
+        <h2 class="z-std">FEATURED IN</h2>
+
+
+        <div class="z-pr-rows cf <?php echo $_hide4ktechspecs; ?>">
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/wired.png" alt="Wired" />
+                </div>
+
+                <div class="desktop">
+                    <p>
+                        "Beautiful and innovative<br /> 
+                        design compliments a<br />
+                        simple and easy to use<br />
+                        interface."
+                    </p>
+                    <span class="z-author">JOSH VALCARCEL</span>
+                    <span class="z-pub">WIRED ‘GEAR’ REVIEW</span>
+                    <span class="z-date">10.09.2015</span>
+                </div>
+            </div>
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/cnet.png" alt="cnet" class="desktop" />
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/cnet-mobile.png" alt="cnet" class="mobile" />
+                </div>
+                <div class="desktop">
+                    <p>
+                        "The excellent mobile app 
+                        is a definite plus compared
+                        to competing cameras."
+                        <br />
+                    </p>
+                    <span class="z-author">JOSHUA GOLDMAN</span>
+                    <span class="z-pub">C|NET REVIEW</span>
+                    <span class="z-date">07.30.2016</span>
+                </div>
+            </div>
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/usa-today.png" alt="USA Today" />
+                </div>
+                <div class="desktop">
+                    <p>
+                        "The clips of skydivers, race car 
+                        enthusiasts and the like on the 360fly
+                        website look awesome."
+                    </p>
+                    <span class="z-author">JEFFERSON GRAHAM</span>
+                    <span class="z-pub">USA TODAY REVIEW</span>
+                    <span class="z-date">08.12.2016</span>
+                </div>
+            </div>
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/toms-guide.png" alt="Tom's Guide" />
+                </div>
+                <div class="desktop">
+                    <p>
+                        "The 360fly 4K delivers the best-looking
+                        images and video and lets you share them with ease.”"
+                    </p>
+                    <span class="z-author">MIKE PROSPERO</span>
+                    <span class="z-pub">TOM’S GUIDE REVIEW</span>
+                    <span class="z-date">07.01.2016</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="z-pr-rows cf <?php echo $_hidehdtechspecs; ?>">
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/wired.png" alt="Wired" />
+                </div>
+
+                <div class="desktop">
+                    <p>
+                        "Beautiful and innovative<br /> 
+                        design compliments a<br />
+                        simple and easy to use<br />
+                        interface."
+                    </p>
+                    <span class="z-author">JOSH VALCARCEL</span>
+                    <span class="z-pub">WIRED ‘GEAR’ REVIEW</span>
+                    <span class="z-date">10.09.2015</span>
+                </div>
+            </div>
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/cnet.png" alt="cnet" class="desktop" />
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/cnet-mobile.png" alt="cnet" class="mobile" />
+                </div>
+                <div class="desktop">
+                    <p>
+                        "The excellent mobile app 
+                        is a definite plus compared
+                        to competing cameras."
+                        <br />
+                    </p>
+                    <span class="z-author">JOSHUA GOLDMAN</span>
+                    <span class="z-pub">C|NET REVIEW</span>
+                    <span class="z-date">07.30.2016</span>
+                </div>
+            </div>
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/usa-today.png" alt="USA Today" />
+                </div>
+                <div class="desktop">
+                    <p>
+                        "The clips of skydivers, race car 
+                        enthusiasts and the like on the 360fly
+                        website look awesome."
+                    </p>
+                    <span class="z-author">JEFFERSON GRAHAM</span>
+                    <span class="z-pub">USA TODAY REVIEW</span>
+                    <span class="z-date">08.12.2016</span>
+                </div>
+            </div>
+
+            <div class="z-pr">
+                <div class="z-img-wrap">
+                    <img src="<?php echo $skinUrl;?>images/camera-products/press/toms-guide.png" alt="Tom's Guide" />
+                </div>
+                <div class="desktop">
+                    <p>
+                        "The 360fly 4K delivers the best-looking
+                        images and video and lets you share them with ease.”"
+                    </p>
+                    <span class="z-author">MIKE PROSPERO</span>
+                    <span class="z-pub">TOM’S GUIDE REVIEW</span>
+                    <span class="z-date">07.01.2016</span>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<div class="z-tabs desktop">
+    <div class="wrapper-width">
+        <div class="z-tab-links cf">
+            <a class="z-testLink z-gradL"href="#testimonials">Testimonials</a>
+            <a class="z-techLink"href="#tech-specs">Tech Specs</a>
+            <a class="z-appsLink z-gradR"href="#apps">Apps</a>
+        </div>
+    </div>
+</div>
+<!-- Tabs -->
+
+<script>
+
+
+
+</script>
+<a class="mobile z-mtab cf" href="#testimonials">
+    <span class="left">TESTIMONIALS</span>
+    <span class="right symb"></span>
+</a>
+
+<div class="z-test" id="tab-testimonials">
+    <div class="container">
+        <div class="row testWrap <?php echo $_hide4ktechspecs; ?>">
+
+            <div class="keyPoints col-sm-4 col-xs-12">
+                <p>
+                    "We love using the 360fly 4K because nothing beats its quality and features. It’s simply the best camera to use when live streaming in 360º/VR in HD."
+                </p>
+                <p>
+                    <span>Jeff Loo</span><br />
+                    Head of Growth at GibLib
+                </p>
+            </div>
+            <div class="keyPoints col-sm-4 col-xs-12">
+                <p>
+                    "The 360fly camera is a marvellous tool to help us train our analog astronauts. We can use it for recording their simulated space walks in Mars-like regions on Earth and analyse their activities in a virtual reality environment. Great hardware!"
+                </p>
+                <p>
+                    <span>Dr. Gernot Groemer</span><br />
+                    Austrian Space Forum
+                </p>
+            </div>
+            <div class="keyPoints col-sm-4 col-xs-12">
+                <p>
+                    "The 360fly creates a unique interactive view for fans. It's able to capture the entire atmosphere during a game while allowing fans to choose their own perspective. Time-lapse is a great feature and created awesome content to use for our in-house videos. All-in-all, a great product and a fantastic design."
+                </p>
+                <p>
+                    <span>Tuscon Roadrunners Hockey Team</span>
+                    <!-- <span>Tuscon Roadrunners Hockey Team</span><br />
+                    Paraplegic Action Sports Athlete -->
+                </p>
+            </div>
+        </div>
+        <div class="row testWrap <?php echo $_hidehdtechspecs; ?>">
+
+            <div class="keyPoints col-sm-4 col-xs-12">
+                <p>
+                    "I love my 360 fly camera. I believe it will single-handedly revolutionize the way we capture extreme sports. It gives you the opportunity to see all views; helping you to perfect your techniques."
+                </p>
+                <p>
+                    <span>Jesi Stracham</span><br />
+                    Adaptive Athlete
+                </p>
+            </div>
+            <div class="keyPoints col-sm-4 col-xs-12">
+                <p>
+                    "The 360fly not only allows me to show the world of action and extreme sports from a perspective unlike any other, but as a professional journalist and digital media member, my ability to show off action and extreme sports from the ground level is even more incredible to growing the community."
+                </p>
+                <p>
+                    <span>Tyler Tate</span><br />
+                    Sports Journalist
+                </p>
+            </div>
+            <div class="keyPoints col-sm-4 col-xs-12">
+                <p>
+                    "There's nothing worse than missing that big lightning strike. With 360fly, I never miss any part of the storm!"
+                </p>
+                <p>
+                    <span>Jesse Ferrell</span><br />
+                    Meteorologist
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="mobile z-mtab cf" href="#tech-specs">
+    <span class="left">Tech Specs</span>
+    <span class="right symb"></span>
+</a>
+
+<div class="z-test" id="tab-tech-specs">
+    <div class="container">
+        <div class="row techWrap z-m-slider 4k <?php echo $_hide4ktechspecs; ?>">
+
+            <ul class="mobile slides"></ul>
+
+            <div class="keyPoints col-sm-4 col-xs-12 " >
+
+                <div class="zm-slide">
+                    <h3>FEATURES</h3>
+                    <span>Keys</span></br>
+                    One Operation Key (Power ON/OFF, Recording Start/Stop)</br></br>
+                    <span>LEDs</span></br>3 Color LED (R,G,B)</br></br>
+                    <span>Vibration Motor</span></br>For device feedback when out of view</br></br>
+                    <span>Microphone</span></br>Built-in Dual Omni-Directional Microphones</br></br>
+                    <span>Sensors</span></br>Accelerometer, E-Compass, Non-Assisted GPS, Gyroscope</br></br>
+                    <span>Storage</span></br>Internal 64GB</br></br>
+                    <span>Wi-Fi</span></br>2.4GHz & 5GHz 802.11 b/g/n</br></br>
+                    <span>Bluetooth</span></br>Bluetooth™ Smart Device (BT LE)</br></br>
+                    <span>USB</span></br>USB 2.0</br></br>
+                    <span>Remote Control</span></br>Viewfinder, control, edit & sharing via smartphone app</br></br>
+                    <span>Supported Mobile O/S</span></br>iOS 9+, Android 4.4+</br></br>
+                    <span>PC Software</span></br>10.8 or later / Windows 7</br></br>
+                    <span>Supported PC O/S</span></br>Mac OS X, Windows
+                </div>
+
+            </div>
+
+            <div class="keyPoints col-sm-4 col-xs-12">
+
+                <div class="zm-slide">
+                    <h3>RECORDING</h3>
+                    <span>Video Format</span></br>H.264</br></br>
+                    <span>Video Mode (Resolution)</span></br>2880 x 2880 @ 30FPS Max</br></br>
+                    <span>Video Recording Rate</span></br>50 Mbps</br></br>
+                    <span>Audio Format</span></br>Stereo AAC 48KHz 96Kbps</br></br>
+                </div>
+
+                <div class="zm-slide">
+                    <h3>ENVIRONMENTAL</h3>
+                    <span>Water-Resistant</span></br>1 ATM</br></br>
+                    <span>Dust-Resistant</span></br>IP6X</br></br>
+                    <span>Shock-Resistant</span></br>Up to 1.5 M</br></br>
+                    <span>Operating Temperature</span></br>-20° to 40° C / -4° to 104° F</br></br>
+                    <span>Storage Temperature</span></br>-20° to 60° C / -4° to 140° F</br></br>
+                </div>
+
+                <div class="zm-slide">
+                    <h3>SIZE AND WEIGHT</h3>
+                    <span>Dimensions</span></br>360fly 4K camera (61mm sphere)</br>PowerCradle (46mm x 12mm)</br></br>
+                    <span>Weight</span></br>~172g
+                </div>
+
+            </div>
+
+            <div class="keyPoints col-sm-4 col-xs-12">
+
+                <div class="zm-slide">
+                    <h3>OPTICS/LENS</h3>
+                    <span>Lens Type</span></br>8 Element Glass Ultra Fisheye Lens</br></br>
+                    <span>Aperture</span></br>F2.5</br></br>
+                    <span>Field of View</span></br>240°</br></br>
+                    <span>Effective Focal Length</span></br>0.88mm</br></br>
+                    <span>Minimum Focus Distance</span></br>30cm</br></br>
+                </div>
+
+                <div class="zm-slide">
+
+                    <h3>POWER</h3>
+                    <span>Power Source</span></br>Built-In Li-Polymer battery (1780mAh)</br></br>
+                    <span>Charging Method</span></br>Through Cradle using bundled USB cable</br></br>
+                    <span>Full Charging Time</span></br>Approx. 2.5 hours with 1.5A charger</br></br>
+                    <span>Battery Life</span></br>
+                        <table>
+                            <tbody>
+                                <tr>
+                                <td>Recording time:</td><td>&nbsp;&nbsp;&nbsp;</td><td>Up to 1.5 hours</td>
+                                </tr>
+                                <tr>
+                                <td>Standby time:</td><td>&nbsp;&nbsp;&nbsp;</td><td>Up to 14 hours</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row techWrap z-m-slider hd <?php echo $_hidehdtechspecs; ?>">
+            <ul class="mobile slides"></ul>
+            <div class="keyPoints col-sm-4 col-xs-12">
+
+                <div class="zm-slide">
+                    <h3>FEATURES</h3>
+                    <span>Keys</span></br>
+                    One Operation Key (Power ON/OFF, Recording Start/Stop)</br></br>
+                    <span>LEDs</span></br>3 Color LED (R,G,B)</br></br>
+                    <span>Vibration Motor</span></br>For device feedback when out of view</br></br>
+                    <span>Microphone</span></br>Built-in Microphone</br></br>
+                    <span>Sensors</span></br>Accelerometer</br></br>
+                    <span>Storage</span></br>Internal 16GB</br></br>
+                    <span>Wi-Fi</span></br>2.4GHz 802.11 b/g/n</br></br>
+                    <span>Bluetooth</span></br>Bluetooth™ Smart Device (BT LE)</br></br>
+                    <span>USB</span></br>USB 2.0</br></br>
+                    <span>Remote Control</span></br>Viewfinder, control, edit & sharing via smartphone app</br></br>
+                    <span>Supported Mobile O/S</span></br>iOS 9+, Android 4.4+</br></br>
+                    <span>PC Software</span></br>10.8 or later / Windows 7</br></br>
+                    <span>Supported PC O/S</span></br>Mac OS X, Windows
+                </div>
+
+            </div>
+
+            <div class="keyPoints col-sm-4 col-xs-12">
+
+                <div class="zm-slide">
+                    <h3>RECORDING</h3>
+                    <span>Video Format</span></br>H.264</br></br>
+                    <span>Video Mode (Resolution)</span></br>1504 x 1504 @ 29.97FPS</br></br>
+                    <span>Video Recording Rate</span></br>20 Mbps</br></br>
+                    <span>Audio Format</span></br>Mono AAC 48KHz 64Kbps</br></br>
+                </div>
+
+                <div class="zm-slide">
+                    <h3>ENVIRONMENTAL</h3>
+                    <span>Water-Resistant</span></br>1m (3')</br></br>
+                    <span>Dust-Resistant</span></br>IP6X</br></br>
+                    <span>Shock-Resistant</span></br>Up to 1.5 M</br></br>
+                    <span>Operating Temperature</span></br>-20° to 40° C / -4° to 104° F</br></br>
+                    <span>Storage Temperature</span></br>-20° to 60° C / -4° to 140° F</br></br>
+                </div>
+
+                <div class="zm-slide">
+                    <h3>SIZE AND WEIGHT</h3>
+                    <span>Dimensions</span></br>
+                    360fly HD camera (61mm sphere)<br />PowerCradle (46mm x 12mm)</br>
+                    <!-- Tilt Mount (50mm x 26mm) -->
+                    </br>
+                    <span>Weight</span></br>138g
+                </div>
+
+            </div>
+
+            <div class="keyPoints col-sm-4 col-xs-12">
+
+                <div class="zm-slide">
+                    <h3>OPTICS/LENS</h3>
+                    <span>Lens Type</span></br>8 Element Glass Ultra Fisheye Lens</br></br>
+                    <span>Aperture</span></br>F2.5</br></br>
+                    <span>Field of View</span></br>240°</br></br>
+                    <span>Effective Focal Length</span></br>0.88mm</br></br>
+                    <span>Minimum Focus Distance</span></br>30cm</br></br>
+                </div>
+
+                <div class="zm-slide">
+
+                    <h3>POWER</h3>
+                    <span>Power Source</span></br>Built-In Li-Polymer battery (1630mAh)</br></br>
+                    <span>Charging Method</span></br>Through Cradle using bundled USB cable</br></br>
+                    <span>Full Charging Time</span></br>Approx. 2.5 hours with 1A charger</br></br>
+                    <span>Battery Life</span></br>
+                    2+ hours of recording and <br />
+                    14 hours of standby
+
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<a class="mobile z-mtab cf apps-trigger" href="#apps">
+    <span class="left">Apps</span>
+    <span class="right symb"></span>
+</a>
+
+<div class="z-test" id="tab-apps">
+    <div class="tab-apps">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 col-md-6 z-appImgGutter"></div>
+            <div class="col-lg-4 col-sm-12 col-md-5 col-xs-12">
+                <div class="z-appsCopy">
+                    <h2>THE APPS POWERING IT ALL.</h2>
+                    <h4 class="z-appHeadline">The 360fly mobile and desktop Director apps.</h4>
+                    <p class="z-appsBody">
+                        360fly isn’t just about amazing cameras. We’re about making the world’s most innovative and
+                        user-friendly 360° video ecosystem. Key to this are the free 360fly mobile and desktop
+                        Director apps. With their intuitive camera controls and features, these apps let you use
+                        your smartphone and home computer to capture, edit, add effects to and share 360° video,
+                        standard POV video and 360° stills with family, friends and fans around the globe.
+                    </p>
+                    <h4>MOBILE DOWNLOADS</h4>
+                    <div class="z-mobileDwnld">
+                        <a class="z-storeBtn" href="https://itunes.apple.com/us/app/360fly/id1030962364" target="_blank">
+                            <img src="<?php echo $skinUrl;?>images/camera-products/z-appStore.png">
+                        </a>
+                        <a class="z-storeBtn" href="https://play.google.com/store/apps/details?id=com.fly360.fly360" target="_blank">
+                            <img src="<?php echo $skinUrl;?>images/camera-products/z-googlePlay.png">
+                        </a>
+                    </div>
+                    <h4 class="z-deskDwnldHead">DESKTOP DOWNLOADS</h4>
+                    <div class="z-deskDwnld">
+                        <a class="z-storeBtn" href="https://s3.amazonaws.com/360fly-media-assets/director-app/360fly-director-162.dmg" target="_blank">
+                            <img src="<?php echo $skinUrl;?>images/camera-products/z-mac.png">
+                        </a>
+                        <a class="z-storeBtn" href="https://s3.amazonaws.com/360fly-media-assets/director-app/360fly-director-setup-162.exe" target="_blank">
+                            <img src="<?php echo $skinUrl;?>images/camera-products/z-windows.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 z-appImgMobile">
+                <img src="<?php echo $skinUrl;?>images/camera-products/z-newAppMobile.png" alt="" />
+            </div>
+            <div class="col-lg-2 col-md-1 col-sm-1"></div>
+        </div>
+    </div>
+</div>
+<div id="box">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 boxTitle">
+                <h2 class="z-std">WHAT'S IN THE BOX?</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="boxListWrap <?php echo $_hide4ktechspecs; ?>">
+                <div class="col-lg-4 col-md-3 col-sm-3 box-gutter">
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                    <ul>
+                        <li class="boxList"><p><span class="bullet">•</span> 360fly 4K Camera</p></li>
+                        <li class="boxList"><p><span class="bullet">•</span> ACA (Action Camera Adapter)</p></li>
+                        <li class="boxList"><p><span class="bullet">•</span> USB 2.0 Cable</p></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 z-boxList2">
+                    <ul>
+                        <li class="boxList"><p><span class="bullet">•</span> Power Cradle</p></li>
+                        <li class="boxList"><p><span class="bullet">•</span> Carrying Pouch</p></li>
+                        <li class="boxList"><p><span class="bullet">•</span> QuickStart Guide and Warranty Card</p></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-3 col-sm-3 box-gutter">
+                </div>
+            </div>
+
+            <div class="boxListWrap <?php echo $_hidehdtechspecs; ?>">
+                <div class="text-center">
+                    <ul class="z-center-b">
+                        <li class="boxList"><p><span class="bullet">•</span> 360fly HD Camera</p></li>
+                        <li class="boxList"><p><span class="bullet">•</span> USB 2.0 Cable</p></li>
+                        <li class="boxList"><p><span class="bullet">•</span> Power Cradle</p></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-3 box-gutter">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="promo">
+    <div class="container">
+        <div class="row z-mobileWrap">
+            <div class="z-productSaleWrap">
+
+                <div class="col-sm-6 z-cameras <?php echo $_hide4ktechspecs; ?>" data-camera="4k">
+                    <img class="z-desk-cam" src="<?php echo $skinUrl;?>images/camera-products/cameras.png" alt="" />
+                    <img class="z-mobile-cam" src="<?php echo $skinUrl;?>images/camera-products/z-camerasMobile.png" alt="" />
+                </div>
+
+                <div class="col-sm-6 z-cameras <?php echo $_hidehdtechspecs; ?>" data-camera="hd">
+                    <img class="z-desk-cam" src="<?php echo $skinUrl;?>images/camera-products/cameras-hd.png" alt="" />
+                    <img class="z-mobile-cam" src="<?php echo $skinUrl;?>images/camera-products/z-camerasMobile-hd.png" alt="" />
+                </div>
+
+                <div class="col-sm-5 productInfo">
+                        <!-- <h1>360fly 4K</br>VIDEO CAMERA</h1> -->
+						<h1>360fly <span class="cam-quality"><?php echo $cameraQuality; ?></span></br>VIDEO CAMERA</h1>
+                        <h4 class="<?php echo $_hide4ktechspecs; ?>">The World's Smartest <br class="z-deskBreak">360° <?php echo $cameraQuality; ?> Camera.</h4>
+                        <h4 class="<?php echo $_hidehdtechspecs; ?>">Immersive 360º<br class="z-deskBreak">Video For All.</h4>
+                        <h1 class="pricing"><small>$</small><!--<span class="strikeSpan">--><?php echo $_productprice; ?><!--</span>&nbsp;&nbsp;<span class="salePrice"><small>$</small><?php echo $_productspecialprice;?></span>--></h1>
+                        <!-- <h6 class="z-saleTop">SALE</h6> -->
+                        <?php if($_product->isSaleable()): ?>
+                            <button type="button" id="btn-cart" title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom-inverse m0" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                        <?php endif; ?>
+                        <!-- <h5>Promotion valid only for residents of the fifty </br>
+                        (50) United States and the District of Columbia.</h5> -->
+                </div>
+
+                <div class="col-sm-1 box-gutter"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="po-rel z-featured">
+    <div class="wrapper-width">
+        <h2 class="z-std">FEATURED ACCESSORIES</h2>
+        <div class="col-sm-10 col-sm-offset-1 product-slider">
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/vr-headset" title="VR Headset"><img alt="VR Headset" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/v/r/vr-headset-closeup.png" title="VR Headset"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/vr-headset" title="VR Headset">VR Headset</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/vr-headset">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/vented-helmet-mount-4k" title="Vented Helmet Mount (4K)"><img alt="Vented Helmet Mount (4K)" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/4/k/4k-vented-helmet-mount-1.jpg" title="Vented Helmet Mount (4K)"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/vented-helmet-mount-4k" title="Vented Helmet Mount (4K)">Vented Helmet Mount (4K)</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/vented-helmet-mount-4k">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/tripod-grip-4k" title="Tripod Grip (4K)"><img alt="Tripod Grip (4K)" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/4/k/4k-tripod-kit-1.png" title="Tripod Grip (4K)"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/tripod-grip-4k" title="Tripod Grip (4K)">Tripod Grip (4K)</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/tripod-grip-4k">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/suction-mount-4k" title="Suction Mount (4K)"><img alt="Suction Mount (4K)" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/4/k/4k-suction-mount-1.png" title="Suction Mount (4K)"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/suction-mount-4k" title="Suction Mount (4K)">Suction Mount (4K)</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/suction-mount-4k">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/mount-kit-4k" title="Mount Kit (4K)"><img alt="Mount Kit (4K)" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/4/k/4k-mount-kit-1.png" title="Mount Kit (4K)"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/mount-kit-4k" title="Mount Kit (4K)">Mount Kit (4K)</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/mount-kit-4k">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/handle-bar-mount-4k" title="Handle Bar Mount (4K)"><img alt="Handle Bar Mount (4K)" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/4/k/4k-handle-bar-mount-1.png" title="Handle Bar Mount (4K)"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/handle-bar-mount-4k" title="Handle Bar Mount (4K)">Handle Bar Mount (4K)</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/handle-bar-mount-4k">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/pov-pole" title="POV Pole"><img alt="POV Pole" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/p/o/pov-pole-1.png" title="POV Pole"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/pov-pole" title="POV Pole">POV Pole</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/pov-pole">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+
+            <div>
+            	<article class="product_pod">
+            		<a href="https://www.360fly.com/floating-handgrip" title="Floating Handgrip"><img alt="Floating Handgrip" class="thumbnail no-border" src="https://www.360fly.com/media/catalog/product/cache/1/thumbnail/280x/9df78eab33525d08d6e5fb8d27136e95/f/l/floating-handgrip-3.png" title="Floating Handgrip"></a>
+
+            		<div class="product_price clearfix">
+            			<p class="product-title"><a href="https://www.360fly.com/floating-handgrip" title="Floating Handgrip">Floating Handgrip</a>
+            			</p>
+            			<a class="btn btn-custom" href="https://www.360fly.com/floating-handgrip">ADD TO CART</a>
+            		</div>
+            	</article>
+            </div>
+
+        </div><!-- Product Slider
+    </div>
+</div> -->
+<!-- Featured Accessories -->
+
+
+    <script type="application/javascript">
+        jQuery(document).ready(function($) {
+
+            $('.product-slider').slick({
+                centerMode: true,
+                centerPadding: '0px',
+                slidesToShow: 3,
+                prevArrow: '<i class="slick-prev left fa fa-angle-left abs"></i>',
+                nextArrow: '<i class="slick-next right fa fa-angle-right abs"></i>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            //arrows: true,
+                            //centerMode: true,
+                            //centerPadding: '0px',
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            //arrows: true,
+                            //centerMode: true,
+                            //centerPadding: '0px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+			$('.product-slider').slick('unslick');
+        });
+    </script>

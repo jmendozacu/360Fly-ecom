@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'FlySans-Bold';
+  src: url("../dependencies/fonts/FlySans-Bd.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-Bd.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-Bd.ttf") format("truetype"), url("../dependencies/fonts/FlySans-Bd.svg#Fly Sans Bold") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+  @font-face {
+    font-family: 'FlySans-SemiBold';
+    src: url("../dependencies/fonts/FlySans-Bd.eot");
+    /* IE9 Compat Modes */
+    src: url("../dependencies/fonts/FlySans-Bd.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-SmBd.ttf") format("truetype"), url("../dependencies/fonts/FlySans-Bd.svg#Fly Sans Bold") format("svg");
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'FlySans-UltraLightItalic';
+  src: url("../dependencies/fonts/FlySans-UltLtIt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-UltLtIt.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-UltLtIt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-UltLtIt.svg#Fly Sans UltraLight Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-UltraLight';
+  src: url("../dependencies/fonts/FlySans-UltLt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-UltLt.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-UltLt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-UltLt.svg#Fly Sans UltraLight") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-ThinItalic';
+  src: url("../dependencies/fonts/FlySans-ThIt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-ThIt.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-ThIt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-ThIt.svg#Fly Sans Thin Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-Thin';
+  src: url("../dependencies/fonts/FlySans-Th.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-Th.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-Th.ttf") format("truetype"), url("../dependencies/fonts/FlySans-Th.svg#Fly Sans Thin") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-SemiBoldItalic';
+  src: url("../dependencies/fonts/FlySans-SmBdIt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-SmBdIt.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-SmBdIt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-SmBdIt.svg#Fly Sans SemiBold Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'FlySans-RegularItalic';
+  src: url("../dependencies/fonts/FlySans-RgIt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-RgIt.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-RgIt.woff") format("woff"), url("../dependencies/fonts/FlySans-RgIt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-RgIt.svg#Fly Sans Regular Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+
+
+@font-face {
+  font-family: 'FlySans-';
+  src: url("../dependencies/fonts/FlySans-Rg.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-Rg.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-Rg.ttf") format("truetype"), url("../dependencies/fonts/FlySans-Rg.svg#Fly Sans") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-MediumItalic';
+  src: url("../dependencies/fonts/FlySans-MdIt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-MdIt.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-MdIt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-MdIt.svg#Fly Sans Medium Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-Medium';
+  src: url("../dependencies/fonts/FlySans-Md.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-Md.eot?#iefix") format("embedded-opentype"),  url("../dependencies/fonts/FlySans-Md.ttf") format("truetype"), url("../dependencies/fonts/FlySans-Md.svg#Fly Sans Medium") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-LightItalic';
+  src: url("../dependencies/fonts/FlySans-LtIt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-LtIt.eot?#iefix") format("embedded-opentype"), url("../dependencies/fonts/FlySans-LtIt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-LtIt.svg#Fly Sans Light Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-Light';
+  src: url("../dependencies/fonts/FlySans-Lt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-Lt.eot?#iefix") format("embedded-opentype"),  url("../dependencies/fonts/FlySans-Lt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-Lt.svg#Fly Sans Light") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'FlySans-BoldItalic';
+  src: url("../dependencies/fonts/FlySans-BdIt.eot");
+  /* IE9 Compat Modes */
+  src: url("../dependencies/fonts/FlySans-BdIt.eot?#iefix") format("embedded-opentype"),  url("../dependencies/fonts/FlySans-BdIt.ttf") format("truetype"), url("../dependencies/fonts/FlySans-BdIt.svg#Fly Sans Bold Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+
+  @font-face {
+  	font-family: '360fly';
+  	src:url('../dependencies/fonts/360fly.eot?ycz9j5');
+  	src:url('../dependencies/fonts/360fly.eot?ycz9j5#iefix') format('embedded-opentype'),
+  		url('../dependencies/fonts/360fly.woff2?ycz9j5') format('woff2'),
+  		url('../dependencies/fonts/360fly.ttf?ycz9j5') format('truetype'),
+  		url('../dependencies/fonts/360fly.woff?ycz9j5') format('woff'),
+  		url('../dependencies/fonts/360fly.svg?ycz9j5#360fly') format('svg');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+
+
+  @font-face {
+  	font-family: 'Glyphicons Halflings';
+  	src:url('../dependencies/fonts/360fly.eot?ycz9j5');
+  	src:url('../dependencies/fonts/360fly.eot?ycz9j5#iefix') format('embedded-opentype'),
+  		url('../dependencies/fonts/glyphicons-halflings-regular.ttf?ycz9j5') format('truetype'),
+  		url('../dependencies/fonts/360fly.woff?ycz9j5') format('woff'),
+  		url('../dependencies/fonts/360fly.svg?ycz9j5#360fly') format('svg');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+
+
+  @font-face {
+  font-family: 'flexslider-icon';
+  src: url('../dependencies/fonts/flexslider-icon.eot');
+  src: url('../dependencies/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('../dependencies/fonts/flexslider-icon.woff') format('woff'), url('../dependencies/fonts/flexslider-icon.ttf') format('truetype'), url('../dependencies/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

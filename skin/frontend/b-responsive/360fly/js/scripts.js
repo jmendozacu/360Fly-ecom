@@ -1,5 +1,6 @@
 
 jQuery.noConflict();
+
 function adjustBioLeftWidth(){
     var wrap_width = jQuery('.wrapper-width').width();
     var window_width = jQuery('window').width();
@@ -21,6 +22,14 @@ jQuery(window).resize(function() {
     adjustBioLeftWidth();
 });
 jQuery(document).ready(function(a) {
+//    if(navigator.userAgent.toLowerCase().indexOf('android') > -1){
+//       jQuery(".hide-on-uncompatible-browser").css("display", "none");
+//      jQuery(".show-on-uncompatible-browser").css("display", "block");
+//      jQuery(".show-on-uncompatible-browser .hide-on-mobile").css("display", "none");
+//      jQuery(".show-on-uncompatible-browser .show-on-mobile").css("display", "block");
+//      jQuery(".hide-android").css("display", "none");
+//      jQuery('.quality-head').css('display','none');
+//  }
 
     adjustBioLeftWidth();
 
@@ -110,4 +119,36 @@ jQuery(document).ready(function(a) {
          }
      });
      /* dewtour2015 page - embed button end */
+	 jQuery(document).on('change', '.div-toggle', function() {
+         var target = jQuery(this).data('target');
+         var show = jQuery("option:selected", this).data('show');
+         jQuery(target).children().hide();
+         jQuery(show).show();
+     });
+     jQuery(document).ready(function(){
+         jQuery('.div-toggle').trigger('change');
+     });
+	 /* Back to top start */
+     var docheight = jQuery(document).height();
+     var footerHeight = jQuery('.footer-360').height();
+     console.log(docheight);
+     console.log(footerHeight);
+     console.log(docheight - footerHeight);
+     jQuery(window).scroll(function(){
+        if((jQuery(this)).scrollTop() >=1000){
+            jQuery('#return-to-top').fadeIn(500);
+            console.log('hello');
+
+        }
+        else{
+            jQuery('#return-to-top').fadeOut(500);
+        }
+     });
+     jQuery('#return-to-top').click(function(){
+        jQuery('body,html').animate({
+            scrollTop:0
+        },1000);
+        return false;
+     });
+     /* Back to top End */
 });

@@ -33,30 +33,40 @@ $skinUrl = $this->getSkinUrl();
     $_product = $this->getProduct();
 	$productResolution = strtolower($_product->getAttributeText('camera_resolution'));
     $productCompatibility = strtolower($_product->getAttributeText('camera_compatibility'));
+    $cart = Mage::helper('checkout/cart');
+    $product = Mage::getModel('catalog/product');
 ?>
 <?php if($this->getItems()->getSize()): ?>
+<div class="green-border-top" style="border-top: #78be20 35px solid;">
 <div class=" product-promotion block-related wrapper-width po-rel">
     <div class="">
-        <div class="abs related-icon hidden-xs hidden-sm">
-            <img src="<?php echo $mediaUrl;?>wysiwyg/productview/quik-twist-logo-shadow-<?php echo $productResolution?>.png" />
-        </div>
-        <h2>GO ANYWHERE. MOUNT EVERYWHERE.</h2>
+        <!-- <div class="abs related-icon hidden-xs hidden-sm">
+            <img src="<?php //echo $mediaUrl;?>wysiwyg/productview/quik-twist-logo-shadow-<?php //echo $productResolution?>.png" />
+        </div> -->
+        <h2>FEATURED ACCESSORIES</h2>
         <div class="col-sm-10 col-sm-offset-1 product-slider ">
             <?php foreach($this->getItems() as $_item): ?>
+                <?php
+                    $productid = $_item->getId();
+                    $_product = $product->load($productid);
+                    $productcarturl = $cart->getAddUrl($_product);
+                ?>
             <div>
                 <article class="product_pod">
                     <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(280);?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="thumbnail no-border"></a>
 
                     <div class="product_price clearfix">
                         <p class="product-title"><a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></p>
+						<p class="product-price-text"><span class="z-pricingTop z-pricing-custom"><small>$</small><?php echo  $_productspecialprice = str_replace('00', '', $_item->getPrice()); ?></span></p>
 
-                        <a href="<?php echo $_item->getProductUrl() ?>" class="btn btn-custom">MORE INFO</a>
+                        <button type="button"  title="<?php echo $this->__('Add to Cart') ?>" class="btn btn-custom mt0" onclick="setLocation('<?php echo $productcarturl;?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                     </div>
                 </article>
             </div>
             <?php endforeach;?>
         </div>
     </div>
+</div>
 </div>
     <script type="application/javascript">
         jQuery(document).ready(function($) {

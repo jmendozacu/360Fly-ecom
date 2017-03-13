@@ -33,6 +33,7 @@
 	$skinUrl = $this->getSkinUrl();
 	$hdUrl =  Mage::getModel('catalog/product')->load(2)->getProductUrl();
 	$fourkUrl =  Mage::getModel('catalog/product')->load(1)->getProductUrl();
+	$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
@@ -154,7 +155,16 @@
 			</div>
 		</form>
 		<?php
-			$ytVideoId = $_product->getYtVideoId();
+		if($productResolution == 'hd'){
+			$VideoId = $mediaUrl."videos/promotional_hd.mp4";
+			$VideoPoster = "https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail_hd.jpg";
+			
+		}
+		else{
+			$VideoId = $mediaUrl."videos/promotional_4k.mp4";
+			$VideoPoster = "https://d3a8ot8p8m13p6.cloudfront.net/videos/promotional_thumbnail.jpg";
+		}
+		
 			//echo $this->getLayout()->createBlock('core/template')->setData('videoid', $ytVideoId)->setTemplate('page/html/blocks/video-block-dyn.phtml')->toHtml();
 			// 	if($productResolution == 'hd'){
 			// 	echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-2.phtml')->toHtml();
@@ -163,10 +173,12 @@
 			// }
 		?>
 		<?php echo $this->getLayout()->createBlock('core/template')
-					->setData('videoid', $ytVideoId)
+					->setData('videoid', $VideoId)
+					->setData('videoposter', $VideoPoster)
 					->setTemplate('page/html/blocks/video-block-dyn.phtml')
 					->toHtml();
 		?>
+		<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-edge-error.phtml')->toHtml(); ?>
 		<div class="camera-view-apps-block container-fluid no-gutter">
 			<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/pages/apps-block.phtml')->toHtml(); ?>
 		</div>

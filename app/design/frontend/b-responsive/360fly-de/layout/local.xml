@@ -1,0 +1,199 @@
+<layout version="0.1.0">
+    <default>
+        <reference name="root">
+            <block type="core/template" name="after_content" as="after_content" template="page/html/after_content.phtml"/>
+            <block type="core/text_list" name="before_content" as="before_content" />
+            <!--<action method="unsetChild"><alias>breadcrumbs</alias></action>-->
+        </reference>
+
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
+            <action method="addLinkRel"><rel>stylesheet</rel><href>//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css</href></action>
+            <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic|Montserrat:400,700|Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans|Merriweather:300,700,700italic,300italic|Open+Sans:700,400</href></action>
+
+            <!--<action method="addCss"><stylesheet>css/magemojo-font.css</stylesheet></action>-->
+            <action method="addCss"><stylesheet>css/helper.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/pe-icon-7-stroke.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/360fly.css</stylesheet></action>
+            <action method="addItem"><type>skin_js</type><name>js/modernizr.custom.js</name></action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/ie.css</name>
+                <params/>
+                <if>IE</if>
+            </action>
+
+			<!-- Custom Files by Ahy Team -->
+            <action method="addCss"><stylesheet>css/player-ui.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/nj.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/flexslider.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/custom.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/custom-fonts.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/slick.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/product_slider.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/harpreet.css</stylesheet></action>
+            <!-- <action method="addCss"><stylesheet>css/slick.css</stylesheet></action> -->
+            <!-- <action method="addCss"><stylesheet>css/slick-theme.css</stylesheet></action> -->
+            <action method="addCss"><stylesheet>css/media-queries.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/animate.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/panaroma/videojs-panorama.css</stylesheet></action>
+            <!-- <action method="addCss"><stylesheet>css/360custom.css</stylesheet></action> -->
+
+			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>	 -->
+			<action method="addItem"><type>skin_js</type><name>js/scrollmagic.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/tweenmax.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/animation.gsap.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/slick.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/scripts.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/led-animations.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/editing-quickstart.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/panaroma/three.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs-panorama.v5.min.js</name></action>
+            <action method="addCss"><stylesheet>css/eude.css</stylesheet></action>
+        </reference>
+
+        <remove name="right_panel"/>
+        <remove name="breadcrumbs"/>
+
+        <reference name="header">
+            <block type="page/template_links" name="account.links" as="accountLinks"/>
+            <block type="core/template" name="minicart.links" as="cartButton" template="page/template/minicart.phtml"/>4
+            <block type="core/template" name="category.links" template="page/html/category-links.phtml"/>
+        </reference>
+<!--
+        <reference name="after_content">
+            <block type="cms/block" name="footer_logos" as="footer_logos" before="footer_social">
+                <action method="setBlockId"><block_id>footer_logos</block_id></action>
+            </block>
+
+            <block type="cms/block" name="footer_social" as="footer_social" after="-">
+                <action method="setBlockId"><block_id>footer_social</block_id></action>
+            </block>
+        </reference>-->
+	</default>
+
+    <customer_logged_in>
+        <reference name="account.links">
+            <action method="addLink" translate="label title" module="customer"><label>Account</label><url helper="customer/getAccountUrl"/><title>Account</title><prepare/><urlParams/><position>10</position><liParams/><aParams>class="link-account"</aParams></action>
+            <action method="addLink" translate="label title" module="customer"><label>Logout</label><url helper="customer/getLogoutUrl"/><title>Logout</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="link-logout"</aParams></action>
+        </reference>
+    </customer_logged_in>
+
+    <customer_logged_out>
+        <reference name="account.links">
+            <action method="addLink" translate="label title" module="customer"><label>Signup</label><url helper="customer/getRegisterUrl"/><title>Register</title><prepare/><urlParams/><position>10</position><liParams/><aParams>class="link-register"</aParams></action>
+            <action method="addLink" translate="label title" module="customer"><label>Login</label><url helper="customer/getLoginUrl"/><title>Login</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="link-account"</aParams></action>
+        </reference>
+    </customer_logged_out>
+
+	<cms_index_index>
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/layerslider.css</stylesheet></action>
+			<action method="addItem"><type>skin_js</type><name>js/layerslider.transitions.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/layerslider.kreaturamedia.jquery.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/greensock.js</name></action>
+		</reference>
+	</cms_index_index>
+
+    <cms_page>
+        <reference name="content">
+            <action method="unsetChild"><name>page_content_heading</name></action>
+            <reference name="cms.wrapper">
+                <action method="setElementClass"><value>container-fluid row m0p0</value></action>
+                <block type="core/template" name="page_content_heading" template="cms/content_heading.phtml" before="-"/>
+            </reference>
+        </reference>
+    </cms_page>
+
+
+    <checkout_cart_index>
+        <reference name="content">
+            <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>
+        </reference>
+    </checkout_cart_index>
+
+    <catalog_category_default>
+		<reference name="product_list">
+			<action method="setColumnCount"><count>4</count></action>
+		</reference>
+	</catalog_category_default>
+
+	<catalog_product_view>
+    <reference name="root">
+        <action method="setTemplate"><template>page/1column.phtml</template></action>
+    </reference>
+		<reference name="content">
+			<remove name="product.info.addto"/>
+			<block type="catalog/product_list_related" name="catalog.product.related" as="relatedProducts" template="catalog/product/list/related.phtml" />
+    </reference>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>js/jquery.flexslider.js</name></action>
+		</reference>
+    <reference name="product.info">
+        <!-- <block type="catalog/product_list_related" name="catalog.product.related" as="relatedProducts" template="catalog/product/list/related.phtml" /> -->
+    </reference>
+    </catalog_product_view>
+
+    <customer_account>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="addBodyClass"><classname>customer-account</classname></action>
+        </reference>
+        <reference name="content">
+            <block type="page/html_wrapper" name="account.navigation.wrapper" before="my.account.wrapper" translate="label">
+                <label>Account Navigation Wrapper</label>
+                <action method="setElementClass"><value>module_navigation</value></action>
+                <action method="append"><block>customer_account_navigation</block></action>
+            </block>
+        </reference>
+    </customer_account>
+
+    <customer_account_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </customer_account_index>
+
+   <!--
+	Uncomment to remove Header and Footer During Checkout
+    <onestepcheckout_index_index>
+        <reference name="footer">
+            <action method="unsetChildren"></action>
+        </reference>
+        <reference name="header">
+            <action method="unsetChildren"></action>
+        </reference>
+    </onestepcheckout_index_index>
+    -->
+
+    <checkout_onepage_success>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </checkout_onepage_success>
+
+	<cms_index_noroute translate="label">
+        <label>CMS No-Route Page</label>
+        <reference name="content">
+            <remove name="cms.wrapper"/>
+			<block type="core/template" name="page.not.found" template="page/html/pages/404.phtml"/>
+            <!-- <block type="catalog/product_list" name="featured" template="catalog/product/list.phtml" after="page_content_heading">
+                <action method="setCategoryId"><category_id>15</category_id></action>
+                <action method="setColumnCount"><column_count>5</column_count></action>
+                <action method="setDefaultGridPerPage"><limit>15</limit></action>
+            </block> -->
+        </reference>
+    </cms_index_noroute>
+    <catalogsearch_result_index translate="label">
+      <reference name="root">
+        <action method="setTemplate">
+          <template>page/1column.phtml</template>
+        </action>
+      </reference>
+      <reference name="search_result_list">
+        <action method="setTemplate"><template>searchresult/list.phtml</template></action>
+    </reference>
+    </catalogsearch_result_index>
+</layout>

@@ -51,6 +51,7 @@
 			<action method="addItem"><type>skin_js</type><name>js/panaroma/three.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/panaroma/videojs-panorama.v5.min.js</name></action>
+            <block type="core/template" name="misc.scripts" as="miscScripts" template="page/html/miscscripts.phtml"/>
         </reference>
 
         <remove name="right_panel"/>
@@ -58,7 +59,7 @@
 
         <reference name="header">
             <block type="page/template_links" name="account.links" as="accountLinks"/>
-            <block type="core/template" name="minicart.links" as="cartButton" template="page/template/minicart.phtml"/>4
+            <block type="core/template" name="minicart.links" as="cartButton" template="page/template/minicart.phtml"/>
             <block type="core/template" name="category.links" template="page/html/category-links.phtml"/>
         </reference>
 <!--

@@ -9,7 +9,7 @@
 $baseUrl = $this->getBaseUrl();
 $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $skinUrl = $this->getSkinUrl();
-$hdId = 2;
+$hdId = 22;
 $producthd = Mage::getModel('catalog/product')->getCollection()
    ->addAttributeToFilter('entity_id', $hdId)
    ->addAttributeToSelect('*')
@@ -29,9 +29,9 @@ $fourkUrl = $productfourk->getProductUrl();
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <h1>WELCOME TO THE 360fly STORE.</h1>
-              <p><b>Now ¼-20 mount system compatible!</b></p>
-              <p class="pr-40">You’ll find everything you need to capture your entire life in immersive, interactive 360° HD and 4K video right here, anytime, under one digital roof. 360fly proudly offers free shipping on any camera purchase <i>(U.S. residents only)</i>. We're even prouder of our customer service and making sure you love your 360fly camera as much as we love ours. Come in and take a look around - all around.</p>
-              <a href="<?php echo $baseUrl ?>cameras" class="btn btn-custom">Shop Cameras</a>
+              <p><b>Now <sup>1</sup>/<sub>4</sub>-20 mount system compatible!</b></p>
+              <p class="pr-40">You’ll find everything you need to capture your entire life in immersive, interactive 360° HD and 4K video right here, anytime, under one digital roof. 360fly proudly offers free shipping on any camera purchase <i>(U.S. residents only)</i>. We're even prouder of our customer service and making sure you love your 360fly camera as much as we love ours. Come in and take a look around&#x2014;all around.</p>
+              <a href="<?php echo $baseUrl ?>shop/cameras" class="btn btn-custom">Shop Cameras</a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 camera-layers hidden-xs hidden-sm ">
                 <a href="<?php echo $fourkUrl;?>" class="camera-4k-link"></a>
@@ -41,6 +41,7 @@ $fourkUrl = $productfourk->getProductUrl();
       </div>
 </div>
 <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-block-a.phtml')->toHtml(); ?>
+<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/video-edge-error.phtml')->toHtml(); ?>
 <div class="row product-block">
     <div class="container wrapper-width">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -52,7 +53,7 @@ $fourkUrl = $productfourk->getProductUrl();
 
                     <p class="col-sm-12 center no-gutter">Browse and buy the game-changing 360fly cameras that miss nothing.<br>And change everything.</p>
                     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 no-gutter text-center shop-btn-container">
-                        <a href="<?php echo $baseUrl ?>cameras" class="btn btn-custom center">Shop Cameras</a>
+                        <a href="<?php echo $baseUrl ?>shop/cameras" class="btn btn-custom center">Shop Cameras</a>
                     </div>
                   </div>
                   <div class="md-left hidden-xs">
@@ -70,7 +71,7 @@ $fourkUrl = $productfourk->getProductUrl();
                     <img class="product-img mounts-img mobile-products hidden-sm hidden-md hidden-lg" alt="360 Fly Camera Accessories" title="360 Fly Camera Accessories" src="<?php echo $skinUrl ?>images/shop360/mount_cluster.png">
                     <p class="col-sm-12 center no-gutter">From innovative mounts to spare chargers, get everything you need to keep your 360fly capturing it all.</p>
                     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 no-gutter text-center shop-btn-container">
-                      <a href="<?php echo $baseUrl ?>accessories" class="btn btn-custom center">Shop Accessories</a>
+                      <a href="<?php echo $baseUrl ?>shop/accessories" class="btn btn-custom center">Shop Accessories</a>
                     </div>
                   </div>
                   <div class="md-left  hidden-xs">

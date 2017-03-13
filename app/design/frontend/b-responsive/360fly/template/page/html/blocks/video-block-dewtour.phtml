@@ -1,12 +1,12 @@
 <?php
     /*Write conditions here to switch video source based on request URL*/
-
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 ?>
 
-<div class="" id="">
+<div class="hide-on-uncompatible-browser" id="">
     <div class="video-container">
         <div id="video">
-            <section id="one-up">
+            <section id="one-up-dewtour">
                 <div class="videocontent embed-responsive embed-responsive-16by9">
                     <div class="video-overlay-content">
                         <div class="swipe-icon">
@@ -16,8 +16,8 @@
                         </div>
                     </div>
                     <video id="video_dewtour" class="video-js video360 vjs-default-skin vjs-big-play-centered devtour-video" controls preload="auto"  data-flyautoplay="off" alt="360 camera, 360 video, panoramic video camera, VR video camera"
-                            data-setup="{}" crossorigin="anonymous">
-                        <source src="https://d1ncy3j1ft9oyb.cloudfront.net/UGnR8qGaoU5CqQrrtM3doC/miLMYBSterEr5DYw27omfi_0/oBjJau5yMU8TvgyKk2o4Uc.mp4" type='video/mp4'>
+                            data-setup="{}" >
+                        <source src="<?php echo  $mediaUrl.'videos/oBjJau5yMU8TvgyKk2o4Uc.mp4';?>" type='video/mp4'>
                     </video>
                 </div>
             </section>
