@@ -18,6 +18,8 @@ $skinUrl = $this->getSkinUrl();
             <h1 class="text-center border-bottom" style="margin-bottom:5px;">360fly-4k User Guide (IOS <i class="fa fa-apple"></i>)</h1>
             <a href="/360fly-4k-user-manual-android" class="fa other-guide-link android" title="Link to the 4K Android Guide"></a>
 
+            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/blocks/google-translate-right.phtml')->toHtml(); ?>
+            
             <a class="user-guide-title" data-toggle="collapse" data-target="#getting-started" aria-expanded="true"><h3 class="user-guide-title">Getting Started</h3></a>
             <div id="getting-started" class="getting-started user-guide-subsection collapse in">
                 <h3>Congratulations on landing your new 360fly 4K camera.</h3>
