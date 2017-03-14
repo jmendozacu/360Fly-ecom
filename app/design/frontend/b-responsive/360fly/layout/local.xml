@@ -119,6 +119,9 @@
 		<reference name="product_list">
 			<action method="setColumnCount"><count>4</count></action>
 		</reference>
+        <reference name="product.info.additional">
+            <block type="catalog/product_list_related" name="catalog.product.related" before="-" template="catalog/product/list/related.phtml"/>
+        </reference>
 	</catalog_category_default>
 
 	<catalog_product_view>
