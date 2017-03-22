@@ -50,6 +50,7 @@
 
 .product-slider .slick-current .product_pod .product_price {
 	opacity: 1;
+	min-height: 70px;
 }
 
 .product-slider .product_pod {
