@@ -97,7 +97,7 @@ ul,ol         { list-style:none; }
 .main { margin:10px 0; }
 
 /* Base Columns */
-.col-left { float:left; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
+.col-left { float:left; width:230px; border:0px solid #ddd; padding:5px 5px 0; }
 .col-main { float:left; width:736px; border:1px solid #ddd; padding:5px; }
 .col-right { float:right; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
 
@@ -1191,7 +1191,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 
 /* Footer ================================================================================ */
-.footer { border:1px solid #ddd; padding:10px; }
+.footer { border:1px solid #ddd; padding:10px; display: none; }
 .footer p { text-align:right; }
 .footer address { text-align:right; }
 .footer ul {}
