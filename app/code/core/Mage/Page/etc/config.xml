@@ -70,11 +70,6 @@
                     <template>page/3columns.phtml</template>
                     <layout_handle>page_three_columns</layout_handle>
                 </three_columns>
-                <allowed_user module="page" translate="label">
-                    <label>Only Registerd / Sign in users</label>
-                    <template>page/restricted.phtml</template>
-                    <layout_handle>page_allowed_user</layout_handle>
-                </allowed_user>
             </layouts>
         </page>
     </global>
