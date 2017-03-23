@@ -98,8 +98,8 @@ ul,ol         { list-style:none; }
 
 /* Base Columns */
 .col-left { float:left; width:230px; border:0px solid #ddd; padding:5px 5px 0; }
-.col-main { float:left; width:736px; border:1px solid #ddd; padding:5px; }
-.col-right { float:right; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
+.col-main { float:left; width:736px; border:0px solid #ddd; padding:5px; }
+.col-right { float:right; width:230px; border:0px solid #ddd; padding:5px 5px 0; }
 
 /* 1 Column Layout */
 .col1-layout .col-main { float:none; width:auto; }
@@ -441,6 +441,7 @@ tr.summary-details-excluded { font-style:italic; }
 .logo { float:left; }
 .header-container {}
 .header { padding:10px; background-color: black; height: 60px; border-bottom: #78b20e 10px solid; }
+.header img {height: 60px;}
 .header .logo { float:left; text-decoration:none !important; }
 .header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
 .header h1.logo { margin:0; padding:0; }
