@@ -185,7 +185,7 @@ body{font-family:"FlySans-", Arial, sans-serif;font-style:normal;font-weight:nor
 .footer-360 #mc-embedded-subscribe-form{display:inline-block;width:120px;margin-right:12px;margin-left:12px;margin-bottom:0px;}
 .footer-360 .btn-footer, .footer-360 #mc-embedded-subscribe-form .btn-footer{border-color:#666666;border-radius:50px;border-width:2px;-webkit-transition:all .5s;-moz-transition:all .5s;transition:all .5s;}
 .footer-360 #mc-embedded-subscribe-form .btn-footer{width:120px;background-color:transparent;margin-bottom:0;min-width: 120px;font-weight:100;cursor: initial;-webkit-user-select:text;}
-.footer-360 .contact{margin-top:46px;}
+.footer-360 .contact{margin-top:5px;}
 .footer-360 .btn-footer:hover{background-color:#666666;color:#999999;}
 .footer-360 a:hover{text-decoration:none;color:#fff;}
 .retailer{border-color:#666666;background:transparent;border-radius:50px;border-width:2px;margin-bottom: 0;min-width: 120px;width: 120px;font-family:"FlySans-", Arial, sans-serif;font-weight: normal;padding:6px 12px;text-align: center;color:#999999;transition:all 0.5s;}
