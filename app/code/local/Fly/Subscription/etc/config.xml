@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fly_Subscription extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Fly
+ * @package        Fly_Subscription
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Fly_Subscription>
+            <version>1.0.0</version>
+        </Fly_Subscription>
+    </modules>
+    <global>
+        <resources>
+            <fly_subscription_setup>
+                <setup>
+                    <module>Fly_Subscription</module>
+                    <class>Fly_Subscription_Model_Resource_Setup</class>
+                </setup>
+            </fly_subscription_setup>
+        </resources>
+        <blocks>
+            <fly_subscription>
+                <class>Fly_Subscription_Block</class>
+            </fly_subscription>
+        </blocks>
+        <helpers>
+            <fly_subscription>
+                <class>Fly_Subscription_Helper</class>
+            </fly_subscription>
+        </helpers>
+        <models>
+            <fly_subscription>
+                <class>Fly_Subscription_Model</class>
+                <resourceModel>fly_subscription_resource</resourceModel>
+            </fly_subscription>
+            <fly_subscription_resource>
+                <class>Fly_Subscription_Model_Resource</class>
+                <entities>
+                    <package>
+                        <table>fly_subscription_package</table>
+                    </package>
+                    <package_store>
+                        <table>fly_subscription_package_store</table>
+                    </package_store>
+                    <package_comment>
+                        <table>fly_subscription_package_comment</table>
+                    </package_comment>
+                    <package_comment_store>
+                        <table>fly_subscription_package_comment_store</table>
+                    </package_comment_store>
+                </entities>
+            </fly_subscription_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <fly_subscription>
+                        <class>Fly_Subscription_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </fly_subscription>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <fly_subscription>
+                    <file>fly_subscription.xml</file>
+                </fly_subscription>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Fly_Subscription>
+                    <files>
+                        <default>Fly_Subscription.csv</default>
+                    </files>
+                </Fly_Subscription>
+            </modules>
+        </translate>
+        <global_search>
+            <package>
+                <class>fly_subscription/adminhtml_search_package</class>
+                <acl>fly_subscription</acl>
+            </package>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Fly_Subscription before="Mage_Adminhtml">Fly_Subscription_Adminhtml</Fly_Subscription>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <fly_subscription>
+                <use>standard</use>
+                <args>
+                    <module>Fly_Subscription</module>
+                    <frontName>fly_subscription</frontName>
+                </args>
+            </fly_subscription>
+        </routers>
+        <layout>
+            <updates>
+                <fly_subscription>
+                    <file>fly_subscription.xml</file>
+                </fly_subscription>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Fly_Subscription>
+                    <files>
+                        <default>Fly_Subscription.csv</default>
+                    </files>
+                </Fly_Subscription>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <fly_subscription>
+            <package>
+                <breadcrumbs>1</breadcrumbs>
+                <allow_comment>1</allow_comment>
+                <rss>1</rss>
+                <meta_title>Subscriptions</meta_title>
+            </package>
+        </fly_subscription>
+    </default>
+</config>

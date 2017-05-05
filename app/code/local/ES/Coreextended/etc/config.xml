@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <ES_Coreextended>
+            <version>0.1.0</version>
+        </ES_Coreextended>
+    </modules>
+    <frontend>
+        <routers>
+            <oauth>
+                <args>
+                    <modules>
+                        <ES_Coreextended before="Mage_Oauth">ES_Coreextended</ES_Coreextended>
+                    </modules>
+                </args>
+            </oauth>
+        </routers>
+    </frontend>
+	 
+</config>

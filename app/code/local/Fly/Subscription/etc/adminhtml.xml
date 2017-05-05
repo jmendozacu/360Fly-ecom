@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fly_Subscription extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Fly
+ * @package        Fly_Subscription
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <fly_subscription translate="title" module="fly_subscription">
+                                        <title>Subscription</title>
+                                    </fly_subscription>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <customer>
+                        <children>
+                            <fly_subscription translate="title" module="fly_subscription">
+                                <title>Subscribers</title>
+                                <children>
+                                    <package translate="title" module="fly_subscription">
+                                        <title>Subscription</title>
+                                        <sort_order>0</sort_order>
+                                    </package>
+                                    
+                                </children>
+                            </fly_subscription>                        </children>
+                    </customer>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <customer>
+            <children>
+                <fly_subscription translate="title" module="fly_subscription">
+                    <title>Subscribers</title>
+                    <sort_order>55</sort_order>
+                    <children>
+                        <package translate="title" module="fly_subscription">
+                            <title>Subscription</title>
+                            <action>adminhtml/subscription_package</action>
+                            <sort_order>0</sort_order>
+                        </package>
+                        
+                    </children>
+                </fly_subscription>            </children>
+        </customer>
+
+    </menu>
+</config>

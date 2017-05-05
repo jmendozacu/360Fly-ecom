@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fly_Subscription extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Fly
+ * @package        Fly_Subscription
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<widgets>
+    <subscription_package_view type="fly_subscription/package_widget_view" translate="name description" module="fly_subscription">
+        <name>Subscription view</name>
+        <description>Subscription view widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <package_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Subscription</label>
+                <type>label</type>
+                <helper_block>
+                    <type>fly_subscription/adminhtml_package_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Subscription</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </package_id>
+        </parameters>
+    </subscription_package_view>
+    <subscription_package_link type="fly_subscription/package_widget_link" translate="name description" module="fly_subscription">
+        <name>Subscription link</name>
+        <description>Subscription link widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <package_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Subscription</label>
+                <type>label</type>
+                <helper_block>
+                    <type>fly_subscription/adminhtml_package_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Subscription</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>130</sort_order>
+            </package_id>
+        </parameters>
+    </subscription_package_link>
+</widgets>
