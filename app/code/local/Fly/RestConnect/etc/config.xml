@@ -6,11 +6,7 @@
             <version>0.1.0</version>
         </Fly_RestConnect>
     </modules>
-	<models>
-		<restConnect>
-		  <class>Fly_RestConnect_Model</class>
-		</restConnect>
-	</models>
+	
 	 <frontend>
         <routers>
             <restConenct>

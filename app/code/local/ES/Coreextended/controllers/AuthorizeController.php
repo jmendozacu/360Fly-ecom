@@ -31,13 +31,9 @@ class ES_CoreExtended_AuthorizeController extends Mage_Oauth_AuthorizeController
         $session = Mage::getSingleton('customer/session');
 
         $session->start();
-        $email = $_GET['username'];
-        $password = $_GET['password'];
-		
-		//$email = 'kiran.kayat@lntinfotech.com';
-        //$password = '123456';
-		
-		//exit;
+        $email = unserialize($this->getRequest()->getParam('username'));
+        $password = unserialize($this->getRequest()->getParam('password'));
+
 
             try {
                 $session->login($email, $password);
@@ -63,7 +59,7 @@ class ES_CoreExtended_AuthorizeController extends Mage_Oauth_AuthorizeController
         $logged = $session->isLoggedIn();
         if ($logged) 
         {
-		//echo "test";
+		
             $helper = Mage::helper('oauth');
             $session = Mage::getSingleton($this->_sessionName);
             
