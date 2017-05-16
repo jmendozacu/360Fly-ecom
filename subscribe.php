@@ -33,18 +33,27 @@
 				$customer = Mage::getModel('customer/customer')->load($customerid);
 				$product = Mage::getModel('catalog/product')->setStoreId(1)->load($planid);
 				// load quote by customer and store...
+				try{
 				$quote = Mage::getModel('sales/quote')->setStoreId(1)->loadByCustomer($customerid);
-				//echo "quote";
 				$quote->addProduct($product, 1);
-				//echo "product added";
 				$quote->setIsActive(1);
-				$quote->collectTotals()->save();
+				if($quote->collectTotals()->save())
+				{			
+					return true;
+				}
+			
 				
-				$url = Mage::getBaseurl().'restconnet/restapi/placeorder';
-				$message['success'] = $url;
-				echo Mage::helper('core')->jsonEncode($message);
-				//echo 1;
-				exit;
+				}catch(Exception $e)
+				{
+					$message['error'] = $e->getMessage();
+					echo Mage::helper('core')->jsonEncode($message);
+					exit;
+					
+				}
+				
+				return false;
+			
+				
 				
 			}
 			else

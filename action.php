@@ -52,9 +52,7 @@
 						$message['success'] = 'Subscription Profile has been activated.';
 						break;
 				}
-				//$profile->activate();
 				
-				//$message['success'] = 'Subscription Profile has been cancelled.';
 				echo Mage::helper('core')->jsonEncode($message);
 				exit;
 			}

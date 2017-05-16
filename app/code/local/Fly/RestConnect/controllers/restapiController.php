@@ -9,7 +9,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 	}
 	
 	// Get consumer key and consumer secret key
-	public function getconsumerDetails()
+	public function getConsumerDetails()
 	{
 		try{
 				// Cusumer created at admin with name: mobileapp
@@ -29,7 +29,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 	}
 	
 	// Get Customer Id using token key
-	public function getcustomerid($token){
+	public function getCustomerId($token){
 		$oauthCollection = Mage::getModel('oauth/token')->getCollection()->addFieldToFilter('token',$token)->addFieldToFilter('revoked','0')->getFirstItem();
 		if($oauthCollection->getCustomerId())
 		{
@@ -170,7 +170,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 		$access_secret = $access_secret[1];
 		
 		// get customer id
-		$customerId = $this->getcustomerid($access_key);
+		$customerId = $this->getCustomerId($access_key);
 		
 		$token['uuid'] = $customerId;
 		$token['token'] = $access_key;
@@ -188,10 +188,55 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 			
 		if($postdata['username'] && $postdata['password'])
 		{
-		$consumer = $this->getconsumerDetails();
+		$consumer = $this->getConsumerDetails();
 				
 		$access_token = $this->getOauthAccessKeyAndSecret($consumer['key'], $consumer['secret'], $postdata['username'], $postdata['password'], $this->getActurl());
 		echo Mage::helper('core')->jsonEncode($access_token);
+		exit;
+		}
+		else
+		{
+			$message['error'] = 'Invalid username or password';
+			echo Mage::helper('core')->jsonEncode($message);
+			exit;
+		}
+		
+	}
+	
+	// get user access token and secret key
+	public function signonAction()
+	{
+
+		$postdata = json_decode(file_get_contents('php://input'), true);
+		
+			
+		if($postdata['username'] && $postdata['password'])
+		{
+		$consumer = $this->getConsumerDetails();
+				
+		$access_token = $this->getOauthAccessKeyAndSecret($consumer['key'], $consumer['secret'], $postdata['username'], $postdata['password'], $this->getActurl());
+			if($access_token['uuid'] && $access_token['token_secret'])
+			{
+			// create customer session
+				$customer = Mage::getModel('customer/customer');
+				$customer->setWebsiteId(Mage::app()->getStore()->getWebsiteId());
+				$session = Mage::getSingleton('customer/session');
+				$customer->loadByEmail($postdata['username']);
+				
+				$session->setCustomerAsLoggedIn($customer);
+				
+				$url = Mage::getBaseurl().'customer/account';
+				$message['success'] = $url;
+				echo Mage::helper('core')->jsonEncode($message);
+				exit;
+			
+			}
+			else
+			{
+				$message['error'] = 'Invalid username or password';
+				echo Mage::helper('core')->jsonEncode($message);
+				exit;
+			}
 		}
 		else
 		{
@@ -268,7 +313,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 			}
 			
 			// Get consumer details
-			$consumer = $this->getconsumerDetails();
+			$consumer = $this->getConsumerDetails();
 		}
 		else
 		{
@@ -330,7 +375,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 			}
 			
 			// Get consumer details
-			$consumer = $this->getconsumerDetails();
+			$consumer = $this->getConsumerDetails();
 		}
 		else
 		{
@@ -393,7 +438,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 			}
 			
 			// Get consumer details
-			$consumer = $this->getconsumerDetails();
+			$consumer = $this->getConsumerDetails();
  
 		}
 		else
@@ -431,12 +476,9 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 		$restClient->setMethod(Zend_Http_Client::GET);
 		
 		// Filters
-		
 		$restClient->setParameterGet('filter[1][attribute]', 'storage');
 		$restClient->setParameterGet('filter[1][neq]', 0);
-		$restClient->setParameterGet('filter[2][attribute]', 'bandwidth');
-		$restClient->setParameterGet('filter[2][neq]', 0);
-		
+				
 		$response = $restClient->request();
 		// Here we can see that response body contains json list of products
 		
@@ -469,25 +511,6 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 			}
 		}	
 			
-		if($prod->bandwidth)
-		{
-			$bandwidth = $prod->bandwidth;
-			$attributes = Mage::getModel('catalogsearch/advanced')->getAttributes();
-			$attributeArray=array();
-			foreach($attributes as $a){
-			  if($a->getAttributeCode() == 'bandwidth'){
-				foreach($a->getSource()->getAllOptions(false) as $option){
-				  
-				  if($option['value'] == $bandwidth)
-				  {
-					$prod->bandwidth = $option['label'];
-					//break;
-				  }
-				}
-			  }
-			}
-		}
-		
 		if($prod->entity_id){
 			$i = $prod->entity_id;
 			$products->$i = $prod;
@@ -515,6 +538,57 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 	public function subscribeAction()
 	{
 		$header_request = $this->getReqeustData();
+	
+		$validateCustomer = $this->validateCustomer($header_request);
+	
+		if(isset($validateCustomer)){
+			
+		if($header_request['planid'])
+		{
+		
+			$sub_req_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'subscribe.php';
+			
+			$ch = curl_init($sub_req_url);
+			$encoded = '';
+			foreach($header_request as $name => $value) {
+			  $encoded .= urlencode($name).'='.urlencode($value).'&';
+			}
+			
+			// chop off last ampersand
+			$encoded = substr($encoded, 0, strlen($encoded)-1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS,  $encoded);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			$response =  curl_exec($ch);
+	
+			if($response == true)
+			{
+				$this->placeOrder($header_request['uuid']);
+			}
+			
+			curl_close($ch);
+		}
+		else
+		{
+			$message['success'] = 'Invalid action or plan id';
+			echo Mage::helper('core')->jsonEncode($message);
+			exit;
+		}
+		}
+		else
+		{
+			$message['error'] = 'Invalid customer.';
+			echo Mage::helper('core')->jsonEncode($message);
+			exit;
+		}
+		
+	}
+	
+	
+	// 	Buy additional storage - package/recurring product
+	public function topupAction()
+	{
+		$header_request = $this->getReqeustData();
 		
 		$validateCustomer = $this->validateCustomer($header_request);
 	
@@ -524,7 +598,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 		{
 		
 			$sub_req_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'subscribe.php';
-			//exit;
+			
 			$ch = curl_init($sub_req_url);
 			$encoded = '';
 			foreach($header_request as $name => $value) {
@@ -538,11 +612,66 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 			curl_setopt($ch, CURLOPT_POST, 1);
 			$response =  curl_exec($ch);
 			
+			if($response == true)
+			{
+				$this->placeOrder($header_request['uuid']);
+			}
+			
 			curl_close($ch);
 		}
 		else
 		{
-			$message['success'] = 'Invalid action or profile id';
+			$message['success'] = 'Invalid action or plan id';
+			echo Mage::helper('core')->jsonEncode($message);
+			exit;
+		}
+		}
+		else
+		{
+			$message['error'] = 'Invalid customer.';
+			echo Mage::helper('core')->jsonEncode($message);
+			exit;
+		}	
+		
+	}
+	
+	// 	Buy additional storage - package/recurring product
+	public function topupbandwidthAction()
+	{
+		$header_request = $this->getReqeustData();
+		
+		$validateCustomer = $this->validateCustomer($header_request);
+	
+		if(isset($validateCustomer)){
+			
+		if($header_request['planid'])
+		{
+		
+			$sub_req_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'subscribe.php';
+			
+			$ch = curl_init($sub_req_url);
+			$encoded = '';
+			foreach($header_request as $name => $value) {
+			  $encoded .= urlencode($name).'='.urlencode($value).'&';
+			}
+			
+			// chop off last ampersand
+			$encoded = substr($encoded, 0, strlen($encoded)-1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS,  $encoded);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			$response =  curl_exec($ch);
+			
+			if($response == true)
+			{
+				$this->placeOrder($header_request['uuid']);
+			}
+			
+			curl_close($ch);
+		}
+		else
+		{
+			$message['success'] = 'Invalid action or plan id';
 			echo Mage::helper('core')->jsonEncode($message);
 			exit;
 		}
@@ -557,25 +686,24 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 	}
 	
 	// 	Create login session of customer and redirect to checkout page of ecomm site/magento site
-	public function placeorderAction()
+	public function placeOrder($customerid)
 	{
 	
-		$header_request = $this->getReqeustData();
-		
-		$validateCustomer = $this->validateCustomer($header_request);
-	
-		if(isset($validateCustomer)){
+		try{
 		
 				$customer = Mage::getModel('customer/customer');
+				$customer->setWebsiteId(Mage::app()->getStore()->getWebsiteId());
 				$session = Mage::getSingleton('customer/session');
 				$customer->load($customerid);
 				
 				$session->setCustomerAsLoggedIn($customer);
+				
 				$url = Mage::getBaseurl().'checkout/onepage';
-				header('Location:'.$url);
+				$message['success'] = $url;
+				echo Mage::helper('core')->jsonEncode($message);
 				exit;
 		}
-		else
+		catch(Exception $e)
 		{
 			$message['error'] = 'Invalid customer.';
 			echo Mage::helper('core')->jsonEncode($message);
@@ -600,8 +728,9 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 				
 			$profiledata = Mage::getModel('sales/recurring_profile')->load($profile->getId());
 				$id = $profiledata['profile_id'];
-				$profiles->$id  = $profiledata->getOrderItemInfo();
+				$profiles->$id  = $profiledata->getData();
 			}
+			
 			echo Mage::helper('core')->jsonEncode($profiles);
 			exit;
 			
@@ -675,11 +804,11 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
 			if($header_request['profile'])
 			{
 				$profiledata = Mage::getModel('sales/recurring_profile')->load($header_request['profile']);
-				
+			
 				if($header_request['uuid'] == $profiledata['customer_id'])
 				{
 					$id = $profiledata['profile_id'];
-					$profiles->$id  = $profiledata->getOrderItemInfo();
+					$profiles->$id  = $profiledata->getData();
 					echo Mage::helper('core')->jsonEncode($profiles);
 					exit;
 				}
