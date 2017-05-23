@@ -1,11 +1,14 @@
 <?php
 		umask(0);
-		require("./app/Mage.php");
+	
+		require("../app/Mage.php");
+		
 		Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
 
 		$customerid = $_REQUEST['uuid'];
 		$planid = $_REQUEST['planid'];
-		
+		$storeid = 1;
+		$storeid = $_REQUEST['storeid'];
 		
 		$header_token = $_REQUEST['token'];
 		if($header_token)
@@ -31,10 +34,10 @@
 				
 								
 				$customer = Mage::getModel('customer/customer')->load($customerid);
-				$product = Mage::getModel('catalog/product')->setStoreId(1)->load($planid);
+				$product = Mage::getModel('catalog/product')->setStoreId($storeid)->load($planid);
 				// load quote by customer and store...
 				try{
-				$quote = Mage::getModel('sales/quote')->setStoreId(1)->loadByCustomer($customerid);
+				$quote = Mage::getModel('sales/quote')->setStoreId($storeid)->loadByCustomer($customerid);
 				$quote->addProduct($product, 1);
 				$quote->setIsActive(1);
 				if($quote->collectTotals()->save())

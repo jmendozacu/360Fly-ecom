@@ -6,7 +6,23 @@
             <version>0.1.0</version>
         </Fly_RestConnect>
     </modules>
-	
+	<global>
+		<models>
+            <fly_restconnect>
+                <class>Fly_RestConnect_Model</class>
+            </fly_restconnect>
+        </models>
+		<events>
+			<checkout_onepage_controller_success_action>
+						<observers>
+							<fly_restconnect>
+								<class>fly_restconnect/observer</class>
+								<method>salesAttribute</method>
+							</fly_restconnect>
+						</observers>
+			</checkout_onepage_controller_success_action>
+		</events>
+	</global>
 	 <frontend>
         <routers>
             <restConenct>

@@ -1,11 +1,11 @@
 <?php
 
 		umask(0);
-		require("./app/Mage.php");
+		require("../app/Mage.php");
 		Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
 
 		$customerid = $_REQUEST['uuid'];
-		//exit;
+		
 		$customer = Mage::getModel('customer/customer');
 		$customer->load($customerid);
 		
@@ -39,17 +39,26 @@
 			if($customerid == $profile->getCustomerId())
 			{
 				switch ($action) {
-					case 'cancel':
-						$profile->cancel();
-						$message['success'] = 'Subscription Profile has been cancelled.';
-						break;
+					case 'cancel':						
 					case 'suspend':
-						$profile->suspend();
+						//$profile->suspend();
+						$collection = Mage::getModel('sales/recurring_profile')->getCollection()
+						->addFieldToFilter('customer_id', array('eq' => $customerid))
+						->addFieldToFilter('state', array('eq' => 'active'))
+						->setOrder('created_at', 'DESC');
+						
+						foreach ($collection as $profiledata) {
+							//$profiledata = Mage::getModel('sales/recurring_profile')->load($profileid);
+							$profiledata->suspend();
+						}
 						$message['success'] = 'Subscription Profile has been suspended.';
 						break;
 					case 'activate':
 						$profile->activate();
 						$message['success'] = 'Subscription Profile has been activated.';
+						break;
+					default:
+						$message['error'] = 'Invalid action.';
 						break;
 				}
 				
