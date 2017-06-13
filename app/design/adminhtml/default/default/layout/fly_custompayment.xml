@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fly_CustomPayment extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Fly
+ * @package        Fly_CustomPayment
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_custompayment_order_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>sales/custompayment/order</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="custompayment/adminhtml_order" name="order" />
+
+        </reference>
+    </adminhtml_custompayment_order_index>
+    <adminhtml_custompayment_order_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="custompayment/adminhtml_order_grid" name="order_grid"/>
+        </block>
+    </adminhtml_custompayment_order_grid>
+    <!-- Order add/edit action -->
+    <adminhtml_custompayment_order_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>sales/custompayment/order</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="custompayment/adminhtml_order_edit" name="order_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="custompayment/adminhtml_order_edit_tabs" name="order_tabs"></block>
+        </reference>
+    </adminhtml_custompayment_order_edit>
+
+</layout>
