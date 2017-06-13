@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fly_CustomPayment extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Fly
+ * @package        Fly_CustomPayment
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <custompayment translate="title" module="custompayment">
+                                        <title>CustomPayment</title>
+                                    </custompayment>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <sales>
+                        <children>
+                            <custompayment translate="title" module="custompayment">
+                                <title>Recurring Orders</title>
+                                    <children>
+                                        <order translate="title" module="custompayment">
+                                            <title>Recurring</title>
+                                            <sort_order>0</sort_order>
+                                        </order>
+                                    </children>
+                                </custompayment>
+                            </children>
+                        </sales>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <sales>
+            <children>
+                <custompayment translate="title" module="custompayment">
+                    <title>Recurring Orders</title>
+                    <sort_order>55</sort_order>
+                    <children>
+                        <order translate="title" module="custompayment">
+                            <title>Recurring</title>
+                            <action>adminhtml/custompayment_order</action>
+                            <sort_order>0</sort_order>
+                        </order>
+                    </children>
+                </custompayment>
+            </children>
+        </sales>
+
+    </menu>
+</config>

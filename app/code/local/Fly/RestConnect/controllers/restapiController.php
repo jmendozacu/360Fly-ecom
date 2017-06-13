@@ -314,6 +314,7 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
         return json_decode($response->getBody());
         
     }
+	
     
     // Get customer information
     public function customerinfoAction()
@@ -430,7 +431,9 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
         $restClient->setHeaders('Accept', 'application/json');
         $restClient->setMethod(Zend_Http_Client::GET);
         
-        // Filters
+		
+		
+		// Filters
 		$restClient->setParameterGet('filter[1][attribute]', 'storage');
         $restClient->setParameterGet('filter[1][neq]', 0);
 		
@@ -548,6 +551,24 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
         
         if (isset($validateCustomer)) {
             
+			$collection = Mage::getModel('sales/recurring_profile')->getCollection()->addFieldToFilter('customer_id', array(
+                'eq' => $header_request['uuid']
+            ))
+            ->addFieldToFilter('state', array('eq' => 'active'))
+            ->setOrder('created_at', 'DESC')->setPageSize(1);
+            
+            foreach ($collection as $profile) {
+                
+                $profiledata = Mage::getModel('sales/recurring_profile')->load($profile->getId());
+                $id          = $profiledata['profile_id'];
+                $profiles[]  = $profiledata->getData();
+            }
+            if (count($profiles) <= 0) {
+				$message['error'] = 'Sorry, You can not subscribe for additional storage.';
+                echo Mage::helper('core')->jsonEncode($message);
+                exit;
+            }
+			
             if ($header_request['planid']) {
                 
                 $baseurl = $this->getActurl();
@@ -594,6 +615,24 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
         
         if (isset($validateCustomer)) {
             
+			$collection = Mage::getModel('sales/recurring_profile')->getCollection()->addFieldToFilter('customer_id', array(
+                'eq' => $header_request['uuid']
+            ))
+            ->addFieldToFilter('state', array('eq' => 'active'))
+            ->setOrder('created_at', 'DESC')->setPageSize(1);
+            
+            foreach ($collection as $profile) {
+                
+                $profiledata = Mage::getModel('sales/recurring_profile')->load($profile->getId());
+                $id          = $profiledata['profile_id'];
+                $profiles[]  = $profiledata->getData();
+            }
+            if (count($profiles) <= 0) {
+				$message['error'] = 'Sorry, You can not subscribe for additional bandwith.';
+                echo Mage::helper('core')->jsonEncode($message);
+                exit;
+            }
+			
             if ($header_request['planid']) {
                 
                 $baseurl = $this->getActurl();
@@ -665,27 +704,92 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
         
         if (isset($validateCustomer)) {
             
-            $collection = Mage::getModel('sales/recurring_profile')->getCollection()->addFieldToFilter('customer_id', array(
-                'eq' => $header_request['uuid']
-            ))
-            //->addFieldToFilter('state', array('eq' => 'active'))
-                ->setOrder('created_at', 'DESC')->setPageSize(10);
+            $collection = Mage::getModel('sales/recurring_profile')->getCollection()
+			->addFieldToFilter('state', array('eq' => 'active'))->addFieldToFilter('customer_id', array(
+                'eq' => $header_request['uuid']));
+			
+			if(count($collection)<=0)
+			{
+				$collection = Mage::getModel('custompayment/order')->getCollection()->addFieldToFilter('customer_id', $header_request['uuid'])
+				->addFieldToFilter('state','active');
+			}
+			
+			foreach ($collection as $profile) {
             
-            foreach ($collection as $profile) {
-                
-                $profiledata = Mage::getModel('sales/recurring_profile')->load($profile->getId());
-                $id          = $profiledata['profile_id'];
-                $profiles[]  = $profiledata->getData();
+                $iteminfo = unserialize($profile['order_item_info']);
+				$profile['order_item_info'] = $iteminfo;
+				$profiles[]  = $profile->getData();
+				$flag = 1;
+
             }
+			
+
             if (count($profiles) > 0) {
+			
                 echo Mage::helper('core')->jsonEncode($profiles);
                 exit;
             } else {
-                $message['error'] = 'No subscribed package found.';
-                echo Mage::helper('core')->jsonEncode($message);
-                exit;
-            }
-            
+			
+				$orders = Mage::getModel('sales/order')->getCollection()->addFieldToFilter('customer_id', $header_request['uuid'])
+				->addFieldToFilter('custom_attribute', array('eq' => 'subscription' ));
+				
+				$productid = "0";
+				foreach($orders as $order){
+					//$order     = Mage::getModel('sales/order')->load($_orderId);
+
+					if($order->getId())
+					{
+					
+						$items = $order->getAllItems();
+						foreach($items as $item){
+						$product = Mage::getModel("catalog/product")->load($item->getProductId());
+						 
+							//if($order->getSubtotal()<=0.0000 && $order->getGrandTotal()<=0.0000)
+							if($product->getPrice()<=0.0000 && $product->getStorage())
+							{ 
+								$freeitem = $item;
+								$productid = $item->getProductId();
+								 if ($product->getStorage()) {
+									$storage        = $product->getStorage();
+									$attributes     = Mage::getModel('catalogsearch/advanced')->getAttributes();
+									$attributeArray = array();
+									foreach ($attributes as $a) {
+										if ($a->getAttributeCode() == 'storage') {
+											foreach ($a->getSource()->getAllOptions(false) as $option) {
+												
+												if ($option['value'] == $storage) {
+													$storagelabel = $option['label'];
+													$item->storage = $option['label'];
+													//break;
+												}
+											}
+										}
+									}
+								}
+								break;
+							}
+											
+						}
+					}
+					
+					
+				}
+				
+				
+				if($productid)
+				{
+					$order = (array)$order->getData();
+					$order['items'] = (array)$freeitem->getData();
+					echo Mage::helper('core')->jsonEncode($order);
+					exit;
+				}
+				else
+				{
+					$message['error'] = 'No subscribed package found.';
+					echo Mage::helper('core')->jsonEncode($message);
+					exit;
+				}
+        }    
         } else {
             $message['error'] = 'Invalid token';
             echo Mage::helper('core')->jsonEncode($message);
@@ -700,6 +804,11 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
         $header_request = $this->getReqeustData();
         
         $validateCustomer = $this->validateCustomer($header_request);
+		
+		if($header_request['profile'] === 0)
+		{
+			$header_request['profile'] = 'mobile';
+		}
         
         if (isset($validateCustomer)) {
             
@@ -757,15 +866,74 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
                 $profiledata = Mage::getModel('sales/recurring_profile')->load($profile->getId());
                 $id          = $profiledata['profile_id'];
                 $profiles[]  = $profiledata->getData();
+				$flag = 1;
             }
             if (count($profiles) > 0) {
+			
                 echo Mage::helper('core')->jsonEncode($profiles);
                 exit;
             } else {
-                $message['error'] = 'No subscribed package found.';
-                echo Mage::helper('core')->jsonEncode($message);
-                exit;
-            }
+			
+				$orders = Mage::getModel('sales/order')->getCollection()->addFieldToFilter('customer_id', $header_request['uuid'])
+				->addFieldToFilter('custom_attribute', array('eq' => 'subscription' ));
+				
+				$productid = "0";
+				foreach($orders as $order){
+					//$order     = Mage::getModel('sales/order')->load($_orderId);
+
+					if($order->getId())
+					{
+					
+						$items = $order->getAllItems();
+						foreach($items as $item){
+						$product = Mage::getModel("catalog/product")->load($item->getProductId());
+						 
+							//if($order->getSubtotal()<=0.0000 && $order->getGrandTotal()<=0.0000)
+							if($product->getPrice()<=0.0000 && $product->getStorage())
+							{ 
+								$freeitem = $item;
+								$productid = $item->getProductId();
+								 if ($product->getStorage()) {
+									$storage        = $product->getStorage();
+									$attributes     = Mage::getModel('catalogsearch/advanced')->getAttributes();
+									$attributeArray = array();
+									foreach ($attributes as $a) {
+										if ($a->getAttributeCode() == 'storage') {
+											foreach ($a->getSource()->getAllOptions(false) as $option) {
+												
+												if ($option['value'] == $storage) {
+													$storagelabel = $option['label'];
+													$item->storage = $option['label'];
+													//break;
+												}
+											}
+										}
+									}
+								}
+								break;
+							}
+											
+						}
+					}
+					
+					
+				}
+				
+				
+				if($productid)
+				{
+					$order = (array)$order->getData();
+					$order['items'] = (array)$freeitem->getData();
+					echo Mage::helper('core')->jsonEncode($order);
+					exit;
+				}
+				else
+				{
+					$message['error'] = 'No subscribed package found.';
+					echo Mage::helper('core')->jsonEncode($message);
+					exit;
+				}
+        } 
             
         } else {
             $message['error'] = 'Invalid token';
@@ -773,5 +941,56 @@ class Fly_RestConnect_RestapiController extends Mage_Core_Controller_Front_Actio
             exit;
         }
     }
+	
+	
+	//     Buy additional storage - package/recurring product
+    public function mobilepayAction()
+    {
+		$storeid = Mage::app()->getStore()->getStoreId();
+        $header_request = $this->getReqeustData();
+		$header_request['storeid'] = $storeid;
+        
+		
+        $validateCustomer = $this->validateCustomer($header_request);
+        
+        if (isset($validateCustomer)) {
+		
+			
+			
+			if ($header_request['uuid'] && $header_request['planid']) {
+                
+                $baseurl = $this->getActurl();
+                $sub_req_url = $baseurl . 'restapi/mobileactions.php';
+                
+                $ch      = curl_init($sub_req_url);
+                $encoded = '';
+                foreach ($header_request as $name => $value) {
+                    $encoded .= urlencode($name) . '=' . urlencode($value) . '&';
+                }
+                
+                // chop off last ampersand
+                $encoded = substr($encoded, 0, strlen($encoded) - 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $encoded);
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                $response = curl_exec($ch);
+                
+                curl_close($ch);
+            } else {
+                $message['error'] = 'Invalid action or plan id';
+                echo Mage::helper('core')->jsonEncode($message);
+                exit;
+            }
+            	
+		
+            
+        } else {
+            $message['error'] = 'Invalid customer.';
+            echo Mage::helper('core')->jsonEncode($message);
+            exit;
+        }
+        
+    }
+	
 }
 ?>

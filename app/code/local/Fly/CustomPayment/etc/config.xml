@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fly_CustomPayment extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Fly
+ * @package        Fly_CustomPayment
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Fly_CustomPayment>
+            <version>1.0.0</version>
+        </Fly_CustomPayment>
+    </modules>
+    <global>
+        <resources>
+            <fly_custompayment_setup>
+                <setup>
+                    <module>Fly_CustomPayment</module>
+                    <class>Fly_CustomPayment_Model_Resource_Setup</class>
+                </setup>
+            </fly_custompayment_setup>
+        </resources>
+        <blocks>
+            <custompayment>
+                <class>Fly_CustomPayment_Block</class>
+            </custompayment>
+        </blocks>
+        <helpers>
+            <custompayment>
+                <class>Fly_CustomPayment_Helper</class>
+            </custompayment>
+        </helpers>
+        <models>
+            <custompayment>
+                <class>Fly_CustomPayment_Model</class>
+                <resourceModel>custompayment_resource</resourceModel>
+            </custompayment>
+            <custompayment_resource>
+                <class>Fly_CustomPayment_Model_Resource</class>
+                <entities>
+                    <order>
+                        <table>custompayment_order</table>
+                    </order>
+                </entities>
+            </custompayment_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <fly_custompayment>
+                    <file>fly_custompayment.xml</file>
+                </fly_custompayment>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Fly_CustomPayment>
+                    <files>
+                        <default>Fly_CustomPayment.csv</default>
+                    </files>
+                </Fly_CustomPayment>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Fly_CustomPayment before="Mage_Adminhtml">Fly_CustomPayment_Adminhtml</Fly_CustomPayment>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
