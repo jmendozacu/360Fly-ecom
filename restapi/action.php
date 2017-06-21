@@ -28,6 +28,7 @@
 		//exit;
 		$flag = 1;
 		$updated = 0;
+		
 		if($profileid){
 		
 		
@@ -39,6 +40,7 @@
 			
 			$flag = 2;
 		}
+		
 		//Mage::register('current_customer', $customer);
 		//Mage::register('current_recurring_profile', $profile);
 		
@@ -54,13 +56,13 @@
 						
 						if($flag != 2)
 						{
+						
 						$collection = Mage::getModel('sales/recurring_profile')->getCollection()
-						->addFieldToFilter('customer_id', array('eq' => $customerid))
-						->addFieldToFilter('state', array('eq' => 'active'))
-						->setOrder('created_at', 'DESC');
+						->addFieldToFilter('customer_id',$customerid)->addFieldToFilter('profile_id',$profileid);
 						
 						foreach ($collection as $profiledata) {
-							//$profiledata = Mage::getModel('sales/recurring_profile')->load($profileid);
+						
+							$profiledata = Mage::getModel('sales/recurring_profile')->load($profileid);
 							$profiledata->suspend();
 							$updated = 1;
 						}
@@ -87,12 +89,10 @@
 						if($flag != 2)
 						{
 						$collection = Mage::getModel('sales/recurring_profile')->getCollection()
-						->addFieldToFilter('customer_id', array('eq' => $customerid))
-						->addFieldToFilter('state', array('eq' => 'suspended'))
-						->setOrder('created_at', 'DESC');
+						->addFieldToFilter('customer_id',$customerid)->addFieldToFilter('profile_id',$profileid);
 						
 						foreach ($collection as $profiledata) {
-							//$profiledata = Mage::getModel('sales/recurring_profile')->load($profileid);
+							$profiledata = Mage::getModel('sales/recurring_profile')->load($profileid);
 							$profiledata->activate();
 							$updated = 1;
 						}

@@ -42,7 +42,8 @@
 				$quote->setIsActive(1);
 				if($quote->collectTotals()->save())
 				{			
-					return true;
+					$message['success'] = "done";
+					return Mage::helper('core')->jsonEncode($message);
 				}
 			
 				
